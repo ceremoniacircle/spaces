@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceremonia Spaces: The Colorado Market Opportunity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Earthy Harmony -->
+    <!-- Application Structure Plan: The application is structured as a single-page, scrollable narrative designed to guide an investor through a logical investment thesis. It begins with a high-level summary (The Thesis), then establishes the market's superiority (A Tale of Two States). It then drills down into the core market dynamics creating the opportunity: the 'Facilitator Wave' (fueled by consumer demand) and the 'Infrastructure Bottleneck'. Following this problem definition, it presents 'The Ceremonia Solution', detailing the asset, the turnkey model, and the unique 'Ecosystem Flywheel' strategy. It concludes with the tangible 'Financial Opportunity', presenting key pro forma inputs in an interactive table. This top-down, problem-then-solution flow was chosen to be maximally persuasive and clear for a sophisticated investor audience, building the case step-by-step rather than mirroring the source report's structure. Key interactions include toggling comparison data, interactive charts, and a visual, animated flywheel diagram to make complex concepts easily digestible. Gemini API features are added to provide dynamic summaries and customer personas. -->
+    <!-- Visualization & Content Choices: 
+        - Hero KPIs: Goal: Inform. Method: Styled HTML cards. Justification: Immediately present the most critical top-line numbers to hook the investor.
+        - CO vs. OR Comparison: Goal: Compare. Method: Bar Chart (Chart.js). Justification: Provides an immediate, powerful visual of Colorado's superior market fundamentals over the Oregon precedent. Interaction: Tooltips on hover.
+        - Facilitator Growth Projection: Goal: Show Change. Method: Line Chart (Chart.js). Justification: Effectively visualizes the "Facilitator Wave," the core B2B customer base growth over time.
+        - Infrastructure Bottleneck: Goal: Organize/Inform. Method: Custom HTML/CSS diagram. Justification: A simple iconic representation (people vs. building) is more visually arresting and memorable than a plain number for the critical facilitator-to-center ratio.
+        - Ecosystem Flywheel: Goal: Explain a Process. Method: Custom HTML/CSS/JS animated diagram. Justification: This is the company's core strategic moat. An animated diagram makes this complex, self-reinforcing loop intuitive and is a high-impact "wow" factor for investors.
+        - Financial Assumptions: Goal: Inform/Organize. Method: Interactive HTML Table. Justification: A table is the standard for financial data. Interaction: JS-powered scenario buttons (Low, Base, High) make the data explorable and demonstrate the model's flexibility.
+        - Gemini Market Summary: Goal: Synthesize. Method: LLM call via button. Justification: Provides a dynamic, narrative summary of complex data points, aiding investor comprehension.
+        - Gemini Persona Generator: Goal: Empathize/Inform. Method: LLM call via button. Justification: Creates a relatable persona of the target B2B customer, making the business case more tangible. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F5F2;
+            color: #3D352E;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 380px;
+            }
+        }
+        .nav-link {
+            transition: all 0.3s ease;
+        }
+        .nav-link.active {
+            color: #A3B18A;
+            border-bottom: 2px solid #A3B18A;
+        }
+        .flywheel-item {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .flywheel-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .kpi-card {
+            background-color: #FFFFFF;
+            border: 1px solid #EAE3DC;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+        .section-bg {
+             background-color: #FFFFFF;
+        }
+        .gemini-btn {
+            background-color: #588157;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .gemini-btn:hover {
+            background-color: #3A5A40;
+        }
+        .gemini-btn:disabled {
+            background-color: #A3B18A;
+            cursor: not-allowed;
+        }
+        .loader {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #588157;
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-[#F8F5F2]/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-bold text-[#3D352E]">
+                Ceremonia <span class="text-[#A3B18A]">Spaces</span>
+            </h1>
+            <div class="hidden md:flex space-x-6 lg:space-x-8 text-sm font-medium">
+                <a href="#thesis" class="nav-link">The Thesis</a>
+                <a href="#market" class="nav-link">The Market</a>
+                <a href="#solution" class="nav-link">The Solution</a>
+                <a href="#financials" class="nav-link">The Financials</a>
+            </div>
+            <a href="#financials" class="md:hidden bg-[#A3B18A] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">
+                View Financials
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Section 1: The Thesis -->
+        <section id="thesis" class="py-16 md:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-[#3D352E]">The Colorado Psilocybin Market:</h2>
+                <p class="mt-4 md:text-xl max-w-3xl mx-auto text-gray-600">
+                    A superior market opportunity defined by a structural <span class="font-semibold text-[#A3B18A]">infrastructure bottleneck</span>. Ceremonia Spaces is purpose-built to solve this bottleneck at scale.
+                </p>
+
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
+                    <div class="kpi-card rounded-xl p-6 text-left">
+                        <p class="text-sm font-semibold text-gray-500">Market Superiority</p>
+                        <p class="mt-2 text-3xl font-bold text-[#A3B18A]">43% Larger</p>
+                        <p class="mt-1 text-sm text-gray-600">Population in Colorado vs. Oregon, creating a vast initial customer base.</p>
+                    </div>
+                    <div class="kpi-card rounded-xl p-6 text-left">
+                        <p class="text-sm font-semibold text-gray-500">Infrastructure Gap (OR)</p>
+                        <p class="mt-2 text-3xl font-bold text-[#A3B18A]">11 : 1</p>
+                        <p class="mt-1 text-sm text-gray-600">Ratio of licensed facilitators to service centers, proving a critical lack of practice space.</p>
+                    </div>
+                    <div class="kpi-card rounded-xl p-6 text-left">
+                        <p class="text-sm font-semibold text-gray-500">Validated B2B Model</p>
+                        <p class="mt-2 text-3xl font-bold text-[#A3B18A]">$900/Session</p>
+                        <p class="mt-1 text-sm text-gray-600">Market-proven room rental rate achieved by operators in Oregon.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section 2: The Market -->
+        <section id="market" class="py-16 md:py-24 section-bg border-t border-b border-gray-200">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">A Tale of Two States</h2>
+                    <p class="mt-3 max-w-2xl mx-auto text-gray-600">
+                        The investment thesis begins with understanding why Colorado is not just another Oregon. The data reveals a market with fundamentally superior demand drivers and a more favorable regulatory environment, creating a significantly larger and more immediate opportunity.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="p-6 md:p-8 rounded-xl bg-gray-50 border border-gray-200">
+                        <h3 class="text-xl font-bold text-center">Market Superiority: CO vs. OR</h3>
+                        <div class="chart-container mt-6">
+                            <canvas id="marketComparisonChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <div class="p-6 bg-white rounded-lg border border-gray-200">
+                           <h4 class="font-bold text-lg">📈 The Demand Surge</h4>
+                           <p class="mt-2 text-sm text-gray-600">Colorado's larger population, higher rate of clinical need, and status as the #1 destination for psychedelic tourism create a compounding effect, projecting demand that will significantly outpace the Oregon precedent. Oregon's <strong>100%+ annual client growth rate</strong>, despite its challenges, validates the powerful underlying consumer interest.</p>
+                        </div>
+                        <div class="p-6 bg-white rounded-lg border border-gray-200">
+                            <h4 class="font-bold text-lg">👋 The Facilitator Wave</h4>
+                            <p class="mt-2 text-sm text-gray-600">This consumer demand fuels a rapid increase in licensed facilitators. Projections show Colorado needing over <strong>500 facilitators by Year 5</strong>. These practitioners are the B2B customers for Ceremonia Spaces.</p>
+                        </div>
+                         <div class="p-6 bg-white rounded-lg border border-gray-200">
+                            <h4 class="font-bold text-lg">🚧 The Infrastructure Bottleneck</h4>
+                            <p class="mt-2 text-sm text-gray-600">High costs ($10k+ annual license) and capital requirements create a systemic shortage of professional practice space. Colorado launches with an immediate <strong>8.9:1 facilitator-to-center ratio</strong>, proving the gap Ceremonia will fill.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NEW GEMINI API SECTION -->
+                <div id="gemini-market-insight" class="mt-16 p-8 rounded-xl bg-gradient-to-br from-green-50 to-teal-50 border border-green-200 text-center">
+                    <h3 class="text-2xl font-bold text-[#3D352E]">AI-Powered Strategic Summary</h3>
+                    <p class="mt-2 max-w-2xl mx-auto text-gray-600">Click the button to let Gemini synthesize the key market data into a concise investment thesis.</p>
+                    <button id="generate-insight-btn" class="gemini-btn font-semibold px-6 py-3 rounded-lg mt-6">
+                        ✨ Generate Strategic Summary
+                    </button>
+                    <div id="insight-loader" class="hidden mx-auto mt-4 loader"></div>
+                    <div id="insight-result" class="mt-6 text-left max-w-2xl mx-auto p-4 bg-white rounded-lg shadow-inner text-gray-700 hidden"></div>
+                </div>
+
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <h3 class="text-2xl font-bold text-center">Projected Facilitator Growth (CO)</h3>
+                        <p class="text-center mt-2 text-gray-600 text-sm">The B2B customer base is set for rapid expansion.</p>
+                        <div class="chart-container mt-4">
+                            <canvas id="facilitatorGrowthChart"></canvas>
+                        </div>
+                    </div>
+                     <div>
+                        <h3 class="text-2xl font-bold text-center">Regulatory Advantages (CO)</h3>
+                         <p class="text-center mt-2 text-gray-600 text-sm">Lower fees & investment certainty create a friendlier market.</p>
+                        <div class="mt-6 flow-root">
+                            <ul role="list" class="divide-y divide-gray-200">
+                                <li class="py-3 flex justify-between items-center">
+                                    <p class="font-medium">Facilitator License Fee</p>
+                                    <div>
+                                        <span class="font-bold text-green-600 text-lg">$500</span>
+                                        <span class="text-gray-500 ml-2 text-sm line-through">$2,000</span>
+                                    </div>
+                                </li>
+                                <li class="py-3 flex justify-between items-center">
+                                    <p class="font-medium">Healing Center Fee</p>
+                                     <div>
+                                        <span class="font-bold text-green-600 text-lg">$6,000</span>
+                                        <span class="text-gray-500 ml-2 text-sm line-through">$10,000</span>
+                                    </div>
+                                </li>
+                                <li class="py-3 flex flex-col text-center">
+                                    <p class="font-medium">Local Opt-Out Bans</p>
+                                    <p class="mt-1 font-bold text-green-600 text-lg">Prohibited in Colorado</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Section 3: The Solution -->
+        <section id="solution" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">The Ceremonia Solution</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
+                        Ceremonia Spaces is not just a real estate play; it's a comprehensive ecosystem designed to solve the market's most critical pain points. We provide Infrastructure-as-a-Service, powered by a strategic flywheel that creates a powerful and defensible competitive moat.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="order-2 lg:order-1">
+                        <h3 class="text-2xl font-bold">The Premier Asset in Colorado</h3>
+                        <p class="mt-2 text-gray-600">With <strong>14 private rooms and a large ceremony hall</strong>, our Golden, CO facility will be the largest of its kind. Its strategic location and serene mountain setting provide an unparalleled client experience, justifying premium pricing.</p>
+                        
+                        <h3 class="text-2xl font-bold mt-8">Turnkey Compliance & Operations</h3>
+                        <p class="mt-2 text-gray-600">We solve the biggest hurdles for independent facilitators:</p>
+                        <ul class="mt-4 space-y-3 text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-3 mt-1">✓</span>
+                                <span><strong>Regulatory & Compliance:</strong> A fully licensed environment, removing the $6k licensing burden and operational complexity.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-green-500 mr-3 mt-1">✓</span>
+                                <span><strong>Ancillary Services:</strong> Integrated solutions for insurance, banking, and payment processing—major industry pain points.</span>
+                            </li>
+                             <li class="flex items-start">
+                                <span class="text-green-500 mr-3 mt-1">✓</span>
+                                <span><strong>Business Development:</strong> Marketing support and continuing education to help our facilitator partners succeed.</span>
+                            </li>
+                        </ul>
+                         <!-- NEW GEMINI API SECTION 2 -->
+                        <div id="gemini-persona" class="mt-8 p-6 rounded-xl bg-gray-50 border border-gray-200">
+                            <h4 class="font-bold text-lg text-center">Meet Our Ideal Customer</h4>
+                            <p class="mt-1 text-sm text-center text-gray-600">Let Gemini generate a profile of a facilitator who needs our solution.</p>
+                            <div class="text-center">
+                                <button id="generate-persona-btn" class="gemini-btn font-semibold px-5 py-2 rounded-lg mt-4 text-sm">
+                                    ✨ Generate Facilitator Profile
+                                </button>
+                            </div>
+                            <div id="persona-loader" class="hidden mx-auto mt-4 loader"></div>
+                            <div id="persona-result" class="mt-4 text-sm text-gray-700 hidden"></div>
+                        </div>
+                    </div>
+                     <div class="order-1 lg:order-2">
+                         <img src="http://googleusercontent.com/file_content/2" alt="Aerial view of the Ceremonia Spaces facility at 538 Commons Dr, Golden, CO, showing a modern building nestled in a forested, mountainous landscape." class="rounded-xl shadow-lg object-cover w-full h-full">
+                     </div>
+                </div>
+
+                <!-- Flywheel Section -->
+                <div id="flywheel" class="mt-20 md:mt-24 p-8 md:p-12 rounded-xl section-bg border border-gray-200">
+                     <div class="text-center">
+                        <h3 class="text-2xl md:text-3xl font-bold">The Practicum Hub Flywheel</h3>
+                        <p class="mt-3 max-w-2xl mx-auto text-gray-600">Our core strategic advantage. By hosting mandatory 40-hour practicums, we create a self-reinforcing loop of revenue and customer acquisition.</p>
+                    </div>
+                    <div class="mt-10 relative max-w-4xl mx-auto">
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                            <div class="flywheel-item">
+                                <div class="bg-teal-50 border-2 border-teal-200 p-4 rounded-full w-24 h-24 mx-auto flex items-center justify-center">
+                                    <span class="text-4xl">🏫</span>
+                                </div>
+                                <h4 class="mt-3 font-semibold">Training Schools</h4>
+                                <p class="text-xs text-gray-500">Partner with top programs in CO & OR.</p>
+                            </div>
+                            <div class="flywheel-item">
+                                <div class="bg-sky-50 border-2 border-sky-200 p-4 rounded-full w-24 h-24 mx-auto flex items-center justify-center">
+                                     <span class="text-4xl">💵</span>
+                                </div>
+                                <h4 class="mt-3 font-semibold">Guaranteed Revenue</h4>
+                                <p class="text-xs text-gray-500">Contracted revenue from practicum hosting.</p>
+                            </div>
+                            <div class="flywheel-item">
+                                <div class="bg-amber-50 border-2 border-amber-200 p-4 rounded-full w-24 h-24 mx-auto flex items-center justify-center">
+                                     <span class="text-4xl">🧑‍🎓</span>
+                                </div>
+                                <h4 class="mt-3 font-semibold">Warm Leads</h4>
+                                <p class="text-xs text-gray-500">Every student is a future customer.</p>
+                            </div>
+                             <div class="flywheel-item">
+                                <div class="bg-rose-50 border-2 border-rose-200 p-4 rounded-full w-24 h-24 mx-auto flex items-center justify-center">
+                                     <span class="text-4xl">🏡</span>
+                                </div>
+                                <h4 class="mt-3 font-semibold">Consistent Rentals</h4>
+                                <p class="text-xs text-gray-500">Newly licensed facilitators rent from a familiar space.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+         <!-- Section 4: The Financials -->
+        <section id="financials" class="py-16 md:py-24 section-bg border-t border-gray-200">
+             <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">The Financial Opportunity</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
+                        Our financial model is built on multiple, data-driven revenue streams and operational assumptions. This analysis distills these inputs into a clear, concise format. Interact with the scenarios to see how the model adapts to different market conditions.
+                    </p>
+                </div>
+                
+                <div class="max-w-4xl mx-auto">
+                    <div class="flex justify-center mb-6 space-x-2">
+                        <button data-scenario="low" class="scenario-btn px-4 py-2 text-sm font-semibold rounded-md transition-all">Low</button>
+                        <button data-scenario="base" class="scenario-btn px-4 py-2 text-sm font-semibold rounded-md transition-all">Base</button>
+                        <button data-scenario="high" class="scenario-btn px-4 py-2 text-sm font-semibold rounded-md transition-all">High</button>
+                    </div>
+
+                    <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
+                        <div class="p-4 bg-gray-50 border-b border-gray-200">
+                           <h3 class="font-bold text-lg">Master Assumptions Table: <span id="scenario-title" class="text-[#A3B18A]">Base Scenario</span></h3>
+                        </div>
+                        <div class="divide-y divide-gray-200">
+                            <div class="p-4 grid grid-cols-2 md:grid-cols-3 gap-4 items-center">
+                                <h4 class="font-semibold text-sm text-gray-600 col-span-2 md:col-span-1">Metric</h4>
+                                <h4 class="font-semibold text-sm text-gray-600 hidden md:block">Notes</h4>
+                                <h4 class="font-semibold text-sm text-gray-600 text-right">Value</h4>
+                            </div>
+                            <!-- Revenue -->
+                             <div class="p-4 grid grid-cols-2 md:grid-cols-3 gap-4 hover:bg-gray-50">
+                                <p class="font-medium">B2B Room Rental Rate / Day</p>
+                                <p class="text-sm text-gray-500 hidden md:block">Conservative entry point below Oregon's $900 validated rate.</p>
+                                <p id="val-rental-rate" class="font-mono font-semibold text-right text-lg"></p>
+                            </div>
+                             <div class="p-4 grid grid-cols-2 md:grid-cols-3 gap-4 hover:bg-gray-50">
+                                <p class="font-medium">Consumer Price Validation</p>
+                                <p class="text-sm text-gray-500 hidden md:block">Validates facilitator economics. Based on Oregon & CO ketamine.</p>
+                                <p id="val-consumer-price" class="font-mono font-semibold text-right text-lg"></p>
+                            </div>
+                             <div class="p-4 grid grid-cols-2 md:grid-cols-3 gap-4 hover:bg-gray-50">
+                                <p class="font-medium">Anchor Tenant Revenue</p>
+                                <p class="text-sm text-gray-500 hidden md:block">Contracted revenue from practicums & internal programs.</p>
+                                <p id="val-anchor-revenue" class="font-mono font-semibold text-right text-lg"></p>
+                            </div>
+                            <!-- Operational -->
+                            <div class="p-4 grid grid-cols-2 md:grid-cols-3 gap-4 hover:bg-gray-50">
+                                <p class="font-medium">Facility Utilization Rate</p>
+                                <p class="text-sm text-gray-500 hidden md:block">Projected based on superior CO demand drivers.</p>
+                                <p id="val-utilization" class="font-mono font-semibold text-right text-lg"></p>
+                            </div>
+                             <div class="p-4 grid grid-cols-2 md:grid-cols-3 gap-4 hover:bg-gray-50">
+                                <p class="font-medium">Lease Rate (sq ft/yr)</p>
+                                <p class="text-sm text-gray-500 hidden md:block">Class B office benchmark for Denver/Golden area.</p>
+                                <p id="val-lease-rate" class="font-mono font-semibold text-right text-lg"></p>
+                            </div>
+                             <!-- Risk -->
+                            <div class="p-4 grid grid-cols-1 md:grid-cols-3 gap-4 bg-red-50 border-t border-red-200">
+                                <p class="font-medium text-red-800">CRITICAL RISK: Fed Tax</p>
+                                <p class="text-sm text-red-700 col-span-2">IRC Section 280E disallows standard business deductions, creating a punitive effective tax rate. This assumption is non-negotiable and requires specialized accounting.</p>
+                                <p class="font-mono font-bold text-right text-lg text-red-800">~70%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-gray-200">
+        <div class="container mx-auto px-6 py-8 text-center text-gray-500">
+            <p class="text-sm">&copy; 2025 Ceremonia Spaces. For informational purposes only.</p>
+            <p class="text-xs mt-2">This interactive dashboard is a synthesis of data from market research reports. All data points should be verified against original source documents. Not an offer to sell securities.</p>
+        </div>
+    </footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const chartDefaults = {
+        plugins: { legend: { display: false }, tooltip: { enabled: true, backgroundColor: '#3D352E', titleColor: '#FFFFFF', bodyColor: '#FFFFFF', padding: 10, cornerRadius: 4, displayColors: false }},
+        scales: { y: { beginAtZero: true, grid: { color: '#EAE3DC' }, ticks: { color: '#6B7280' }}, x: { grid: { display: false }, ticks: { color: '#6B7280' }}},
+        responsive: true, maintainAspectRatio: false
+    };
+
+    const marketComparisonCtx = document.getElementById('marketComparisonChart');
+    if (marketComparisonCtx) {
+        new Chart(marketComparisonCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Population (M)', 'Mental Health Need (%)', 'Psychedelic Tourism (%)'],
+                datasets: [{ label: 'Colorado', data: [6.0, 26.2, 42.9], backgroundColor: '#A3B18A', borderColor: '#8F9D77', borderWidth: 1, borderRadius: 4 }, { label: 'Oregon', data: [4.2, 21.0, 28.9], backgroundColor: '#DDBEA9', borderColor: '#C7A991', borderWidth: 1, borderRadius: 4 }]
+            },
+            options: { ...chartDefaults, plugins: { ...chartDefaults.plugins, legend: { display: true, position: 'bottom', labels: { color: '#3D352E' }}}}
+        });
+    }
+
+    const facilitatorGrowthCtx = document.getElementById('facilitatorGrowthChart');
+    if (facilitatorGrowthCtx) {
+        new Chart(facilitatorGrowthCtx, {
+            type: 'line',
+            data: {
+                labels: ['Y1', 'Y2', 'Y3', 'Y4', 'Y5'],
+                datasets: [{ label: 'Projected Facilitators', data: [202, 303, 409, 491, 564], fill: true, backgroundColor: 'rgba(163, 177, 138, 0.1)', borderColor: '#A3B18A', tension: 0.3, pointBackgroundColor: '#A3B18A', pointRadius: 4 }]
+            },
+            options: chartDefaults
+        });
+    }
+
+    const financialData = {
+        low: { title: 'Low Scenario', rentalRate: '$400', consumerPrice: '$2,000', anchorRevenue: 'Stable', utilization: '25%', leaseRate: '$26.52' },
+        base: { title: 'Base Scenario', rentalRate: '$500', consumerPrice: '$2,750', anchorRevenue: 'Contracted', utilization: '50%', leaseRate: '$26.52' },
+        high: { title: 'High Scenario', rentalRate: '$600', consumerPrice: '$3,500', anchorRevenue: 'Expanded', utilization: '75%', leaseRate: '$26.52' }
+    };
+
+    const scenarioBtns = document.querySelectorAll('.scenario-btn');
+    const scenarioTitleEl = document.getElementById('scenario-title');
+    const valRentalRateEl = document.getElementById('val-rental-rate');
+    const valConsumerPriceEl = document.getElementById('val-consumer-price');
+    const valAnchorRevenueEl = document.getElementById('val-anchor-revenue');
+    const valUtilizationEl = document.getElementById('val-utilization');
+    const valLeaseRateEl = document.getElementById('val-lease-rate');
+
+    function updateScenario(scenario) {
+        const data = financialData[scenario];
+        scenarioTitleEl.textContent = data.title;
+        valRentalRateEl.textContent = data.rentalRate;
+        valConsumerPriceEl.textContent = data.consumerPrice;
+        valAnchorRevenueEl.textContent = data.anchorRevenue;
+        valUtilizationEl.textContent = data.utilization;
+        valLeaseRateEl.textContent = data.leaseRate;
+
+        scenarioBtns.forEach(btn => {
+            btn.classList.toggle('bg-[#A3B18A]', btn.dataset.scenario === scenario);
+            btn.classList.toggle('text-white', btn.dataset.scenario === scenario);
+            btn.classList.toggle('bg-gray-200', btn.dataset.scenario !== scenario);
+            btn.classList.toggle('text-gray-700', btn.dataset.scenario !== scenario);
+        });
+    }
+
+    scenarioBtns.forEach(btn => btn.addEventListener('click', () => updateScenario(btn.dataset.scenario)));
+    updateScenario('base');
+
+    const flywheel = document.getElementById('flywheel');
+    if (flywheel) {
+        const flywheelItems = flywheel.querySelectorAll('.flywheel-item');
+        const observer = new IntersectionObserver((entries) => {
+            if (entries[0].isIntersecting) {
+                let delay = 0;
+                flywheelItems.forEach((item) => {
+                    setTimeout(() => item.classList.add('visible'), delay);
+                    delay += 200;
+                });
+                observer.unobserve(flywheel);
+            }
+        }, { threshold: 0.5 });
+        observer.observe(flywheel);
+    }
+    
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.nav-link');
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 75) { current = section.getAttribute('id'); }
+        });
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href').includes(current)) { link.classList.add('active'); }
+        });
+    });
+
+    // Gemini API Integration
+    const apiKey = ""; 
+    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+    async function callGemini(prompt, button, loader, resultContainer) {
+        button.disabled = true;
+        loader.classList.remove('hidden');
+        resultContainer.classList.add('hidden');
+        
+        const payload = {
+            contents: [{ role: "user", parts: [{ text: prompt }] }]
+        };
+
+        try {
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(payload)
+            });
+
+            if (!response.ok) {
+                throw new Error(`API request failed with status ${response.status}`);
+            }
+
+            const result = await response.json();
+            
+            if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
+                const text = result.candidates[0].content.parts[0].text;
+                resultContainer.innerHTML = text.replace(/\n/g, '<br>');
+                resultContainer.classList.remove('hidden');
+            } else {
+                throw new Error("Invalid response structure from API.");
+            }
+        } catch (error) {
+            console.error("Gemini API Error:", error);
+            resultContainer.textContent = "An error occurred while generating the content. Please try again.";
+            resultContainer.classList.remove('hidden');
+        } finally {
+            button.disabled = false;
+            loader.classList.add('hidden');
+        }
+    }
+
+    // Feature 1: Market Insight
+    const insightBtn = document.getElementById('generate-insight-btn');
+    const insightLoader = document.getElementById('insight-loader');
+    const insightResult = document.getElementById('insight-result');
+    insightBtn.addEventListener('click', () => {
+        const prompt = `You are a market analyst advising a potential investor. Based on the following data points, generate a concise strategic summary (3-4 sentences) highlighting the core investment thesis:
+        - Colorado's population is 6.0M vs Oregon's 4.2M.
+        - Colorado has a 26.2% adult mental health need vs Oregon's 21%.
+        - Colorado captures 42.9% of psychedelic tourism vs Oregon's 28.9%.
+        - Oregon has an 11:1 facilitator-to-center ratio, proving a severe infrastructure bottleneck for practitioners.
+        - The validated B2B room rental rate in Oregon is $900/session.
+        Conclude by stating how a turnkey facility model like Ceremonia Spaces is positioned to capitalize on these factors.`;
+        callGemini(prompt, insightBtn, insightLoader, insightResult);
+    });
+
+    // Feature 2: Facilitator Persona
+    const personaBtn = document.getElementById('generate-persona-btn');
+    const personaLoader = document.getElementById('persona-loader');
+    const personaResult = document.getElementById('persona-result');
+    personaBtn.addEventListener('click', () => {
+        const prompt = `Create a brief, relatable persona (4-5 sentences) for a potential B2B customer of Ceremonia Spaces. This person is a newly licensed psilocybin facilitator in Colorado. Give them a name and a background (e.g., former therapist, yoga instructor, or wellness coach). Describe their passion for helping others but also their struggle with the high startup costs, real estate challenges, and regulatory complexity of opening their own healing center. Emphasize their need for a professional, compliant, turnkey solution that lets them focus on their clients.`;
+        callGemini(prompt, personaBtn, personaLoader, personaResult);
+    });
+});
+</script>
+
+</body>
+</html>
