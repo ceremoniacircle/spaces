@@ -10,16 +10,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Earthy Harmony -->
-    <!-- Application Structure Plan: The application is structured as a single-page, scrollable narrative designed to guide an investor through a logical investment thesis. It begins with a high-level summary (The Thesis), then establishes the market's superiority (A Tale of Two States). It then drills down into the core market dynamics creating the opportunity: the 'Facilitator Wave' (fueled by consumer demand) and the 'Infrastructure Bottleneck'. Following this problem definition, it presents 'The Ceremonia Solution', detailing the asset, the turnkey model, and the unique 'Ecosystem Flywheel' strategy. It concludes with the tangible 'Financial Opportunity', presenting key pro forma inputs in an interactive table. This top-down, problem-then-solution flow was chosen to be maximally persuasive and clear for a sophisticated investor audience, building the case step-by-step rather than mirroring the source report's structure. Key interactions include toggling comparison data, interactive charts, and a visual, animated flywheel diagram to make complex concepts easily digestible. Gemini API features are added to provide dynamic summaries and customer personas. -->
+    <!-- Application Structure Plan: The application is structured as a single-page, scrollable narrative designed to guide an investor through a logical investment thesis. It begins with a new intro section explaining the legalization landscape (Oregon then Colorado). It then presents the core thesis, compares the two states, and offers a new deep-dive section on Oregon's market data to establish a precedent. It then details the superior Colorado opportunity, presents the Ceremonia solution, introduces the founder, and concludes with financial inputs. This top-down flow is chosen to be maximally persuasive and clear for a sophisticated investor audience. -->
     <!-- Visualization & Content Choices: 
-        - Hero KPIs: Goal: Inform. Method: Styled HTML cards. Justification: Immediately present the most critical top-line numbers to hook the investor.
-        - CO vs. OR Comparison: Goal: Compare. Method: Bar Chart (Chart.js). Justification: Provides an immediate, powerful visual of Colorado's superior market fundamentals over the Oregon precedent. Interaction: Tooltips on hover.
-        - Facilitator Growth Projection: Goal: Show Change. Method: Line Chart (Chart.js). Justification: Effectively visualizes the "Facilitator Wave," the core B2B customer base growth over time.
-        - Infrastructure Bottleneck: Goal: Organize/Inform. Method: Custom HTML/CSS diagram. Justification: A simple iconic representation (people vs. building) is more visually arresting and memorable than a plain number for the critical facilitator-to-center ratio.
-        - Ecosystem Flywheel: Goal: Explain a Process. Method: Custom HTML/CSS/JS animated diagram. Justification: This is the company's core strategic moat. An animated diagram makes this complex, self-reinforcing loop intuitive and is a high-impact "wow" factor for investors.
-        - Financial Assumptions: Goal: Inform/Organize. Method: Interactive HTML Table. Justification: A table is the standard for financial data. Interaction: JS-powered scenario buttons (Low, Base, High) make the data explorable and demonstrate the model's flexibility.
-        - Gemini Market Summary: Goal: Synthesize. Method: LLM call via button. Justification: Provides a dynamic, narrative summary of complex data points, aiding investor comprehension.
-        - Gemini Persona Generator: Goal: Empathize/Inform. Method: LLM call via button. Justification: Creates a relatable persona of the target B2B customer, making the business case more tangible. -->
+        - Founder Bio Section: Goal: Establish Credibility. Method: Minimalist Card format. Justification: Quickly communicates the founder's unique and essential qualifications (industry leadership + operational expertise) to build investor confidence.
+        - All other elements remain as before, contributing to the overall narrative flow. -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
 
     <style>
@@ -101,10 +95,13 @@
                 Ceremonia <span class="text-[#A3B18A]">Spaces</span>
             </h1>
             <div class="hidden md:flex space-x-6 lg:space-x-8 text-sm font-medium">
-                <a href="#thesis" class="nav-link">The Thesis</a>
-                <a href="#market" class="nav-link">The Market</a>
-                <a href="#solution" class="nav-link">The Solution</a>
-                <a href="#financials" class="nav-link">The Financials</a>
+                <a href="#intro" class="nav-link">Intro</a>
+                <a href="#thesis" class="nav-link">Thesis</a>
+                <a href="#precedent" class="nav-link">Precedent</a>
+                <a href="#opportunity" class="nav-link">Opportunity</a>
+                <a href="#solution" class="nav-link">Solution</a>
+                <a href="#founder" class="nav-link">Founder</a>
+                <a href="#financials" class="nav-link">Financials</a>
             </div>
             <a href="#financials" class="md:hidden bg-[#A3B18A] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">
                 View Financials
@@ -113,8 +110,18 @@
     </header>
 
     <main>
-        <!-- Section 1: The Thesis -->
-        <section id="thesis" class="py-16 md:py-24">
+        <!-- Section 0: Intro -->
+        <section id="intro" class="py-16 md:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-[#3D352E]">The Dawn of a New Regulated Market</h2>
+                <p class="mt-4 md:text-xl max-w-3xl mx-auto text-gray-600">
+                    In 2023, Oregon became the first state in the U.S. to launch a state-regulated market for psilocybin services. In 2025, Colorado followed, launching its own regulated natural medicine program. For investors, Oregon's two-year head start provides a crucial, data-rich case study that validates the core business model while revealing structural flaws. Colorado's framework, designed with the benefit of hindsight, presents a superior and more scalable market opportunity.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Section 1: Thesis -->
+        <section id="thesis" class="py-16 md:py-24 section-bg border-t border-b border-gray-200">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-5xl font-bold tracking-tight text-[#3D352E]">The Colorado Psilocybin Market:</h2>
                 <p class="mt-4 md:text-xl max-w-3xl mx-auto text-gray-600">
@@ -141,13 +148,68 @@
             </div>
         </section>
 
-        <!-- Section 2: The Market -->
-        <section id="market" class="py-16 md:py-24 section-bg border-t border-b border-gray-200">
+        <!-- Section 2: Precedent -->
+        <section id="precedent" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">The Precedent: Oregon's Market Data</h2>
+                    <p class="mt-3 max-w-2xl mx-auto text-gray-600">
+                        Oregon's market validates three core truths: consumers will pay premium prices for regulated services, this demand fuels a wave of new practitioners, but high costs create a crippling lack of professional facilities for them to practice in.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div class="space-y-6">
+                        <div class="p-6 bg-white rounded-lg border border-gray-200">
+                           <h4 class="font-bold text-lg">📈 Validated Consumer Demand</h4>
+                           <p class="mt-2 text-sm text-gray-600">Despite challenges, Oregon served over <strong>1,500 clients in Q1 2025 alone</strong>, with a 100%+ annual growth rate. This proves a strong, out-of-pocket market exists for services priced from <strong>$1,200 to over $3,500</strong>.</p>
+                        </div>
+                        <div class="p-6 bg-white rounded-lg border border-gray-200">
+                            <h4 class="font-bold text-lg">🚧 Proven Infrastructure Bottleneck</h4>
+                            <p class="mt-2 text-sm text-gray-600">With <strong>345 licensed facilitators</strong> and only ~31 service centers, the <strong>11:1 ratio</strong> confirms a systemic shortage of practice space, leaving hundreds of trained professionals underemployed.</p>
+                        </div>
+                    </div>
+                    <div class="p-6 md:p-8 rounded-xl bg-gray-50 border border-gray-200">
+                        <h3 class="text-xl font-bold text-center mb-6">Oregon Market Snapshot</h3>
+                        <div class="flow-root">
+                            <dl class="-my-3 divide-y divide-gray-200 text-sm">
+                                <div class="grid grid-cols-2 gap-1 py-3">
+                                    <dt class="font-medium text-gray-600">Clients (Q1 2025)</dt>
+                                    <dd class="text-gray-800 font-semibold text-right">1,509</dd>
+                                </div>
+                                <div class="grid grid-cols-2 gap-1 py-3">
+                                    <dt class="font-medium text-gray-600">Annual Growth Rate</dt>
+                                    <dd class="text-gray-800 font-semibold text-right">100%+</dd>
+                                </div>
+                                <div class="grid grid-cols-2 gap-1 py-3">
+                                    <dt class="font-medium text-gray-600">Average Session Price</dt>
+                                    <dd class="text-gray-800 font-semibold text-right">$1,800</dd>
+                                </div>
+                                <div class="grid grid-cols-2 gap-1 py-3">
+                                    <dt class="font-medium text-gray-600">Licensed Facilitators</dt>
+                                    <dd class="text-gray-800 font-semibold text-right">345</dd>
+                                </div>
+                                <div class="grid grid-cols-2 gap-1 py-3">
+                                    <dt class="font-medium text-gray-600">Operational Centers</dt>
+                                    <dd class="text-gray-800 font-semibold text-right">~31</dd>
+                                </div>
+                                <div class="grid grid-cols-2 gap-1 py-3">
+                                    <dt class="font-medium text-gray-600">Facilitator:Center Ratio</dt>
+                                    <dd class="text-red-600 font-bold text-right">11.1 : 1</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Section 3: Opportunity -->
+        <section id="opportunity" class="py-16 md:py-24 section-bg border-t border-b border-gray-200">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">A Tale of Two States</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">The Opportunity: A Superior Colorado Market</h2>
                     <p class="mt-3 max-w-2xl mx-auto text-gray-600">
-                        The investment thesis begins with understanding why Colorado is not just another Oregon. The data reveals a market with fundamentally superior demand drivers and a more favorable regulatory environment, creating a significantly larger and more immediate opportunity.
+                        Colorado is not just another Oregon. The data reveals a market with fundamentally superior demand drivers and a more favorable regulatory environment, creating a significantly larger and more immediate opportunity.
                     </p>
                 </div>
                 
@@ -158,24 +220,16 @@
                             <canvas id="marketComparisonChart"></canvas>
                         </div>
                     </div>
-
-                    <div class="space-y-6">
-                        <div class="p-6 bg-white rounded-lg border border-gray-200">
-                           <h4 class="font-bold text-lg">📈 The Demand Surge</h4>
-                           <p class="mt-2 text-sm text-gray-600">Colorado's larger population, higher rate of clinical need, and status as the #1 destination for psychedelic tourism create a compounding effect, projecting demand that will significantly outpace the Oregon precedent. Oregon's <strong>100%+ annual client growth rate</strong>, despite its challenges, validates the powerful underlying consumer interest.</p>
-                        </div>
-                        <div class="p-6 bg-white rounded-lg border border-gray-200">
-                            <h4 class="font-bold text-lg">👋 The Facilitator Wave</h4>
-                            <p class="mt-2 text-sm text-gray-600">This consumer demand fuels a rapid increase in licensed facilitators. Projections show Colorado needing over <strong>500 facilitators by Year 5</strong>. These practitioners are the B2B customers for Ceremonia Spaces.</p>
-                        </div>
-                         <div class="p-6 bg-white rounded-lg border border-gray-200">
-                            <h4 class="font-bold text-lg">🚧 The Infrastructure Bottleneck</h4>
-                            <p class="mt-2 text-sm text-gray-600">High costs ($10k+ annual license) and capital requirements create a systemic shortage of professional practice space. Colorado launches with an immediate <strong>8.9:1 facilitator-to-center ratio</strong>, proving the gap Ceremonia will fill.</p>
+                    <div>
+                        <h3 class="text-2xl font-bold text-center">Projected Facilitator Growth (CO)</h3>
+                        <p class="text-center mt-2 text-gray-600 text-sm">The B2B customer base is set for rapid expansion.</p>
+                        <div class="chart-container mt-4">
+                            <canvas id="facilitatorGrowthChart"></canvas>
                         </div>
                     </div>
                 </div>
 
-                <!-- NEW GEMINI API SECTION -->
+                <!-- GEMINI API SECTION -->
                 <div id="gemini-market-insight" class="mt-16 p-8 rounded-xl bg-gradient-to-br from-green-50 to-teal-50 border border-green-200 text-center">
                     <h3 class="text-2xl font-bold text-[#3D352E]">AI-Powered Strategic Summary</h3>
                     <p class="mt-2 max-w-2xl mx-auto text-gray-600">Click the button to let Gemini synthesize the key market data into a concise investment thesis.</p>
@@ -185,47 +239,10 @@
                     <div id="insight-loader" class="hidden mx-auto mt-4 loader"></div>
                     <div id="insight-result" class="mt-6 text-left max-w-2xl mx-auto p-4 bg-white rounded-lg shadow-inner text-gray-700 hidden"></div>
                 </div>
-
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-                    <div>
-                        <h3 class="text-2xl font-bold text-center">Projected Facilitator Growth (CO)</h3>
-                        <p class="text-center mt-2 text-gray-600 text-sm">The B2B customer base is set for rapid expansion.</p>
-                        <div class="chart-container mt-4">
-                            <canvas id="facilitatorGrowthChart"></canvas>
-                        </div>
-                    </div>
-                     <div>
-                        <h3 class="text-2xl font-bold text-center">Regulatory Advantages (CO)</h3>
-                         <p class="text-center mt-2 text-gray-600 text-sm">Lower fees & investment certainty create a friendlier market.</p>
-                        <div class="mt-6 flow-root">
-                            <ul role="list" class="divide-y divide-gray-200">
-                                <li class="py-3 flex justify-between items-center">
-                                    <p class="font-medium">Facilitator License Fee</p>
-                                    <div>
-                                        <span class="font-bold text-green-600 text-lg">$500</span>
-                                        <span class="text-gray-500 ml-2 text-sm line-through">$2,000</span>
-                                    </div>
-                                </li>
-                                <li class="py-3 flex justify-between items-center">
-                                    <p class="font-medium">Healing Center Fee</p>
-                                     <div>
-                                        <span class="font-bold text-green-600 text-lg">$6,000</span>
-                                        <span class="text-gray-500 ml-2 text-sm line-through">$10,000</span>
-                                    </div>
-                                </li>
-                                <li class="py-3 flex flex-col text-center">
-                                    <p class="font-medium">Local Opt-Out Bans</p>
-                                    <p class="mt-1 font-bold text-green-600 text-lg">Prohibited in Colorado</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
 
-        <!-- Section 3: The Solution -->
+        <!-- Section 4: Solution -->
         <section id="solution" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
@@ -256,7 +273,7 @@
                                 <span><strong>Business Development:</strong> Marketing support and continuing education to help our facilitator partners succeed.</span>
                             </li>
                         </ul>
-                         <!-- NEW GEMINI API SECTION 2 -->
+                         <!-- GEMINI API SECTION 2 -->
                         <div id="gemini-persona" class="mt-8 p-6 rounded-xl bg-gray-50 border border-gray-200">
                             <h4 class="font-bold text-lg text-center">Meet Our Ideal Customer</h4>
                             <p class="mt-1 text-sm text-center text-gray-600">Let Gemini generate a profile of a facilitator who needs our solution.</p>
@@ -269,115 +286,109 @@
                             <div id="persona-result" class="mt-4 text-sm text-gray-700 hidden"></div>
                         </div>
                     </div>
-                     <div class="order-1 lg:order-2">
-                         <img src="http://googleusercontent.com/file_content/2" alt="Aerial view of the Ceremonia Spaces facility at 538 Commons Dr, Golden, CO, showing a modern building nestled in a forested, mountainous landscape." class="rounded-xl shadow-lg object-cover w-full h-full">
+                     <div class="order-1 lg:order-2 space-y-4">
+                         <img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/height:400/https://cdn.gamma.app/n6682t494kr1g0u/f579442fbf3b444b8052e79f950a97ed/original/1b210982-ab14-45d8-b599-90e952496fbc.jpg" alt="Outdoor patio at Ceremonia Spaces with a view of the mountains in Golden, CO." class="rounded-xl shadow-lg object-cover w-full h-auto">
+                         <img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:1200/https://cdn.gamma.app/n6682t494kr1g0u/7c396fd6d16d4495ad062bf0e609dc65/original/ce3ba6e5-59e3-495f-9463-bf9e6409e4b8---Edited.jpg" alt="Interior view of the group ceremony hall, featuring comfortable seating arranged in a circle in a spacious, well-lit room." class="rounded-xl shadow-lg object-cover w-full h-auto">
                      </div>
                 </div>
-
-                <!-- Flywheel Section -->
-                <div id="flywheel" class="mt-20 md:mt-24 p-8 md:p-12 rounded-xl section-bg border border-gray-200">
-                     <div class="text-center">
-                        <h3 class="text-2xl md:text-3xl font-bold">The Practicum Hub Flywheel</h3>
-                        <p class="mt-3 max-w-2xl mx-auto text-gray-600">Our core strategic advantage. By hosting mandatory 40-hour practicums, we create a self-reinforcing loop of revenue and customer acquisition.</p>
-                    </div>
-                    <div class="mt-10 relative max-w-4xl mx-auto">
-                        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-                            <div class="flywheel-item">
-                                <div class="bg-teal-50 border-2 border-teal-200 p-4 rounded-full w-24 h-24 mx-auto flex items-center justify-center">
-                                    <span class="text-4xl">🏫</span>
-                                </div>
-                                <h4 class="mt-3 font-semibold">Training Schools</h4>
-                                <p class="text-xs text-gray-500">Partner with top programs in CO & OR.</p>
-                            </div>
-                            <div class="flywheel-item">
-                                <div class="bg-sky-50 border-2 border-sky-200 p-4 rounded-full w-24 h-24 mx-auto flex items-center justify-center">
-                                     <span class="text-4xl">💵</span>
-                                </div>
-                                <h4 class="mt-3 font-semibold">Guaranteed Revenue</h4>
-                                <p class="text-xs text-gray-500">Contracted revenue from practicum hosting.</p>
-                            </div>
-                            <div class="flywheel-item">
-                                <div class="bg-amber-50 border-2 border-amber-200 p-4 rounded-full w-24 h-24 mx-auto flex items-center justify-center">
-                                     <span class="text-4xl">🧑‍🎓</span>
-                                </div>
-                                <h4 class="mt-3 font-semibold">Warm Leads</h4>
-                                <p class="text-xs text-gray-500">Every student is a future customer.</p>
-                            </div>
-                             <div class="flywheel-item">
-                                <div class="bg-rose-50 border-2 border-rose-200 p-4 rounded-full w-24 h-24 mx-auto flex items-center justify-center">
-                                     <span class="text-4xl">🏡</span>
-                                </div>
-                                <h4 class="mt-3 font-semibold">Consistent Rentals</h4>
-                                <p class="text-xs text-gray-500">Newly licensed facilitators rent from a familiar space.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
 
-         <!-- Section 4: The Financials -->
-        <section id="financials" class="py-16 md:py-24 section-bg border-t border-gray-200">
+        <!-- Section 5: Founder -->
+        <section id="founder" class="py-16 md:py-24 section-bg border-t border-b border-gray-200">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Founder & Vision</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
+                        A successful venture is led by a founder with the precise blend of industry expertise and operational capability.
+                    </p>
+                </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <div class="md:col-span-1">
+                        <img src="https://images.squarespace-cdn.com/content/v1/628ba13f70f05c064dcc79cc/1688257081949-T156DIGDLGG49U97FBY3/austin_ces_summit.jpeg?format=1500w" alt="Austin Mao, Founder & CEO of Ceremonia" class="rounded-xl shadow-lg object-cover w-full h-auto">
+                    </div>
+                    <div class="md:col-span-2 bg-white p-8 rounded-xl border border-gray-200">
+                        <h3 class="text-2xl font-bold">Austin Mao</h3>
+                        <p class="text-md font-semibold text-[#A3B18A]">Founder & CEO, Ceremonia</p>
+                        <p class="mt-4 text-gray-600">Austin is a pioneering entrepreneur and policy leader in the regulated psychedelic ecosystem. As Colorado's first licensed Legacy Healer, he combines deep facilitation experience with a proven track record of scaling hospitality and real estate ventures.</p>
+                        <div class="mt-6">
+                            <h4 class="font-semibold">Key Highlights:</h4>
+                            <ul class="mt-2 space-y-2 text-sm list-disc list-inside text-gray-700">
+                                <li>Colorado's 1st Licensed Facilitator (Legacy Healer Pathway)</li>
+                                <li>Advisor to Colorado Governor's Office & DORA</li>
+                                <li>Scaled largest short-term rental portfolio in Las Vegas to 2000+ monthly guests over 24 owned homes</li>
+                                <li>Scaled Ceremonia to one of US's Top 3 psilocybin retreats by volume</li>
+                            </ul>
+                        </div>
+                        <div class="mt-4">
+                            <h4 class="font-semibold">Speaking & Thought Leadership:</h4>
+                             <p class="text-sm text-gray-700">Recognized as a thought leader with keynote presentations at <strong>TEDxBoulder, Mindvalley,</strong> and the <strong>Conscious Entrepreneur Summit</strong>.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Section 6: Financials -->
+        <section id="financials" class="py-16 md:py-24">
              <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">The Financial Opportunity</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Financial Opportunity</h2>
                     <p class="mt-3 max-w-3xl mx-auto text-gray-600">
-                        Our financial model is built on multiple, data-driven revenue streams and operational assumptions. This analysis distills these inputs into a clear, concise format. Interact with the scenarios to see how the model adapts to different market conditions.
+                        Our financial model is built on clear, data-driven assumptions. The following tables outline the core inputs and forecast potential revenue and participant volume based on Low, Base, and High utilization scenarios.
                     </p>
                 </div>
                 
-                <div class="max-w-4xl mx-auto">
-                    <div class="flex justify-center mb-6 space-x-2">
-                        <button data-scenario="low" class="scenario-btn px-4 py-2 text-sm font-semibold rounded-md transition-all">Low</button>
-                        <button data-scenario="base" class="scenario-btn px-4 py-2 text-sm font-semibold rounded-md transition-all">Base</button>
-                        <button data-scenario="high" class="scenario-btn px-4 py-2 text-sm font-semibold rounded-md transition-all">High</button>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Master Assumptions Table -->
+                    <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
+                        <h3 class="font-bold text-lg text-center mb-4">Master Assumptions</h3>
+                        <dl class="divide-y divide-gray-200 text-sm">
+                             <div class="grid grid-cols-2 gap-1 py-3">
+                                <dt class="font-medium text-gray-600">Rentable Rooms</dt>
+                                <dd class="text-gray-800 font-semibold text-right">14</dd>
+                            </div>
+                             <div class="grid grid-cols-2 gap-1 py-3">
+                                <dt class="font-medium text-gray-600">Group Ceremony Rooms</dt>
+                                <dd class="text-gray-800 font-semibold text-right">2</dd>
+                            </div>
+                            <div class="grid grid-cols-2 gap-1 py-3">
+                                <dt class="font-medium text-gray-600">Room Rental Rate / Day</dt>
+                                <dd class="text-gray-800 font-semibold text-right">$500 (Base)</dd>
+                            </div>
+                            <div class="grid grid-cols-2 gap-1 py-3">
+                                <dt class="font-medium text-gray-600">Group Ceremony Rate / Day</dt>
+                                <dd class="text-gray-800 font-semibold text-right">$2,000</dd>
+                            </div>
+                        </dl>
                     </div>
 
-                    <div class="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
-                        <div class="p-4 bg-gray-50 border-b border-gray-200">
-                           <h3 class="font-bold text-lg">Master Assumptions Table: <span id="scenario-title" class="text-[#A3B18A]">Base Scenario</span></h3>
+                    <!-- Forecast Scenarios Table -->
+                    <div class="bg-white rounded-xl border border-gray-200 shadow-sm p-6">
+                         <h3 class="font-bold text-lg text-center mb-4">Forecast Scenarios</h3>
+                         <div class="flex justify-center mb-4 space-x-2">
+                            <button data-scenario="low" class="scenario-btn px-3 py-1 text-xs font-semibold rounded-md transition-all">Low</button>
+                            <button data-scenario="base" class="scenario-btn px-3 py-1 text-xs font-semibold rounded-md transition-all">Base</button>
+                            <button data-scenario="high" class="scenario-btn px-3 py-1 text-xs font-semibold rounded-md transition-all">High</button>
                         </div>
-                        <div class="divide-y divide-gray-200">
-                            <div class="p-4 grid grid-cols-2 md:grid-cols-3 gap-4 items-center">
-                                <h4 class="font-semibold text-sm text-gray-600 col-span-2 md:col-span-1">Metric</h4>
-                                <h4 class="font-semibold text-sm text-gray-600 hidden md:block">Notes</h4>
-                                <h4 class="font-semibold text-sm text-gray-600 text-right">Value</h4>
+                        <dl id="forecast-table" class="divide-y divide-gray-200 text-sm">
+                            <div class="grid grid-cols-2 gap-1 py-3">
+                                <dt class="font-medium text-gray-600">Room Rental Rate</dt>
+                                <dd id="val-rental-rate" class="text-gray-800 font-semibold text-right"></dd>
                             </div>
-                            <!-- Revenue -->
-                             <div class="p-4 grid grid-cols-2 md:grid-cols-3 gap-4 hover:bg-gray-50">
-                                <p class="font-medium">B2B Room Rental Rate / Day</p>
-                                <p class="text-sm text-gray-500 hidden md:block">Conservative entry point below Oregon's $900 validated rate.</p>
-                                <p id="val-rental-rate" class="font-mono font-semibold text-right text-lg"></p>
+                             <div class="grid grid-cols-2 gap-1 py-3">
+                                <dt class="font-medium text-gray-600">Facility Utilization Rate</dt>
+                                <dd id="val-utilization" class="text-gray-800 font-semibold text-right"></dd>
                             </div>
-                             <div class="p-4 grid grid-cols-2 md:grid-cols-3 gap-4 hover:bg-gray-50">
-                                <p class="font-medium">Consumer Price Validation</p>
-                                <p class="text-sm text-gray-500 hidden md:block">Validates facilitator economics. Based on Oregon & CO ketamine.</p>
-                                <p id="val-consumer-price" class="font-mono font-semibold text-right text-lg"></p>
+                             <div class="grid grid-cols-2 gap-1 py-3 bg-green-50">
+                                <dt class="font-bold text-green-800">Annual Revenue</dt>
+                                <dd id="val-revenue" class="font-bold text-green-800 text-right"></dd>
                             </div>
-                             <div class="p-4 grid grid-cols-2 md:grid-cols-3 gap-4 hover:bg-gray-50">
-                                <p class="font-medium">Anchor Tenant Revenue</p>
-                                <p class="text-sm text-gray-500 hidden md:block">Contracted revenue from practicums & internal programs.</p>
-                                <p id="val-anchor-revenue" class="font-mono font-semibold text-right text-lg"></p>
+                             <div class="grid grid-cols-2 gap-1 py-3 bg-green-50">
+                                <dt class="font-bold text-green-800">Participants Served / Year</dt>
+                                <dd id="val-participants" class="font-bold text-green-800 text-right"></dd>
                             </div>
-                            <!-- Operational -->
-                            <div class="p-4 grid grid-cols-2 md:grid-cols-3 gap-4 hover:bg-gray-50">
-                                <p class="font-medium">Facility Utilization Rate</p>
-                                <p class="text-sm text-gray-500 hidden md:block">Projected based on superior CO demand drivers.</p>
-                                <p id="val-utilization" class="font-mono font-semibold text-right text-lg"></p>
-                            </div>
-                             <div class="p-4 grid grid-cols-2 md:grid-cols-3 gap-4 hover:bg-gray-50">
-                                <p class="font-medium">Lease Rate (sq ft/yr)</p>
-                                <p class="text-sm text-gray-500 hidden md:block">Class B office benchmark for Denver/Golden area.</p>
-                                <p id="val-lease-rate" class="font-mono font-semibold text-right text-lg"></p>
-                            </div>
-                             <!-- Risk -->
-                            <div class="p-4 grid grid-cols-1 md:grid-cols-3 gap-4 bg-red-50 border-t border-red-200">
-                                <p class="font-medium text-red-800">CRITICAL RISK: Fed Tax</p>
-                                <p class="text-sm text-red-700 col-span-2">IRC Section 280E disallows standard business deductions, creating a punitive effective tax rate. This assumption is non-negotiable and requires specialized accounting.</p>
-                                <p class="font-mono font-bold text-right text-lg text-red-800">~70%</p>
-                            </div>
-                        </div>
+                        </dl>
                     </div>
                 </div>
 
@@ -397,10 +408,11 @@
 document.addEventListener('DOMContentLoaded', function () {
     const chartDefaults = {
         plugins: { legend: { display: false }, tooltip: { enabled: true, backgroundColor: '#3D352E', titleColor: '#FFFFFF', bodyColor: '#FFFFFF', padding: 10, cornerRadius: 4, displayColors: false }},
-        scales: { y: { beginAtZero: true, grid: { color: '#EAE3DC' }, ticks: { color: '#6B7280' }}, x: { grid: { display: false }, ticks: { color: '#6B7280' }}},
+        scales: { y: { beginAtZero: true, grid: { color: '#EAE3DC' }, ticks: { color: '#6B7280', callback: function(value, index, values) { if (Math.floor(value) === value) { return value; } } } }, x: { grid: { display: false }, ticks: { color: '#6B7280' }}},
         responsive: true, maintainAspectRatio: false
     };
 
+    // Chart 1: Market Comparison
     const marketComparisonCtx = document.getElementById('marketComparisonChart');
     if (marketComparisonCtx) {
         new Chart(marketComparisonCtx, {
@@ -413,6 +425,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
+    // Chart 2: Facilitator Growth
     const facilitatorGrowthCtx = document.getElementById('facilitatorGrowthChart');
     if (facilitatorGrowthCtx) {
         new Chart(facilitatorGrowthCtx, {
@@ -425,28 +438,41 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    const financialData = {
-        low: { title: 'Low Scenario', rentalRate: '$400', consumerPrice: '$2,000', anchorRevenue: 'Stable', utilization: '25%', leaseRate: '$26.52' },
-        base: { title: 'Base Scenario', rentalRate: '$500', consumerPrice: '$2,750', anchorRevenue: 'Contracted', utilization: '50%', leaseRate: '$26.52' },
-        high: { title: 'High Scenario', rentalRate: '$600', consumerPrice: '$3,500', anchorRevenue: 'Expanded', utilization: '75%', leaseRate: '$26.52' }
+    // Financial Forecast Logic
+    const forecastData = {
+        low: { rentalRate: 400, utilization: 0.25 },
+        base: { rentalRate: 500, utilization: 0.50 },
+        high: { rentalRate: 600, utilization: 0.75 }
     };
 
     const scenarioBtns = document.querySelectorAll('.scenario-btn');
-    const scenarioTitleEl = document.getElementById('scenario-title');
     const valRentalRateEl = document.getElementById('val-rental-rate');
-    const valConsumerPriceEl = document.getElementById('val-consumer-price');
-    const valAnchorRevenueEl = document.getElementById('val-anchor-revenue');
     const valUtilizationEl = document.getElementById('val-utilization');
-    const valLeaseRateEl = document.getElementById('val-lease-rate');
+    const valRevenueEl = document.getElementById('val-revenue');
+    const valParticipantsEl = document.getElementById('val-participants');
 
-    function updateScenario(scenario) {
-        const data = financialData[scenario];
-        scenarioTitleEl.textContent = data.title;
-        valRentalRateEl.textContent = data.rentalRate;
-        valConsumerPriceEl.textContent = data.consumerPrice;
-        valAnchorRevenueEl.textContent = data.anchorRevenue;
-        valUtilizationEl.textContent = data.utilization;
-        valLeaseRateEl.textContent = data.leaseRate;
+    function updateForecast(scenario) {
+        const data = forecastData[scenario];
+        const groupCeremonyRate = 2000;
+        const individualRooms = 14;
+        const groupRooms = 1; // Only 1 group room booked on weekends
+        const weekendDays = 104;
+        const weekdays = 365;
+
+        // Revenue Calculation
+        const individualRoomRevenue = individualRooms * data.rentalRate * weekdays;
+        const groupRoomRevenue = groupRooms * groupCeremonyRate * weekendDays;
+        const totalAnnualRevenue = (individualRoomRevenue + groupRoomRevenue) * data.utilization;
+
+        // Participant Calculation
+        const individualParticipants = individualRooms * 1 * weekdays;
+        const groupParticipants = groupRooms * 8 * weekendDays;
+        const totalAnnualParticipants = (individualParticipants + groupParticipants) * data.utilization;
+
+        valRentalRateEl.textContent = `$${data.rentalRate}`;
+        valUtilizationEl.textContent = `${data.utilization * 100}%`;
+        valRevenueEl.textContent = totalAnnualRevenue.toLocaleString('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0 });
+        valParticipantsEl.textContent = `~${Math.round(totalAnnualParticipants).toLocaleString('en-US')}`;
 
         scenarioBtns.forEach(btn => {
             btn.classList.toggle('bg-[#A3B18A]', btn.dataset.scenario === scenario);
@@ -456,8 +482,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    scenarioBtns.forEach(btn => btn.addEventListener('click', () => updateScenario(btn.dataset.scenario)));
-    updateScenario('base');
+    scenarioBtns.forEach(btn => btn.addEventListener('click', () => updateForecast(btn.dataset.scenario)));
+    updateForecast('base'); // Initialize with base scenario
 
     const flywheel = document.getElementById('flywheel');
     if (flywheel) {
@@ -488,11 +514,13 @@ document.addEventListener('DOMContentLoaded', function () {
         let current = '';
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 75) { current = section.getAttribute('id'); }
+            if (pageYOffset >= sectionTop - 65) { current = section.getAttribute('id'); }
         });
         navLinks.forEach(link => {
             link.classList.remove('active');
-            if (link.getAttribute('href').includes(current)) { link.classList.add('active'); }
+            if (link.getAttribute('href').substring(1) === current) {
+                link.classList.add('active');
+            }
         });
     });
 
