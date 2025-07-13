@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceremonia Spaces: Revenue Model Analysis</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            transition: all 0.3s ease;
+        }
+        .card:hover {
+             box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+             transform: translateY(-2px);
+        }
+        .final-revenue-card {
+            border: 2px solid;
+        }
+        .model-title {
+            border-bottom: 2px solid;
+        }
+        .scenario-btn.active {
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+        <!-- Header -->
+        <header class="text-center mb-10">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900">Ceremonia Spaces</h1>
+            <p class="text-xl text-gray-600 mt-2">A Comparative Analysis of Revenue Models</p>
+        </header>
+
+        <!-- Main Grid for Models -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Model 1: Top-Down Market Share (REVISED) -->
+            <div class="flex flex-col space-y-6">
+                <div class="card p-6 flex-grow flex flex-col">
+                    <h2 class="text-2xl font-bold text-blue-700 model-title border-blue-200 pb-2 mb-4">Model 1: Top-Down Market Share</h2>
+                    <p class="text-sm text-gray-600 mb-4">
+                        This model provides a high-level forecast by first estimating the entire potential market for psilocybin sessions in Colorado (Total Addressable Market). It then projects Ceremonia's revenue based on capturing a specific percentage of that market, determined by its share of the total available healing rooms.
+                    </p>
+                    
+                    <div class="space-y-4 text-sm flex-grow">
+                        <div class="p-3 bg-blue-50 rounded-lg">
+                            <h4 class="font-semibold text-blue-800">Core Assumptions</h4>
+                            <ul class="list-disc list-inside mt-1 text-gray-700 space-y-1">
+                                <li><strong>Market Size Basis:</strong> Uses Oregon's Q1 2025 client numbers (1,509) as the foundation.</li>
+                                <li><strong>State-Specific Adjustments:</strong> Scales the baseline using a <strong>1.48x multiplier</strong> for tourism and a <strong>1.43x multiplier</strong> for the larger domestic population in Colorado.</li>
+                                <li><strong>Market Composition:</strong> Assumes the market is 80% driven by tourism and 20% by the domestic population.</li>
+                                <li><strong>Competitive Landscape:</strong> Assumes 1 room per micro-healing center and 3 rooms per healing center to calculate total market rooms.</li>
+                                <li><strong>Revenue per Session:</strong> $500 room rental fee.</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-gray-700">1. Baseline Annual Sessions (from Oregon Data)</h4>
+                            <p class="text-gray-600">1,509 clients/qtr * 4 = <span class="font-bold text-blue-600">6,036</span> sessions</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-700">2. Projected Colorado Market Size</h4>
+                            <p class="text-gray-600">A) Tourism (80%): (6,036 * 1.48) * 80% = 7,159 sessions</p>
+                            <p class="text-gray-600">B) Domestic (20%): (6,036 * 1.43) * 20% = 1,726 sessions</p>
+                            <p class="font-bold text-gray-800">Total: <span class="text-blue-600">8,885</span> Annual Sessions</p>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-gray-700">3. Ceremonia's Market Share</h4>
+                            <p class="text-gray-600">Total Rooms: (19 micro * 1) + (12 centers * 3) + 14 Ceremonia = 69</p>
+                            <p class="text-gray-600">Share: 14 / 69 total rooms = <span class="font-bold text-blue-600">20.29%</span></p>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto pt-6">
+                        <div class="final-revenue-card border-blue-500 bg-blue-50 p-4 text-center rounded-lg">
+                            <p class="text-sm font-semibold text-blue-800">Final Projected Annual Revenue</p>
+                            <p class="text-3xl font-bold text-blue-700 mt-1">$901,624</p>
+                            <p class="text-xs text-blue-600 mt-1">8,885 sessions * 20.29% * $500</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Model 2: Bottom-Up Utilization (REVISED) -->
+            <div class="flex flex-col space-y-6">
+                <div class="card p-6 flex-grow flex flex-col">
+                    <h2 class="text-2xl font-bold text-green-700 model-title border-green-200 pb-2 mb-4">Model 2: Bottom-Up Utilization</h2>
+                    <p class="text-sm text-gray-600 mb-4">
+                        This model builds a forecast from the ground up, starting with Ceremonia's own assets. It calculates the total potential revenue based on the number of rooms available in a phased rollout and then applies a utilization rate (the percentage of time rooms are booked) to arrive at a realistic projection.
+                    </p>
+                    
+                    <div class="space-y-4 text-sm flex-grow">
+                         <div class="p-3 bg-green-50 rounded-lg">
+                            <h4 class="font-semibold text-green-800">Core Assumptions</h4>
+                            <ul class="list-disc list-inside mt-1 text-gray-700 space-y-1">
+                                <li><strong>Pricing:</strong> $500/day (Ind.), $2,000/day (Group)</li>
+                                <li>
+                                    <strong>Phased Rollout:</strong>
+                                    <ul class="list-['-_'] list-inside ml-4 text-xs">
+                                        <li><strong>Phase 1 (M 1-4):</strong> 4 Ind. Rooms, 1 Group Room</li>
+                                        <li><strong>Phase 2 (M 5-8):</strong> 8 Ind. Rooms, 2 Group Rooms</li>
+                                        <li><strong>Phase 3 (M 9-12):</strong> 12 Ind. Rooms, 2 Group Rooms</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Select Utilization Scenario:</h4>
+                            <div class="flex space-x-2" id="utilization-controls">
+                                <button onclick="calculateUtilization(0.25, this)" class="util-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">Low (25%)</button>
+                                <button onclick="calculateUtilization(0.50, this)" class="util-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-green-600 text-white transition">Base (50%)</button>
+                                <button onclick="calculateUtilization(0.75, this)" class="util-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">High (75%)</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-gray-700">Phased Revenue Projection</h4>
+                            <div class="space-y-2 mt-2">
+                                <div class="flex justify-between items-center bg-gray-100 p-2 rounded-md">
+                                    <span class="text-gray-600">Phase 1 (M 1-4):</span>
+                                    <span id="phase1-revenue" class="font-bold text-green-600">$157,000</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-gray-100 p-2 rounded-md">
+                                    <span class="text-gray-600">Phase 2 (M 5-8):</span>
+                                    <span id="phase2-revenue" class="font-bold text-green-600">$314,000</span>
+                                </div>
+                                <div class="flex justify-between items-center bg-gray-100 p-2 rounded-md">
+                                    <span class="text-gray-600">Phase 3 (M 9-12):</span>
+                                    <span id="phase3-revenue" class="font-bold text-green-600">$436,000</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-auto pt-6">
+                        <div class="final-revenue-card border-green-500 bg-green-50 p-4 text-center rounded-lg">
+                            <p class="text-sm font-semibold text-green-800">Final Projected Annual Revenue</p>
+                            <p id="total-revenue-utilization" class="text-3xl font-bold text-green-700 mt-1">$907,000</p>
+                            <p id="utilization-rate-display" class="text-xs text-green-600 mt-1">at 50% Utilization</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Model 3: Facilitator Onboarding -->
+            <div class="flex flex-col space-y-6">
+                <div class="card p-6 flex-grow flex flex-col">
+                    <h2 class="text-2xl font-bold text-purple-700 model-title border-purple-200 pb-2 mb-4">Model 3: Facilitator Onboarding</h2>
+                    <p class="text-sm text-gray-600 mb-4">
+                        This is the most detailed and operationally-grounded model. It projects revenue based on the real-world process of acquiring customers (facilitators) over time, factoring in guaranteed income from anchor tenants and the variable revenue from newly onboarded independent facilitators each month.
+                    </p>
+                    
+                    <div class="space-y-4 text-sm flex-grow">
+                        <div class="p-3 bg-purple-50 rounded-lg">
+                            <h4 class="font-semibold text-purple-800">Core Assumptions</h4>
+                            <ul class="list-disc list-inside mt-1 text-gray-700">
+                                <li><strong>Guaranteed Revenue:</strong> ~$18,794/month baseline from anchor tenants.</li>
+                                <li><strong>Growth Driver:</strong> Revenue grows based on a set number of new facilitators onboarded monthly.</li>
+                                <li><strong>Seasonality:</strong> Applies a 65% "slump factor" to variable revenue in November and December.</li>
+                                <li><strong>Facilitator Activity:</strong> Assumes each facilitator serves one client every two weeks (2 per month).</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Select Onboarding Scenario:</h4>
+                            <div class="flex space-x-2" id="onboarding-controls">
+                                <button onclick="calculateOnboarding(4, this)" class="scenario-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">Low (+4/mo)</button>
+                                <button onclick="calculateOnboarding(8, this)" class="scenario-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-purple-600 text-white transition active">Base (+8/mo)</button>
+                                <button onclick="calculateOnboarding(12, this)" class="scenario-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">High (+12/mo)</button>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mt-4">12-Month Revenue & Utilization Projection</h4>
+                            <div class="h-48 overflow-y-auto border rounded-lg mt-2">
+                                <table class="w-full text-left text-xs">
+                                    <thead class="sticky top-0 bg-white z-10">
+                                        <tr class="border-b">
+                                            <th class="py-2 px-2 font-semibold">Month</th>
+                                            <th class="py-2 px-2 font-semibold text-right">Revenue</th>
+                                            <th class="py-2 px-2 font-semibold text-right">% Utilization</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="facilitator-table-body">
+                                        <!-- Rows will be generated by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-auto pt-6">
+                        <div class="final-revenue-card border-purple-500 bg-purple-50 p-4 text-center rounded-lg">
+                            <p class="text-sm font-semibold text-purple-800">Final Projected Annual Revenue</p>
+                            <p id="total-revenue-facilitator" class="text-3xl font-bold text-purple-700 mt-1">$505,581</p>
+                            <p id="facilitator-scenario-display" class="text-xs text-purple-600 mt-1">Base Case (+8/mo)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        // --- Shared currency formatter ---
+        const currencyFormatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        });
+
+        // --- JavaScript for Model 2 Interactivity ---
+        function calculateUtilization(rate, clickedButton) {
+            const phase1Potential = (4 * 500 * 122) + (1 * 2000 * 35);
+            const phase2Potential = (8 * 500 * 122) + (2 * 2000 * 35);
+            const phase3Potential = (12 * 500 * 122) + (2 * 2000 * 35);
+
+            const phase1Revenue = phase1Potential * rate;
+            const phase2Revenue = phase2Potential * rate;
+            const phase3Revenue = phase3Potential * rate;
+            const totalRevenue = phase1Revenue + phase2Revenue + phase3Revenue;
+
+            document.getElementById('phase1-revenue').textContent = currencyFormatter.format(phase1Revenue);
+            document.getElementById('phase2-revenue').textContent = currencyFormatter.format(phase2Revenue);
+            document.getElementById('phase3-revenue').textContent = currencyFormatter.format(phase3Revenue);
+            document.getElementById('total-revenue-utilization').textContent = currencyFormatter.format(totalRevenue);
+            document.getElementById('utilization-rate-display').textContent = `at ${rate * 100}% Utilization`;
+
+            const buttons = document.querySelectorAll('.util-btn');
+            buttons.forEach(button => {
+                button.classList.remove('bg-green-600', 'text-white');
+                button.classList.add('bg-gray-200', 'text-gray-700');
+            });
+            clickedButton.classList.add('bg-green-600', 'text-white');
+            clickedButton.classList.remove('bg-gray-200', 'text-gray-700');
+        }
+
+        // --- JavaScript for Model 3 Interactivity ---
+        function calculateOnboarding(facilitatorsPerMonth, clickedButton) {
+            // Base case monthly totals, extrapolated for a full 12 months
+            const baseMonthlyTotals = [14500, 42183, 50825, 66735, 96472, 114060, 131648, 149236, 166824, 184412, 202000, 219588];
+            const guaranteedMonthlyRevenue = 18794; // Using the figure from the prompt's assumptions
+            const baseFacilitatorsPerMonth = 8;
+            const scalingFactor = facilitatorsPerMonth / baseFacilitatorsPerMonth;
+
+            const tableBody = document.getElementById('facilitator-table-body');
+            tableBody.innerHTML = ''; // Clear existing table rows
+            let annualTotal = 0;
+            let cumulativeFacilitators = 0;
+
+            const monthNames = ["Sep '24", "Oct '24", "Nov '24", "Dec '24", "Jan '25", "Feb '25", "Mar '25", "Apr '25", "May '25", "Jun '25", "Jul '25", "Aug '25"];
+
+            for (let i = 0; i < 12; i++) {
+                let monthlyTotal;
+                // The first month's revenue is treated as a fixed launch amount that scales with the initial onboarded group.
+                if (i === 0) {
+                    // We use the provided Sep '24 value as the starting point for the base case.
+                    const baseLaunchRevenue = 14500;
+                    monthlyTotal = baseLaunchRevenue * scalingFactor;
+                    cumulativeFacilitators = facilitatorsPerMonth;
+                } else {
+                    // For subsequent months, calculate the variable portion from the base case and scale it.
+                    const baseVariablePortion = baseMonthlyTotals[i] - guaranteedMonthlyRevenue;
+                    const scaledVariablePortion = baseVariablePortion * scalingFactor;
+                    monthlyTotal = guaranteedMonthlyRevenue + scaledVariablePortion;
+                    cumulativeFacilitators += facilitatorsPerMonth;
+                }
+
+                // Ensure revenue doesn't drop below the guaranteed minimum
+                if (monthlyTotal < guaranteedMonthlyRevenue && i > 0) {
+                    monthlyTotal = guaranteedMonthlyRevenue;
+                }
+                
+                annualTotal += monthlyTotal;
+
+                // Calculate Utilization
+                const clientsPerMonth = cumulativeFacilitators * 2; // 1 client every 2 weeks = 2 per month
+                const totalAvailableRoomDays = 14 * 30.44; // 14 rooms * avg days in month
+                const utilizationPercent = (clientsPerMonth / totalAvailableRoomDays) * 100;
+
+                const row = document.createElement('tr');
+                row.className = 'border-b';
+                if (i === 2 || i === 3) { // Highlight seasonality for Nov/Dec
+                    row.classList.add('bg-yellow-50');
+                }
+                row.innerHTML = `
+                    <td class="py-2 px-2">${monthNames[i]}</td>
+                    <td class="py-2 px-2 font-mono text-right">${currencyFormatter.format(monthlyTotal)}</td>
+                    <td class="py-2 px-2 font-mono text-right">${utilizationPercent.toFixed(1)}%</td>
+                `;
+                tableBody.appendChild(row);
+            }
+
+            // Update the final total card
+            document.getElementById('total-revenue-facilitator').textContent = currencyFormatter.format(annualTotal);
+            
+            let scenarioText = `Base Case (+${facilitatorsPerMonth}/mo)`;
+            if (facilitatorsPerMonth < baseFacilitatorsPerMonth) scenarioText = `Low Case (+${facilitatorsPerMonth}/mo)`;
+            if (facilitatorsPerMonth > baseFacilitatorsPerMonth) scenarioText = `High Case (+${facilitatorsPerMonth}/mo)`;
+            document.getElementById('facilitator-scenario-display').textContent = scenarioText;
+
+            // Update button styles
+            const buttons = document.querySelectorAll('.scenario-btn');
+            buttons.forEach(button => {
+                button.classList.remove('bg-purple-600', 'text-white', 'active');
+                button.classList.add('bg-gray-200', 'text-gray-700');
+            });
+            clickedButton.classList.add('bg-purple-600', 'text-white', 'active');
+            clickedButton.classList.remove('bg-gray-200', 'text-gray-700');
+        }
+
+        // --- Initial call to set the default state on page load ---
+        window.onload = function() {
+            // Set default for Model 2
+            document.querySelector('#utilization-controls button:nth-child(2)').click();
+            // Set default for Model 3
+            document.querySelector('#onboarding-controls button:nth-child(2)').click();
+        };
+
+    </script>
+
+</body>
+</html>
