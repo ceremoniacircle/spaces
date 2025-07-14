@@ -725,7 +725,7 @@
                 <div class="details-content" id="revenue-model-details">
                     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
                         <div class="financials-card p-6 flex flex-col">
-                            <h2 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">Revenue Model 1</h2>
+                            <h2 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">Revenue Model 1: Top-Down Market Share</h2>
                             <div class="mt-4 space-y-4 text-sm">
                                 <div class="p-3 bg-blue-50 rounded-lg"><h4 class="font-semibold text-blue-800">Core Assumptions</h4><ul class="list-disc list-inside mt-1 text-gray-700 space-y-1"><li><strong>Market Size Basis:</strong> Uses Oregon's Q1 2025 client numbers (1,509).</li><li><strong>State Adjustments:</strong> 1.48x tourism multiplier, 1.43x population multiplier.</li><li><strong>Market Mix:</strong> 80% tourism, 20% domestic.</li><li><strong>Competitive Landscape:</strong> 1 room/micro-center, 3 rooms/healing center.</li><li><strong>Revenue per Session:</strong> $500.</li></ul></div>
                                 <div><h4 class="font-semibold text-gray-700">1. Baseline Annual Sessions</h4><p class="text-gray-600">1,509 clients/qtr * 4 = <span class="font-bold text-blue-600">6,036</span></p></div>
@@ -734,7 +734,7 @@
                             </div>
                         </div>
                         <div class="financials-card p-6 flex flex-col">
-                            <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">Revenue Model 2</h2>
+                            <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">Revenue Model 2: Bottom-Up Utilization</h2>
                             <div class="mt-4 space-y-4 text-sm">
                                 <div class="p-3 bg-green-50 rounded-lg"><h4 class="font-semibold text-green-800">Core Assumptions</h4><ul class="list-disc list-inside mt-1 text-gray-700 space-y-1"><li><strong>Standard Room Price:</strong> $497/day for all rooms.</li><li><strong>Phased Rollout:</strong> Phase 1 (5 Rms), Phase 2 (10 Rms), Phase 3 (14 Rms).</li></ul></div>
                                 <div><h4 class="font-semibold text-gray-700 mb-2">Select Utilization Scenario:</h4><div class="flex space-x-2" id="utilization-controls"><button onclick="calculateUtilization(0.25, this)" class="util-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">Low (25%)</button><button onclick="calculateUtilization(0.50, this)" class="util-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md active">Base (50%)</button><button onclick="calculateUtilization(0.75, this)" class="util-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">High (75%)</button></div></div>
@@ -742,7 +742,7 @@
                             </div>
                         </div>
                         <div class="financials-card p-6 flex flex-col">
-                            <h2 class="text-2xl font-bold text-purple-700 border-b-2 border-purple-200 pb-2 mb-4">Revenue Model 3</h2>
+                            <h2 class="text-2xl font-bold text-purple-700 border-b-2 border-purple-200 pb-2 mb-4">Revenue Model 3: Facilitator Onboarding</h2>
                             <div class="mt-4 space-y-4 text-sm">
                                 <div class="p-3 bg-purple-50 rounded-lg"><h4 class="font-semibold text-purple-800">Core Assumptions</h4><ul class="list-disc list-inside mt-1 text-gray-700"><li><strong>Standard Room Price:</strong> $497/day.</li><li><strong>Guaranteed Revenue:</strong> ~$18,794/month.</li><li><strong>Growth Driver:</strong> New facilitators/month.</li><li><strong>Seasonality:</strong> 65% slump in Nov/Dec.</li><li><strong>Activity:</strong> 2 room-days/facilitator/month.</li></ul></div>
                                 <div><h4 class="font-semibold text-gray-700 mb-2">Select Onboarding Scenario:</h4><div class="flex space-x-2" id="model3-controls"><button onclick="updateAll('low', this, true)" class="model3-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">Low (+4/mo)</button><button onclick="updateAll('base', this, true)" class="model3-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md active">Base (+8/mo)</button><button onclick="updateAll('high', this, true)" class="model3-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">High (+16/mo)</button></div></div>
@@ -802,6 +802,8 @@
                                         <tbody>
                                             <tr class="border-b"><td class="p-2">CEO</td><td class="p-2 text-center font-mono">$6,000</td><td class="p-2 text-center font-mono">$3,960</td><td class="p-2 text-center font-mono">$3,000</td></tr>
                                             <tr class="border-b"><td class="p-2">Dir. of Ops</td><td class="p-2 text-center font-mono">$4,000</td><td class="p-2 text-center font-mono">$2,640</td><td class="p-2 text-center font-mono">$2,000</td></tr>
+                                            <tr class="border-b"><td class="p-2">Community Manager</td><td class="p-2 text-center font-mono">$4,500</td><td class="p-2 text-center font-mono">$3,000</td><td class="p-2 text-center font-mono">$2,375</td></tr>
+                                            <tr class="border-b"><td class="p-2">Marketing Manager</td><td class="p-2 text-center font-mono">$2,000</td><td class="p-2 text-center font-mono">$2,055</td><td class="p-2 text-center font-mono">$2,000</td></tr>
                                             <tr class="font-bold bg-gray-50"><td class="p-2">Subtotal</td><td class="p-2 text-center font-mono">$16,500</td><td class="p-2 text-center font-mono">$11,655</td><td class="p-2 text-center font-mono">$9,375</td></tr>
                                         </tbody>
                                     </table>
