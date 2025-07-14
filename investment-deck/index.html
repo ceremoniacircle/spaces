@@ -18,7 +18,7 @@
             background-color: #f5f3ff;
             color: #3D352E;
         }
-        h1, h2, h3, h4, h5, h6, .nav-link, .stat-value, .stat-label, button, .highlight-value {
+        h1, h2, h3, h4, h5, h6, .nav-link, .stat-value, .stat-label, button, .highlight-value, .timeline-date-month, .timeline-date-day {
             font-family: 'Public Sans', sans-serif;
         }
         .chart-container {
@@ -130,80 +130,55 @@
             overflow: hidden;
             transition: max-height 0.5s ease-in-out;
         }
-        /* Calculator Styles */
-        .calculator-card {
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
             background-color: white;
             border-radius: 0.75rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            margin-bottom: 1.5rem;
-        }
-        .calculator-input-group {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.75rem;
-        }
-        .calculator-input-group label {
-            flex-basis: 50%;
-            font-size: 0.875rem;
-            color: #475569; /* slate-600 */
-            margin-right: 0.5rem;
-        }
-        .calculator-input-group .input-wrapper {
-            flex-basis: 50%;
-            position: relative;
-        }
-        .calculator-input-group input, .calculator-input-group select {
-            width: 100%;
-            padding: 0.5rem 0.75rem;
-            border: 1px solid #cbd5e1; /* slate-300 */
-            border-radius: 0.375rem;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        .calculator-input-group input:focus, .calculator-input-group select:focus {
-            outline: none;
-            border-color: #65C5B2;
-            box-shadow: 0 0 0 2px rgba(101, 197, 178, 0.4);
-        }
-        .calculator-input-group .adornment {
-            position: absolute;
-            left: 0.75rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #64748b; /* slate-500 */
-            pointer-events: none;
-        }
-        .calculator-input-group input.has-adornment {
-            padding-left: 2rem;
-        }
-        .calculator-tab {
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-            color: #475569;
-            font-weight: 500;
-            font-size: 0.875rem;
-            white-space: nowrap;
-        }
-        .calculator-tab.active {
-            color: #4a9484;
-            border-bottom-color: #65C5B2;
-        }
-        .checklist-item {
-            display: flex;
-            align-items: center;
-            padding: 0.75rem;
-            background-color: white;
-            border-radius: 0.5rem;
             border: 1px solid #e5e7eb;
+            margin-bottom: 1rem;
+            transition: all 0.2s ease-in-out;
         }
-        .checklist-item.checked {
+        .timeline-item.completed {
             background-color: #f0fdf4;
             border-color: #bbf7d0;
         }
-        .checklist-item.checked .checklist-label {
+        .timeline-item.completed .timeline-description {
             text-decoration: line-through;
             color: #6b7280;
+        }
+        .timeline-date-box {
+            flex-shrink: 0;
+            width: 60px;
+            height: 60px;
+            text-align: center;
+            margin-right: 1.5rem;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            background-color: #eef2f3;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .timeline-date-month {
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #6283C2;
+        }
+        .timeline-date-day {
+            font-weight: 700;
+            font-size: 1.75rem;
+            line-height: 1;
+            color: #3D352E;
+        }
+        .timeline-item.completed .timeline-date-box {
+            background-color: #65C5B2;
+        }
+        .timeline-item.completed .timeline-date-month,
+        .timeline-item.completed .timeline-date-day {
+            color: white;
         }
     </style>
 </head>
@@ -222,6 +197,7 @@
                 <a href="#brand" class="nav-link">Company</a>
                 <a href="#financials" class="nav-link">Financials</a>
                 <a href="#investment-ask" class="nav-link">Investment</a>
+                <a href="#next-steps" class="nav-link">Next Steps</a>
             </div>
             <a href="#investment-ask" class="md:hidden bg-[#65C5B2] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">
                 View The Ask
@@ -902,6 +878,76 @@
                             <div class="grid grid-cols-2 gap-4 p-3"><dt class="font-medium text-gray-600">Loan Term</dt><dd class="text-gray-800 font-semibold text-right">12 Months</dd></div>
                             <div class="grid grid-cols-2 gap-4 p-3 bg-[#65C5B2]/10"><dt class="font-bold text-[#4a9484]">Monthly Payment</dt><dd class="font-bold text-[#4a9484] text-right">$916.67</dd></div>
                         </dl>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW Next Steps Section -->
+        <section id="next-steps" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Next Steps & Timeline</h2>
+                    <p class="mt-3 max-w-2xl mx-auto text-gray-600">
+                        We are moving quickly to capitalize on our first-mover advantage. Here is our immediate roadmap.
+                    </p>
+                </div>
+                <div class="max-w-3xl mx-auto space-y-4">
+                    <div class="timeline-item completed">
+                        <div class="timeline-date-box">
+                            <div class="timeline-date-month">APR</div>
+                            <div class="timeline-date-day">23</div>
+                        </div>
+                        <p class="timeline-description">Pre-approved by State for Healing Center license</p>
+                    </div>
+                    <div class="timeline-item completed">
+                        <div class="timeline-date-box">
+                            <div class="timeline-date-month">JUN</div>
+                            <div class="timeline-date-day">19</div>
+                        </div>
+                        <p class="timeline-description">Under contract and in due diligence period</p>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-date-box">
+                            <div class="timeline-date-month">JUL</div>
+                            <div class="timeline-date-day">19</div>
+                        </div>
+                        <p class="timeline-description">Launch waitlist from licensed facilitators for day rentals @ $500/day</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date-box">
+                            <div class="timeline-date-month">JUL</div>
+                            <div class="timeline-date-day">31</div>
+                        </div>
+                        <p class="timeline-description">Secure Healing Center license</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date-box">
+                            <div class="timeline-date-month">JUL</div>
+                            <div class="timeline-date-day">31</div>
+                        </div>
+                        <p class="timeline-description">Execute LOIs from licensed training centers for consistent group space rentals @ $2000/day</p>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-date-box">
+                            <div class="timeline-date-month">SEP</div>
+                            <div class="timeline-date-day">1</div>
+                        </div>
+                        <p class="timeline-description">Close on property</p>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-date-box">
+                            <div class="timeline-date-month">SEP</div>
+                            <div class="timeline-date-day">16</div>
+                        </div>
+                        <p class="timeline-description">Launch with first retreat by Ceremonia Journeys</p>
+                    </div>
+                     <div class="timeline-item">
+                        <div class="timeline-date-box">
+                            <div class="timeline-date-month">SEP</div>
+                            <div class="timeline-date-day">23</div>
+                        </div>
+                        <p class="timeline-description">Launch with first facilitator rentals</p>
                     </div>
                 </div>
             </div>
