@@ -61,13 +61,16 @@
             padding: 2rem;
             border: 1px solid #e2e8f0;
         }
-        .check-icon {
-            color: var(--tierra-teal);
+        .value-prop-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        .value-prop-icon {
             flex-shrink: 0;
-            margin-right: 0.75rem;
-            margin-top: 0.35rem;
-            width: 1.5rem;
-            height: 1.5rem;
+            margin-right: 1rem;
+            font-size: 1.75rem;
+            margin-top: -0.25rem;
         }
     </style>
 </head>
@@ -92,10 +95,10 @@
             <div class="relative container mx-auto px-6 text-center py-32 md:py-48">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight max-w-4xl mx-auto">Your Medicine Practice, Powered by Ceremonia.</h1>
                 <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-200">
-                    Join Colorado's only healing center offering rentable rooms and group space in nature, supported by a turnkey platform that lets you focus purely on facilitation.
+                    Join Colorado's only healing center offering rentable rooms and group retreat space in nature, just 20 minutes from Downtown Denver. Launching in September, our turnkey platform provides everything you need to focus purely on facilitation.
                 </p>
                 <div class="mt-10">
-                    <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary inline-block">Request to Join the Founding Circle</a>
+                    <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary inline-block">Join The Waitlist</a>
                 </div>
             </div>
         </section>
@@ -105,11 +108,11 @@
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center">
                     <div class="md:col-span-1">
-                        <img src="https://images.squarespace-cdn.com/content/v1/628ba13f70f05c064dcc79cc/1688257081949-T156DIGDLGG49U97FBY3/austin_ces_summit.jpeg?format=1500w" alt="Austin Mao, Founder of Ceremonia" class="rounded-xl shadow-lg object-cover w-full h-auto">
+                        <img src="/images/deck.jpg" alt="A beautiful deck overlooking the mountains at Ceremonia Spaces" class="rounded-xl shadow-lg object-cover w-full h-auto">
                     </div>
                     <div class="md:col-span-2">
-                        <h2 class="section-heading mb-4">Built by a Facilitator, For Facilitators.</h2>
-                        <p class="text-lg text-body-color mb-4">Ceremonia Spaces was born from direct experience. Its founder, Colorado's first licensed Legacy Healer, saw a community of gifted practitioners hindered by the logistical realities of business—the search for compliant space, the administrative burdens, and the professional isolation. It was a distraction from the real work.</p>
+                        <h2 class="section-heading mb-4">Built by Facilitators, For Facilitators.</h2>
+                        <p class="text-lg text-body-color mb-4">Ceremonia Spaces was born from direct experience. It was founded to solve a community-wide problem: a passion for healing hindered by the logistical realities of business—the search for compliant space, the administrative burdens, and the professional isolation. It was a distraction from the real work.</p>
                         <p class="text-lg text-body-color font-semibold">This is not just a real estate venture; it's a platform built to solve our collective problem, designed to uphold the integrity of the work and empower the practitioners who do it.</p>
                     </div>
                 </div>
@@ -137,49 +140,109 @@
             </div>
         </section>
 
-        <!-- The Solution Platform Section -->
+        <!-- REVISED Platform Features Section -->
         <section class="bg-white py-20 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="section-heading">The Platform for Your Professional Practice</h2>
                     <p class="mt-4 max-w-3xl mx-auto text-lg text-body-color">We've addressed the critical infrastructure gaps so you can practice with confidence and focus.</p>
                 </div>
-                <div class="grid lg:grid-cols-3 gap-8">
-                    <!-- Feature 1: The Space -->
-                    <div class="feature-card">
-                        <h3 class="font-heading text-2xl font-bold mb-4" style="color: var(--cielo-cerulean);">The Sanctuary: Space to Practice</h3>
-                        <p class="text-body-color">End the search for compliant space. Our Golden facility provides on-demand access to 12 individual rooms and is the **only licensed healing center in the Denver metro with a rentable group space**. Our nature-integrated setting provides a powerful therapeutic container for your clients.</p>
+                <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                    <div>
+                        <div class="value-prop-item">
+                            <div class="value-prop-icon">🏢</div>
+                            <div>
+                                <h3 class="font-heading text-xl font-bold mb-1">On-Demand Professional Space</h3>
+                                <p class="text-body-color">Secure your spot in the <strong class="font-semibold">only licensed healing center in the Denver metro</strong> with rentable individual rooms and a 16-person group ceremony hall.</p>
+                            </div>
+                        </div>
+                        <div class="value-prop-item">
+                            <div class="value-prop-icon">🌲</div>
+                            <div>
+                                <h3 class="font-heading text-xl font-bold mb-1">Nature-Integrated Healing</h3>
+                                <p class="text-body-color">Practice in a sanctuary where our private outdoor spaces and stunning mountain views are part of the therapeutic container.</p>
+                            </div>
+                        </div>
+                        <div class="value-prop-item">
+                            <div class="value-prop-icon">⚙️</div>
+                            <div>
+                                <h3 class="font-heading text-xl font-bold mb-1">Complete Turnkey Operations</h3>
+                                <p class="text-body-color">We handle the HIPAA-compliant software, billing, insurance resources, and regulatory complexities. You don't build a business; you plug into one.</p>
+                            </div>
+                        </div>
+                        <div class="value-prop-item">
+                            <div class="value-prop-icon">🤝</div>
+                            <div>
+                                <h3 class="font-heading text-xl font-bold mb-1">A Vetted Professional Community</h3>
+                                <p class="text-body-color">Step out of isolation and into a collaborative ecosystem for peer support, co-facilitation, and client referrals.</p>
+                            </div>
+                        </div>
                     </div>
-                    <!-- Feature 2: The Support -->
-                    <div class="feature-card">
-                        <h3 class="font-heading text-2xl font-bold mb-4" style="color: var(--corazon-rose);">The Operations: Turnkey Support</h3>
-                        <p class="text-body-color">Your expertise is facilitation, not administration. Our platform provides a fully integrated, turnkey solution—from HIPAA-compliant EHR and billing to insurance support and regulatory peace of mind. You don't build a business; you plug into one.</p>
-                    </div>
-                    <!-- Feature 3: The Community -->
-                    <div class="feature-card">
-                        <h3 class="font-heading text-2xl font-bold mb-4" style="color: var(--sol-orange);">The Ecosystem: Professional Community</h3>
-                        <p class="text-body-color">Step out of isolation and into a vetted community of your peers. Benefit from our client referral pipeline, co-facilitation opportunities, and a network dedicated to elevating the standard of care in Colorado.</p>
+                    <div class="hidden lg:block">
+                        <img src="/images/ceremony_hall.jpg" alt="The spacious group ceremony hall at Ceremonia, set up for a session" class="rounded-xl shadow-2xl object-cover w-full h-auto">
                     </div>
                 </div>
             </div>
         </section>
-        
-        <!-- NEW Group Ceremony Hall Section -->
+
+        <!-- NEW Turnkey Compliance Section -->
         <section class="py-20 md:py-24">
-             <div class="container mx-auto flex flex-col lg:flex-row items-center px-6">
-                <div class="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0">
-                    <h2 class="section-heading leading-tight mb-4">A Space for Collective Healing</h2>
-                    <p class="text-lg text-body-color">Beyond individual sessions, our purpose-built group ceremony hall provides a unique and essential space for collective work. It is the only rentable, licensed group space of its kind in the region, designed to comfortably accommodate up to 16 participants.</p>
-                    <p class="mt-4 text-lg text-body-color">This versatile sanctuary is ideal for facilitator trainings, group retreats, workshops, and community events, empowering you to scale your impact and diversify your offerings in a professional, inspiring environment.</p>
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="section-heading">Turnkey Compliance & Operations</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-body-color">Our platform is designed to remove the most significant administrative burdens and risks from your practice.</p>
                 </div>
-                <div class="lg:w-1/2">
-                    <img src="/images/ceremony_hall.jpg" alt="The spacious group ceremony hall at Ceremonia, set up for a session" class="rounded-xl shadow-2xl object-cover w-full h-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    <div class="feature-card text-center">
+                        <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--cielo-cerulean);">Regulatory Compliance</h3>
+                        <p class="text-sm text-body-color">Practice with confidence in a state-licensed facility that meets all DORA requirements, eliminating a major source of personal liability and stress.</p>
+                    </div>
+                    <div class="feature-card text-center">
+                        <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--cielo-cerulean);">Secure Payments</h3>
+                        <p class="text-sm text-body-color">Utilize our integrated, secure payment processing system designed for the unique needs of a therapy practice, simplifying your finances.</p>
+                    </div>
+                    <div class="feature-card text-center">
+                        <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--cielo-cerulean);">Insurance Support</h3>
+                        <p class="text-sm text-body-color">Gain access to our network and resources for navigating professional liability insurance, a critical and often complex step for facilitators.</p>
+                    </div>
+                    <div class="feature-card text-center">
+                        <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--cielo-cerulean);">Health Records (EHR)</h3>
+                        <p class="text-sm text-body-color">Our HIPAA-compliant Electronic Health Record system streamlines your client documentation, ensuring you meet professional standards effortlessly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW Additional Offerings Section -->
+        <section class="bg-white py-20 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="section-heading">A Professional Growth Ecosystem</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-body-color">Membership extends beyond the space. We provide resources to help you build and scale a sustainable, impactful practice.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    <div class="feature-card text-center">
+                        <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--tierra-teal);">Web Marketing</h3>
+                        <p class="text-sm text-body-color">Leverage our #1 Google ranking and established digital presence to connect with clients actively seeking psychedelic therapy in Colorado.</p>
+                    </div>
+                    <div class="feature-card text-center">
+                        <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--tierra-teal);">Business Coaching</h3>
+                        <p class="text-sm text-body-color">Access optional coaching and mentorship from industry veterans on the art of building a thriving, ethical, and sustainable healing practice.</p>
+                    </div>
+                    <div class="feature-card text-center">
+                        <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--tierra-teal);">Prep & Integration Resources</h3>
+                        <p class="text-sm text-body-color">Utilize our library of professional resources, including therapeutic tools, music playlists, and client-facing materials for preparation and integration.</p>
+                    </div>
+                    <div class="feature-card text-center">
+                        <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--tierra-teal);">Vetted Community</h3>
+                        <p class="text-sm text-body-color">Join a curated circle of professional peers for case consultation, co-facilitation opportunities, and the invaluable support of a shared mission.</p>
+                    </div>
                 </div>
             </div>
         </section>
         
         <!-- How It Works Section -->
-        <section class="bg-white py-20 md:py-24">
+        <section class="py-20 md:py-24">
              <div class="container mx-auto flex flex-col lg:flex-row items-center px-6">
                 <div class="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0 order-2 lg:order-1">
                     <img src="https://ceremoniacircle.github.io/spaces/images/538_commons_dr.jpg" alt="A serene outdoor space at Ceremonia with a view of nature" class="rounded-xl shadow-2xl object-cover w-full h-auto">
@@ -212,7 +275,7 @@
                     Founding memberships are limited to ensure a high-quality, collaborative environment. If you are a licensed facilitator ready to practice without the operational burdens, we invite you to apply.
                 </p>
                 <div class="mt-10">
-                    <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary inline-block text-lg">Apply to Join The Waitlist</a>
+                    <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary inline-block text-lg">Join The Waitlist</a>
                 </div>
             </div>
         </section>
