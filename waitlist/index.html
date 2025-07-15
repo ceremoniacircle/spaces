@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Medicine Practice, Powered by Ceremonia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --tierra-teal: #65C5B2;
+            --cielo-cerulean: #6283C2;
+            --corazon-rose: #E31C78;
+            --sol-orange: #FBAE17;
+            --primary-text: #3D352E;
+            --background-color: #f8f7ff; /* A slightly softer purple-white */
+        }
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--background-color);
+            color: var(--primary-text);
+        }
+        .font-heading {
+            font-family: 'Public Sans', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .btn-primary {
+            background-color: var(--tierra-teal);
+            color: #FFFFFF;
+            font-weight: 700;
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            font-family: 'Public Sans', sans-serif;
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(101, 197, 178, 0.3);
+        }
+        .btn-primary:hover {
+            background-color: #4a9484;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(101, 197, 178, 0.4);
+        }
+        .section-heading {
+            font-family: 'Public Sans', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary-text);
+        }
+         @media (min-width: 768px) {
+            .section-heading {
+                font-size: 2.75rem;
+            }
+        }
+        .feature-card {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+        }
+        .check-icon {
+            color: var(--tierra-teal);
+            flex-shrink: 0;
+            margin-right: 0.75rem;
+            margin-top: 0.35rem;
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#">
+                <img src="https://ceremoniacircle.github.io/spaces/images/ceremonia_logo_horiz_color.png" alt="Ceremonia Logo" class="h-10 w-auto">
+            </a>
+            <div>
+                <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary">Join The Waitlist</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-white py-20 md:py-28">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-main-heading leading-tight max-w-4xl mx-auto">Your Medicine Practice, Powered by Ceremonia.</h1>
+                <p class="mt-6 max-w-3xl mx-auto text-xl text-body-color">
+                    Join Colorado's only healing center offering rentable rooms and group space in nature, supported by a turnkey platform that lets you focus purely on facilitation.
+                </p>
+                <div class="mt-10">
+                    <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary inline-block">Request to Join the Founding Circle</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Founder's Vision Section -->
+        <section class="py-20 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center">
+                    <div class="md:col-span-1">
+                        <img src="https://images.squarespace-cdn.com/content/v1/628ba13f70f05c064dcc79cc/1688257081949-T156DIGDLGG49U97FBY3/austin_ces_summit.jpeg?format=1500w" alt="Austin Mao, Founder of Ceremonia" class="rounded-xl shadow-lg object-cover w-full h-auto">
+                    </div>
+                    <div class="md:col-span-2">
+                        <h2 class="section-heading mb-4">Built by a Facilitator, For Facilitators.</h2>
+                        <p class="text-lg text-body-color mb-4">Ceremonia Spaces was born from direct experience. Its founder, Colorado's first licensed Legacy Healer, saw a community of gifted practitioners hindered by the logistical realities of business—the search for compliant space, the administrative burdens, and the professional isolation. It was a distraction from the real work.</p>
+                        <p class="text-lg text-body-color font-semibold">This is not just a real estate venture; it's a platform built to solve our collective problem, designed to uphold the integrity of the work and empower the practitioners who do it.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Facility Image & Map Section -->
+        <section class="py-12">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <img src="https://ceremoniacircle.github.io/spaces/images/538_commons_dr.jpg" alt="Exterior of the Ceremonia Spaces property at 538 Commons Dr, Golden, CO" class="rounded-xl shadow-2xl object-cover w-full h-auto">
+                    <p class="text-center italic text-gray-600 mt-4 text-sm">Our flagship Golden facility: 12 individual & 2 group rooms, just 20 minutes from downtown Denver with stunning mountain views.</p>
+                    <div class="mt-8 rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3067.896945038318!2d-105.18039888462436!3d39.7408999794492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b854935253579%3A0x86fe6e344b5823e5!2s538%20Commons%20Dr%2C%20Golden%2C%20CO%2080401!5e0!3m2!1sen!2sus!4v1689458921543!5m2!1sen!2sus"
+                            width="100%"
+                            height="400"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Solution Platform Section -->
+        <section class="bg-white py-20 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="section-heading">The Platform for Your Professional Practice</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-body-color">We've addressed the critical infrastructure gaps so you can practice with confidence and focus.</p>
+                </div>
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Feature 1: The Space -->
+                    <div class="feature-card">
+                        <h3 class="font-heading text-2xl font-bold mb-4" style="color: var(--cielo-cerulean);">The Sanctuary: Space to Practice</h3>
+                        <p class="text-body-color">End the search for compliant space. Our Golden facility provides on-demand access to 12 individual rooms and is the **only licensed healing center in the Denver metro with a rentable group space**. Our nature-integrated setting provides a powerful therapeutic container for your clients.</p>
+                    </div>
+                    <!-- Feature 2: The Support -->
+                    <div class="feature-card">
+                        <h3 class="font-heading text-2xl font-bold mb-4" style="color: var(--corazon-rose);">The Operations: Turnkey Support</h3>
+                        <p class="text-body-color">Your expertise is facilitation, not administration. Our platform provides a fully integrated, turnkey solution—from HIPAA-compliant EHR and billing to insurance support and regulatory peace of mind. You don't build a business; you plug into one.</p>
+                    </div>
+                    <!-- Feature 3: The Community -->
+                    <div class="feature-card">
+                        <h3 class="font-heading text-2xl font-bold mb-4" style="color: var(--sol-orange);">The Ecosystem: Professional Community</h3>
+                        <p class="text-body-color">Step out of isolation and into a vetted community of your peers. Benefit from our client referral pipeline, co-facilitation opportunities, and a network dedicated to elevating the standard of care in Colorado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How It Works Section -->
+        <section class="py-20 md:py-24">
+             <div class="container mx-auto flex flex-col lg:flex-row items-center px-6">
+                <div class="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0">
+                    <h2 class="section-heading leading-tight mb-8">A Seamless Path to Your Practice.</h2>
+                    <div class="space-y-8">
+                        <div>
+                            <h3 class="text-xl font-bold font-heading mb-2">1. Apply to Join the Circle</h3>
+                            <p class="text-body-color">Submit your information to our waitlist. We review applications to ensure our community is composed of aligned, licensed professionals committed to the highest ethical standards.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold font-heading mb-2">2. Onboarding & Platform Access</h3>
+                            <p class="text-body-color">Once accepted, you'll be onboarded onto our platform, gaining access to our booking system for rooms, our operational tools, and our professional community resources.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold font-heading mb-2">3. Facilitate with Freedom</h3>
+                            <p class="text-body-color">Book space as you need it, focus on your clients, and leave the operational complexities to us. Welcome to the new standard of practice.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2">
+                    <img src="https://imgproxy.gamma.app/resize/quality:80/resizing_type:fit/width:1200/https://cdn.gamma.app/n6682t494kr1g0u/f579442fbf3b444b8052e79f950a97ed/original/1b210982-ab14-45d8-b599-90e952496fbc.jpg" alt="A serene outdoor space at Ceremonia with a view of nature" class="rounded-xl shadow-2xl object-cover w-full h-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section id="join" class="bg-main py-20 md:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-heading max-w-3xl mx-auto">It's Time to Elevate Your Practice.</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-body-color">
+                    Founding memberships are limited to ensure a high-quality, collaborative environment. If you are a licensed facilitator ready to practice without the operational burdens, we invite you to apply.
+                </p>
+                <div class="mt-10">
+                    <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary inline-block text-lg">Apply to Join The Waitlist</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
