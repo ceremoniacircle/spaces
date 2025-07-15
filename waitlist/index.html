@@ -60,6 +60,7 @@
             border-radius: 1rem;
             padding: 2rem;
             border: 1px solid #e2e8f0;
+            height: 100%;
         }
         .value-prop-item {
             display: flex;
@@ -72,6 +73,19 @@
             font-size: 1.75rem;
             margin-top: -0.25rem;
         }
+        .offer-stack {
+            background-color: white;
+            border-radius: 1rem;
+            border: 2px solid var(--tierra-teal);
+            box-shadow: 0 10px 25px -5px rgba(101, 197, 178, 0.2);
+        }
+        .offer-item {
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .offer-item:last-child {
+            border-bottom: none;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -80,7 +94,7 @@
     <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#">
-                <img src="https://ceremoniacircle.github.io/spaces/images/ceremonia_logo_horiz_color.png" alt="Ceremonia Logo" class="h-10 w-auto">
+                <img src="images/ceremonia_logo_horiz_color.png" alt="Ceremonia Logo" class="h-10 w-auto">
             </a>
             <div>
                 <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary">Join The Waitlist</a>
@@ -90,12 +104,12 @@
 
     <main>
         <!-- Hero Section -->
-        <section class="relative bg-cover bg-center text-white" style="background-image: url('/images/deck.jpg');">
+        <section class="relative bg-cover bg-center text-white" style="background-image: url('images/deck.jpg');">
             <div class="absolute inset-0 bg-black/50"></div>
             <div class="relative container mx-auto px-6 text-center py-32 md:py-48">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight max-w-4xl mx-auto">Your Medicine Practice, Powered by Ceremonia.</h1>
                 <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-200">
-                    Join Colorado's only healing center offering rentable rooms and group retreat space in nature, just 20 minutes from Downtown Denver. Launching in September, our turnkey platform provides everything you need to focus purely on facilitation.
+                   Join Colorado's only healing center with daily rentable rooms and a group retreat space in nature, just 20 minutes from Downtown Denver. Launching in September, our turnkey platform provides everything you need to focus purely on facilitation.
                 </p>
                 <div class="mt-10">
                     <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary inline-block">Join The Waitlist</a>
@@ -103,49 +117,12 @@
             </div>
         </section>
 
-        <!-- The Founder's Vision Section -->
+        <!-- The Platform Features Section -->
         <section class="py-20 md:py-24">
             <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 items-center">
-                    <div class="md:col-span-1">
-                        <img src="/images/deck.jpg" alt="A beautiful deck overlooking the mountains at Ceremonia Spaces" class="rounded-xl shadow-lg object-cover w-full h-auto">
-                    </div>
-                    <div class="md:col-span-2">
-                        <h2 class="section-heading mb-4">Built by Facilitators, For Facilitators.</h2>
-                        <p class="text-lg text-body-color mb-4">Ceremonia Spaces was born from direct experience. It was founded to solve a community-wide problem: a passion for healing hindered by the logistical realities of business—the search for compliant space, the administrative burdens, and the professional isolation. It was a distraction from the real work.</p>
-                        <p class="text-lg text-body-color font-semibold">This is not just a real estate venture; it's a platform built to solve our collective problem, designed to uphold the integrity of the work and empower the practitioners who do it.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Facility Image & Map Section -->
-        <section class="py-12 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto">
-                    <img src="https://ceremoniacircle.github.io/spaces/images/538_commons_dr.jpg" alt="Exterior of the Ceremonia Spaces property at 538 Commons Dr, Golden, CO" class="rounded-xl shadow-2xl object-cover w-full h-auto">
-                    <p class="text-center italic text-gray-600 mt-4 text-sm">Our flagship Golden facility: 12 individual & 2 group rooms, just 20 minutes from downtown Denver with stunning mountain views.</p>
-                    <div class="mt-8 rounded-xl shadow-2xl overflow-hidden border border-gray-200">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3067.896945038318!2d-105.18039888462436!3d39.7408999794492!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b854935253579%3A0x86fe6e344b5823e5!2s538%20Commons%20Dr%2C%20Golden%2C%20CO%2080401!5e0!3m2!1sen!2sus!4v1689458921543!5m2!1sen!2sus"
-                            width="100%"
-                            height="400"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- REVISED Platform Features Section -->
-        <section class="bg-white py-20 md:py-24">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="section-heading">The Platform for Your Professional Practice</h2>
-                    <p class="mt-4 max-w-3xl mx-auto text-lg text-body-color">We've addressed the critical infrastructure gaps so you can practice with confidence and focus.</p>
+                 <div class="text-center mb-16">
+                    <h2 class="section-heading">Built by Facilitators, For Facilitators.</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-body-color">Ceremonia Spaces was born from direct experience to solve the critical infrastructure gaps that hinder practitioners. We empower you to practice with confidence and focus.</p>
                 </div>
                 <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
                     <div>
@@ -153,7 +130,7 @@
                             <div class="value-prop-icon">🏢</div>
                             <div>
                                 <h3 class="font-heading text-xl font-bold mb-1">On-Demand Professional Space</h3>
-                                <p class="text-body-color">Secure your spot in the <strong class="font-semibold">only licensed healing center in the Denver metro</strong> with rentable individual rooms and a 16-person group ceremony hall.</p>
+                                <p class="text-body-color">Secure your spot in the <strong class="font-semibold">only licensed healing center in the Denver metro</strong> with 12 rentable individual rooms and a 16-person group ceremony hall.</p>
                             </div>
                         </div>
                         <div class="value-prop-item">
@@ -179,23 +156,48 @@
                         </div>
                     </div>
                     <div class="hidden lg:block">
-                        <img src="/images/ceremony_hall.jpg" alt="The spacious group ceremony hall at Ceremonia, set up for a session" class="rounded-xl shadow-2xl object-cover w-full h-auto">
+                        <img src="images/ceremony_hall.jpg" alt="The spacious group ceremony hall at Ceremonia, set up for a session" class="rounded-xl shadow-2xl object-cover w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Facility Image & Map Section -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto">
+                    <img src="images/538_commons_dr.jpg" alt="Exterior of the Ceremonia Spaces property at 538 Commons Dr, Golden, CO" class="rounded-xl shadow-2xl object-cover w-full h-auto">
+                    <p class="text-center italic text-gray-600 mt-4 text-sm">Our flagship Golden facility, 20 minutes from downtown Denver.</p>
+                    <div class="mt-8 rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d98171.18999968857!2d-105.2533348413452!3d39.74354207901772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b854935253579%3A0x86fe6e344b5823e5!2s538%20Commons%20Dr%2C%20Golden%2C%20CO%2080401!5e0!3m2!1sen!2sus!4v1721084249826!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="400" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- NEW Turnkey Compliance Section -->
+        <!-- Turnkey Compliance Section -->
         <section class="py-20 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
                     <h2 class="section-heading">Turnkey Compliance & Operations</h2>
                     <p class="mt-4 max-w-3xl mx-auto text-lg text-body-color">Our platform is designed to remove the most significant administrative burdens and risks from your practice.</p>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
                     <div class="feature-card text-center">
                         <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--cielo-cerulean);">Regulatory Compliance</h3>
                         <p class="text-sm text-body-color">Practice with confidence in a state-licensed facility that meets all DORA requirements, eliminating a major source of personal liability and stress.</p>
+                    </div>
+                    <div class="feature-card text-center">
+                        <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--cielo-cerulean);">Health Records</h3>
+                        <p class="text-sm text-body-color">Our HIPAA-compliant Electronic Health Record system streamlines your client documentation, ensuring you meet professional standards effortlessly.</p>
                     </div>
                     <div class="feature-card text-center">
                         <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--cielo-cerulean);">Secure Payments</h3>
@@ -206,14 +208,19 @@
                         <p class="text-sm text-body-color">Gain access to our network and resources for navigating professional liability insurance, a critical and often complex step for facilitators.</p>
                     </div>
                     <div class="feature-card text-center">
-                        <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--cielo-cerulean);">Health Records (EHR)</h3>
-                        <p class="text-sm text-body-color">Our HIPAA-compliant Electronic Health Record system streamlines your client documentation, ensuring you meet professional standards effortlessly.</p>
+                        <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--cielo-cerulean);">Wholesale Regulated Medicine</h3>
+                        <p class="text-sm text-body-color">Access a consistent, reliable supply of regulated psilocybin mushrooms at wholesale cost, removing another major logistical hurdle from your practice.</p>
+                    </div>
+                     <div class="feature-card text-center">
+                        <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--cielo-cerulean);">Medical Intake Support</h3>
+                        <p class="text-sm text-body-color">Leverage our professional support systems to manage the crucial medical intake process for your clients, ensuring safety and compliance.</p>
                     </div>
                 </div>
+                <div class="text-center mt-8 font-semibold text-gray-600">And more...</div>
             </div>
         </section>
 
-        <!-- NEW Additional Offerings Section -->
+        <!-- Additional Offerings Section -->
         <section class="bg-white py-20 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-16">
@@ -222,18 +229,22 @@
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
                     <div class="feature-card text-center">
+                        <div class="text-4xl mb-4">📈</div>
                         <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--tierra-teal);">Web Marketing</h3>
                         <p class="text-sm text-body-color">Leverage our #1 Google ranking and established digital presence to connect with clients actively seeking psychedelic therapy in Colorado.</p>
                     </div>
                     <div class="feature-card text-center">
+                        <div class="text-4xl mb-4">🧭</div>
                         <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--tierra-teal);">Business Coaching</h3>
                         <p class="text-sm text-body-color">Access optional coaching and mentorship from industry veterans on the art of building a thriving, ethical, and sustainable healing practice.</p>
                     </div>
                     <div class="feature-card text-center">
+                        <div class="text-4xl mb-4">📚</div>
                         <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--tierra-teal);">Prep & Integration Resources</h3>
                         <p class="text-sm text-body-color">Utilize our library of professional resources, including therapeutic tools, music playlists, and client-facing materials for preparation and integration.</p>
                     </div>
                     <div class="feature-card text-center">
+                        <div class="text-4xl mb-4">💬</div>
                         <h3 class="font-heading text-xl font-bold mb-2" style="color: var(--tierra-teal);">Vetted Community</h3>
                         <p class="text-sm text-body-color">Join a curated circle of professional peers for case consultation, co-facilitation opportunities, and the invaluable support of a shared mission.</p>
                     </div>
@@ -241,41 +252,64 @@
             </div>
         </section>
         
-        <!-- How It Works Section -->
+        <!-- Pricing Section -->
         <section class="py-20 md:py-24">
-             <div class="container mx-auto flex flex-col lg:flex-row items-center px-6">
-                <div class="lg:w-1/2 lg:pr-12 mb-10 lg:mb-0 order-2 lg:order-1">
-                    <img src="https://ceremoniacircle.github.io/spaces/images/538_commons_dr.jpg" alt="A serene outdoor space at Ceremonia with a view of nature" class="rounded-xl shadow-2xl object-cover w-full h-auto">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="section-heading">Simple, Transparent Pricing</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-body-color">No complex tiers. One membership unlocks the entire platform. Book space only when you need it.</p>
                 </div>
-                <div class="lg:w-1/2 lg:pl-12 mb-10 lg:mb-0 order-1 lg:order-2">
-                    <h2 class="section-heading leading-tight mb-8">A Seamless Path to Your Practice.</h2>
-                    <div class="space-y-8">
-                        <div>
-                            <h3 class="text-xl font-bold font-heading mb-2">1. Apply to Join the Circle</h3>
-                            <p class="text-body-color">Submit your information to our waitlist. We review applications to ensure our community is composed of aligned, licensed professionals committed to the highest ethical standards.</p>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold font-heading mb-2">2. Onboarding & Platform Access</h3>
-                            <p class="text-body-color">Once accepted, you'll be onboarded onto our platform, gaining access to our booking system for rooms, our operational tools, and our professional community resources.</p>
-                        </div>
-                        <div>
-                            <h3 class="text-xl font-bold font-heading mb-2">3. Facilitate with Freedom</h3>
-                            <p class="text-body-color">Book space as you need it, focus on your clients, and leave the operational complexities to us. Welcome to the new standard of practice.</p>
-                        </div>
+                <div class="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                    <div class="feature-card text-center">
+                        <h3 class="font-heading text-2xl font-bold mb-2">Platform Membership</h3>
+                        <p class="text-5xl font-bold font-heading my-4">$97<span class="text-xl font-normal">/mo</span></p>
+                        <p class="text-body-color">Grants full access to the Ceremonia platform, community, resources, and the ability to book space at member rates.</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3 class="font-heading text-2xl font-bold mb-4 text-center">On-Demand Room Rentals</h3>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between items-baseline"><span class="font-semibold">Individual Room</span><span class="font-bold font-heading text-lg">$497 / day</span></li>
+                            <li class="flex justify-between items-baseline"><span class="font-semibold">4-Person Group Space</span><span class="font-bold font-heading text-lg">$1197 / day</span></li>
+                            <li class="flex justify-between items-baseline"><span class="font-semibold">16-Person Group Hall</span><span class="font-bold font-heading text-lg">$1997 / day</span></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Final CTA Section -->
-        <section id="join" class="bg-main py-20 md:py-24">
+        <!-- Founding Facilitator Offer Section -->
+        <section id="join" class="bg-white py-20 md:py-24">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="section-heading max-w-3xl mx-auto">It's Time to Elevate Your Practice.</h2>
+                <h2 class="section-heading max-w-3xl mx-auto">The Founding Facilitator Offer</h2>
                 <p class="mt-4 max-w-2xl mx-auto text-lg text-body-color">
-                    Founding memberships are limited to ensure a high-quality, collaborative environment. If you are a licensed facilitator ready to practice without the operational burdens, we invite you to apply.
+                   To celebrate our launch, we are extending a high-value offer exclusively to the first facilitators who join our waitlist. Become a Founding Facilitator and receive:
                 </p>
-                <div class="mt-10">
-                    <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary inline-block text-lg">Join The Waitlist</a>
+                <div class="max-w-2xl mx-auto mt-12">
+                    <div class="offer-stack">
+                        <div class="offer-item bg-tierra-teal/10 text-center rounded-t-lg p-6">
+                            <p class="text-3xl font-bold font-heading" style="color: var(--tierra-teal);">FREE 6-Month Professional Membership</p>
+                            <p class="font-semibold text-lg" style="color: var(--primary-text);">(a ~$600 value)</p>
+                        </div>
+                        <div class="offer-item">
+                            <p class="font-semibold">⭐ "Founding Facilitator" Status & Priority Booking Access</p>
+                        </div>
+                        <div class="offer-item">
+                            <p class="font-semibold">🤖 AI Toolkit for Building Your Personal Practice</p>
+                        </div>
+                        <div class="offer-item">
+                            <p class="font-semibold">📋 Compliance-Ready Toolkit (Checklists & Templates)</p>
+                        </div>
+                        <div class="offer-item">
+                            <p class="font-semibold">💬 Invitation to Private "Founding Facilitators" WhatsApp Group</p>
+                        </div>
+                        <div class="offer-item">
+                            <p class="font-semibold" style="color: var(--tierra-teal);">🎁 Plus, Exclusive Founding Member Discounts on all services.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12">
+                    <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary inline-block text-lg">Claim Your Founding Member Offer</a>
+                     <p class="mt-4 text-sm text-gray-600">This offer is limited. Join the waitlist to secure your spot.</p>
                 </div>
             </div>
         </section>
