@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You for Joining | Ceremonia Spaces</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --tierra-teal: #65C5B2;
+            --cielo-cerulean: #6283C2;
+            --primary-text: #3D352E;
+            --background-color: #f8f7ff;
+        }
+        body, html {
+            height: 100%;
+        }
+        body {
+            font-family: 'Lora', serif;
+            color: var(--primary-text);
+            background-image: url('images/deck.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .font-heading {
+            font-family: 'Public Sans', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .section-heading {
+            font-family: 'Public Sans', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary-text);
+        }
+         @media (min-width: 768px) {
+            .section-heading {
+                font-size: 2.75rem;
+            }
+        }
+        .next-step-item {
+            display: flex;
+            align-items: flex-start;
+            text-align: left;
+        }
+        .next-step-item strong {
+            flex-shrink: 0;
+            width: 130px; /* Adjust as needed */
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md fixed top-0 left-0 right-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#">
+                <img src="images/ceremonia_logo_horiz_color.png" alt="Ceremonia Logo" class="h-10 w-auto">
+            </a>
+        </nav>
+    </header>
+
+    <main class="flex items-center justify-center w-full h-full p-4">
+        <div class="absolute inset-0 bg-white/80 backdrop-blur-sm"></div>
+        <div class="relative max-w-2xl w-full mx-auto bg-white p-8 md:p-12 rounded-xl shadow-2xl text-center border border-gray-200">
+            <div class="w-16 h-16 bg-tierra-teal text-white rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                </svg>
+            </div>
+            <h1 class="section-heading mb-4">You're In. Welcome to the Founding Circle.</h1>
+            <p class="text-lg text-body-color mb-6">
+                Your spot on the waitlist is confirmed and your Founding Facilitator offer is secured. Welcome to the community.
+            </p>
+            <div class="bg-gray-50 p-6 rounded-lg border border-gray-200">
+                <h2 class="font-heading text-xl font-bold mb-4">What Happens Next?</h2>
+                <ul class="space-y-4">
+                    <li class="next-step-item">
+                        <strong class="mr-2 text-tierra-teal">1. Confirmation:</strong>
+                        <span class="text-body-color">You'll receive an email shortly summarizing your exclusive Founding Member benefits.</span>
+                    </li>
+                    <li class="next-step-item">
+                        <strong class="mr-2 text-tierra-teal">2. Community Invite:</strong>
+                        <span class="text-body-color">Look for an invitation to our private WhatsApp group to connect with the circle.</span>
+                    </li>
+                    <li class="next-step-item">
+                        <strong class="mr-2 text-tierra-teal">3. Next Steps:</strong>
+                        <span class="text-body-color">We'll be in touch with details on priority booking for our September launch.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="mt-8">
+                <p class="text-body-color">Welcome to the future of healing in Colorado. We're honored to build it with you.</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
