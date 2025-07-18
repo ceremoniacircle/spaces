@@ -239,6 +239,23 @@
             color: #4a9484;
             border-bottom-color: #65C5B2;
         }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 100%;
+            background: #000;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -507,6 +524,76 @@
                 </div>
             </div>
         </section>
+
+        
+                <section id="real-estate-analysis" class="py-16 md:py-24 section-bg">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Real Estate Investment Analysis</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
+                        This summary provides a comprehensive analysis of the real estate investment at 538 Commons Dr. to de-risk the acquisition. The purchase price is well-supported by market data, and the property's location and existing conditions are favorable for the intended use as a healing center.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <div class="space-y-6">
+                            <div class="stat-card grid grid-cols-2 gap-4">
+                                <div>
+                                    <p class="stat-value">$1.05M</p>
+                                    <p class="stat-label">Acquisition Price</p>
+                                </div>
+                                 <div>
+                                    <p class="stat-value">$1.2M</p>
+                                    <p class="stat-label">Appraised Value</p>
+                                </div>
+                                <div class="col-span-2">
+                                    <p class="stat-value text-green-600">$150,000</p>
+                                    <p class="stat-label">Immediate Equity Cushion</p>
+                                </div>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg border">
+                                <h4 class="font-bold text-lg">Market Valuation & Comparables</h4>
+                                <ul class="mt-2 text-sm text-gray-700 list-disc list-inside space-y-2">
+                                    <li>Our purchase price of <strong>~$149/SF</strong> is highly favorable compared to premium downtown Golden offices trading for over <strong>$300/SF</strong>.</li>
+                                    <li>A modernized comp sold for <strong>~$316/SF</strong> in March 2024.</li>
+                                    <li>This aligns perfectly with market rates for suburban offices in the $150–$200/SF range, confirming we are acquiring the asset at or below fair market value.</li>
+                                </ul>
+                            </div>
+                            <div class="bg-white p-6 rounded-lg border">
+                                <h4 class="font-bold text-lg">Property Details & Suitability</h4>
+                                <ul class="mt-2 text-sm text-gray-700 list-disc list-inside space-y-2">
+                                    <li>7,062 sq. ft. two-story office building with a new roof (2021).</li>
+                                    <li>Located in a business park with a strong focus on health and wellness, creating a synergistic environment.</li>
+                                    <li>Tranquil, private setting with mountain views, yet conveniently just off I-70 for easy access.</li>
+                                    <li>Will be delivered vacant, allowing immediate customization without tenant buyouts.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.751680199148!2d-105.2913388846247!3d39.7225199794519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b8180a53b1229%3A0x4a4c483a3bff8b27!2s538%20Commons%20Dr%2C%20Golden%2C%20CO%2080401!5e0!3m2!1sen!2sus!4v1689708940833!5m2!1sen!2sus" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-xl shadow-lg"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW Virtual Fly-Through Section -->
+        <section id="flythrough" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Virtual Fly-Through</h2>
+                    <p class="mt-3 max-w-2xl mx-auto text-gray-600">
+                        Experience the space and envision the future of healing at our flagship Golden, Colorado location.
+                    </p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/WJo5Kqxagm4?si=tg_SjDmDNhjqLtfF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
 
         <!-- NEW GTM Strategy Section -->
         <section id="strategy" class="py-16 md:py-24">
@@ -943,6 +1030,26 @@
             </div>
         </section>
 
+        <!-- NEW Proforma Calculator Section -->
+        <section id="proforma-calculator" class="py-16 md:py-24 section-bg border-t">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Interactive Proforma Calculator</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
+                        This interactive financial model allows you to analyze the acquisition and performance of the property. Adjust the inputs in the "Control Panel" to see how they impact the financial projections in real-time.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <button id="toggle-calculator-btn" class="bg-[#6283C2] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#496291] transition-transform transform hover:scale-105 shadow-lg">
+                        Open Proforma Calculator
+                    </button>
+                </div>
+                <div id="calculator-container" class="hidden mt-12">
+                    <!-- Calculator content will be injected here by JS -->
+                </div>
+            </div>
+        </section>
+
         <!-- NEW Next Steps Section -->
         <section id="next-steps" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
@@ -1319,6 +1426,207 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 </script>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const calculatorContainer = document.getElementById('calculator-container');
+    const toggleButton = document.getElementById('toggle-calculator-btn');
 
+    const calculatorHTML = `
+        <div class="max-w-7xl mx-auto">
+            <div class="card">
+                <h2 class="text-xl font-bold mb-2 text-gray-800">Executive Summary & Instructions</h2>
+                <div class="text-sm text-gray-600 space-y-2">
+                    <p>This tool models the acquisition of <strong>538 Commons Dr</strong>, a commercial property financed through a combination of seller financing and private investor debt. The model projects a 5-year holding period, with rental income structured as a Triple Net (NNN) lease where the tenant covers all operating expenses in addition to a base rent that services the property's debt.</p>
+                    <p><strong>How to Use:</strong> Adjust any input in the left "Control Panel" to see how it impacts the financial projections on the right in real-time. Use the tabs on the right to switch between the overall summary, annual schedules, and detailed return breakdowns for each capital provider.</p>
+                </div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div id="input-column">
+                    <div class="calculator-card">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4 border-b pb-2">Property & Acquisition</h2>
+                        <div class="calculator-input-group"><label for="purchasePrice">Purchase Price</label><div class="input-wrapper"><span class="adornment">$</span><input type="number" id="purchasePrice" value="1050000" class="has-adornment text-right"></div></div>
+                        <div class="calculator-input-group"><label for="renovationCosts">Renovation Costs</label><div class="input-wrapper"><span class="adornment">$</span><input type="number" id="renovationCosts" value="85000" class="has-adornment text-right"></div></div>
+                        <div class="calculator-input-group"><label for="miscCosts">Misc. Closing Costs</label><div class="input-wrapper"><span class="adornment">$</span><input type="number" id="miscCosts" value="15000" class="has-adornment text-right"></div></div>
+                        <div class="calculator-input-group"><label for="buildingSize">Building Size (SF)</label><div class="input-wrapper"><input type="number" id="buildingSize" value="7062" class="text-right"></div></div>
+                    </div>
+                    <div class="calculator-card">
+                        <h2 class="text-lg font-semibold text-gray-800 mb-4 border-b pb-2">Financing Stack</h2>
+                        <div class="border p-4 rounded-md bg-gray-50 mb-4">
+                            <h3 class="font-semibold text-gray-700 mb-2">Seller Financing (1st Position)</h3>
+                            <div class="calculator-input-group"><label>Loan Amount</label><div class="input-wrapper"><span class="adornment">$</span><input type="number" id="sellerLoanAmount" value="550000" class="has-adornment text-right"></div></div>
+                            <div class="calculator-input-group"><label>Annual Interest Rate</label><div class="input-wrapper"><span class="adornment">%</span><input type="number" id="sellerInterestRate" value="7" step="0.1" class="has-adornment text-right"></div></div>
+                            <div class="calculator-input-group"><label>Amortization Period</label><div class="input-wrapper"><input type="number" id="sellerAmortization" value="15" class="text-right"></div></div>
+                            <div class="calculator-input-group"><label>Loan Term (Balloon)</label><div class="input-wrapper"><input type="number" id="sellerTerm" value="5" class="text-right"></div></div>
+                        </div>
+                        <div id="investor-capital-container"></div>
+                    </div>
+                </div>
+                <div id="output-column">
+                    <div class="calculator-card">
+                        <div class="flex border-b border-gray-200 overflow-x-auto">
+                            <div id="tab-summary" class="calculator-tab active">Summary</div>
+                            <div id="tab-annual" class="calculator-tab">Annual View</div>
+                            <div id="investor-tabs-container" class="flex"></div>
+                        </div>
+                        <div id="view-summary" class="pt-4 space-y-6">
+                            <div><h3 class="font-semibold text-lg text-gray-700 mb-3">Deal Summary</h3><div class="space-y-2 text-sm"><div class="flex justify-between"><span class="text-gray-500">Total Capital Required</span><span id="totalCapitalRequired" class="font-semibold"></span></div><hr class="my-2"><div class="flex justify-between"><span class="text-gray-500">Seller Financing</span><span id="sourceSellerFinancing" class="font-semibold"></span></div><div class="flex justify-between"><span class="text-gray-500">Investor Capital Required</span><span id="sourceInvestorCapital" class="font-semibold text-green-600"></span></div></div></div>
+                            <div><h3 class="font-semibold text-lg text-gray-700 mb-3">Required Tenant Rent (NNN Lease)</h3><div class="grid grid-cols-1 gap-4 text-sm"><div class="col-span-2 bg-blue-50 border border-blue-200 p-3 rounded-lg text-center"><div class="text-blue-700 font-semibold">Total Monthly Cost to Tenant</div><div id="totalRentMonthly" class="font-bold text-blue-800 text-2xl"></div><div id="totalRentPerSf" class="text-blue-600"></div></div></div></div>
+                        </div>
+                        <div id="view-annual" class="pt-4 hidden"><h3 class="font-semibold text-lg text-gray-700 mb-3">Consolidated 5-Year Schedule</h3><div class="overflow-x-auto"><table class="w-full text-sm text-left"><thead class="bg-gray-50 text-gray-600"><tr><th class="p-2">Year</th><th class="p-2 text-right">Debt Service</th><th class="p-2 text-right">Principal Paid</th><th class="p-2 text-right">Interest Paid</th><th class="p-2 text-right">Ending Balance</th></tr></thead><tbody id="annualTableBody"></tbody></table></div></div>
+                        <div id="investor-views-container"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+
+    toggleButton.addEventListener('click', () => {
+        const isHidden = calculatorContainer.classList.contains('hidden');
+        if (isHidden) {
+            calculatorContainer.innerHTML = calculatorHTML;
+            calculatorContainer.classList.remove('hidden');
+            toggleButton.textContent = 'Close Proforma Calculator';
+            initializeCalculator();
+        } else {
+            calculatorContainer.classList.add('hidden');
+            calculatorContainer.innerHTML = '';
+            toggleButton.textContent = 'Open Interactive Proforma Calculator';
+        }
+    });
+
+    function initializeCalculator() {
+        const $ = (selector) => calculatorContainer.querySelector(selector);
+        const $$ = (selector) => calculatorContainer.querySelectorAll(selector);
+        const formatCurrency = (value) => isNaN(value) ? '$0.00' : value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+        const HOLDING_PERIOD = 5;
+        let investorGroupId = 0;
+
+        function calculateLoan(principal, annualRate, amortizationYears, termYears) {
+            if (principal <= 0 || annualRate <= 0 || amortizationYears <= 0) {
+                const schedule = Array.from({ length: termYears }, (_, i) => ({ year: i + 1, debtService: 0, principalPaid: 0, interestPaid: 0, endingBalance: principal }));
+                return { monthlyPayment: 0, annualPayment: 0, schedule };
+            }
+            const monthlyRate = annualRate / 12 / 100;
+            const numberOfPayments = amortizationYears * 12;
+            const monthlyPayment = principal * (monthlyRate * Math.pow(1 + monthlyRate, numberOfPayments)) / (Math.pow(1 + monthlyRate, numberOfPayments) - 1);
+            let balance = principal;
+            let schedule = [];
+            for (let year = 1; year <= termYears; year++) {
+                let annualInterest = 0, annualPrincipal = 0;
+                for (let month = 1; month <= 12; month++) {
+                    if (balance > 0) {
+                        const interestPayment = balance * monthlyRate;
+                        const principalPayment = monthlyPayment - interestPayment;
+                        balance -= principalPayment;
+                        annualInterest += interestPayment;
+                        annualPrincipal += principalPayment;
+                    }
+                }
+                schedule.push({ year, debtService: monthlyPayment * 12, principalPaid: annualPrincipal, interestPaid: annualInterest, endingBalance: balance < 0 ? 0 : balance });
+            }
+            return { monthlyPayment: isNaN(monthlyPayment) ? 0 : monthlyPayment, annualPayment: isNaN(monthlyPayment) ? 0 : monthlyPayment * 12, schedule };
+        }
+
+        function calculateInterestOnlyLoan(principal, annualRate, termYears) {
+            if (principal <= 0) {
+                const schedule = Array.from({ length: termYears }, (_, i) => ({ year: i + 1, debtService: 0, principalPaid: 0, interestPaid: 0, endingBalance: principal }));
+                return { monthlyPayment: 0, annualPayment: 0, schedule };
+            }
+            const annualPayment = principal * (annualRate / 100);
+            const schedule = Array.from({ length: termYears }, (_, i) => ({ year: i + 1, debtService: annualPayment, principalPaid: 0, interestPaid: annualPayment, endingBalance: principal }));
+            return { monthlyPayment: annualPayment / 12, annualPayment, schedule };
+        }
+
+        function runProforma() {
+            const purchasePrice = parseFloat($('#purchasePrice').value) || 0;
+            const renovationCosts = parseFloat($('#renovationCosts').value) || 0;
+            const miscCosts = parseFloat($('#miscCosts').value) || 0;
+            const buildingSize = parseFloat($('#buildingSize').value) || 0;
+            const totalCapitalRequired = purchasePrice + renovationCosts + miscCosts;
+
+            const financingSources = [];
+            const sellerLoanAmount = parseFloat($('#sellerLoanAmount').value) || 0;
+            financingSources.push({ id: 'seller', name: 'Seller Financing', amount: sellerLoanAmount, rate: parseFloat($('#sellerInterestRate').value) || 0, amortization: parseFloat($('#sellerAmortization').value) || 0, term: parseFloat($('#sellerTerm').value) || 0, type: 'amortizing' });
+
+            let totalInvestorCapital = 0;
+            $$('.investor-card').forEach(card => {
+                const id = card.dataset.id;
+                const investorAmount = parseFloat($(`#investorAmount-${id}`).value) || 0;
+                totalInvestorCapital += investorAmount;
+                financingSources.push({ id, name: $(`#investorName-${id}`).value || `Investor ${id}`, amount: investorAmount, rate: parseFloat($(`#investorRate-${id}`).value) || 0, amortization: parseFloat($(`#investorAmortization-${id}`)?.value) || 0, term: parseFloat($(`#investorTerm-${id}`).value) || 0, type: $(`#investorType-${id}`).value, isInvestor: true });
+            });
+            
+            const investorCapitalRequired = totalCapitalRequired - sellerLoanAmount;
+            
+            let totalMonthlyPayment = 0, totalAnnualPayment = 0;
+            financingSources.forEach(source => {
+                source.result = source.type === 'interest-only' ? calculateInterestOnlyLoan(source.amount, source.rate, source.term) : calculateLoan(source.amount, source.rate, source.amortization, source.term);
+                totalMonthlyPayment += source.result.monthlyPayment;
+                totalAnnualPayment += source.result.annualPayment;
+            });
+
+            $('#totalCapitalRequired').textContent = formatCurrency(totalCapitalRequired);
+            $('#sourceSellerFinancing').textContent = formatCurrency(sellerLoanAmount);
+            $('#sourceInvestorCapital').textContent = formatCurrency(investorCapitalRequired);
+            $('#sourceInvestorCapital').classList.toggle('text-red-600', totalInvestorCapital.toFixed(0) !== investorCapitalRequired.toFixed(0));
+
+            const totalMonthlyRent = totalMonthlyPayment;
+            $('#totalRentMonthly').textContent = formatCurrency(totalMonthlyRent);
+            const rentPerSf = buildingSize > 0 ? (totalMonthlyRent * 12) / buildingSize : 0;
+            $('#totalRentPerSf').textContent = `${formatCurrency(rentPerSf)} / SF / Year`;
+
+            const annualTableBody = $('#annualTableBody');
+            annualTableBody.innerHTML = '';
+            for (let year = 1; year <= HOLDING_PERIOD; year++) {
+                let yearData = { debtService: 0, principalPaid: 0, interestPaid: 0, endingBalance: 0 };
+                financingSources.forEach(source => {
+                    const yearSchedule = source.result.schedule.find(s => s.year === year);
+                    if (yearSchedule) {
+                        yearData.debtService += yearSchedule.debtService;
+                        yearData.principalPaid += yearSchedule.principalPaid;
+                        yearData.interestPaid += yearSchedule.interestPaid;
+                        yearData.endingBalance += yearSchedule.endingBalance;
+                    }
+                });
+                annualTableBody.innerHTML += `<tr class="border-b border-gray-200"><td class="p-2 font-medium">${year}</td><td class="p-2 text-right">${formatCurrency(yearData.debtService)}</td><td class="p-2 text-right">${formatCurrency(yearData.principalPaid)}</td><td class="p-2 text-right">${formatCurrency(yearData.interestPaid)}</td><td class="p-2 text-right">${formatCurrency(yearData.endingBalance)}</td></tr>`;
+            }
+        }
+
+        function addInvestorCard(defaults = {}) {
+            investorGroupId++;
+            const container = $('#investor-capital-container');
+            const card = document.createElement('div');
+            card.className = 'border p-4 rounded-md mb-4 investor-card';
+            card.dataset.id = investorGroupId;
+            card.innerHTML = `<input type="text" id="investorName-${investorGroupId}" placeholder="Investor Group Name" class="w-full font-semibold text-gray-700 mb-2 border-0 p-0 focus:ring-0 bg-transparent"><div class="calculator-input-group"><label>Financing Type</label><select id="investorType-${investorGroupId}" class="w-full"><option value="amortizing">Amortizing Debt</option><option value="interest-only">Interest-Only</option></select></div><div class="calculator-input-group"><label>Loan Amount</label><div class="input-wrapper"><span class="adornment">$</span><input type="number" id="investorAmount-${investorGroupId}" value="0" class="has-adornment text-right"></div></div><div class="calculator-input-group"><label>Annual Interest Rate</label><div class="input-wrapper"><span class="adornment">%</span><input type="number" id="investorRate-${investorGroupId}" value="10" step="0.1" class="has-adornment text-right"></div></div><div id="amortization-wrapper-${investorGroupId}"><div class="calculator-input-group"><label>Amortization Period</label><div class="input-wrapper"><input type="number" id="investorAmortization-${investorGroupId}" value="15" class="text-right"></div></div></div><div class="calculator-input-group"><label>Loan Term (Balloon)</label><div class="input-wrapper"><input type="number" id="investorTerm-${investorGroupId}" value="15" class="text-right"></div></div>`;
+            container.appendChild(card);
+            
+            if (defaults.name) $(`#investorName-${investorGroupId}`).value = defaults.name;
+            if (defaults.type) $(`#investorType-${investorGroupId}`).value = defaults.type;
+            if (defaults.amount) $(`#investorAmount-${investorGroupId}`).value = defaults.amount;
+            if (defaults.rate) $(`#investorRate-${investorGroupId}`).value = defaults.rate;
+            if (defaults.amortization) $(`#investorAmortization-${investorGroupId}`).value = defaults.amortization;
+            if (defaults.term) $(`#investorTerm-${investorGroupId}`).value = defaults.term;
+
+            $(`#investorType-${investorGroupId}`).addEventListener('change', handleTypeChange);
+            card.querySelectorAll('input, select').forEach(el => el.addEventListener('input', runProforma));
+            handleTypeChange({ target: { id: `investorType-${investorGroupId}`, value: defaults.type || 'amortizing' } });
+        }
+
+        function handleTypeChange(event) {
+            const id = event.target.id.split('-')[1];
+            const wrapper = $(`#amortization-wrapper-${id}`);
+            wrapper.style.display = event.target.value === 'interest-only' ? 'none' : 'block';
+        }
+
+        $$('#input-column input, #input-column select').forEach(el => el.addEventListener('input', runProforma));
+        
+        addInvestorCard({ name: "Lead Investor Debt (2nd Pos)", amount: "650000", rate: "10", amortization: "15", term: "15", type: "amortizing" });
+        addInvestorCard({ name: "LP Investor Debt (3rd Pos)", amount: "100000", rate: "11", term: "10", type: "interest-only" });
+
+        runProforma();
+    }
+});
+</script>
 </body>
 </html>
