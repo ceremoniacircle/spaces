@@ -117,6 +117,13 @@
             width: 100%;
             height: 100%;
         }
+        .nav-link {
+            padding-bottom: 0.25rem; /* 4px */
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link.active {
+            border-bottom-color: var(--tierra-teal);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -129,8 +136,8 @@
             </a>
             <div class="flex items-center space-x-6">
                  <div class="hidden md:flex items-center space-x-6 font-heading text-sm">
-                    <a href="../" class="text-gray-600 hover:text-tierra-teal transition-colors">For Facilitators</a>
-                    <span class="font-bold text-tierra-teal border-b-2 border-tierra-teal pb-1">For Training Centers</span>
+                    <a href="../" class="nav-link text-gray-600 hover:text-tierra-teal transition-colors">For Facilitators</a>
+                    <span class="nav-link active font-bold text-tierra-teal">For Training Centers</span>
                 </div>
                 <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary">Join The Waitlist</a>
             </div>

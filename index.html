@@ -115,6 +115,13 @@
             transform: translate(-50%, -50%);
             pointer-events: none;
         }
+        .nav-link {
+            padding-bottom: 0.25rem; /* 4px */
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link.active {
+            border-bottom-color: var(--tierra-teal);
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -125,7 +132,11 @@
             <a href="#">
                 <img src="images/ceremonia_logo_horiz_color.png" alt="Ceremonia Logo" class="h-10 w-auto">
             </a>
-            <div>
+            <div class="flex items-center space-x-6">
+                <div class="hidden md:flex items-center space-x-6 font-heading text-sm">
+                    <span class="nav-link active font-bold text-tierra-teal">For Facilitators</span>
+                    <a href="practicums/" class="nav-link text-gray-600 hover:text-tierra-teal transition-colors">For Training Centers</a>
+                </div>
                 <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary">Join The Waitlist</a>
             </div>
         </nav>
