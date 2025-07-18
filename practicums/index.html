@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceremonia Spaces | Practicum Site for Training Centers</title>
+    <link rel="icon" type="image/png" href="images/ceremonia_icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700;800&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <!-- Google tag (gtag.js) --> 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-D0WZYLGBLS"></script> 
+    <script> 
+      window.dataLayer = window.dataLayer || []; 
+      function gtag(){dataLayer.push(arguments);} 
+      gtag('js', new Date()); 
+    
+      gtag('config', 'G-D0WZYLGBLS'); 
+    </script>
+    <style>
+        :root {
+            --tierra-teal: #65C5B2;
+            --cielo-cerulean: #6283C2;
+            --primary-text: #3D352E;
+            --background-color: #f8f7ff;
+        }
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--background-color);
+            color: var(--primary-text);
+        }
+        .font-heading {
+            font-family: 'Public Sans', sans-serif;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+        .btn-primary {
+            background-color: var(--tierra-teal);
+            color: #FFFFFF;
+            font-weight: 700;
+            padding: 0.875rem 2rem;
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            font-family: 'Public Sans', sans-serif;
+            transform: translateY(0);
+            box-shadow: 0 4px 15px rgba(101, 197, 178, 0.3);
+        }
+        .btn-primary:hover {
+            background-color: #4a9484;
+            transform: translateY(-2px);
+            box-shadow: 0 7px 20px rgba(101, 197, 178, 0.4);
+        }
+        .section-heading {
+            font-family: 'Public Sans', sans-serif;
+            font-size: 2.25rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary-text);
+        }
+         @media (min-width: 768px) {
+            .section-heading {
+                font-size: 2.75rem;
+            }
+        }
+        .hero-video-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .hero-video-container video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+        .pathway-card {
+            background-color: white;
+            border-radius: 1rem;
+            border: 1px solid #e2e8f0;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .pathway-card.highlight {
+             border: 2px solid var(--cielo-cerulean);
+        }
+        .feature-card {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            border: 1px solid #e2e8f0;
+            height: 100%;
+        }
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 0.75rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="../">
+                <img src="images/ceremonia_logo_horiz_color.png" alt="Ceremonia Logo" class="h-10 w-auto">
+            </a>
+            <div class="flex items-center space-x-6">
+                 <div class="hidden md:flex items-center space-x-6 font-heading text-sm">
+                    <a href="../" class="text-gray-600 hover:text-tierra-teal transition-colors">For Facilitators</a>
+                    <span class="font-bold text-tierra-teal border-b-2 border-tierra-teal pb-1">For Training Centers</span>
+                </div>
+                <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary">Join The Waitlist</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative text-white overflow-hidden flex items-center justify-center" style="height: 80vh; min-height: 500px;">
+            <div class="hero-video-container">
+                 <video autoplay loop muted playsinline>
+                    <source src="videos/Front_Orbit.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="relative container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight max-w-4xl mx-auto">Elevate Your Practicum.</h1>
+                <p class="mt-6 max-w-3xl mx-auto text-xl text-gray-200">
+                   Secure your program's access to Colorado's only large-group, nature-integrated practicum site. We provide the turnkey facility and compliance you need to deliver a world-class training experience.
+                </p>
+                <div class="mt-10">
+                    <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary inline-block">Join The Waitlist</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Value Propositions Section -->
+        <section class="py-20 md:py-24">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <h2 class="section-heading">The Search for a Practicum Site is Over.</h2>
+                <p class="mt-4 text-lg text-body-color">
+                    Ceremonia Spaces was purpose-built to fill the critical gap for training centers in Colorado. We offer the solution that not only meets state requirements but elevates the marketability and prestige of your program.
+                </p>
+                <div class="grid sm:grid-cols-2 gap-8 mt-12 text-left">
+                    <div class="bg-white p-6 rounded-lg border flex items-start">
+                        <span class="text-3xl mr-4">🏞️</span>
+                        <div>
+                            <h3 class="font-heading font-bold text-lg">The Only Site in Nature</h3>
+                            <p class="text-sm">Offer your students a practicum experience in a setting that honors the medicine, disconnected from the noise of the city.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border flex items-start">
+                        <span class="text-3xl mr-4">🏛️</span>
+                        <div>
+                            <h3 class="font-heading font-bold text-lg">Unmatched Group Capacity</h3>
+                            <p class="text-sm">We are the only licensed center with a 16-person group hall, allowing you to run your entire practicum cohort simultaneously.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border flex items-start">
+                        <span class="text-3xl mr-4">⚙️</span>
+                        <div>
+                            <h3 class="font-heading font-bold text-lg">Turnkey Compliance</h3>
+                            <p class="text-sm">We handle the extensive legal and regulatory work so you can focus on what you do best: training world-class facilitators.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border flex items-start">
+                        <span class="text-3xl mr-4">📈</span>
+                        <div>
+                            <h3 class="font-heading font-bold text-lg">A Marketable Advantage</h3>
+                            <p class="text-sm">Attract more applicants by offering a premium practicum experience that no other training program can match.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Image Gallery Section -->
+        <section class="py-12 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    <img src="images/ceremony_hall.jpg" alt="The spacious group ceremony hall at Ceremonia" class="rounded-xl shadow-lg object-cover w-full h-full">
+                    <img src="images/deck.jpg" alt="The deck at Ceremonia with a view of the mountains" class="rounded-xl shadow-lg object-cover w-full h-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- Convenience & Lodging Section -->
+        <section class="py-20 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="section-heading">Conveniently Located, Beautifully Situated</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-body-color">Our Golden facility offers the perfect balance of natural seclusion and accessibility, with stunning mountain views from our rooms and numerous lodging options for your trainees just minutes away.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+                    <div>
+                        <h3 class="font-heading text-xl font-bold mb-4">Travel Times</h3>
+                        <ul class="list-disc list-inside space-y-2 mb-8">
+                            <li><strong class="font-semibold">20 minutes</strong> from Downtown Denver</li>
+                            <li><strong class="font-semibold">40 minutes</strong> from Denver International Airport (DIA)</li>
+                        </ul>
+                        <h3 class="font-heading text-xl font-bold mb-4">Nearby Lodging for Your Cohort</h3>
+                        <p class="mb-4 text-sm text-gray-600">We've identified a range of nearby hotels and B&Bs suitable for groups, with options for every budget—all within a 15-minute drive.</p>
+                        <div class="grid grid-cols-2 gap-4 text-sm">
+                            <ul class="space-y-2">
+                                <li class="font-semibold">Hampton Inn</li>
+                                <li>Quality Inn & Suites</li>
+                                <li>Table Mountain Inn</li>
+                            </ul>
+                            <ul class="space-y-2">
+                                <li class="font-semibold">The Golden Hotel</li>
+                                <li>The Eddy Taproom & Hotel</li>
+                                <li>And multiple B&Bs</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="rounded-xl shadow-2xl overflow-hidden border border-gray-200">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d98171.18999968857!2d-105.2533348413452!3d39.74354207901772!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b854935253579%3A0x86fe6e344b5823e5!2s538%20Commons%20Dr%2C%20Golden%2C%20CO%2080401!5e0!3m2!1sen!2sus!4v1721084249826!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Two Pathways Section -->
+        <section class="bg-white py-20 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="section-heading">A Partnership, Designed for Your Program</h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-lg text-body-color">We understand every training program is unique. That's why we've developed two distinct partnership models to serve your specific needs.</p>
+                </div>
+                <div class="grid lg:grid-cols-2 gap-8 max-w-5xl mx-auto items-stretch">
+                    <!-- Option A -->
+                    <div class="pathway-card">
+                        <h3 class="font-heading text-2xl font-bold mb-2 text-center">Option A: Host Your Practicum</h3>
+                        <p class="text-center text-body-color mb-4">Lead your training in a world-class environment. Command our space with your curriculum and your team. Our turnkey compliance work means you can focus entirely on your students.</p>
+                        <div class="text-center my-4">
+                            <p class="text-4xl font-bold font-heading">$1997<span class="text-lg font-normal">/day</span></p>
+                            <p class="text-sm text-gray-600">for 16-Person Group Space</p>
+                        </div>
+                        <ul class="space-y-2 text-sm flex-grow">
+                            <li class="flex"><span class="mr-2 text-tierra-teal">✅</span> The state's only 16-person group ceremony hall.</li>
+                            <li class="flex"><span class="mr-2 text-tierra-teal">✅</span> 12 professional breakout rooms for individual work.</li>
+                            <li class="flex"><span class="mr-2 text-tierra-teal">✅</span> A fully turnkey, compliant, and inspiring environment.</li>
+                        </ul>
+                    </div>
+                    <!-- Option B -->
+                    <div class="pathway-card highlight">
+                         <h3 class="font-heading text-2xl font-bold mb-2 text-center">Option B: The Apprenticeship Model</h3>
+                        <p class="text-center text-body-color mb-4">Bypass the logistics of running a practicum entirely. Send your trainees to apprentice at our monthly "Awaken" psilocybin retreat to satisfy their practicum hours with real, hands-on experience.</p>
+                        <div class="text-center my-4">
+                            <p class="text-4xl font-bold font-heading">$2497<span class="text-lg font-normal">/student</span></p>
+                            <p class="text-sm text-gray-600">for the complete practicum experience</p>
+                        </div>
+                        <div class="bg-cielo-cerulean/10 p-4 rounded-lg text-sm flex-grow">
+                            <p class="font-bold text-cielo-cerulean mb-2">The only practicum offered as live training with real participants.</p>
+                            <p class="mb-2">Includes 4 administration sessions in groups of up to 16 (1 as a participant, 3 as an apprentice).</p>
+                            <p class="font-semibold">Your students learn in an ecosystem that has facilitated 1000+ sessions and hosted 50+ successful retreats.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Waitlist Benefits Section -->
+        <section class="py-20 md:py-24">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <h2 class="section-heading">Gain Priority Access</h2>
+                <p class="mt-4 text-lg text-body-color">
+                    By joining our no-obligation waitlist, you secure your program's place in line for our September launch. Founding partners receive:
+                </p>
+                <div class="grid sm:grid-cols-2 gap-8 mt-12 text-left">
+                    <div class="bg-white p-6 rounded-lg border flex items-start">
+                        <span class="text-3xl mr-4">🗓️</span>
+                        <div>
+                            <h3 class="font-heading font-bold text-lg">Priority Booking</h3>
+                            <p class="text-sm">Get first access to our 2025 calendar to reserve your practicum dates before they are released to the public.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border flex items-start">
+                        <span class="text-3xl mr-4">🎥</span>
+                        <div>
+                            <h3 class="font-heading font-bold text-lg">Exclusive Previews</h3>
+                            <p class="text-sm">Receive a private 3D walkthrough, photo gallery, and videos of the remodeled facility as soon as they are available.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section id="join" class="bg-white py-20 md:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="section-heading max-w-3xl mx-auto">The Time to Secure Your Practicum Solution is Now.</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-body-color">
+                    We are launching in <strong class="font-semibold text-tierra-teal">September</strong>. While your competitors scramble to find compliant space, you can have a world-class solution secured. Due to the high demand for Colorado's only nature-based group practicum site, our calendar will fill instantly. Joining the waitlist is the only way to guarantee priority access. This is your moment to decide if you will lead the market or be left behind.
+                </p>
+                <div class="mt-10">
+                    <a href="https://airtable.com/appMm0qTxT33niMxn/pagpjHL3s2flMY0BP/form" class="btn-primary inline-block text-lg">Join The Waitlist</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+</html>
