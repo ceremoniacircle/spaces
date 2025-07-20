@@ -47,6 +47,17 @@
             color: #6b7280;
             margin-top: 0.5rem;
         }
+        .highlight-card {
+            background-color: #FFFFFF; 
+            border: 1px solid #EAE3DC;
+            border-radius: 0.75rem;
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .highlight-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         .table-container {
             background-color: white;
             border: 1px solid #e5e7eb;
@@ -606,10 +617,14 @@
             </div>
         </section>
 
+        <!-- Section 6: Founder -->
         <section id="founder" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Experienced Leadership</h2>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Founder & Vision</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
+                        A successful venture is led by a founder with the precise blend of industry expertise and operational capability.
+                    </p>
                 </div>
                 <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                     <div class="md:col-span-1">
@@ -618,8 +633,46 @@
                     <div class="md:col-span-2 bg-white p-8 rounded-xl border border-gray-200">
                         <h3 class="text-2xl font-bold">Austin Mao</h3>
                         <p class="text-md font-semibold text-[#65C5B2]">Founder & CEO, Ceremonia</p>
-                        <p class="mt-4 text-gray-600">Austin is a pioneering entrepreneur and policy leader in the regulated psychedelic ecosystem. As Colorado's first licensed Legacy Healer, he combines deep facilitation experience with a proven track record of scaling hospitality and real estate ventures, including building the largest short-term rental portfolio in Las Vegas.</p>
+                        <p class="mt-4 text-gray-600">Austin is a pioneering entrepreneur and policy leader in the regulated psychedelic ecosystem. As Colorado's first licensed Legacy Healer, he combines deep facilitation experience with a proven track record of scaling hospitality and real estate ventures.</p>
+                        <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="highlight-card">
+                                <p class="highlight-value">600+</p>
+                                <p class="highlight-label">Individuals Facilitated</p>
+                            </div>
+                            <div class="highlight-card">
+                                <p class="highlight-value">Top 3</p>
+                                <p class="highlight-label">Psilocybin Retreats in US</p>
+                            </div>
+                            <div class="highlight-card">
+                               <p class="highlight-value">#1</p>
+                               <p class="highlight-label">STR Portfolio in Las Vegas</p>
+                            </div>
+                        </div>
+                        <div class="mt-6 pt-4 border-t border-gray-200">
+                             <h4 class="font-semibold text-gray-800">Additional Highlights:</h4>
+                             <ul class="mt-2 space-y-2 text-sm list-disc list-inside text-gray-700">
+                                <li>Colorado's 1st Licensed Facilitator (Legacy Healer Pathway)</li>
+                                <li>Advisor to Colorado Governor's Office & DORA</li>
+                                <li>Scaled largest short-term rental portfolio in Las Vegas to 2000+ monthly guests over 24 owned homes</li>
+                                <li>Recognized as a thought leader with keynote presentations at <strong>TEDxBoulder, Mindvalley,</strong> and the <strong>Conscious Entrepreneur Summit</strong>.</li>
+                            </ul>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Due Diligence Link -->
+        <section id="due-diligence" class="py-16 md:py-24">
+             <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Ready for a Deeper Dive?</h2>
+                <p class="mt-3 max-w-2xl mx-auto text-gray-600">
+                    Access the complete market research and financial analysis for a comprehensive look at the data driving this opportunity.
+                </p>
+                <div class="mt-8">
+                    <a href="https://docs.google.com/document/d/1pqQU5jK7CJfV8YCehTCSCwGvNWfa8KgIN1NykqKUFqQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#6283C2] text-white font-bold py-4 px-10 rounded-lg hover:bg-[#496291] transition-transform transform hover:scale-105 shadow-lg">
+                        View Full Due Diligence Document
+                    </a>
                 </div>
             </div>
         </section>
