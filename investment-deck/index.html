@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Ceremonia Spaces: the WeWork of Legal Psychedelic Healing - Investment Deck</title>
+    <title>Financing the Future of Healing: A Secured Real Estate Loan for Ceremonia Spaces</title>
     <link rel="icon" type="image/png" href="images/ceremonia_icon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -18,33 +18,34 @@
             background-color: #f5f3ff;
             color: #3D352E;
         }
-        h1, h2, h3, h4, h5, h6, .nav-link, .stat-value, .stat-label, button, .highlight-value, .timeline-date-month, .timeline-date-day {
+        h1, h2, h3, h4, h5, h6, .stat-value, .stat-label, button, .highlight-value, .table th {
             font-family: 'Public Sans', sans-serif;
         }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 320px;
-            max-height: 400px;
-        }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 380px;
-            }
-        }
-        .nav-link {
-            transition: all 0.3s ease;
-        }
-        .nav-link.active {
-            color: #65C5B2; /* tierra teal */
-            border-bottom: 2px solid #65C5B2;
-        }
-        
         .section-bg {
-             background-color: #FFFFFF;
+            background-color: #FFFFFF;
+        }
+        .stat-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+        }
+        .stat-value {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #6283C2; /* cielo cerulean */
+        }
+        .stat-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
         }
         .table-container {
             background-color: white;
@@ -52,192 +53,6 @@
             border-radius: 0.75rem;
             overflow: hidden;
             box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-        }
-        .table-container th {
-            background-color: #f9fafb;
-        }
-        .stat-card {
-            background-color: white;
-            border: 1px solid #e5e7eb;
-            border-radius: 0.75rem;
-            padding: 1rem;
-            text-align: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        }
-        .stat-value {
-            font-size: 1.875rem;
-            font-weight: 700;
-            color: #6283C2; /* cielo cerulean */
-        }
-        .stat-label {
-            font-size: 0.875rem;
-            color: #6b7280;
-            margin-top: 0.25rem;
-        }
-        .highlight-card {
-            background-color: #FFFFFF; 
-            border: 1px solid #EAE3DC;
-            border-radius: 0.75rem;
-            padding: 1rem;
-            text-align: center;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        .highlight-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
-        .highlight-value {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #3D352E;
-        }
-        .highlight-label {
-            font-size: 0.875rem;
-            color: #6b7280;
-            margin-top: 0.25rem;
-        }
-        .strategy-card {
-            background-color: white;
-            border-radius: 1rem;
-            padding: 2rem;
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        /* Financials Section Styles */
-        .financials-card {
-            background-color: white;
-            border-radius: 0.75rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            transition: all 0.3s ease;
-        }
-        .main-scenario-btn {
-            transition: all 0.2s ease;
-        }
-        .main-scenario-btn.active {
-            background-color: #6283C2; /* cielo cerulean */
-            color: white;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-        }
-        .model3-btn.active {
-             background-color: #65C5B2; /* tierra teal */
-             color: white;
-        }
-        .util-btn.active {
-            background-color: #496291; /* darker cerulean */
-            color: white;
-        }
-        .details-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-in-out;
-        }
-        .timeline-item {
-            display: flex;
-            align-items: center;
-            padding: 1rem;
-            background-color: white;
-            border-radius: 0.75rem;
-            border: 1px solid #e5e7eb;
-            margin-bottom: 1rem;
-            transition: all 0.2s ease-in-out;
-        }
-        .timeline-item.completed {
-            background-color: #f0fdf4;
-            border-color: #bbf7d0;
-        }
-        .timeline-item.completed .timeline-description {
-            text-decoration: line-through;
-            color: #6b7280;
-        }
-        .timeline-date-box {
-            flex-shrink: 0;
-            width: 60px;
-            height: 60px;
-            text-align: center;
-            margin-right: 1.5rem;
-            padding: 0.5rem;
-            border-radius: 0.5rem;
-            background-color: #eef2f3;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        .timeline-date-month {
-            font-weight: 700;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            color: #6283C2;
-        }
-        .timeline-date-day {
-            font-weight: 700;
-            font-size: 1.75rem;
-            line-height: 1;
-            color: #3D352E;
-        }
-        .timeline-item.completed .timeline-date-box {
-            background-color: #65C5B2;
-        }
-        .timeline-item.completed .timeline-date-month,
-        .timeline-item.completed .timeline-date-day {
-            color: white;
-        }
-        /* Calculator Styles */
-        .calculator-card {
-            background-color: white;
-            border-radius: 0.75rem;
-            padding: 1.5rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            margin-bottom: 1.5rem;
-        }
-        .calculator-input-group {
-            display: flex;
-            align-items: center;
-            margin-bottom: 0.75rem;
-        }
-        .calculator-input-group label {
-            flex-basis: 50%;
-            font-size: 0.875rem;
-            color: #475569; /* slate-600 */
-            margin-right: 0.5rem;
-        }
-        .calculator-input-group .input-wrapper {
-            flex-basis: 50%;
-            position: relative;
-        }
-        .calculator-input-group input, .calculator-input-group select {
-            width: 100%;
-            padding: 0.5rem 0.75rem;
-            border: 1px solid #cbd5e1; /* slate-300 */
-            border-radius: 0.375rem;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-        .calculator-input-group input:focus, .calculator-input-group select:focus {
-            outline: none;
-            border-color: #65C5B2;
-            box-shadow: 0 0 0 2px rgba(101, 197, 178, 0.4);
-        }
-        .calculator-input-group .adornment {
-            position: absolute;
-            left: 0.75rem;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #64748b; /* slate-500 */
-            pointer-events: none;
-        }
-        .calculator-input-group input.has-adornment {
-            padding-left: 2rem;
-        }
-        .calculator-tab {
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            border-bottom: 2px solid transparent;
-            color: #475569;
-            font-weight: 500;
-            font-size: 0.875rem;
-            white-space: nowrap;
-        }
-        .calculator-tab.active {
-            color: #4a9484;
-            border-bottom-color: #65C5B2;
         }
         .video-container {
             position: relative;
@@ -256,228 +71,441 @@
             width: 100%;
             height: 100%;
         }
+        .calculator-card, .financials-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            margin-bottom: 1.5rem;
+        }
+        .calculator-input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.75rem;
+        }
+        .calculator-input-group label {
+            flex-basis: 50%;
+            font-size: 0.875rem;
+            color: #475569;
+            margin-right: 0.5rem;
+        }
+        .calculator-input-group .input-wrapper {
+            flex-basis: 50%;
+            position: relative;
+        }
+        .calculator-input-group input, .calculator-input-group select {
+            width: 100%;
+            padding: 0.5rem 0.75rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 0.375rem;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .calculator-input-group input:focus, .calculator-input-group select:focus {
+            outline: none;
+            border-color: #65C5B2;
+            box-shadow: 0 0 0 2px rgba(101, 197, 178, 0.4);
+        }
+        .calculator-input-group .adornment {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+            pointer-events: none;
+        }
+        .calculator-input-group input.has-adornment {
+            padding-left: 2rem;
+        }
+        .calculator-tab {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            color: #475569;
+            font-weight: 500;
+            font-size: 0.875rem;
+            white-space: nowrap;
+        }
+        .calculator-tab.active {
+            color: #4a9484;
+            border-bottom-color: #65C5B2;
+        }
+        .main-scenario-btn {
+            transition: all 0.2s ease;
+        }
+        .main-scenario-btn.active {
+            background-color: #6283C2; /* cielo cerulean */
+            color: white;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        }
+        .strategy-card {
+            background-color: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .details-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .model3-btn.active {
+            background-color: #65C5B2; /* tierra teal */
+            color: white;
+        }
+        .util-btn.active {
+            background-color: #496291; /* darker cerulean */
+            color: white;
+        }
+        pre {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f8fafc;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid #e2e8f0;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-size: 0.8rem;
+            line-height: 1.4;
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <!-- Header & Navigation -->
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200">
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="#opening">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#investment-ask">
                 <img src="images/ceremonia_logo_horiz_color.png" alt="Ceremonia Spaces Logo" class="h-8 md:h-10 w-auto">
             </a>
-            <div class="hidden md:flex flex-wrap items-center justify-center space-x-4 lg:space-x-6 text-sm font-medium">
-                <a href="#precedent" class="nav-link">Market</a>
-                <a href="#solution" class="nav-link">Solution</a>
-                <a href="#strategy" class="nav-link">Marketing</a>
-                <a href="#brand" class="nav-link">Company</a>
-                <a href="#financials" class="nav-link">Financials</a>
-                <a href="#investment-ask" class="nav-link">Investment</a>
-                <a href="#next-steps" class="nav-link">Next Steps</a>
-            </div>
-            <a href="#investment-ask" class="md:hidden bg-[#65C5B2] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">
-                View The Ask
+            <a href="#contact" class="bg-[#65C5B2] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">
+                Contact
             </a>
-        </nav>
+        </div>
     </header>
 
     <main>
-        <!-- Section 0: New Introduction -->
-        <section id="opening" class="py-16 md:py-24">
+        <!-- Section 1: Investment Ask -->
+        <section id="investment-ask" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#3D352E]">Scaling Impact with the WeWork of Legal Psychedelic Healing in Colorado</h2>
-                    <p class="text-lg text-gray-700 mt-4 max-w-3xl mx-auto">Leveraging our status as a Top 3 US psilocybin retreat, we are solving a critical infrastructure bottleneck proven in Oregon's market. Our first-mover advantage and turnkey ecosystem of compliance, marketing, and logistics creates a powerful moat to capture the market.</p>
+                     <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-[#3D352E]">Financing the Future of Healing: A Secured Real Estate Loan for Ceremonia Spaces</h1>
+                     <p class="text-lg text-gray-700 mt-4 max-w-3xl mx-auto">This document outlines a secured debt offering of $650,000 for the acquisition and renovation of the commercial property at 538 Commons Dr, Golden, CO. The loan is secured by a 2nd lien position on the real estate and will be leased to Ceremonia Spaces Inc. under a long-term NNN lease. Repayment is de-risked by the tenant's guaranteed anchor revenue, a clear path to profitability, and a personal guarantee from the founder.</p>
                 </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-                        <div class="stat-card md:col-span-1">
-                            <p class="stat-value">13.8 : 1</p>
-                            <p class="stat-label">Facilitator to Center Ratio in Oregon (Proven Demand)</p>
-                        </div>
-                        <div class="stat-card md:col-span-1">
-                            <p class="stat-value">~20%</p>
-                            <p class="stat-label">Projected Market Share of CO Healing Rooms</p>
-                        </div>
-                        <div class="stat-card md:col-span-1">
-                            <p class="stat-value">$907K</p>
-                            <p class="stat-label">Expected First-Year Revenue (Base Case)</p>
-                        </div>
-                        <div class="stat-card md:col-span-3">
-                            <p class="stat-value">$750K Total Raise</p>
-                            <p class="stat-label">$650k secured debt for real estate + remodel<br>$100k bridge loan @ 11% for operating company</p>
-                        </div>
-                        <div class="stat-card col-span-2 md:col-span-3">
-                             <p class="stat-value">The Only One</p>
-                             <p class="stat-label">The only rentable space for licensed 🍄 facilitation in nature, just 20 minutes from Downtown Denver</p>
-                        </div>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                    <div class="table-container border-2 border-[#65C5B2] flex flex-col">
+                        <h3 class="text-lg font-semibold text-white bg-[#65C5B2] p-4 text-center">Ask 1: $650,000 Secured Loan</h3>
+                        <div class="p-4 text-center text-sm text-gray-600">for <span class="font-semibold">Ceremonia Spaces Colorado I LLC</span> (the LandCo SPV)</div>
+                        <dl class="divide-y divide-gray-200 text-sm flex-grow">
+                            <div class="grid grid-cols-2 gap-4 p-3"><dt class="font-medium text-gray-600">Position</dt><dd class="text-gray-800 font-semibold text-right">2nd Position</dd></div>
+                            <div class="grid grid-cols-2 gap-4 p-3"><dt class="font-medium text-gray-600">Annual Interest</dt><dd class="text-gray-800 font-semibold text-right">10.0%</dd></div>
+                            <div class="grid grid-cols-2 gap-4 p-3"><dt class="font-medium text-gray-600">Amortization</dt><dd class="text-gray-800 font-semibold text-right">10 Years</dd></div>
+                            <div class="grid grid-cols-2 gap-4 p-3"><dt class="font-medium text-gray-600">Loan Term</dt><dd class="text-gray-800 font-semibold text-right">10 Years</dd></div>
+                            <div class="grid grid-cols-2 gap-4 p-3 bg-[#65C5B2]/10"><dt class="font-bold text-[#4a9484]">Monthly Payment</dt><dd class="font-bold text-[#4a9484] text-right">$8,590.04</dd></div>
+                        </dl>
                     </div>
-                     <div class="text-center">
-                        <img src="images/538_commons_dr.jpg" alt="Exterior of the Ceremonia Spaces property at 538 Commons Dr, Golden, CO" class="rounded-xl shadow-2xl object-cover w-full h-auto">
-                        <p class="text-center italic text-gray-600 mt-4 text-sm">Our flagship Golden facility: 12 individual & 2 group rooms, just 20 minutes from downtown Denver with stunning mountain views.</p>
+                    <div class="table-container border-2 border-[#65C5B2] flex flex-col">
+                        <h3 class="text-lg font-semibold text-white bg-[#65C5B2] p-4 text-center">Ask 2: $100,000 Bridge Loan</h3>
+                        <div class="p-4 text-center text-sm text-gray-600">for <span class="font-semibold">Ceremonia Spaces Inc.</span> (the OpCo)</div>
+                         <dl class="divide-y divide-gray-200 text-sm flex-grow">
+                            <div class="grid grid-cols-2 gap-4 p-3"><dt class="font-medium text-gray-600">Position</dt><dd class="text-gray-800 font-semibold text-right">3rd Position</dd></div>
+                            <div class="grid grid-cols-2 gap-4 p-3"><dt class="font-medium text-gray-600">Annual Interest</dt><dd class="text-gray-800 font-semibold text-right">11.0%</dd></div>
+                            <div class="grid grid-cols-2 gap-4 p-3"><dt class="font-medium text-gray-600">Type</dt><dd class="text-gray-800 font-semibold text-right">Interest Only</dd></div>
+                            <div class="grid grid-cols-2 gap-4 p-3"><dt class="font-medium text-gray-600">Loan Term</dt><dd class="text-gray-800 font-semibold text-right">12 Months</dd></div>
+                            <div class="grid grid-cols-2 gap-4 p-3 bg-[#65C5B2]/10"><dt class="font-bold text-[#4a9484]">Monthly Payment</dt><dd class="font-bold text-[#4a9484] text-right">$916.67</dd></div>
+                        </dl>
                     </div>
                 </div>
+                 <p class="mt-8 text-sm text-gray-500 max-w-2xl mx-auto text-center">The acquisition is partially funded by $550k in 1st position seller financing, further securing the investment.</p>
             </div>
         </section>
 
-        <!-- Section 2: Precedent (Retitled) -->
-        <section id="precedent" class="py-16 md:py-24 section-bg border-t border-b border-gray-200">
-            <div class="container mx-auto px-6">
-                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">The Oregon Case Study</h2>
-                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
-                        As the first state to launch legal psilocybin services in mid-2023, Oregon's market provides a critical case study. It validates three core truths: consumers will pay premium prices, this demand fuels a wave of new practitioners, but high costs create a crippling lack of professional facilities for them to practice in.
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-                    <div class="space-y-6">
-                        <div class="p-6 bg-white rounded-lg border border-gray-200">
-                           <h4 class="font-bold text-lg">📈 Validated Consumer Demand</h4>
-                           <p class="mt-2 text-sm text-gray-600">Despite challenges, Oregon served over <strong>1,500 clients in Q1 2025 alone</strong>. With a consistent 100%+ annual growth rate, the market is on track to <strong>double in 2025</strong>. This demand is supercharged by psychedelic tourism, with some centers reporting that <strong>80-90% of their clientele are tourists</strong>.</p>
-                        </div>
-                        <div class="p-6 bg-white rounded-lg border border-gray-200">
-                            <h4 class="font-bold text-lg">🚧 Proven Infrastructure Bottleneck</h4>
-                            <p class="mt-2 text-sm text-gray-600">With <strong>283 independent facilitators</strong> vs. only <strong>~31 service centers</strong>, the <strong>13.8:1 ratio</strong> confirms a systemic shortage of practice space. Most centers are small (1-3 rooms) and not for rent, leaving hundreds of trained professionals underemployed.</p>
-                        </div>
-                    </div>
-                    <div class="p-6 md:p-8 rounded-xl bg-gray-50 border border-gray-200">
-                        <h3 class="text-xl font-bold text-center mb-6">Oregon Market Snapshot</h3>
-                        <div class="flow-root">
-                            <dl class="-my-3 divide-y divide-gray-200 text-sm">
-                                <div class="grid grid-cols-2 gap-1 py-3">
-                                    <dt class="font-medium text-gray-600">Program Started</dt>
-                                    <dd class="text-gray-800 font-semibold text-right">Mid-2023</dd>
-                                </div>
-                                <div class="grid grid-cols-2 gap-1 py-3">
-                                    <dt class="font-medium text-gray-600">Psychedelic Tourism %</dt>
-                                    <dd class="text-gray-800 font-semibold text-right">80-90%</dd>
-                                </div>
-                                <div class="grid grid-cols-2 gap-1 py-3">
-                                    <dt class="font-medium text-gray-600">Clients (Q1 2025)</dt>
-                                    <dd class="text-gray-800 font-semibold text-right">1,509</dd>
-                                </div>
-                                <div class="grid grid-cols-2 gap-1 py-3">
-                                    <dt class="font-medium text-gray-600">Annual Growth Rate</dt>
-                                    <dd class="text-gray-800 font-semibold text-right">100%+</dd>
-                                </div>
-                                <div class="grid grid-cols-2 gap-1 py-3">
-                                    <dt class="font-medium text-gray-600">Average Session Price</dt>
-                                    <dd class="text-gray-800 font-semibold text-right">$1,800</dd>
-                                </div>
-                                <div class="grid grid-cols-2 gap-1 py-3">
-                                    <dt class="font-medium text-gray-600">Independent Facilitators</dt>
-                                    <dd class="text-gray-800 font-semibold text-right">283</dd>
-                                </div>
-                                <div class="grid grid-cols-2 gap-1 py-3">
-                                    <dt class="font-medium text-gray-600">Operational Centers</dt>
-                                    <dd class="text-gray-800 font-semibold text-right">~31</dd>
-                                </div>
-                                <div class="grid grid-cols-2 gap-1 py-3">
-                                    <dt class="font-medium text-gray-600">Facilitator:Center Ratio</dt>
-                                    <dd class="text-[#E31C78] font-bold text-right">13.8 : 1</dd>
-                                </div>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Section 3: Opportunity -->
-        <section id="opportunity" class="py-16 md:py-24">
+        <section id="real-estate-analysis" class="py-16 md:py-24 section-bg border-t">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Colorado's Superior Market</h2>
-                    <p class="mt-3 max-w-2xl mx-auto text-gray-600">
-                        Colorado is not just another Oregon. The data reveals a market with fundamentally superior demand drivers and a more favorable regulatory environment, creating a significantly larger and more immediate opportunity.
-                    </p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Real Estate Investment Analysis</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">The loan is secured by the property at 538 Commons Dr, Golden, CO. The acquisition is well-supported by market data, and the property's location and condition are ideal for its intended use.</p>
                 </div>
-                
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-                    <div class="p-6 md:p-8 rounded-xl bg-gray-50 border border-gray-200">
-                        <h3 class="text-xl font-bold text-center">Market Superiority: CO vs. OR</h3>
-                        <div class="chart-container mt-6">
-                            <canvas id="marketComparisonChart"></canvas>
-                        </div>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.751680199148!2d-105.2913388846247!3d39.7225199794519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b8180a53b1229%3A0x4a4c483a3bff8b27!2s538%20Commons%20Dr%2C%20Golden%2C%20CO%2080401!5e0!3m2!1sen!2sus!4v1689708940833!5m2!1sen!2sus" width="100%" height="500" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-xl shadow-lg"></iframe>
                     </div>
-                    <div class="space-y-6">
-                        <div class="p-6 rounded-xl bg-white border border-gray-200 text-center">
-                            <h4 class="text-lg font-semibold text-gray-700">Population</h4>
-                            <div class="flex justify-around items-baseline mt-2">
-                                <div>
-                                    <p class="text-3xl font-bold text-[#65C5B2]">6.0M</p>
-                                    <p class="text-sm text-gray-500">Colorado</p>
-                                </div>
-                                <div>
-                                    <p class="text-3xl font-bold text-[#FBAE17]">4.2M</p>
-                                    <p class="text-sm text-gray-500">Oregon</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-bold text-center">Key Advantages</h3>
-                            <ul class="mt-4 space-y-3 text-gray-700">
-                                <li class="flex items-start p-4 bg-white rounded-lg border">
-                                    <span class="text-[#65C5B2] mr-3 mt-1">✓</span>
-                                    <span><strong>Psychedelic Tourism Leader:</strong> Colorado is the <strong>#1 destination for psychedelic tourism</strong>, capturing 42.9% of US travelers seeking these experiences.</span>
-                                </li>
-                                 <li class="flex items-start p-4 bg-white rounded-lg border">
-                                    <span class="text-[#65C5B2] mr-3 mt-1">✓</span>
-                                    <span><strong>Lower Barriers to Entry:</strong> Colorado fosters a more accessible market with significantly lower fees: a <strong>$500 facilitator license</strong> (vs. $2,000 in OR) and a <strong>$6,000 healing center license</strong> (vs. $10,000 in OR).</span>
-                                </li>
+                    <div>
+                        <div class="bg-white p-6 rounded-lg border">
+                            <h4 class="font-bold text-lg">Property Highlights</h4>
+                            <ul class="mt-2 text-sm text-gray-700 list-disc list-inside space-y-2">
+                                <li>7,062 sq. ft. two-story office building with a new roof (2021).</li>
+                                <li>Located in a business park with a strong focus on health and wellness.</li>
+                                <li>Tranquil, private setting with mountain views, yet conveniently just off I-70 for easy access.</li>
+                                <li>Will be delivered vacant, allowing immediate customization.</li>
                             </ul>
                         </div>
                     </div>
                 </div>
-
-                <div class="mt-16 space-y-8">
-                    <div class="text-center">
-                        <h3 class="text-2xl font-bold text-gray-800">Projected Market Size: Oregon vs. Colorado</h3>
-                        <p class="mt-2 text-gray-600">A data-driven forecast of the Total Addressable Market (TAM) for Regulated Psilocybin Sessions.</p>
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div class="bg-white p-6 rounded-lg border border-gray-200 shadow-md text-center">
-                            <h4 class="text-xl font-semibold text-gray-500">Oregon <span class="text-sm font-normal">(Baseline)</span></h4>
-                            <p class="text-5xl font-bold text-gray-800 mt-2">~6,036</p>
-                            <p class="text-md text-gray-600">Annual Sessions</p>
-                        </div>
-                        <div class="bg-[#65C5B2]/10 p-6 rounded-lg border-2 border-[#65C5B2] shadow-lg text-center">
-                            <h4 class="text-xl font-semibold text-[#4a9484]">Colorado <span class="text-sm font-normal">(Projected)</span></h4>
-                            <p class="text-5xl font-bold text-[#65C5B2] mt-2">~8,872</p>
-                            <p class="text-md text-[#4a9484]">Annual Sessions</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="mt-16 pt-12 border-t border-gray-200">
-                    <div class="text-center mb-12">
-                        <h2 class="text-3xl md:text-4xl font-bold text-[#6283C2]">The Colorado Infrastructure Crisis</h2>
-                        <p class="mt-3 max-w-3xl mx-auto text-gray-600">
-                            Licensed facilitators require licensed healing centers to practice. Colorado is launching with a severe shortage of viable spaces, a problem set to worsen as hundreds more facilitators come online.
-                        </p>
-                    </div>
-                    <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
-                        <div class="p-6 bg-[#E31C78]/10 border border-[#E31C78]/30 rounded-lg">
-                            <p class="text-4xl font-bold text-[#E31C78]">10 of 11</p>
-                            <p class="mt-2 font-semibold text-[#E31C78]/80">Licensed centers have only 1 room and are not for rent.</p>
-                        </div>
-                        <div class="p-6 bg-[#E31C78]/10 border border-[#E31C78]/30 rounded-lg">
-                            <p class="text-4xl font-bold text-[#E31C78]">~5:1</p>
-                            <p class="mt-2 font-semibold text-[#E31C78]/80">Initial facilitator-to-center ratio, which will quickly grow.</p>
-                        </div>
-                         <div class="p-6 bg-[#E31C78]/10 border border-[#E31C78]/30 rounded-lg">
-                            <p class="text-4xl font-bold text-[#E31C78]">0</p>
-                            <p class="mt-2 font-semibold text-[#E31C78]/80">High-quality, multi-room, rentable healing centers with natural light near Denver.</p>
-                        </div>
-                    </div>
-                    <div class="text-center mt-8">
-                        <p class="text-xl font-semibold text-gray-800 max-w-2xl mx-auto">The question is: Where will the ~300 facilitators licensed this year actually be able to practice?</p>
-                    </div>
-                </div>
-
             </div>
         </section>
 
+        <section id="nnn-lease" class="py-16 md:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Repayment Security: The NNN Lease</h2>
+                <p class="mt-3 max-w-3xl mx-auto text-gray-600">The property-owning entity (LandCo) will execute a long-term Triple Net (NNN) lease with the operating company (OpCo), Ceremonia Spaces Inc. This structure ensures all property expenses and debt service are covered directly by the tenant, providing a stable, predictable income stream to service the loan.</p>
+                 <div class="max-w-4xl mx-auto mt-8 table-container">
+                    <h3 class="text-lg font-semibold bg-gray-50 p-4 text-center">Rent Coverage Analysis (Year 1, Base Case)</h3>
+                    <table class="w-full">
+                         <tbody class="divide-y">
+                            <tr>
+                                <td class="p-4">Total Annual NNN Lease Payment</td>
+                                <td class="p-4 text-right font-mono">$167,004</td>
+                                <td class="p-4 text-sm text-gray-500">Covers 100% of property debt & expenses</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4">Less: Guaranteed Anchor Revenue</td>
+                                <td class="p-4 text-right font-mono">($96,000)</td>
+                                <td class="p-4 text-sm text-gray-500">Covers 57% of the lease from Day 1</td>
+                            </tr>
+                            <tr class="bg-gray-50">
+                                <td class="p-4 font-semibold">Remaining Rent Obligation</td>
+                                <td class="p-4 text-right font-semibold font-mono">$71,004</td>
+                                <td class="p-4 text-sm"></td>
+                            </tr>
+                             <tr class="bg-green-50">
+                                <td class="p-4 font-semibold text-green-800">Projected Tenant Annual Revenue</td>
+                                <td class="p-4 text-right font-semibold text-green-800 font-mono">$907,000</td>
+                                <td class="p-4 text-sm font-semibold text-green-800">Provides a >5.4x coverage ratio on the total lease payment</td>
+                            </tr>
+                         </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="loan-terms-summary" class="py-16 md:py-24 section-bg border-t">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Loan Terms Summary</h2>
+                </div>
+                <div class="max-w-4xl mx-auto table-container">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="p-4 font-semibold">Term</th>
+                                <th class="p-4 font-semibold">1st Position: Seller Financing</th>
+                                <th class="p-4 font-semibold text-teal-800">2nd Position: Secured Loan (This Offer)</th>
+                                <th class="p-4 font-semibold">3rd Position: Bridge Loan</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y">
+                            <tr>
+                                <td class="p-4 font-semibold">Amount</td>
+                                <td class="p-4 font-mono">$550,000</td>
+                                <td class="p-4 font-mono text-teal-800 font-bold">$650,000</td>
+                                <td class="p-4 font-mono">$100,000</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold">Interest Rate</td>
+                                <td class="p-4 font-mono">7.0%</td>
+                                <td class="p-4 font-mono text-teal-800 font-bold">10.0%</td>
+                                <td class="p-4 font-mono">11.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold">Amortization</td>
+                                <td class="p-4">15 Years</td>
+                                <td class="p-4 text-teal-800 font-bold">10 Years</td>
+                                <td class="p-4">Interest Only</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold">Loan Term</td>
+                                <td class="p-4">5-Year Balloon</td>
+                                <td class="p-4 text-teal-800 font-bold">10 Years</td>
+                                <td class="p-4">12 Months</td>
+                            </tr>
+                             <tr>
+                                <td class="p-4 font-semibold">Personal Guarantee</td>
+                                <td class="p-4">N/A</td>
+                                <td class="p-4 text-teal-800 font-bold">Yes (Austin Mao)</td>
+                                <td class="p-4">Yes (Austin Mao)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <section id="proforma-calculator" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">LandCo SPV Proforma & Financial Model</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">This interactive financial model allows you to analyze the acquisition and performance of the property. Adjust the inputs to see how they impact the financial projections and debt service coverage in real-time.</p>
+                </div>
+                <div class="text-center">
+                    <button id="toggle-calculator-btn" class="bg-[#6283C2] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#496291] transition-transform transform hover:scale-105 shadow-lg">
+                        Open Proforma Calculator
+                    </button>
+                </div>
+                <div id="calculator-container" class="hidden mt-12">
+                    <!-- Calculator content will be injected here by JS -->
+                </div>
+            </div>
+        </section>
+        
+        <section id="due-diligence-summary" class="py-16 md:py-24 section-bg border-t">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Due Diligence Summary</h2>
+                </div>
+                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white p-4 rounded-lg border text-center">
+                        <h4 class="font-bold">Appraisal</h4>
+                        <p class="text-sm mt-1 text-gray-600">Appraised at <strong>$1.2M</strong>, providing a <strong>$150k immediate equity cushion</strong>. Full report available.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border text-center">
+                        <h4 class="font-bold">Property Condition</h4>
+                        <p class="text-sm mt-1 text-gray-600">Inspection complete. Roof replaced in 2021. No major structural issues identified. Full report available.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border text-center">
+                        <h4 class="font-bold">Environmental</h4>
+                        <p class="text-sm mt-1 text-gray-600">Phase I ESA complete. No Recognized Environmental Conditions (RECs) found. Full report available.</p>
+                    </div>
+                    <div class="bg-white p-4 rounded-lg border text-center">
+                        <h4 class="font-bold">Zoning & Title</h4>
+                        <p class="text-sm mt-1 text-gray-600">Zoning confirmed for intended use. Title search is clean. Full reports available.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="flythrough" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Virtual Fly-Through</h2>
+                    <p class="mt-3 max-w-2xl mx-auto text-gray-600">Experience the space and envision the future of healing at our flagship Golden, Colorado location.</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/WJo5Kqxagm4?si=tg_SjDmDNhjqLtfF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="opco-financials" class="py-16 md:py-24 section-bg border-t">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Tenant's Financial Projections</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">The operating company, Ceremonia Spaces Inc., has strong growth projections, ensuring it can comfortably meet its lease obligations and generate significant profit. The model below is interactive; select a scenario to see the impact on cash flow.</p>
+                </div>
+                
+                <div class="financials-card p-6 max-w-6xl mx-auto">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2 text-center">OpCo 12-Month Financial Forecast</h3>
+                    <div class="flex justify-center space-x-2 md:space-x-4 mb-6" id="main-scenario-controls">
+                        <button onclick="updateAll('low', this)" class="main-scenario-btn flex-1 md:flex-none py-2 px-6 text-sm font-semibold rounded-md bg-gray-200 text-gray-700 transition">Low Growth</button>
+                        <button onclick="updateAll('base', this)" class="main-scenario-btn flex-1 md:flex-none py-2 px-6 text-sm font-semibold rounded-md active">Base Case</button>
+                        <button onclick="updateAll('high', this)" class="main-scenario-btn flex-1 md:flex-none py-2 px-6 text-sm font-semibold rounded-md bg-gray-200 text-gray-700 transition">High Growth</button>
+                    </div>
+                    <div class="w-full h-96">
+                        <canvas id="financialChart"></canvas>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+                        <div class="text-center bg-gray-50 p-4 rounded-lg">
+                            <p class="text-sm font-semibold text-gray-700">Projected 12-Month Revenue</p>
+                            <p id="revenue-summary" class="text-3xl font-bold text-gray-800"></p>
+                        </div>
+                        <div class="text-center bg-green-50 p-4 rounded-lg border border-green-200">
+                            <p class="text-sm font-semibold text-green-800">Revenue to Debt Service Ratio</p>
+                            <p id="dscr-summary" class="text-3xl font-bold text-green-600"></p>
+                            <p class="text-xs text-gray-500">(OpCo Revenue / Total Annual Debt Service)</p>
+                        </div>
+                    </div>
+                     <button onclick="toggleDetails('revenue-model-details', this)" class="text-[#6283C2] text-sm mt-6 font-semibold">Show Revenue & Expense Model Details</button>
+                </div>
+                
+                <div class="details-content max-w-6xl mx-auto" id="revenue-model-details">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+                        <div class="financials-card p-6 flex flex-col">
+                            <h2 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">Revenue Model 1: Top-Down Market Share</h2>
+                            <div class="mt-4 space-y-4 text-sm">
+                                <div class="p-3 bg-blue-50 rounded-lg"><h4 class="font-semibold text-blue-800">Core Assumptions</h4><ul class="list-disc list-inside mt-1 text-gray-700 space-y-1"><li><strong>Market Size Basis:</strong> Uses Oregon's Q1 2025 client numbers (1,509).</li><li><strong>State Adjustments:</strong> 1.48x tourism multiplier, 1.43x population multiplier.</li><li><strong>Market Mix:</strong> 80% tourism, 20% domestic.</li><li><strong>Competitive Landscape:</strong> 1 room/micro-center, 3 rooms/healing center.</li><li><strong>Revenue per Session:</strong> $500.</li></ul></div>
+                                <div><h4 class="font-semibold text-gray-700">1. Baseline Annual Sessions</h4><p class="text-gray-600">1,509 clients/qtr * 4 = <span class="font-bold text-blue-600">6,036</span></p></div>
+                                <div><h4 class="font-semibold text-gray-700">2. Projected Colorado Market Size</h4><p class="text-gray-600">Tourism + Domestic = <span class="font-bold text-blue-600">8,885</span></p></div>
+                                <div><h4 class="font-semibold text-gray-700">3. Ceremonia's Market Share</h4><p class="text-gray-600">14 / 69 total rooms = <span class="font-bold text-blue-600">20.29%</span></p></div>
+                            </div>
+                        </div>
+                        <div class="financials-card p-6 flex flex-col">
+                            <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">Revenue Model 2: Bottom-Up Utilization</h2>
+                            <div class="mt-4 space-y-4 text-sm">
+                                <div class="p-3 bg-green-50 rounded-lg"><h4 class="font-semibold text-green-800">Core Assumptions</h4><ul class="list-disc list-inside mt-1 text-gray-700 space-y-1"><li><strong>Standard Room Price:</strong> $497/day for all rooms.</li><li><strong>Phased Rollout:</strong> Phase 1 (5 Rms), Phase 2 (10 Rms), Phase 3 (14 Rms).</li></ul></div>
+                                <div><h4 class="font-semibold text-gray-700 mb-2">Select Utilization Scenario:</h4><div class="flex space-x-2" id="utilization-controls"><button onclick="calculateUtilization(0.25, this)" class="util-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">Low (25%)</button><button onclick="calculateUtilization(0.50, this)" class="util-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md active">Base (50%)</button><button onclick="calculateUtilization(0.75, this)" class="util-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">High (75%)</button></div></div>
+                                <div id="utilization-output" class="mt-4"></div>
+                            </div>
+                        </div>
+                        <div class="financials-card p-6 flex flex-col">
+                            <h2 class="text-2xl font-bold text-purple-700 border-b-2 border-purple-200 pb-2 mb-4">Revenue Model 3: Facilitator Onboarding</h2>
+                            <div class="mt-4 space-y-4 text-sm">
+                                <div class="p-3 bg-purple-50 rounded-lg"><h4 class="font-semibold text-purple-800">Core Assumptions</h4><ul class="list-disc list-inside mt-1 text-gray-700"><li><strong>Standard Room Price:</strong> $497/day.</li><li><strong>Guaranteed Revenue:</strong> ~$18,794/month.</li><li><strong>Growth Driver:</strong> New facilitators/month.</li><li><strong>Seasonality:</strong> 65% slump in Nov/Dec.</li><li><strong>Activity:</strong> 2 room-days/facilitator/month.</li></ul></div>
+                                <div><h4 class="font-semibold text-gray-700 mb-2">Select Onboarding Scenario:</h4><div class="flex space-x-2" id="model3-controls"><button onclick="updateModel3('low', this, true)" class="model3-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">Low (+4/mo)</button><button onclick="updateModel3('base', this, true)" class="model3-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md active">Base (+8/mo)</button><button onclick="updateModel3('high', this, true)" class="model3-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">High (+16/mo)</button></div></div>
+                                <div class="h-48 overflow-y-auto border rounded-lg mt-4"><table class="w-full text-left text-xs"><thead class="sticky top-0 bg-white z-10"><tr class="border-b"><th class="py-2 px-2 font-semibold">Month</th><th class="py-2 px-2 font-semibold text-right">Revenue</th><th class="py-2 px-2 font-semibold text-right">% Util.</th></tr></thead><tbody id="facilitator-table-body"></tbody></table></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
+                        <div class="financials-card p-6 flex flex-col bg-blue-50 border border-blue-200 lg:col-span-2">
+                             <h2 class="text-xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">Operating Expense Breakdown</h2>
+                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                <div>
+                                    <h3 class="font-semibold text-blue-800">Fixed & Tiered Monthly Costs</h3>
+                                    <p class="text-xs text-blue-700 mb-2">Costs that scale with operational phases.</p>
+                                    <table class="w-full text-sm">
+                                        <thead class="bg-gray-50"><tr><th class="p-2 text-left">Item</th><th class="p-2 text-center">Phase 1</th><th class="p-2 text-center">Phase 2</th><th class="p-2 text-center">Phase 3</th></tr></thead>
+                                        <tbody>
+                                            <tr class="border-b"><td class="p-2 font-semibold" colspan="4">Fixed Costs</td></tr>
+                                            <tr class="border-b"><td class="p-2 pl-4">NNN Lease</td><td class="p-2 text-center font-mono" colspan="3">$13,917</td></tr>
+                                            <tr class="border-b"><td class="p-2 pl-4">Software & Support</td><td class="p-2 text-center font-mono" colspan="3">$2,000</td></tr>
+                                            <tr class="border-b"><td class="p-2 pl-4">Accounting</td><td class="p-2 text-center font-mono" colspan="3">$250</td></tr>
+                                            <tr class="border-b"><td class="p-2 font-semibold" colspan="4">Tiered Costs</td></tr>
+                                            <tr class="border-b"><td class="p-2 pl-4">Shared Payroll</td><td class="p-2 text-center font-mono">$16,500</td><td class="p-2 text-center font-mono">$11,655</td><td class="p-2 text-center font-mono">$9,375</td></tr>
+                                            <tr class="border-b"><td class="p-2 pl-4">Janitorial</td><td class="p-2 text-center font-mono">$1,000</td><td class="p-2 text-center font-mono">$1,500</td><td class="p-2 text-center font-mono">$2,000</td></tr>
+                                            <tr class="border-b"><td class="p-2 pl-4">On-Site Staff</td><td class="p-2 text-center font-mono">$2,340</td><td class="p-2 text-center font-mono">$3,120</td><td class="p-2 text-center font-mono">$4,680</td></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div>
+                                    <h3 class="font-semibold text-blue-800">Variable Costs & CapEx</h3>
+                                     <p class="text-xs text-blue-700 mb-2">Revenue-driven costs and one-time build-out expenses.</p>
+                                     <div class="p-3 bg-white rounded-lg mb-4">
+                                         <h4 class="font-semibold text-gray-700">Variable Costs</h4>
+                                         <p class="text-xs text-gray-600">Composed of a 5% transaction fee on all revenue and a $75 cost per occupied room day for supplies and laundry.</p>
+                                     </div>
+                                     <div class="p-3 bg-white rounded-lg">
+                                         <h4 class="font-semibold text-gray-700">Capital Expenditures</h4>
+                                         <ul class="text-xs text-gray-600 list-disc list-inside mt-1">
+                                             <li><strong>Phase 1:</strong> $64,590 (Remodel, furniture, buffer)</li>
+                                             <li><strong>Phase 2:</strong> $33,500 (Construction, new furnishings)</li>
+                                             <li><strong>Phase 3:</strong> $14,000 (Final furnishings)</li>
+                                         </ul>
+                                     </div>
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="context" class="py-16 md:py-24 section-bg border-t">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Business Context: Why This Tenant Will Succeed</h2>
+                </div>
+                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                     <div>
+                        <h3 class="text-2xl font-bold mb-4">The Colorado Psychedelic Infrastructure Crisis</h3>
+                        <p class="text-gray-600">Oregon's market proves a systemic shortage of practice space exists, with a <strong>13.8-to-1 ratio</strong> of facilitators to centers. Colorado faces an even greater shortage, creating a clear and immediate demand for our tenant's services.</p>
+                    </div>
+                     <div>
+                        <h3 class="text-2xl font-bold mb-4">The Ceremonia Solution</h3>
+                        <p class="text-gray-600">Ceremonia Spaces provides the premier, turnkey, compliant facility for Colorado's hundreds of licensed facilitators, capturing an estimated <strong>20% of the state's market share</strong> from this single flagship location.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Section 4: Solution -->
         <section id="solution" class="py-16 md:py-24 section-bg border-t">
             <div class="container mx-auto px-6">
@@ -524,257 +552,64 @@
                 </div>
             </div>
         </section>
-
         
-                <section id="real-estate-analysis" class="py-16 md:py-24 section-bg">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Real Estate Investment Analysis</h2>
-                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
-                        This summary provides a comprehensive analysis of the real estate investment at 538 Commons Dr. to de-risk the acquisition. The purchase price is well-supported by market data, and the property's location and existing conditions are favorable for the intended use as a healing center.
-                    </p>
-                </div>
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div>
-                        <div class="space-y-6">
-                            <div class="stat-card grid grid-cols-2 gap-4">
-                                <div>
-                                    <p class="stat-value">$1.05M</p>
-                                    <p class="stat-label">Acquisition Price</p>
-                                </div>
-                                 <div>
-                                    <p class="stat-value">$1.2M</p>
-                                    <p class="stat-label">Appraised Value</p>
-                                </div>
-                                <div class="col-span-2">
-                                    <p class="stat-value text-green-600">$150,000</p>
-                                    <p class="stat-label">Immediate Equity Cushion</p>
-                                </div>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg border">
-                                <h4 class="font-bold text-lg">Market Valuation & Comparables</h4>
-                                <ul class="mt-2 text-sm text-gray-700 list-disc list-inside space-y-2">
-                                    <li>Our purchase price of <strong>~$149/SF</strong> is highly favorable compared to premium downtown Golden offices trading for over <strong>$300/SF</strong>.</li>
-                                    <li>A modernized comp sold for <strong>~$316/SF</strong> in March 2024.</li>
-                                    <li>This aligns perfectly with market rates for suburban offices in the $150–$200/SF range, confirming we are acquiring the asset at or below fair market value.</li>
-                                </ul>
-                            </div>
-                            <div class="bg-white p-6 rounded-lg border">
-                                <h4 class="font-bold text-lg">Property Details & Suitability</h4>
-                                <ul class="mt-2 text-sm text-gray-700 list-disc list-inside space-y-2">
-                                    <li>7,062 sq. ft. two-story office building with a new roof (2021).</li>
-                                    <li>Located in a business park with a strong focus on health and wellness, creating a synergistic environment.</li>
-                                    <li>Tranquil, private setting with mountain views, yet conveniently just off I-70 for easy access.</li>
-                                    <li>Will be delivered vacant, allowing immediate customization without tenant buyouts.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.751680199148!2d-105.2913388846247!3d39.7225199794519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b8180a53b1229%3A0x4a4c483a3bff8b27!2s538%20Commons%20Dr%2C%20Golden%2C%20CO%2080401!5e0!3m2!1sen!2sus!4v1689708940833!5m2!1sen!2sus" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-xl shadow-lg"></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NEW Virtual Fly-Through Section -->
-        <section id="flythrough" class="py-16 md:py-24">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Virtual Fly-Through</h2>
-                    <p class="mt-3 max-w-2xl mx-auto text-gray-600">
-                        Experience the space and envision the future of healing at our flagship Golden, Colorado location.
-                    </p>
-                </div>
-                <div class="max-w-4xl mx-auto">
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/WJo5Kqxagm4?si=tg_SjDmDNhjqLtfF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- NEW GTM Strategy Section -->
-        <section id="strategy" class="py-16 md:py-24">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl font-bold mb-4 text-[#3D352E]">Go-to-Market & De-Risking Strategy</h2>
-                    <p class="max-w-3xl mx-auto text-lg text-gray-600">
-                        Our strategy is engineered to rapidly capture the Colorado market by leveraging unique regulatory advantages, strategic partnerships, and guaranteed anchor tenancy. This approach secures immediate revenue, de-risks the investment, and establishes Ceremonia Spaces as the premier destination for psychedelic wellness professionals.
-                    </p>
-                </div>
-                <div class="space-y-12">
-                    <!-- Strategy 1 -->
-                    <div class="strategy-card">
-                        <div class="flex flex-col md:flex-row items-center gap-8">
-                            <div class="flex-shrink-0">
-                                <div class="bg-[#65C5B2]/20 text-[#4a9484] rounded-full p-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" /></svg>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold mb-3">1. Capturing the Training Practicum Market: A Regulatory "Moat"</h3>
-                                <p class="text-gray-600 mb-4">Our primary advantage stems from the Colorado regulation mandating that all facilitator <span class="font-semibold text-[#4a9484]">training practicums</span> must occur in state-licensed healing centers. As the only licensed group space in the Denver metro area, we hold a functional monopoly on this critical stage of facilitator education.</p>
-                                <div class="mt-4 bg-[#65C5B2]/10 rounded-lg p-4">
-                                    <p class="text-lg font-semibold text-gray-800">Quantifiable Practicum Market</p>
-                                    <p class="text-gray-700">With 300+ facilitators to be licensed in 2025, we project at least 150 will conduct their practicums at our facility. At <span class="font-semibold">$600 per trainee for the two-day practicum</span>, this represents an immediate <span class="font-bold text-2xl text-[#4a9484]">$90,000</span> market opportunity.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Strategy 2 -->
-                    <div class="strategy-card">
-                        <div class="flex flex-col md:flex-row items-center gap-8">
-                            <div class="flex-shrink-0">
-                                <div class="bg-[#6283C2]/20 text-[#496291] rounded-full p-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold mb-3">2. Strategic Partnerships & Affiliate Channels</h3>
-                                <p class="text-gray-600 mb-4">We are establishing formal partnerships with key directories like the <span class="font-semibold">Healing Advocacy Fund</span> and <span class="font-semibold">Althea</span>, plus training center alumni networks. We will offer a competitive affiliate payout for referrals, creating a low-cost, high-efficiency client acquisition strategy.</p>
-                                <div class="mt-4 bg-[#6283C2]/10 rounded-lg p-4">
-                                    <p class="text-lg font-semibold text-gray-800">Unmatched Competitive Advantage</p>
-                                    <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
-                                        <li><strong>Virtual Monopoly:</strong> The only rentable, licensed group space.</li>
-                                        <li><strong>Turnkey Operation:</strong> Premium, compliant, and hassle-free.</li>
-                                        <li><strong>Unique Setting:</strong> A licensed center in nature with mountain views.</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Strategy 3 -->
-                    <div class="strategy-card">
-                         <div class="flex flex-col md:flex-row items-center gap-8">
-                            <div class="flex-shrink-0">
-                                <div class="bg-sky-100 text-sky-700 rounded-full p-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                    </svg>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold mb-3">3. Digital Dominance & SEO Leadership</h3>
-                                <p class="text-gray-600 mb-4">Our brand, Ceremonia, is already a recognized leader in the digital space, providing a significant inbound marketing advantage. This organic traffic drastically reduces customer acquisition costs and validates our market authority.</p>
-                                <div class="mt-4 bg-sky-50 rounded-lg p-4">
-                                    <p class="text-lg font-semibold text-gray-800">Top Google Rankings</p>
-                                    <ul class="list-disc list-inside text-gray-700 space-y-1 mt-2">
-                                        <li><span class="font-semibold">#1 Ranked:</span> "colorado psilocybin", "colorado ayahuasca", "colorado psychedelic retreat"</li>
-                                        <li><span class="font-semibold">Top 5 Ranked:</span> "colorado psychedelic therapy"</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                     <!-- Strategy 4 -->
-                    <div class="strategy-card">
-                        <div class="flex flex-col md:flex-row items-center gap-8">
-                            <div class="flex-shrink-0">
-                                <div class="bg-amber-100 text-amber-700 rounded-full p-4">
-                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold mb-3">4. De-Risking the Investment: Pre-Launch Commitments</h3>
-                                <p class="text-gray-600">Our immediate focus is converting market interest into tangible, binding commitments to significantly de-risk the investment prior to our full operational launch.</p>
-                                <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-                                    <div class="bg-amber-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-amber-900">LOIs from Training Centers</h4>
-                                        <p class="text-gray-700">We are already engaging top training centers, including <span class="font-bold">Synthesis</span> and <span class="font-bold">Changa Institute</span>, to sign formal Letters of Intent.</p>
-                                    </div>
-                                    <div class="bg-amber-50 rounded-lg p-4">
-                                        <h4 class="font-semibold text-amber-900">Facilitator Pre-Bookings</h4>
-                                        <p class="text-gray-700">Accepting room rentals for mid-September onwards to provide upfront cash flow and validate demand.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                     <!-- Strategy 5 -->
-                    <div class="strategy-card">
-                        <div class="flex flex-col md:flex-row items-center gap-8">
-                            <div class="flex-shrink-0">
-                                <div class="bg-emerald-100 text-emerald-700 rounded-full p-4">
-                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m-1 4h1m5-4h1m-1 4h1m-1-4h1m-1 4h1" /></svg>
-                                </div>
-                            </div>
-                            <div>
-                                <h3 class="text-2xl font-bold mb-3">5. Guaranteed Revenue: Anchor Tenant Commitments</h3>
-                                <p class="text-gray-600 mb-4">To establish a stable and predictable revenue baseline from day one, we have secured commitments from two anchor tenants, covering a significant portion of our initial operating expenses.</p>
-                                <div class="mt-4 grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-500">
-                                        <h4 class="font-semibold text-emerald-900">Ceremonia Journeys</h4>
-                                        <p class="text-2xl font-bold text-emerald-800 mt-2">$6,000 / month</p>
-                                        <p class="text-gray-600">3 days/month for group space, plus 2x/week for individual rooms. Growing to two retreats/month by Jan 2026.</p>
-                                    </div>
-                                    <div class="bg-emerald-50 rounded-lg p-4 border-l-4 border-emerald-500">
-                                        <h4 class="font-semibold text-emerald-900">Ceremonia EDU</h4>
-                                        <p class="text-2xl font-bold text-emerald-800 mt-2">$2,000 / month</p>
-                                        <p class="text-gray-600">1 weekend/month for group space for for-profit training.</p>
-                                    </div>
-                                </div>
-                                <div class="mt-6 bg-emerald-200 text-emerald-900 font-bold text-center rounded-lg p-3">
-                                    Total Guaranteed Baseline Revenue: $8,000 / month
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <!-- Section 5: Brand Ecosystem -->
-        <section id="brand" class="py-16 md:py-24 section-bg border-t">
+        <section id="ecosystem" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">The Ceremonia Ecosystem</h2>
-                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
-                        Ceremonia is more than a single company; it's an integrated ecosystem designed to build a safe, scalable, and spiritually grounded psychedelic healing industry. Each entity creates a defensible moat and a synergistic advantage for the others.
-                    </p>
+                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">The tenant's success is supported by a synergistic ecosystem of entities that drive revenue, ensure compliance, and build a defensible market position.</p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto items-start">
-                    <!-- Card 1: Ceremonia Journeys -->
                     <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm h-full flex flex-col">
                         <h3 class="font-bold text-xl text-center">🌿 Ceremonia Journeys</h3>
                         <p class="text-center text-sm font-semibold text-gray-500">(Nonprofit)</p>
-                        <img src="images/sacred_space.jpg" alt="Sacred space for Ceremonia Journeys" class="my-4 rounded-lg shadow-md">
-                        <p class="text-sm text-gray-600 flex-grow">The established and trusted brand for legal, sacramental psilocybin retreats. It provides the brand with a foundation of trust, community, and operational excellence.</p>
+                        <p class="mt-4 text-sm text-gray-600 flex-grow">The established and trusted brand for legal psilocybin retreats. It provides a foundation of trust and operational excellence, and acts as a primary anchor tenant.</p>
                     </div>
-                    <!-- Card 2: Ceremonia EDU -->
                     <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm h-full flex flex-col">
                         <h3 class="font-bold text-xl text-center">🧑‍🎓 Ceremonia EDU</h3>
                         <p class="text-center text-sm font-semibold text-gray-500">(For-Profit Training)</p>
-                        <p class="mt-4 text-sm text-gray-600 flex-grow">A state-approved facilitator training program that serves as the engine for our <strong>customer acquisition flywheel</strong>. By hosting mandatory practicums, it funnels a steady stream of newly licensed facilitators directly to Ceremonia Spaces.</p>
+                        <p class="mt-4 text-sm text-gray-600 flex-grow">A state-approved facilitator training program that serves as a customer acquisition flywheel, funneling newly licensed facilitators directly to Ceremonia Spaces.</p>
                     </div>
-                    <!-- Card 3: Ceremonia Spaces -->
                     <div class="bg-white p-6 rounded-xl border border-gray-200 shadow-sm h-full flex flex-col">
                          <h3 class="font-bold text-xl text-center">🏢 Ceremonia Spaces</h3>
                         <p class="text-center text-sm font-semibold text-gray-500">(Public Benefit Corp.)</p>
-                        <p class="mt-4 text-sm text-gray-600 flex-grow">The scalable, for-profit real estate arm and the focus of this investment. It provides turnkey, compliant facilities to the captive B2B market of facilitators created by our brand and trained by Ceremonia EDU, solving the market's core bottleneck.</p>
+                        <p class="mt-4 text-sm text-gray-600 flex-grow">The scalable, for-profit real estate arm (the tenant) that provides turnkey facilities to the captive B2B market created by our brand and trained by Ceremonia EDU.</p>
                     </div>
-                </div>
-                <div class="mt-8 max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
-                    <div class="highlight-card"><p class="highlight-value">May 2022</p><p class="highlight-label">Founded</p></div>
-                    <div class="highlight-card"><p class="highlight-value">Top 3</p><p class="highlight-label">Psilocybin Retreats in US</p></div>
-                    <div class="highlight-card"><p class="highlight-value">318</p><p class="highlight-label">Alumni</p></div>
-                    <div class="highlight-card"><p class="highlight-value">52</p><p class="highlight-label">Retreats</p></div>
-                    <div class="highlight-card"><p class="highlight-value">929+</p><p class="highlight-label">Sessions Served</p></div>
-                    <div class="highlight-card"><p class="highlight-value">200+</p><p class="highlight-label">5-Star Reviews</p></div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 6: Founder -->
+        <section id="legal-overview" class="py-16 md:py-24 section-bg border-t">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Legal & Entity Structure</h2>
+                     <p class="mt-3 max-w-3xl mx-auto text-gray-600">Our sophisticated, multi-entity structure ensures regulatory compliance, maximizes tax efficiency, minimizes investor liability, and clearly delineates roles to facilitate scalable growth and risk mitigation.</p>
+                </div>
+                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start max-w-6xl mx-auto">
+                    <div class="bg-white p-6 rounded-lg border">
+                        <h3 class="font-bold text-lg mb-2">Ceremonia Holdings, LLC</h3>
+                        <p class="text-sm text-gray-700">Provides consolidated governance and holds ownership stakes. Acts as the General Partner (GP) of the property-owning LLC.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border">
+                        <h3 class="font-bold text-lg mb-2">Ceremonia Spaces Colorado I, LLC (LandCo)</h3>
+                        <p class="text-sm text-gray-700">The property owner and investment SPV. It is fully insulated from direct operational risk and provides a fixed return to investors via the lease.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border">
+                        <h3 class="font-bold text-lg mb-2">Ceremonia Spaces, Inc. (OpCo)</h3>
+                        <p class="text-sm text-gray-700">The master tenant responsible for all operations and lease payments. Generates non-280E taxable income.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border">
+                        <h3 class="font-bold text-lg mb-2">Ceremonia Healing Center, Inc.</h3>
+                        <p class="text-sm text-gray-700">A separate C-Corp that holds the state healing center license, isolating all plant-touching activities and IRS §280E tax exposure.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="founder" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Founder & Vision</h2>
-                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
-                        A successful venture is led by a founder with the precise blend of industry expertise and operational capability.
-                    </p>
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Experienced Leadership</h2>
                 </div>
                 <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                     <div class="md:col-span-1">
@@ -783,365 +618,16 @@
                     <div class="md:col-span-2 bg-white p-8 rounded-xl border border-gray-200">
                         <h3 class="text-2xl font-bold">Austin Mao</h3>
                         <p class="text-md font-semibold text-[#65C5B2]">Founder & CEO, Ceremonia</p>
-                        <p class="mt-4 text-gray-600">Austin is a pioneering entrepreneur and policy leader in the regulated psychedelic ecosystem. As Colorado's first licensed Legacy Healer, he combines deep facilitation experience with a proven track record of scaling hospitality and real estate ventures.</p>
-                        <div class="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                            <div class="highlight-card">
-                                <p class="highlight-value">600+</p>
-                                <p class="highlight-label">Individuals Facilitated</p>
-                            </div>
-                            <div class="highlight-card">
-                                <p class="highlight-value">Top 3</p>
-                                <p class="highlight-label">Psilocybin Retreats in US</p>
-                            </div>
-                            <div class="highlight-card">
-                               <p class="highlight-value">#1</p>
-                               <p class="highlight-label">STR Portfolio in Las Vegas</p>
-                            </div>
-                        </div>
-                        <div class="mt-6 pt-4 border-t border-gray-200">
-                             <h4 class="font-semibold text-gray-800">Additional Highlights:</h4>
-                             <ul class="mt-2 space-y-2 text-sm list-disc list-inside text-gray-700">
-                                <li>Colorado's 1st Licensed Facilitator (Legacy Healer Pathway)</li>
-                                <li>Advisor to Colorado Governor's Office & DORA</li>
-                                <li>Scaled largest short-term rental portfolio in Las Vegas to 2000+ monthly guests over 24 owned homes</li>
-                                <li>Recognized as a thought leader with keynote presentations at <strong>TEDxBoulder, Mindvalley,</strong> and the <strong>Conscious Entrepreneur Summit</strong>.</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- NEW Financials Section -->
-        <section id="financials" class="py-16 md:py-24 section-bg border-t">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl font-bold text-gray-800">Financial Projections</h2>
-                    <div class="inline-block w-24 h-1 bg-[#65C5B2] rounded-full mt-2"></div>
-                </div>
-                <p class="text-center max-w-3xl mx-auto text-gray-600 mb-8">The following projections are for the operating company, <strong>Ceremonia Spaces Inc.</strong>, to demonstrate its strong ability to service its lease payments to the property-owning SPV. The model is de-risked by <strong>$8,000/month in guaranteed revenue</strong> from anchor tenants, covering 57% of the total NNN lease payment from day one.</p>
-
-                <div class="financials-card p-6 mb-8">
-                    <h2 class="text-xl font-bold text-gray-800 mb-2">12-Month Financial Forecast</h2>
-                    <p class="text-sm text-gray-600 mb-4">The chart below stacks Revenue and OpEx to visually represent EBITDA, with Cash Balance as an overlaid line. The total 12-month EBITDA for the selected scenario is displayed below.</p>
-                    <div class="flex justify-center space-x-2 md:space-x-4 mb-6" id="main-scenario-controls">
-                        <button onclick="updateAll('low', this)" class="main-scenario-btn flex-1 md:flex-none py-2 px-6 text-sm font-semibold rounded-md bg-gray-200 text-gray-700 transition">Low Growth</button>
-                        <button onclick="updateAll('base', this)" class="main-scenario-btn flex-1 md:flex-none py-2 px-6 text-sm font-semibold rounded-md active">Base Case</button>
-                        <button onclick="updateAll('high', this)" class="main-scenario-btn flex-1 md:flex-none py-2 px-6 text-sm font-semibold rounded-md bg-gray-200 text-gray-700 transition">High Growth</button>
-                    </div>
-                    <div class="w-full h-96">
-                        <canvas id="financialChart"></canvas>
-                    </div>
-                    <div class="text-center mt-4 bg-gray-50 p-3 rounded-lg">
-                        <p class="text-sm font-semibold text-gray-700">Projected 12-Month EBITDA</p>
-                        <p id="ebitda-summary" class="text-3xl font-bold text-gray-800"></p>
-                    </div>
-                </div>
-
-                <div class="financials-card p-6 mb-8 text-center bg-[#65C5B2]/10 border border-[#65C5B2]/30">
-                    <h2 class="text-xl font-bold text-[#4a9484]">Blended Annual Revenue Projection</h2>
-                    <p class="text-sm text-[#4a9484] mb-2">(Weighted 33% from each model's current scenario)</p>
-                    <p id="blended-revenue-display" class="text-5xl font-bold text-[#4a9484]">$597,110</p>
-                </div>
-                
-                <div class="financials-card p-6 mb-8">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Revenue Modeling Approach</h3>
-                    <p class="text-sm text-gray-600">To create a robust forecast, we utilize three distinct revenue models. A key component of our financial stability is the presence of anchor tenants (Ceremonia Journeys & Ceremonia Edu), whose commitments of <strong>$8,000/month</strong> cover <strong>57% of the total NNN lease payment</strong> from day one.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center mt-4">
-                        <div class="bg-blue-50 p-4 rounded-lg border border-blue-200">
-                            <p class="text-sm font-semibold text-blue-800">Revenue Model 1</p>
-                            <p id="model1-summary-val" class="text-3xl font-bold text-blue-600">$901,624</p>
-                            <p class="text-xs text-blue-700">Top-Down Market Share</p>
-                        </div>
-                        <div class="bg-green-50 p-4 rounded-lg border border-green-200">
-                            <p class="text-sm font-semibold text-green-800">Revenue Model 2</p>
-                            <p id="model2-summary-val" class="text-3xl font-bold text-green-600">$439,596</p>
-                            <p class="text-xs text-green-700">Bottom-Up Utilization</p>
-                        </div>
-                        <div class="bg-purple-50 p-4 rounded-lg border border-purple-200">
-                            <p class="text-sm font-semibold text-purple-800">Revenue Model 3</p>
-                            <p id="model3-summary-val" class="text-3xl font-bold text-purple-600">$450,110</p>
-                            <p class="text-xs text-purple-700">Facilitator Onboarding</p>
-                        </div>
-                    </div>
-                    <button onclick="toggleDetails('revenue-model-details', this)" class="text-[#6283C2] text-sm mt-4 self-start font-semibold">Show Revenue Model Details</button>
-                </div>
-
-                <div class="details-content" id="revenue-model-details">
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
-                        <div class="financials-card p-6 flex flex-col">
-                            <h2 class="text-2xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">Revenue Model 1: Top-Down Market Share</h2>
-                            <div class="mt-4 space-y-4 text-sm">
-                                <div class="p-3 bg-blue-50 rounded-lg"><h4 class="font-semibold text-blue-800">Core Assumptions</h4><ul class="list-disc list-inside mt-1 text-gray-700 space-y-1"><li><strong>Market Size Basis:</strong> Uses Oregon's Q1 2025 client numbers (1,509).</li><li><strong>State Adjustments:</strong> 1.48x tourism multiplier, 1.43x population multiplier.</li><li><strong>Market Mix:</strong> 80% tourism, 20% domestic.</li><li><strong>Competitive Landscape:</strong> 1 room/micro-center, 3 rooms/healing center.</li><li><strong>Revenue per Session:</strong> $500.</li></ul></div>
-                                <div><h4 class="font-semibold text-gray-700">1. Baseline Annual Sessions</h4><p class="text-gray-600">1,509 clients/qtr * 4 = <span class="font-bold text-blue-600">6,036</span></p></div>
-                                <div><h4 class="font-semibold text-gray-700">2. Projected Colorado Market Size</h4><p class="text-gray-600">Tourism + Domestic = <span class="font-bold text-blue-600">8,885</span></p></div>
-                                <div><h4 class="font-semibold text-gray-700">3. Ceremonia's Market Share</h4><p class="text-gray-600">14 / 69 total rooms = <span class="font-bold text-blue-600">20.29%</span></p></div>
-                            </div>
-                        </div>
-                        <div class="financials-card p-6 flex flex-col">
-                            <h2 class="text-2xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">Revenue Model 2: Bottom-Up Utilization</h2>
-                            <div class="mt-4 space-y-4 text-sm">
-                                <div class="p-3 bg-green-50 rounded-lg"><h4 class="font-semibold text-green-800">Core Assumptions</h4><ul class="list-disc list-inside mt-1 text-gray-700 space-y-1"><li><strong>Standard Room Price:</strong> $497/day for all rooms.</li><li><strong>Phased Rollout:</strong> Phase 1 (5 Rms), Phase 2 (10 Rms), Phase 3 (14 Rms).</li></ul></div>
-                                <div><h4 class="font-semibold text-gray-700 mb-2">Select Utilization Scenario:</h4><div class="flex space-x-2" id="utilization-controls"><button onclick="calculateUtilization(0.25, this)" class="util-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">Low (25%)</button><button onclick="calculateUtilization(0.50, this)" class="util-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md active">Base (50%)</button><button onclick="calculateUtilization(0.75, this)" class="util-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">High (75%)</button></div></div>
-                                <div id="utilization-output" class="mt-4"></div>
-                            </div>
-                        </div>
-                        <div class="financials-card p-6 flex flex-col">
-                            <h2 class="text-2xl font-bold text-purple-700 border-b-2 border-purple-200 pb-2 mb-4">Revenue Model 3: Facilitator Onboarding</h2>
-                            <div class="mt-4 space-y-4 text-sm">
-                                <div class="p-3 bg-purple-50 rounded-lg"><h4 class="font-semibold text-purple-800">Core Assumptions</h4><ul class="list-disc list-inside mt-1 text-gray-700"><li><strong>Standard Room Price:</strong> $497/day.</li><li><strong>Guaranteed Revenue:</strong> ~$18,794/month.</li><li><strong>Growth Driver:</strong> New facilitators/month.</li><li><strong>Seasonality:</strong> 65% slump in Nov/Dec.</li><li><strong>Activity:</strong> 2 room-days/facilitator/month.</li></ul></div>
-                                <div><h4 class="font-semibold text-gray-700 mb-2">Select Onboarding Scenario:</h4><div class="flex space-x-2" id="model3-controls"><button onclick="updateAll('low', this, true)" class="model3-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">Low (+4/mo)</button><button onclick="updateAll('base', this, true)" class="model3-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md active">Base (+8/mo)</button><button onclick="updateAll('high', this, true)" class="model3-btn flex-1 py-2 px-4 text-xs font-semibold rounded-md bg-gray-200 text-gray-700 transition">High (+16/mo)</button></div></div>
-                                <div><h4 class="font-semibold text-gray-700 mt-4">12-Month Revenue & Utilization</h4><div class="h-48 overflow-y-auto border rounded-lg"><table class="w-full text-left text-xs"><thead class="sticky top-0 bg-white z-10"><tr class="border-b"><th class="py-2 px-2 font-semibold">Month</th><th class="py-2 px-2 font-semibold text-right">Revenue</th><th class="py-2 px-2 font-semibold text-right">% Util.</th></tr></thead><tbody id="facilitator-table-body"></tbody></table></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                 <div class="financials-card p-6 mt-8">
-                    <h3 class="text-xl font-bold text-gray-800 mb-2">Operating Expense & Capital Plan</h3>
-                     <p class="text-sm text-gray-600">The expense model is dynamic. Below is a summary of the average total monthly expenses for each operational phase, based on the Base Case scenario.</p>
-                     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center mt-4">
-                         <div class="bg-red-50 p-4 rounded-lg border border-red-200">
-                             <p class="text-sm font-semibold text-red-800">Phase 1 (Sep-Dec)</p>
-                             <p class="text-3xl font-bold text-red-600">$41,185</p>
-                             <p class="text-xs text-red-700">Avg. Monthly Expense</p>
-                         </div>
-                         <div class="bg-red-50 p-4 rounded-lg border border-red-200">
-                             <p class="text-sm font-semibold text-red-800">Phase 2 (Jan-Apr)</p>
-                             <p class="text-3xl font-bold text-red-600">$46,385</p>
-                             <p class="text-xs text-red-700">Avg. Monthly Expense</p>
-                         </div>
-                         <div class="bg-red-50 p-4 rounded-lg border border-red-200">
-                             <p class="text-sm font-semibold text-red-800">Phase 3 (May-Aug)</p>
-                             <p class="text-3xl font-bold text-red-600">$54,482</p>
-                             <p class="text-xs text-red-700">Avg. Monthly Expense</p>
-                         </div>
-                     </div>
-                    <button onclick="toggleDetails('expense-details-wrapper', this)" class="text-[#6283C2] text-sm mt-4 self-start font-semibold">Show Expense & CapEx Details</button>
-                </div>
-                 <div class="details-content" id="expense-details-wrapper">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
-                        <div class="financials-card p-6 flex flex-col bg-blue-50 border border-blue-200">
-                            <h2 class="text-xl font-bold text-blue-700 border-b-2 border-blue-200 pb-2 mb-4">A. Fixed Monthly Costs</h2>
-                            <p class="text-3xl font-bold text-blue-600">$16,167</p>
-                            <p class="text-sm text-blue-600 mb-4">Stable baseline costs incurred monthly.</p>
-                            <div class="mt-4 space-y-4 text-sm">
-                                <table class="w-full text-sm bg-white rounded-lg">
-                                    <thead class="bg-gray-50"><tr class="border-b"><th class="p-3 text-left font-semibold">Expense Line Item</th><th class="p-3 text-right font-semibold">Monthly Cost</th></tr></thead>
-                                    <tbody>
-                                        <tr class="border-b"><td class="p-3">NNN Lease Payment (incl. Tax, HOA, Ins.)</td><td class="p-3 text-right font-mono">$13,917</td></tr>
-                                        <tr class="border-b"><td class="p-3">Technology & Software</td><td class="p-3 text-right font-mono">$1,000</td></tr>
-                                        <tr class="border-b"><td class="p-3">Tech Support</td><td class="p-3 text-right font-mono">$1,000</td></tr>
-                                        <tr class="border-b"><td class="p-3">Accounting Fees</td><td class="p-3 text-right font-mono">$250</td></tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                        <div class="financials-card p-6 flex flex-col bg-green-50 border border-green-200">
-                            <h2 class="text-xl font-bold text-green-700 border-b-2 border-green-200 pb-2 mb-4">B. Tiered Monthly Costs</h2>
-                            <p class="text-sm text-green-600 mb-4">Costs that scale with operational phases.</p>
-                             <div class="mt-4 space-y-4 text-sm">
-                                <div class="overflow-x-auto bg-white rounded-lg p-2">
-                                    <h4 class="text-md font-semibold text-gray-800 mb-2">Shared Payroll Breakdown</h4>
-                                    <table class="w-full text-sm">
-                                        <thead class="bg-gray-50"><tr><th class="p-2 text-left">Role</th><th class="p-2 text-center">Phase 1</th><th class="p-2 text-center">Phase 2</th><th class="p-2 text-center">Phase 3</th></tr></thead>
-                                        <tbody>
-                                            <tr class="border-b"><td class="p-2">CEO</td><td class="p-2 text-center font-mono">$6,000</td><td class="p-2 text-center font-mono">$3,960</td><td class="p-2 text-center font-mono">$3,000</td></tr>
-                                            <tr class="border-b"><td class="p-2">Dir. of Ops</td><td class="p-2 text-center font-mono">$4,000</td><td class="p-2 text-center font-mono">$2,640</td><td class="p-2 text-center font-mono">$2,000</td></tr>
-                                            <tr class="border-b"><td class="p-2">Community Manager</td><td class="p-2 text-center font-mono">$4,500</td><td class="p-2 text-center font-mono">$3,000</td><td class="p-2 text-center font-mono">$2,375</td></tr>
-                                            <tr class="border-b"><td class="p-2">Marketing Manager</td><td class="p-2 text-center font-mono">$2,000</td><td class="p-2 text-center font-mono">$2,055</td><td class="p-2 text-center font-mono">$2,000</td></tr>
-                                            <tr class="font-bold bg-gray-50"><td class="p-2">Subtotal</td><td class="p-2 text-center font-mono">$16,500</td><td class="p-2 text-center font-mono">$11,655</td><td class="p-2 text-center font-mono">$9,375</td></tr>
-                                        </tbody>
-                                    </table>
-                                     <h4 class="text-md font-semibold text-gray-800 mt-4 mb-2">Other Tiered Costs</h4>
-                                    <table class="w-full text-sm">
-                                        <thead class="bg-gray-50"><tr><th class="p-2 text-left">Item</th><th class="p-2 text-center">Phase 1</th><th class="p-2 text-center">Phase 2</th><th class="p-2 text-center">Phase 3</th></tr></thead>
-                                        <tbody>
-                                            <tr class="border-b"><td class="p-2">Janitorial</td><td class="p-2 text-center font-mono">$1,000</td><td class="p-2 text-center font-mono">$1,500</td><td class="p-2 text-center font-mono">$2,000</td></tr>
-                                            <tr class="border-b"><td class="p-2">On-Site Staff</td><td class="p-2 text-center font-mono">$2,340</td><td class="p-2 text-center font-mono">$3,120</td><td class="p-2 text-center font-mono">$4,680</td></tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="financials-card p-6 flex flex-col bg-purple-50 border border-purple-200">
-                            <h2 class="text-xl font-bold text-purple-700 border-b-2 border-purple-200 pb-2 mb-4">C. Variable Costs</h2>
-                            <p class="text-sm text-purple-600 mb-4">Avg. monthly costs based on Base Case revenue.</p>
-                            <div class="mt-4 space-y-4 text-sm">
-                                <p class="text-xs text-gray-600">Variable costs are composed of a 5% transaction fee on all revenue and a $75 cost per occupied room day for supplies and laundry.</p>
-                            </div>
-                        </div>
-                        <div class="financials-card p-6 flex flex-col bg-gray-100 border border-gray-200">
-                            <h2 class="text-xl font-bold text-gray-700 border-b-2 border-gray-200 pb-2 mb-4">D. Capital Expenditures</h2>
-                             <p class="text-sm text-gray-600 mb-4">One-time costs for facility build-out.</p>
-                            <div class="mt-4 space-y-4 text-sm">
-                                <div class="p-3 bg-white rounded-lg">
-                                    <h4 class="font-semibold text-gray-700">Phase 1: Initial Build-Out ($64,590)</h4>
-                                    <p class="text-xs text-gray-600">Includes remodeling, painting, furniture, appliances, plants, curtains, a safe, depreciated assets, and a $10k buffer.</p>
-                                </div>
-                                <div class="p-3 bg-white rounded-lg">
-                                    <h4 class="font-semibold text-gray-700">Phase 2: Expansion ($33,500)</h4>
-                                    <p class="text-xs text-gray-600">Includes major construction to combine rooms ($16k), new furnishings, an AED, plants, and a $10k buffer.</p>
-                                </div>
-                                <div class="p-3 bg-white rounded-lg">
-                                    <h4 class="font-semibold text-gray-700">Phase 3: Final Furnishings ($14,000)</h4>
-                                    <p class="text-xs text-gray-600">Covers furniture for the final rooms as they come online, plus a $10k buffer.</p>
-                                </div>
-                            </div>
-                        </div>
+                        <p class="mt-4 text-gray-600">Austin is a pioneering entrepreneur and policy leader in the regulated psychedelic ecosystem. As Colorado's first licensed Legacy Healer, he combines deep facilitation experience with a proven track record of scaling hospitality and real estate ventures, including building the largest short-term rental portfolio in Las Vegas.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Investment Ask Section -->
-        <section id="investment-ask" class="py-16 md:py-24 section-bg border-t">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">The Investment Ask</h2>
-                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
-                        We are seeking strategic partners to fund two distinct, secured debt opportunities to launch our flagship Golden facility.
-                    </p>
-                     <p class="mt-4 text-sm text-gray-500 max-w-2xl mx-auto">Note: The 7,062 sq ft property, built in 1985, appraised at $1.2M and is being acquired for $1.05M. The acquisition is partially funded by $550k in seller financing.</p>
-                </div>
-                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
-                    <!-- Card 1: Property Debt -->
-                    <div class="table-container border-2 border-[#65C5B2] flex flex-col">
-                        <h3 class="text-lg font-semibold text-white bg-[#65C5B2] p-4 text-center">$650k Secured Debt</h3>
-                        <div class="p-4 text-center text-sm text-gray-600">for <span class="font-semibold">Ceremonia Spaces Colorado I LLC</span> (the LandCo SPV)</div>
-                        <dl class="divide-y divide-gray-200 text-sm flex-grow">
-                            <div class="grid grid-cols-2 gap-4 p-3"><dt class="font-medium text-gray-600">Annual Interest</dt><dd class="text-gray-800 font-semibold text-right">10.0%</dd></div>
-                            <div class="grid grid-cols-2 gap-4 p-3"><dt class="font-medium text-gray-600">Amortization</dt><dd class="text-gray-800 font-semibold text-right">15 Years</dd></div>
-                            <div class="grid grid-cols-2 gap-4 p-3"><dt class="font-medium text-gray-600">Loan Term</dt><dd class="text-gray-800 font-semibold text-right">15 Years</dd></div>
-                            <div class="grid grid-cols-2 gap-4 p-3 bg-[#65C5B2]/10"><dt class="font-bold text-[#4a9484]">Monthly Payment</dt><dd class="font-bold text-[#4a9484] text-right">$6,984.94</dd></div>
-                        </dl>
-                    </div>
-                    <!-- Card 2: Bridge Loan -->
-                    <div class="table-container border-2 border-[#65C5B2] flex flex-col">
-                        <h3 class="text-lg font-semibold text-white bg-[#65C5B2] p-4 text-center">$100k Bridge Loan</h3>
-                        <div class="p-4 text-center text-sm text-gray-600">for <span class="font-semibold">Ceremonia Spaces Inc.</span> (the OpCo)</div>
-                         <dl class="divide-y divide-gray-200 text-sm flex-grow">
-                            <div class="grid grid-cols-2 gap-4 p-3"><dt class="font-medium text-gray-600">Annual Interest</dt><dd class="text-gray-800 font-semibold text-right">11.0%</dd></div>
-                            <div class="grid grid-cols-2 gap-4 p-3"><dt class="font-medium text-gray-600">Type</dt><dd class="text-gray-800 font-semibold text-right">Interest Only</dd></div>
-                            <div class="grid grid-cols-2 gap-4 p-3"><dt class="font-medium text-gray-600">Loan Term</dt><dd class="text-gray-800 font-semibold text-right">12 Months</dd></div>
-                            <div class="grid grid-cols-2 gap-4 p-3 bg-[#65C5B2]/10"><dt class="font-bold text-[#4a9484]">Monthly Payment</dt><dd class="font-bold text-[#4a9484] text-right">$916.67</dd></div>
-                        </dl>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- NEW Proforma Calculator Section -->
-        <section id="proforma-calculator" class="py-16 md:py-24 section-bg border-t">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Interactive Proforma Calculator</h2>
-                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
-                        This interactive financial model allows you to analyze the acquisition and performance of the property. Adjust the inputs in the "Control Panel" to see how they impact the financial projections in real-time.
-                    </p>
-                </div>
-                <div class="text-center">
-                    <button id="toggle-calculator-btn" class="bg-[#6283C2] text-white font-bold py-3 px-8 rounded-lg hover:bg-[#496291] transition-transform transform hover:scale-105 shadow-lg">
-                        Open Proforma Calculator
-                    </button>
-                </div>
-                <div id="calculator-container" class="hidden mt-12">
-                    <!-- Calculator content will be injected here by JS -->
-                </div>
-            </div>
-        </section>
-
-        <!-- NEW Next Steps Section -->
-        <section id="next-steps" class="py-16 md:py-24">
-            <div class="container mx-auto px-6">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Next Steps & Timeline</h2>
-                    <p class="mt-3 max-w-2xl mx-auto text-gray-600">
-                        We are moving quickly to capitalize on our first-mover advantage. Here is our immediate roadmap.
-                    </p>
-                </div>
-                <div class="max-w-3xl mx-auto space-y-4">
-                    <div class="timeline-item completed">
-                        <div class="timeline-date-box">
-                            <div class="timeline-date-month">APR</div>
-                            <div class="timeline-date-day">23</div>
-                        </div>
-                        <p class="timeline-description">Pre-approved by State for Healing Center license</p>
-                    </div>
-                    <div class="timeline-item completed">
-                        <div class="timeline-date-box">
-                            <div class="timeline-date-month">JUN</div>
-                            <div class="timeline-date-day">19</div>
-                        </div>
-                        <p class="timeline-description">Under contract and in due diligence period</p>
-                    </div>
-                     <div class="timeline-item">
-                        <div class="timeline-date-box">
-                            <div class="timeline-date-month">JUL</div>
-                            <div class="timeline-date-day">19</div>
-                        </div>
-                        <p class="timeline-description">Launch waitlist from licensed facilitators for day rentals @ $500/day</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date-box">
-                            <div class="timeline-date-month">JUL</div>
-                            <div class="timeline-date-day">31</div>
-                        </div>
-                        <p class="timeline-description">Secure Healing Center license</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date-box">
-                            <div class="timeline-date-month">JUL</div>
-                            <div class="timeline-date-day">31</div>
-                        </div>
-                        <p class="timeline-description">Execute LOIs from licensed training centers for consistent group space rentals @ $2000/day</p>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date-box">
-                            <div class="timeline-date-month">SEP</div>
-                            <div class="timeline-date-day">1</div>
-                        </div>
-                        <p class="timeline-description">Close on property</p>
-                    </div>
-                     <div class="timeline-item">
-                        <div class="timeline-date-box">
-                            <div class="timeline-date-month">SEP</div>
-                            <div class="timeline-date-day">16</div>
-                        </div>
-                        <p class="timeline-description">Launch with first retreat by Ceremonia Journeys</p>
-                    </div>
-                     <div class="timeline-item">
-                        <div class="timeline-date-box">
-                            <div class="timeline-date-month">SEP</div>
-                            <div class="timeline-date-day">23</div>
-                        </div>
-                        <p class="timeline-description">Launch with first facilitator rentals</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Due Diligence Link -->
-        <section id="due-diligence" class="py-16 md:py-24">
-             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Ready for a Deeper Dive?</h2>
-                <p class="mt-3 max-w-2xl mx-auto text-gray-600">
-                    Access the complete market research and financial analysis for a comprehensive look at the data driving this opportunity.
-                </p>
-                <div class="mt-8">
-                    <a href="https://docs.google.com/document/d/1pqQU5jK7CJfV8YCehTCSCwGvNWfa8KgIN1NykqKUFqQ/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="inline-block bg-[#6283C2] text-white font-bold py-4 px-10 rounded-lg hover:bg-[#496291] transition-transform transform hover:scale-105 shadow-lg">
-                        View Full Due Diligence Document
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- NEW Contact Section -->
-        <section id="contact" class="py-16 md:py-24 border-t">
+        <section id="contact" class="py-16 md:py-24 section-bg border-t">
             <div class="container mx-auto px-6 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Contact</h2>
-                 <p class="mt-3 max-w-2xl mx-auto text-gray-600">
-                    Ready to be part of Colorado's first scalable, compliant psychedelic rental platform?
-                </p>
+                 <p class="mt-3 max-w-2xl mx-auto text-gray-600">Ready to discuss this secured debt opportunity?</p>
                 <div class="mt-8">
                     <p class="text-xl font-semibold">Austin Mao</p>
                     <a href="mailto:austin@ceremoniacircle.org" class="text-lg text-[#6283C2] hover:text-[#496291] transition-colors">austin@ceremoniacircle.org</a>
@@ -1153,124 +639,14 @@
     <footer class="border-t border-gray-200 bg-white">
         <div class="container mx-auto px-6 py-8 text-center text-gray-500">
             <img src="images/ceremonia_logo_horiz_color.png" alt="Ceremonia Spaces Logo" class="h-8 mx-auto mb-4">
-            <p class="text-sm">&copy; 2025 Ceremonia Spaces. For informational purposes only.</p>
-            <p class="text-xs mt-2">This interactive dashboard is a synthesis of data from market research reports. All data points should be verified against original source documents. Not an offer to sell securities.</p>
+            <p class="text-sm">&copy; 2025 Ceremonia. For informational purposes only.</p>
         </div>
     </footer>
 
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    const chartDefaults = {
-        plugins: { legend: { display: false }, tooltip: { enabled: true, backgroundColor: '#3D352E', titleColor: '#FFFFFF', bodyColor: '#FFFFFF', padding: 10, cornerRadius: 4, displayColors: false }},
-        scales: { y: { beginAtZero: true, grid: { color: '#EAE3DC' }, ticks: { color: '#6B7280', callback: function(value) { if (Math.floor(value) === value) { return value; } } } }, x: { grid: { display: false }, ticks: { color: '#6B7280' }}},
-        responsive: true, maintainAspectRatio: false
-    };
-
-    // Chart 1: Market Comparison
-    const marketComparisonCtx = document.getElementById('marketComparisonChart');
-    if (marketComparisonCtx) {
-        new Chart(marketComparisonCtx, {
-            type: 'bar',
-            data: {
-                labels: ['Mental Health Need (%)', 'Psychedelic Tourism (%)'],
-                datasets: [{ label: 'Colorado', data: [26.2, 42.9], backgroundColor: '#65C5B2', borderColor: '#4a9484', borderWidth: 1, borderRadius: 4 }, { label: 'Oregon', data: [21.0, 28.9], backgroundColor: '#FBAE17', borderColor: '#d9920e', borderWidth: 1, borderRadius: 4 }]
-            },
-            options: { ...chartDefaults, plugins: { ...chartDefaults.plugins, legend: { display: true, position: 'bottom', labels: { color: '#3D352E' }}}}
-        });
-    }
-    
-    // Chart 4: Market Share
-    const marketShareCtx = document.getElementById('marketShareChart');
-    if (marketShareCtx) {
-        new Chart(marketShareCtx, {
-            type: 'pie',
-            data: {
-                labels: ['Ceremonia Spaces Rooms', 'All Other Competitor Rooms'],
-                datasets: [{
-                    data: [14, 55],
-                    backgroundColor: ['#65C5B2', '#F8F5F2'],
-                    borderColor: ['#FFFFFF'],
-                    borderWidth: 2
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                    },
-                    title: {
-                        display: true,
-                        text: 'Projected Market Share of Healing Rooms (CO)',
-                        font: { size: 16, family: 'Public Sans' },
-                        color: '#3D352E'
-                    },
-                    tooltip: {
-                        callbacks: {
-                            label: function(context) {
-                                let label = context.label || '';
-                                let value = context.parsed;
-                                let sum = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
-                                let percentage = (value / sum * 100).toFixed(2) + '%';
-                                return label + ': ' + percentage;
-                            }
-                        }
-                    }
-                }
-            }
-        });
-    }
-    
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-        });
-    });
-
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-    window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 65) { current = section.getAttribute('id'); }
-        });
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href').substring(1) === current) {
-                link.classList.add('active');
-            }
-        });
-    });
-
-    // --- Financials Section Logic ---
     const currencyFormatter = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 });
-    let financialChart;
-    let model2Revenue = 0;
-    let model3Revenue = 0;
-    let model3MonthlyData = [];
-
-    const financialData = {
-        labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'],
-        revenue: {
-            low: [0, 0, 0, 14500, 33342, 35906, 41463, 58986, 67530, 76074, 84618, 93162],
-            base: [0, 0, 0, 14500, 42183, 50825, 66735, 96472, 114060, 131648, 149236, 166824],
-            high: [0, 0, 0, 14500, 50865, 65744, 92000, 151430, 186690, 221950, 257210, 292470]
-        },
-        opex: {
-            low: [-24500, -20300, -10300, -37629, -41116, -41042, -41595, -42981, -43846, -44711, -46076, -46941],
-            base: [-24500, -20300, -10300, -37629, -41458, -42421, -43961, -45717, -47342, -48967, -51092, -52717],
-            high: [-24500, -20300, -10300, -37629, -41793, -43788, -46325, -49867, -52567, -55267, -58467, -61167]
-        },
-        cashBalance: {
-            low: [25500, 5200, 94900, 7181, -593, -5729, -5861, 23644, 47328, 78691, 117233, 163454],
-            base: [25500, 5200, 94900, 7181, 7906, 16310, 39084, 56339, 123057, 205738, 303882, 417989],
-            high: [25500, 5200, 94900, 7181, 16253, 38209, 83884, 151947, 286070, 452753, 651496, 882799]
-        }
-    };
 
     window.toggleDetails = function(elementId, button) {
         const content = document.getElementById(elementId);
@@ -1282,165 +658,13 @@ document.addEventListener('DOMContentLoaded', function () {
             button.textContent = button.textContent.replace("Show", "Hide");
         }
     }
-    
-    function calculateBlendedRevenue() {
-        const model1Revenue = 901624;
-        const blendedTotal = (model1Revenue * 0.33) + (model2Revenue * 0.33) + (model3Revenue * 0.33);
-        const displayEl = document.getElementById('blended-revenue-display');
-        if (displayEl) displayEl.textContent = currencyFormatter.format(blendedTotal);
-    }
 
-    window.calculateUtilization = function(rate, clickedButton) {
-        const roomPrice = 497;
-        const daysInPhase = 121.67;
-        const phase1Potential = (5 * roomPrice * daysInPhase) * rate;
-        const phase2Potential = (10 * roomPrice * daysInPhase) * rate;
-        const phase3Potential = (14 * roomPrice * daysInPhase) * rate;
-        model2Revenue = phase1Potential + phase2Potential + phase3Potential;
-        
-        const model2SummaryEl = document.getElementById('model2-summary-val');
-        if (model2SummaryEl) model2SummaryEl.textContent = currencyFormatter.format(model2Revenue);
-        
-        const outputEl = document.getElementById('utilization-output');
-        if(outputEl) {
-            outputEl.innerHTML = `
-                <div class="mt-4 space-y-2 text-sm">
-                    <div class="flex justify-between p-2 bg-gray-50 rounded"><span>Phase 1 Revenue:</span> <span class="font-semibold">${currencyFormatter.format(phase1Potential)}</span></div>
-                    <div class="flex justify-between p-2 bg-gray-50 rounded"><span>Phase 2 Revenue:</span> <span class="font-semibold">${currencyFormatter.format(phase2Potential)}</span></div>
-                    <div class="flex justify-between p-2 bg-gray-50 rounded"><span>Phase 3 Revenue:</span> <span class="font-semibold">${currencyFormatter.format(phase3Potential)}</span></div>
-                    <div class="flex justify-between p-3 bg-green-100 rounded mt-2 text-green-800 font-bold"><span>Total Annual Revenue:</span> <span>${currencyFormatter.format(model2Revenue)}</span></div>
-                </div>
-            `;
-        }
-
-        document.querySelectorAll('.util-btn').forEach(button => button.classList.remove('active'));
-        clickedButton.classList.add('active');
-        calculateBlendedRevenue();
-    }
-
-    function calculateOnboarding(facilitatorsPerMonth) {
-        const guaranteedMonthlyRevenue = 18794;
-        const revenuePerFacilitator = 497 * 2;
-        const slumpFactor = 0.35;
-        let annualTotal = 0;
-        let cumulativeFacilitators = 0;
-        model3MonthlyData = [];
-        const tableBody = document.getElementById('facilitator-table-body');
-        if(tableBody) tableBody.innerHTML = '';
-        const monthNames = ["Sep '25", "Oct '25", "Nov '25", "Dec '25", "Jan '26", "Feb '26", "Mar '26", "Apr '26", "May '26", "Jun '26", "Jul '26", "Aug '26"];
-
-        for (let i = 0; i < 12; i++) {
-            cumulativeFacilitators += facilitatorsPerMonth;
-            let variableRevenue = cumulativeFacilitators * revenuePerFacilitator;
-            if (i === 2 || i === 3) variableRevenue *= slumpFactor;
-            let monthlyTotal = guaranteedMonthlyRevenue + variableRevenue;
-            annualTotal += monthlyTotal;
-            model3MonthlyData.push(monthlyTotal);
-
-            const roomDaysUsed = cumulativeFacilitators * 2;
-            const totalAvailableRoomDays = 14 * 30.44;
-            const utilizationPercent = (roomDaysUsed / totalAvailableRoomDays) * 100;
-            
-            if(tableBody) {
-                const row = document.createElement('tr');
-                row.className = 'border-b';
-                if (i === 2 || i === 3) row.classList.add('bg-yellow-50');
-                row.innerHTML = `
-                    <td class="py-2 px-2">${monthNames[i]}</td>
-                    <td class="py-2 px-2 font-mono text-right">${currencyFormatter.format(monthlyTotal)}</td>
-                    <td class="py-2 px-2 font-mono text-right">${utilizationPercent.toFixed(1)}%</td>`;
-                tableBody.appendChild(row);
-            }
-        }
-        return annualTotal;
-    }
-
-    function createFinancialChart(scenario) {
-        const financialChartEl = document.getElementById('financialChart');
-        if (!financialChartEl) return;
-        const ctx = financialChartEl.getContext('2d');
-        financialChart = new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: financialData.labels,
-                datasets: [{
-                    label: 'Revenue', data: financialData.revenue[scenario],
-                    backgroundColor: '#65C5B2', order: 2
-                }, {
-                    label: 'Operating Expenses', data: financialData.opex[scenario],
-                    backgroundColor: '#FBAE17', order: 2
-                }, {
-                    label: 'Cash Balance', data: financialData.cashBalance[scenario],
-                    type: 'line', borderColor: '#6283C2', yAxisID: 'y1', order: 1, tension: 0.3
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                scales: {
-                    x: { stacked: true },
-                    y: { stacked: true, position: 'left', title: { display: true, text: 'Revenue & OpEx ($)' }, ticks: { callback: value => '$' + (value/1000) + 'k' } },
-                    y1: { position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: 'Cash Balance ($)' }, ticks: { callback: value => '$' + (value/1000) + 'k' } }
-                }
-            }
-        });
-    }
-    
-    window.updateAll = function(scenario, clickedButton, isModel3 = false) {
-        if (!financialChart) return;
-        financialChart.data.datasets[0].data = financialData.revenue[scenario];
-        financialChart.data.datasets[1].data = financialData.opex[scenario];
-        financialChart.data.datasets[2].data = financialData.cashBalance[scenario];
-        financialChart.update();
-
-        const totalEbitda = financialData.revenue[scenario].reduce((acc, val, i) => acc + val + financialData.opex[scenario][i], 0);
-        document.getElementById('ebitda-summary').textContent = currencyFormatter.format(totalEbitda);
-
-        let onboardingRate = 8;
-        if (scenario === 'low') onboardingRate = 4;
-        if (scenario === 'high') onboardingRate = 16;
-        model3Revenue = calculateOnboarding(onboardingRate);
-        const model3SummaryEl = document.getElementById('model3-summary-val');
-        if(model3SummaryEl) model3SummaryEl.textContent = currencyFormatter.format(model3Revenue);
-        
-        document.querySelectorAll('.main-scenario-btn').forEach(button => button.classList.remove('active'));
-        document.querySelectorAll('.model3-btn').forEach(button => button.classList.remove('active'));
-        
-        const mainButtons = document.querySelectorAll('.main-scenario-btn');
-        const model3Buttons = document.querySelectorAll('.model3-btn');
-        let buttonIndex = 0;
-        if (scenario === 'base') buttonIndex = 1;
-        if (scenario === 'high') buttonIndex = 2;
-
-        if(mainButtons[buttonIndex]) mainButtons[buttonIndex].classList.add('active');
-        if(model3Buttons[buttonIndex]) model3Buttons[buttonIndex].classList.add('active');
-        
-        calculateBlendedRevenue();
-    }
-
-    if (document.getElementById('financialChart')) {
-        createFinancialChart('base');
-        const utilButton = document.querySelector('#utilization-controls button:nth-child(2)');
-        if(utilButton) calculateUtilization(0.50, utilButton);
-        const mainButton = document.querySelector('#main-scenario-controls button:nth-child(2)');
-        if(mainButton) updateAll('base', mainButton);
-    }
-});
-</script>
-<script>
-document.addEventListener('DOMContentLoaded', function () {
+    // --- Proforma Calculator Logic ---
     const calculatorContainer = document.getElementById('calculator-container');
     const toggleButton = document.getElementById('toggle-calculator-btn');
-
     const calculatorHTML = `
         <div class="max-w-7xl mx-auto">
-            <div class="card">
-                <h2 class="text-xl font-bold mb-2 text-gray-800">Executive Summary & Instructions</h2>
-                <div class="text-sm text-gray-600 space-y-2">
-                    <p>This tool models the acquisition of <strong>538 Commons Dr</strong>, a commercial property financed through a combination of seller financing and private investor debt. The model projects a 5-year holding period, with rental income structured as a Triple Net (NNN) lease where the tenant covers all operating expenses in addition to a base rent that services the property's debt.</p>
-                    <p><strong>How to Use:</strong> Adjust any input in the left "Control Panel" to see how it impacts the financial projections on the right in real-time. Use the tabs on the right to switch between the overall summary, annual schedules, and detailed return breakdowns for each capital provider.</p>
-                </div>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                 <div id="input-column">
                     <div class="calculator-card">
                         <h2 class="text-lg font-semibold text-gray-800 mb-4 border-b pb-2">Property & Acquisition</h2>
@@ -1466,38 +690,36 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div class="flex border-b border-gray-200 overflow-x-auto">
                             <div id="tab-summary" class="calculator-tab active">Summary</div>
                             <div id="tab-annual" class="calculator-tab">Annual View</div>
-                            <div id="investor-tabs-container" class="flex"></div>
                         </div>
                         <div id="view-summary" class="pt-4 space-y-6">
                             <div><h3 class="font-semibold text-lg text-gray-700 mb-3">Deal Summary</h3><div class="space-y-2 text-sm"><div class="flex justify-between"><span class="text-gray-500">Total Capital Required</span><span id="totalCapitalRequired" class="font-semibold"></span></div><hr class="my-2"><div class="flex justify-between"><span class="text-gray-500">Seller Financing</span><span id="sourceSellerFinancing" class="font-semibold"></span></div><div class="flex justify-between"><span class="text-gray-500">Investor Capital Required</span><span id="sourceInvestorCapital" class="font-semibold text-green-600"></span></div></div></div>
                             <div><h3 class="font-semibold text-lg text-gray-700 mb-3">Required Tenant Rent (NNN Lease)</h3><div class="grid grid-cols-1 gap-4 text-sm"><div class="col-span-2 bg-blue-50 border border-blue-200 p-3 rounded-lg text-center"><div class="text-blue-700 font-semibold">Total Monthly Cost to Tenant</div><div id="totalRentMonthly" class="font-bold text-blue-800 text-2xl"></div><div id="totalRentPerSf" class="text-blue-600"></div></div></div></div>
                         </div>
                         <div id="view-annual" class="pt-4 hidden"><h3 class="font-semibold text-lg text-gray-700 mb-3">Consolidated 5-Year Schedule</h3><div class="overflow-x-auto"><table class="w-full text-sm text-left"><thead class="bg-gray-50 text-gray-600"><tr><th class="p-2">Year</th><th class="p-2 text-right">Debt Service</th><th class="p-2 text-right">Principal Paid</th><th class="p-2 text-right">Interest Paid</th><th class="p-2 text-right">Ending Balance</th></tr></thead><tbody id="annualTableBody"></tbody></table></div></div>
-                        <div id="investor-views-container"></div>
                     </div>
                 </div>
             </div>
         </div>
     `;
-
-    toggleButton.addEventListener('click', () => {
-        const isHidden = calculatorContainer.classList.contains('hidden');
-        if (isHidden) {
-            calculatorContainer.innerHTML = calculatorHTML;
-            calculatorContainer.classList.remove('hidden');
-            toggleButton.textContent = 'Close Proforma Calculator';
-            initializeCalculator();
-        } else {
-            calculatorContainer.classList.add('hidden');
-            calculatorContainer.innerHTML = '';
-            toggleButton.textContent = 'Open Interactive Proforma Calculator';
-        }
-    });
+    if(toggleButton) {
+        toggleButton.addEventListener('click', () => {
+            const isHidden = calculatorContainer.classList.contains('hidden');
+            if (isHidden) {
+                calculatorContainer.innerHTML = calculatorHTML;
+                calculatorContainer.classList.remove('hidden');
+                toggleButton.textContent = 'Close Proforma Calculator';
+                initializeCalculator();
+            } else {
+                calculatorContainer.classList.add('hidden');
+                calculatorContainer.innerHTML = '';
+                toggleButton.textContent = 'Open Interactive Proforma Calculator';
+            }
+        });
+    }
 
     function initializeCalculator() {
         const $ = (selector) => calculatorContainer.querySelector(selector);
         const $$ = (selector) => calculatorContainer.querySelectorAll(selector);
-        const formatCurrency = (value) => isNaN(value) ? '$0.00' : value.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
         const HOLDING_PERIOD = 5;
         let investorGroupId = 0;
 
@@ -1565,15 +787,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 totalAnnualPayment += source.result.annualPayment;
             });
 
-            $('#totalCapitalRequired').textContent = formatCurrency(totalCapitalRequired);
-            $('#sourceSellerFinancing').textContent = formatCurrency(sellerLoanAmount);
-            $('#sourceInvestorCapital').textContent = formatCurrency(investorCapitalRequired);
+            $('#totalCapitalRequired').textContent = currencyFormatter.format(totalCapitalRequired);
+            $('#sourceSellerFinancing').textContent = currencyFormatter.format(sellerLoanAmount);
+            $('#sourceInvestorCapital').textContent = currencyFormatter.format(investorCapitalRequired);
             $('#sourceInvestorCapital').classList.toggle('text-red-600', totalInvestorCapital.toFixed(0) !== investorCapitalRequired.toFixed(0));
 
             const totalMonthlyRent = totalMonthlyPayment;
-            $('#totalRentMonthly').textContent = formatCurrency(totalMonthlyRent);
+            $('#totalRentMonthly').textContent = currencyFormatter.format(totalMonthlyRent);
             const rentPerSf = buildingSize > 0 ? (totalMonthlyRent * 12) / buildingSize : 0;
-            $('#totalRentPerSf').textContent = `${formatCurrency(rentPerSf)} / SF / Year`;
+            $('#totalRentPerSf').textContent = `${currencyFormatter.format(rentPerSf)} / SF / Year`;
 
             const annualTableBody = $('#annualTableBody');
             annualTableBody.innerHTML = '';
@@ -1588,7 +810,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         yearData.endingBalance += yearSchedule.endingBalance;
                     }
                 });
-                annualTableBody.innerHTML += `<tr class="border-b border-gray-200"><td class="p-2 font-medium">${year}</td><td class="p-2 text-right">${formatCurrency(yearData.debtService)}</td><td class="p-2 text-right">${formatCurrency(yearData.principalPaid)}</td><td class="p-2 text-right">${formatCurrency(yearData.interestPaid)}</td><td class="p-2 text-right">${formatCurrency(yearData.endingBalance)}</td></tr>`;
+                annualTableBody.innerHTML += `<tr class="border-b border-gray-200"><td class="p-2 font-medium">${year}</td><td class="p-2 text-right">${currencyFormatter.format(yearData.debtService)}</td><td class="p-2 text-right">${currencyFormatter.format(yearData.principalPaid)}</td><td class="p-2 text-right">${currencyFormatter.format(yearData.interestPaid)}</td><td class="p-2 text-right">${currencyFormatter.format(yearData.endingBalance)}</td></tr>`;
             }
         }
 
@@ -1618,15 +840,208 @@ document.addEventListener('DOMContentLoaded', function () {
             const wrapper = $(`#amortization-wrapper-${id}`);
             wrapper.style.display = event.target.value === 'interest-only' ? 'none' : 'block';
         }
+        
+        $$('#tab-summary, #tab-annual').forEach(tab => {
+            tab.addEventListener('click', () => {
+                $$('.calculator-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                $('#view-summary').classList.toggle('hidden', tab.id !== 'tab-summary');
+                $('#view-annual').classList.toggle('hidden', tab.id !== 'tab-annual');
+            });
+        });
 
         $$('#input-column input, #input-column select').forEach(el => el.addEventListener('input', runProforma));
         
-        addInvestorCard({ name: "Lead Investor Debt (2nd Pos)", amount: "650000", rate: "10", amortization: "15", term: "15", type: "amortizing" });
-        addInvestorCard({ name: "LP Investor Debt (3rd Pos)", amount: "100000", rate: "11", term: "10", type: "interest-only" });
+        addInvestorCard({ name: "Lead Investor Debt (2nd Pos)", amount: "650000", rate: "10", amortization: "10", term: "10", type: "amortizing" });
+        addInvestorCard({ name: "LP Investor Debt (3rd Pos)", amount: "100000", rate: "11", term: "1", type: "interest-only" });
 
         runProforma();
     }
+    
+    // --- OpCo Financial Chart Logic ---
+    let financialChart;
+    const financialData = {
+        labels: ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr', 'May'],
+        revenue: {
+            low: [0, 0, 0, 14500, 33342, 35906, 41463, 58986, 67530, 76074, 84618, 93162],
+            base: [0, 0, 0, 14500, 42183, 50825, 66735, 96472, 114060, 131648, 149236, 166824],
+            high: [0, 0, 0, 14500, 50865, 65744, 92000, 151430, 186690, 221950, 257210, 292470]
+        },
+        opex: {
+            low: [-24500, -20300, -10300, -37629, -41116, -41042, -41595, -42981, -43846, -44711, -46076, -46941],
+            base: [-24500, -20300, -10300, -37629, -41458, -42421, -43961, -45717, -47342, -48967, -51092, -52717],
+            high: [-24500, -20300, -10300, -37629, -41793, -43788, -46325, -49867, -52567, -55267, -58467, -61167]
+        },
+        cashBalance: {
+            low: [25500, 5200, 94900, 7181, -593, -5729, -5861, 23644, 47328, 78691, 117233, 163454],
+            base: [25500, 5200, 94900, 7181, 7906, 16310, 39084, 56339, 123057, 205738, 303882, 417989],
+            high: [25500, 5200, 94900, 7181, 16253, 38209, 83884, 151947, 286070, 452753, 651496, 882799]
+        }
+    };
+    
+    function createFinancialChart(scenario) {
+        const financialChartEl = document.getElementById('financialChart');
+        if (!financialChartEl) return;
+        const ctx = financialChartEl.getContext('2d');
+        financialChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: financialData.labels,
+                datasets: [{
+                    label: 'Revenue', data: financialData.revenue[scenario],
+                    backgroundColor: '#65C5B2', order: 2
+                }, {
+                    label: 'Operating Expenses', data: financialData.opex[scenario],
+                    backgroundColor: '#FBAE17', order: 2
+                }, {
+                    label: 'Cash Balance', data: financialData.cashBalance[scenario],
+                    type: 'line', borderColor: '#6283C2', yAxisID: 'y1', order: 1, tension: 0.3
+                }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                scales: {
+                    x: { stacked: true },
+                    y: { stacked: true, position: 'left', title: { display: true, text: 'Revenue & OpEx ($)' }, ticks: { callback: value => '$' + (value/1000) + 'k' } },
+                    y1: { position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: 'Cash Balance ($)' }, ticks: { callback: value => '$' + (value/1000) + 'k' } }
+                }
+            }
+        });
+    }
+    
+    window.updateAll = function(scenario, clickedButton) {
+        if (!financialChart) {
+            createFinancialChart(scenario);
+        } else {
+            financialChart.data.datasets[0].data = financialData.revenue[scenario];
+            financialChart.data.datasets[1].data = financialData.opex[scenario];
+            financialChart.data.datasets[2].data = financialData.cashBalance[scenario];
+            financialChart.update();
+        }
+
+        const totalRevenue = financialData.revenue[scenario].reduce((acc, val) => acc + val, 0);
+        const revenueSummaryEl = document.getElementById('revenue-summary');
+        if(revenueSummaryEl) revenueSummaryEl.textContent = currencyFormatter.format(totalRevenue);
+        
+        const annualLeasePayment = 13917 * 12;
+        const dscr = totalRevenue / annualLeasePayment;
+        const dscrSummaryEl = document.getElementById('dscr-summary');
+        if(dscrSummaryEl) dscrSummaryEl.textContent = dscr.toFixed(2) + 'x';
+
+        document.querySelectorAll('.main-scenario-btn').forEach(button => button.classList.remove('active'));
+        clickedButton.classList.add('active');
+    }
+
+    if (document.getElementById('financialChart')) {
+        const mainButton = document.querySelector('#main-scenario-controls button:nth-child(2)');
+        if(mainButton) updateAll('base', mainButton);
+    }
+    
+    // --- Market Share Chart ---
+    const marketShareCtx = document.getElementById('marketShareChart');
+    if (marketShareCtx) {
+        new Chart(marketShareCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Ceremonia Spaces Rooms', 'All Other Competitor Rooms'],
+                datasets: [{
+                    data: [14, 55],
+                    backgroundColor: ['#65C5B2', '#F8F5F2'],
+                    borderColor: ['#FFFFFF'],
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    title: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.label || '';
+                                let value = context.parsed;
+                                let sum = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                                let percentage = (value / sum * 100).toFixed(2) + '%';
+                                return label + ': ' + percentage;
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    }
+    
+    window.calculateUtilization = function(rate, clickedButton) {
+        const roomPrice = 497;
+        const daysInPhase = 121.67;
+        const phase1Potential = (5 * roomPrice * daysInPhase) * rate;
+        const phase2Potential = (10 * roomPrice * daysInPhase) * rate;
+        const phase3Potential = (14 * roomPrice * daysInPhase) * rate;
+        const totalRevenue = phase1Potential + phase2Potential + phase3Potential;
+
+        const outputEl = document.getElementById('utilization-output');
+        if(outputEl) {
+             outputEl.innerHTML = `
+                <div class="mt-4 space-y-2 text-sm">
+                    <div class="flex justify-between p-2 bg-gray-50 rounded"><span>Phase 1 Revenue:</span> <span class="font-semibold">${currencyFormatter.format(phase1Potential)}</span></div>
+                    <div class="flex justify-between p-2 bg-gray-50 rounded"><span>Phase 2 Revenue:</span> <span class="font-semibold">${currencyFormatter.format(phase2Potential)}</span></div>
+                    <div class="flex justify-between p-2 bg-gray-50 rounded"><span>Phase 3 Revenue:</span> <span class="font-semibold">${currencyFormatter.format(phase3Potential)}</span></div>
+                    <div class="flex justify-between p-3 bg-green-100 rounded mt-2 text-green-800 font-bold"><span>Total Annual Revenue:</span> <span>${currencyFormatter.format(totalRevenue)}</span></div>
+                </div>
+            `;
+        }
+        document.querySelectorAll('.util-btn').forEach(button => button.classList.remove('active'));
+        clickedButton.classList.add('active');
+    }
+    
+    window.updateModel3 = function(scenario) {
+        let facilitatorsPerMonth = 8;
+        if (scenario === 'low') facilitatorsPerMonth = 4;
+        if (scenario === 'high') facilitatorsPerMonth = 16;
+        
+        const guaranteedMonthlyRevenue = 18794;
+        const revenuePerFacilitator = 497 * 2;
+        const slumpFactor = 0.35;
+        let cumulativeFacilitators = 0;
+        const tableBody = document.getElementById('facilitator-table-body');
+        if(tableBody) tableBody.innerHTML = '';
+        const monthNames = ["Sep '25", "Oct '25", "Nov '25", "Dec '25", "Jan '26", "Feb '26", "Mar '26", "Apr '26", "May '26", "Jun '26", "Jul '26", "Aug '26"];
+
+        for (let i = 0; i < 12; i++) {
+            cumulativeFacilitators += facilitatorsPerMonth;
+            let variableRevenue = cumulativeFacilitators * revenuePerFacilitator;
+            if (i === 2 || i === 3) variableRevenue *= slumpFactor;
+            let monthlyTotal = guaranteedMonthlyRevenue + variableRevenue;
+
+            const roomDaysUsed = cumulativeFacilitators * 2;
+            const totalAvailableRoomDays = 14 * 30.44;
+            const utilizationPercent = (roomDaysUsed / totalAvailableRoomDays) * 100;
+            
+            if(tableBody) {
+                const row = document.createElement('tr');
+                row.className = 'border-b';
+                if (i === 2 || i === 3) row.classList.add('bg-yellow-50');
+                row.innerHTML = `
+                    <td class="py-2 px-2">${monthNames[i]}</td>
+                    <td class="py-2 px-2 font-mono text-right">${currencyFormatter.format(monthlyTotal)}</td>
+                    <td class="py-2 px-2 font-mono text-right">${utilizationPercent.toFixed(1)}%</td>`;
+                tableBody.appendChild(row);
+            }
+        }
+        
+        document.querySelectorAll('.model3-btn').forEach(button => button.classList.remove('active'));
+        const activeBtn = document.querySelector(`#model3-controls button[onclick*="'${scenario}'"]`);
+        if(activeBtn) activeBtn.classList.add('active');
+    }
+
+    // Initialize sub-models
+    const utilButton = document.querySelector('#utilization-controls button:nth-child(2)');
+    if(utilButton) calculateUtilization(0.50, utilButton);
+    updateModel3('base');
 });
 </script>
+
 </body>
 </html>
