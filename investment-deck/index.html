@@ -70,7 +70,9 @@
             padding-bottom: 56.25%; /* 16:9 aspect ratio */
             height: 0;
             overflow: hidden;
-            max-width: 100%;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
             background: #000;
             border-radius: 0.75rem;
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -81,6 +83,11 @@
             left: 0;
             width: 100%;
             height: 100%;
+        }
+        @media (max-width: 1024px) {
+            .video-container {
+                max-width: 100%;
+            }
         }
         .calculator-card, .financials-card {
             background-color: white;
@@ -158,6 +165,9 @@
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.5s ease-in-out;
+        }
+        .details-content.open {
+            max-height: 2000px; /* Large enough for content */
         }
         .model3-btn.active {
             background-color: #65C5B2; /* tierra teal */
@@ -703,12 +713,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     window.toggleDetails = function(elementId, button) {
         const content = document.getElementById(elementId);
-        if (content.style.maxHeight && content.style.maxHeight !== '0px') {
-            content.style.maxHeight = '0px';
-            button.textContent = button.textContent.replace("Hide", "Show");
-        } else {
-            content.style.maxHeight = content.scrollHeight + "px";
+        const isOpen = content.classList.toggle('open');
+        if (isOpen) {
             button.textContent = button.textContent.replace("Show", "Hide");
+        } else {
+            button.textContent = button.textContent.replace("Hide", "Show");
         }
     }
 
