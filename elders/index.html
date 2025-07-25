@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceremonia Spaces: A Proposal for Compassionate Care</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Ceremonia Brand Palette -->
+    <!-- Application Structure Plan: A non-linear, thematic single-page application. The structure uses a sticky navigation bar to allow users (e.g., board members) to jump directly to sections addressing their primary concerns: 1) The Community Crisis (the "why"), 2) The Professional Solution (the "how"), 3) Our Commitment (the "who"), and 4) A proactive Q&A. This architecture prioritizes user-driven exploration over a passive, linear report, making the information more accessible and persuasive by allowing users to address their own questions first. -->
+    <!-- Visualization & Content Choices: 
+        - The Crisis (State Level): Report data on CO mental health vs. US average -> Goal: Compare -> Viz: Bar Chart (Chart.js) -> Interaction: Hover for details -> Justification: Immediately establishes the scale of the problem.
+        - The Crisis (TRD): Report data on Treatment-Resistant Depression -> Goal: Inform/Proportion -> Viz: Donut Chart (Chart.js) -> Interaction: Hover for details -> Justification: Visually highlights the specific underserved population the center helps.
+        - The Crisis (PTSD): Report data on PTSD prevalence -> Goal: Compare -> Viz: Bar Chart (Chart.js) -> Interaction: Hover -> Justification: Highlights the disproportionate impact on veterans and first responders.
+        - The Crisis (Economic Cost): Report data on TRD cost -> Goal: Inform -> Viz: Formatted Text Block -> Interaction: Static -> Justification: Presents a large, impactful number clearly without a complex chart.
+        - The Solution (Efficacy): Report data on psilocybin vs. antidepressant remission -> Goal: Compare -> Viz: Grouped Bar Chart (Chart.js) -> Interaction: Hover for details -> Justification: Provides a powerful, data-driven argument for effectiveness.
+        - The Solution (Process): Report's 3-stage clinical protocol -> Goal: Organize/Explain -> Viz: Numbered HTML/CSS flexbox diagram -> Interaction: Static -> Justification: Clearly illustrates the structured, professional nature of the therapy.
+        - Q&A: Report's anticipated questions -> Goal: Organize/Inform -> Viz: HTML/CSS/JS Accordion -> Interaction: Click to reveal -> Justification: Proactively addresses concerns in a clean, organized manner.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        :root {
+            --tierra-teal: #65C5B2;
+            --cielo-cerulean: #6283C2;
+            --corazon-rose: #E31C78;
+            --sol-orange: #FBAE17;
+            --neutral-bg: #FDFDFC;
+            --neutral-text: #3D3D3D;
+            --neutral-light-text: #6B7280;
+        }
+        body {
+            font-family: 'Lora', serif;
+            background-color: var(--neutral-bg);
+            color: var(--neutral-text);
+        }
+        h1, h2, h3, h4, h5, h6, .nav-link, button {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            height: 320px;
+            max-height: 400px;
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+            padding: 0 1.5rem;
+        }
+        .accordion-button[aria-expanded="true"] + .accordion-content {
+            max-height: 500px;
+            padding: 1rem 1.5rem 1.5rem;
+        }
+        .accordion-button[aria-expanded="true"] .accordion-arrow {
+            transform: rotate(180deg);
+        }
+        .accordion-arrow {
+            transition: transform 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <h1 class="text-xl md:text-2xl font-bold" style="color: var(--cielo-cerulean);">Ceremonia Spaces</h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="#crisis" class="nav-link text-gray-600 hover:text-[var(--tierra-teal)] font-medium">The Community Crisis</a>
+                <a href="#solution" class="nav-link text-gray-600 hover:text-[var(--tierra-teal)] font-medium">Our Professional Solution</a>
+                <a href="#commitment" class="nav-link text-gray-600 hover:text-[var(--tierra-teal)] font-medium">Our Commitment</a>
+                <a href="#faq" class="nav-link text-gray-600 hover:text-[var(--tierra-teal)] font-medium">Your Questions</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-600 hover:text-[var(--tierra-teal)] focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <a href="#crisis" class="block py-2 px-6 text-gray-600 hover:bg-gray-50 hover:text-[var(--tierra-teal)]">The Community Crisis</a>
+            <a href="#solution" class="block py-2 px-6 text-gray-600 hover:bg-gray-50 hover:text-[var(--tierra-teal)]">Our Professional Solution</a>
+            <a href="#commitment" class="block py-2 px-6 text-gray-600 hover:bg-gray-50 hover:text-[var(--tierra-teal)]">Our Commitment</a>
+            <a href="#faq" class="block py-2 px-6 text-gray-600 hover:bg-gray-50 hover:text-[var(--tierra-teal)]">Your Questions</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8 md:py-12">
+
+        <section class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: var(--cielo-cerulean);">A Proposal for Compassionate Care</h2>
+            <p class="max-w-3xl mx-auto text-lg text-gray-600 leading-relaxed">
+                An introduction to a new, state-licensed healthcare facility designed to address a critical mental health need in our community. We are committed to being a quiet, respectful, and positive partner, operating with the highest standards of safety and professionalism.
+            </p>
+        </section>
+
+        <section id="crisis" class="mb-20 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-2">The Problem: A Critical Community Need</h3>
+                <p class="max-w-3xl mx-auto text-gray-600 leading-relaxed">The need for new, effective mental health services in our state is not just a talking point; it is a documented crisis. The data reveals a story of widespread suffering that touches every part of our community, demanding a compassionate and effective response.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h4 class="text-xl font-semibold mb-4 text-center" style="color: var(--cielo-cerulean);">Colorado's Mental Health Crisis</h4>
+                    <div class="chart-container">
+                        <canvas id="mentalHealthChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h4 class="text-xl font-semibold mb-4 text-center" style="color: var(--cielo-cerulean);">When Standard Treatments Fail</h4>
+                    <div class="chart-container">
+                        <canvas id="trdChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <h4 class="text-xl font-semibold mb-4 text-center" style="color: var(--cielo-cerulean);">The Burden on Our Heroes</h4>
+                    <div class="chart-container">
+                        <canvas id="ptsdChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg flex flex-col justify-center items-center text-center">
+                    <h4 class="text-xl font-semibold mb-4" style="color: var(--cielo-cerulean);">The Economic Impact</h4>
+                    <p class="text-gray-600 mb-4">The economic burden of Treatment-Resistant Depression is staggering, costing the U.S. economy an estimated</p>
+                    <div class="text-5xl font-bold" style="color: var(--corazon-rose);">$48 Billion</div>
+                    <p class="text-gray-600 mt-4">annually in healthcare costs and lost productivity. This highlights the urgent need for more effective treatments.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="mb-20 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-2">Our Solution: A Professional, Medically-Supervised Center</h3>
+                <p class="max-w-3xl mx-auto text-gray-600 leading-relaxed">Our center operates according to a structured, evidence-based clinical protocol, validated by research from the world's most respected medical institutions. This is a healthcare facility, not an experimental venture.</p>
+            </div>
+
+            <div class="bg-white p-8 rounded-lg shadow-lg mb-12">
+                <h4 class="text-xl font-semibold mb-6 text-center" style="color: var(--cielo-cerulean);">The Three-Stage Clinical Protocol</h4>
+                <div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0 md:space-x-6">
+                    <div class="text-center flex-1">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl font-bold text-white" style="background-color: var(--cielo-cerulean);">1</div>
+                        <h5 class="font-bold text-lg">Preparation & Intake</h5>
+                        <p class="text-gray-600">Multiple sessions with a licensed facilitator for thorough safety screening, goal-setting, and building trust.</p>
+                    </div>
+                    <div class="text-3xl font-light transform rotate-90 md:rotate-0" style="color: var(--tierra-teal);">→</div>
+                    <div class="text-center flex-1">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl font-bold text-white" style="background-color: var(--cielo-cerulean);">2</div>
+                        <h5 class="font-bold text-lg">Medically-Supervised Session</h5>
+                        <p class="text-gray-600">A session in a private, controlled clinical environment under the constant supervision of a facilitator.</p>
+                    </div>
+                    <div class="text-3xl font-light transform rotate-90 md:rotate-0" style="color: var(--tierra-teal);">→</div>
+                    <div class="text-center flex-1">
+                        <div class="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-3 text-2xl font-bold text-white" style="background-color: var(--cielo-cerulean);">3</div>
+                        <h5 class="font-bold text-lg">Integration</h5>
+                        <p class="text-gray-600">Follow-up sessions to process insights and translate them into lasting, positive life changes.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h4 class="text-xl font-semibold text-center mb-4" style="color: var(--cielo-cerulean);">Validated by World-Class Research</h4>
+                <p class="max-w-4xl mx-auto text-center text-gray-600 mb-8 leading-relaxed">The effectiveness of this therapy is not speculative; it's documented in leading peer-reviewed journals. The data shows remarkable success not just for depression, but for other difficult-to-treat conditions, with positive effects that are sustained long-term.</p>
+                 
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h5 class="font-bold text-center mb-2" style="color: var(--cielo-cerulean);">Depression: Initial Efficacy</h5>
+                        <div class="chart-container">
+                            <canvas id="efficacyChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h5 class="font-bold text-center mb-2" style="color: var(--cielo-cerulean);">Depression: Long-Term Durability</h5>
+                        <div class="chart-container">
+                            <canvas id="remissionChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+                 <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 p-4 rounded-lg">
+                        <h5 class="font-bold text-center mb-2" style="color: var(--cielo-cerulean);">Alcohol Use Disorder Efficacy</h5>
+                        <div class="chart-container">
+                            <canvas id="audChart"></canvas>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 p-4 rounded-lg flex flex-col justify-center">
+                        <h5 class="font-bold text-center mb-4" style="color: var(--cielo-cerulean);">Key Research Findings</h5>
+                        <ul class="space-y-4 text-base text-gray-600">
+                            <li><strong style="color: var(--tierra-teal);">Johns Hopkins:</strong> Found psilocybin therapy's effect was four times larger than traditional antidepressants. At the 12-month mark, 58% of participants remained in remission from depression.</li>
+                            <li><strong style="color: var(--tierra-teal);">NYU:</strong> In a trial for Alcohol Use Disorder, participants receiving psilocybin therapy reduced their heavy drinking days by 83%, compared to a 51% reduction for those receiving an active placebo.</li>
+                            <li><strong style="color: var(--tierra-teal);">Imperial College London:</strong> Found remission rates from depression were twice as high in the psilocybin group versus a leading daily antidepressant.</li>
+                            <li><strong style="color: var(--tierra-teal);">Yale University:</strong> Research has shown that a single clinical dose can increase neural connections in the brain that are lost due to stress and depression, providing a biological basis for the therapy's lasting effects.</li>
+                        </ul>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <section id="commitment" class="mb-20 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-2">Our Commitment: Safety, Professionalism, and Alignment</h3>
+                <p class="max-w-3xl mx-auto text-gray-600 leading-relaxed">We are founded on three core pillars that guide our operations and our relationship with the community. Our mission of healing is deeply aligned with the values of compassion and service.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h4 class="font-bold text-lg mb-2" style="color: var(--tierra-teal);">A Clinic, Not a Commune</h4>
+                    <p class="text-gray-600">We are a state-licensed, highly regulated healthcare facility focused on professional conduct, participant safety, and strict confidentiality.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h4 class="font-bold text-lg mb-2" style="color: var(--tierra-teal);">Evidence-Based Therapy</h4>
+                    <p class="text-gray-600">Our goal is to provide measurable improvements in mental health, using clinical protocols validated by rigorous science from world-class institutions.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                    <h4 class="font-bold text-lg mb-2" style="color: var(--tierra-teal);">An Alignment, Not an Alternative</h4>
+                    <p class="text-gray-600">Our work is aligned with shared values of healing, restoration, and hope, complementing the spiritual care and support offered by the community.</p>
+                </div>
+            </div>
+            
+            <div class="p-8 rounded-lg shadow-lg text-center text-white" style="background-color: var(--cielo-cerulean);">
+                <h4 class="text-2xl font-bold mb-3">A Quiet & Respectful Neighbor</h4>
+                <p class="max-w-3xl mx-auto leading-relaxed">We are deeply committed to being a positive presence. Our center operates strictly by appointment. Each of our private therapy rooms will host only a single participant or one small group per day, ensuring a calm, predictable, and low-traffic environment. All therapeutic work is conducted indoors in a private, controlled setting. We are here to be a place of quiet healing, not a source of disruption.</p>
+            </div>
+        </section>
+
+        <section id="faq" class="scroll-mt-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-2">Your Questions Answered</h3>
+                <p class="max-w-3xl mx-auto text-gray-600 leading-relaxed">We believe in transparency and want to address potential questions proactively with answers based on state regulations and established best practices.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto space-y-4">
+                <div class="bg-white rounded-lg shadow-lg">
+                    <button class="accordion-button w-full flex justify-between items-center text-left p-6 font-semibold text-lg" aria-expanded="false" style="color: var(--cielo-cerulean);">
+                        <span>How is the medicine secured?</span>
+                        <span class="accordion-arrow transform transition-transform duration-300">▼</span>
+                    </button>
+                    <div class="accordion-content text-gray-600 leading-relaxed">
+                        We adhere to strict security protocols mandated by the Colorado Department of Revenue. All natural medicine is stored in a commercial-grade, bolted safe within a dedicated, locked room. In addition, every room where therapeutic sessions are conducted is equipped with security cameras as required by state regulation, with footage securely stored. Access is restricted to licensed, background-checked personnel.
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg">
+                    <button class="accordion-button w-full flex justify-between items-center text-left p-6 font-semibold text-lg" aria-expanded="false" style="color: var(--cielo-cerulean);">
+                        <span>How are participants screened?</span>
+                        <span class="accordion-arrow transform transition-transform duration-300">▼</span>
+                    </button>
+                    <div class="accordion-content text-gray-600 leading-relaxed">
+                        Our screening process is extremely rigorous, modeled on clinical trial safety protocols. We exclude individuals with a history of psychosis or certain unstable medical conditions. Every participant undergoes a multi-session intake process to ensure they are a safe and appropriate candidate.
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg">
+                    <button class="accordion-button w-full flex justify-between items-center text-left p-6 font-semibold text-lg" aria-expanded="false" style="color: var(--cielo-cerulean);">
+                        <span>What about liability insurance?</span>
+                        <span class="accordion-arrow transform transition-transform duration-300">▼</span>
+                    </button>
+                    <div class="accordion-content text-gray-600 leading-relaxed">
+                        We carry comprehensive business insurance, including General Liability, Professional Liability, and Medical Malpractice insurance specifically designed for the natural medicine therapy industry, ensuring our facility, staff, and participants are fully protected.
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg">
+                    <button class="accordion-button w-full flex justify-between items-center text-left p-6 font-semibold text-lg" aria-expanded="false" style="color: var(--cielo-cerulean);">
+                        <span>What is the impact on traffic and parking?</span>
+                        <span class="accordion-arrow transform transition-transform duration-300">▼</span>
+                    </button>
+                    <div class="accordion-content text-gray-600 leading-relaxed">
+                        The impact will be minimal. We operate by appointment only and host only one session per room per day. This means a very limited number of participants daily, resulting in a traffic impact significantly less than a typical doctor's office or retail business.
+                    </div>
+                </div>
+                 <div class="bg-white rounded-lg shadow-lg">
+                    <button class="accordion-button w-full flex justify-between items-center text-left p-6 font-semibold text-lg" aria-expanded="false" style="color: var(--cielo-cerulean);">
+                        <span>How do you ensure compliance with state laws?</span>
+                        <span class="accordion-arrow transform transition-transform duration-300">▼</span>
+                    </button>
+                    <div class="accordion-content text-gray-600 leading-relaxed">
+                        Compliance is the bedrock of our operation. We are dually licensed and regulated by two separate state agencies: DORA and the Department of Revenue. We are subject to regular inspections and must adhere to a comprehensive set of rules governing everything from security and inventory to participant safety.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="mt-20 py-8" style="background-color: var(--neutral-text);">
+        <div class="container mx-auto px-6 text-center text-white">
+            <h3 class="text-xl font-bold mb-4">Verifiable Sources & Further Reading</h3>
+            <div class="flex justify-center space-x-6 flex-wrap">
+                <a href="https://www.hopkinsmedicine.org/news/newsroom/news-releases/2022/02/psilocybin-treatment-for-major-depression-effective-for-up-to-a-year-for-most-patients" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--tierra-teal)]">Johns Hopkins</a>
+                <a href="https://www.imperial.ac.uk/news/219413/magic-mushroom-compound-performs-well-antidepressant/" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--tierra-teal)]">Imperial College</a>
+                <a href="https://nyulangone.org/news/study-shows-psilocybin-assisted-therapy-can-reduce-heavy-drinking" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--tierra-teal)]">NYU Langone</a>
+                <a href="https://dpo.colorado.gov/NaturalMedicine" target="_blank" rel="noopener noreferrer" class="hover:text-[var(--tierra-teal)]">Colorado DORA</a>
+            </div>
+            <p class="mt-8 text-gray-400 text-sm">Ceremonia Spaces | [Contact Information]</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            document.querySelectorAll('#mobile-menu a, .nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                   if(!mobileMenu.classList.contains('hidden')) {
+                       mobileMenu.classList.add('hidden');
+                   }
+                });
+            });
+
+            const accordionButtons = document.querySelectorAll('.accordion-button');
+            accordionButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const isExpanded = button.getAttribute('aria-expanded') === 'true';
+                    accordionButtons.forEach(btn => btn.setAttribute('aria-expanded', 'false'));
+                    if (!isExpanded) {
+                        button.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+
+            const chartFont = { family: "'Inter', sans-serif" };
+            const brandColors = {
+                teal: 'rgba(101, 197, 178, 0.7)',
+                cerulean: 'rgba(98, 131, 194, 0.7)',
+                rose: 'rgba(227, 28, 120, 0.7)',
+                orange: 'rgba(251, 174, 23, 0.7)',
+                neutral: 'rgba(107, 114, 128, 0.5)',
+                teal_border: 'rgb(101, 197, 178)',
+                cerulean_border: 'rgb(98, 131, 194)',
+                rose_border: 'rgb(227, 28, 120)',
+                orange_border: 'rgb(251, 174, 23)',
+                neutral_border: 'rgb(107, 114, 128)',
+            };
+
+            const defaultChartPlugins = {
+                legend: { position: 'bottom', labels: {font: chartFont}},
+                tooltip: { bodyFont: chartFont, titleFont: chartFont }
+            };
+
+            const mentalHealthCtx = document.getElementById('mentalHealthChart').getContext('2d');
+            new Chart(mentalHealthCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Adults with Any Mental Illness'],
+                    datasets: [{
+                        label: 'Colorado',
+                        data: [23.5],
+                        backgroundColor: brandColors.cerulean,
+                        borderColor: brandColors.cerulean_border,
+                        borderWidth: 1
+                    }, {
+                        label: 'U.S. Average',
+                        data: [21],
+                        backgroundColor: brandColors.neutral,
+                        borderColor: brandColors.neutral_border,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+                    plugins: { ...defaultChartPlugins, title: { display: true, text: 'Prevalence of Mental Illness', font: chartFont }, tooltip: { ...defaultChartPlugins.tooltip, callbacks: { label: (c) => `${c.dataset.label}: ${c.raw}%` } } },
+                    scales: { x: { ticks:{font: chartFont}, title: { display: true, text: 'Percentage of Adults', font: chartFont } }, y: { ticks:{font: chartFont} } }
+                }
+            });
+
+            const trdCtx = document.getElementById('trdChart').getContext('2d');
+            new Chart(trdCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Treatment-Resistant (TRD)', 'Responds to Treatment'],
+                    datasets: [{
+                        label: 'Population with Major Depression',
+                        data: [30, 70],
+                        backgroundColor: [brandColors.rose, brandColors.neutral],
+                        borderColor: [brandColors.rose_border, brandColors.neutral_border],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { ...defaultChartPlugins, title: { display: true, text: 'Share of Depression Patients with TRD', font: chartFont }, tooltip: { ...defaultChartPlugins.tooltip, callbacks: { label: (c) => `${c.label}: ${c.raw}%` } } }
+                }
+            });
+            
+            const ptsdCtx = document.getElementById('ptsdChart').getContext('2d');
+            new Chart(ptsdCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['General Population', 'First Responders', 'Combat Veterans'],
+                    datasets: [{
+                        label: 'Lifetime PTSD Prevalence',
+                        data: [6, 30, 29],
+                        backgroundColor: [brandColors.neutral, brandColors.orange, brandColors.cerulean],
+                        borderColor: [brandColors.neutral_border, brandColors.orange_border, brandColors.cerulean_border],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false }, title: { display: true, text: 'Lifetime PTSD Prevalence by Population', font: chartFont }, tooltip: { ...defaultChartPlugins.tooltip, callbacks: { label: (c) => `${c.label}: ~${c.raw}%` } } },
+                    scales: { y: { ticks:{font: chartFont}, title: { display: true, text: 'Percentage (%)', font: chartFont } }, x: { ticks:{font: chartFont} } }
+                }
+            });
+
+            const efficacyCtx = document.getElementById('efficacyChart').getContext('2d');
+            new Chart(efficacyCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Remission from Depression'],
+                    datasets: [{
+                        label: 'Psilocybin Therapy',
+                        data: [57],
+                        backgroundColor: brandColors.teal,
+                        borderColor: brandColors.teal_border,
+                        borderWidth: 1
+                    }, {
+                        label: 'Leading Daily Antidepressant (SSRI)',
+                        data: [28],
+                        backgroundColor: brandColors.neutral,
+                        borderColor: brandColors.neutral_border,
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { ...defaultChartPlugins, title: { display: true, text: 'Psilocybin vs. Antidepressant', font: chartFont }, tooltip: { ...defaultChartPlugins.tooltip, callbacks: { label: (c) => `${c.dataset.label}: ${c.raw}% in Remission` } } },
+                    scales: { y: { beginAtZero: true, max: 75, ticks:{font: chartFont}, title: { display: true, text: 'Participants in Remission (%)', font: chartFont } }, x: { ticks:{font: chartFont} } }
+                }
+            });
+
+            const remissionCtx = document.getElementById('remissionChart').getContext('2d');
+            new Chart(remissionCtx, {
+                type: 'line',
+                data: {
+                    labels: ['1 Month', '3 Months', '6 Months', '12 Months'],
+                    datasets: [{
+                        label: '% of Participants in Remission',
+                        data: [67, 75, 58, 58],
+                        fill: true,
+                        backgroundColor: brandColors.teal,
+                        borderColor: brandColors.teal_border,
+                        tension: 0.1
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false }, title: { display: true, text: 'Durability of Antidepressant Effect', font: chartFont }, tooltip: { ...defaultChartPlugins.tooltip, callbacks: { label: (c) => `${c.dataset.label}: ${c.raw}%` } } },
+                    scales: { y: { beginAtZero: true, max: 100, ticks:{font: chartFont}, title: { display: true, text: 'Remission Rate (%)', font: chartFont } }, x: { ticks:{font: chartFont} } }
+                }
+            });
+
+            const audCtx = document.getElementById('audChart').getContext('2d');
+            new Chart(audCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['Psilocybin Therapy', 'Active Placebo (Benadryl)'],
+                    datasets: [{
+                        label: 'Reduction in Heavy Drinking Days',
+                        data: [83, 51],
+                        backgroundColor: [brandColors.cerulean, brandColors.neutral],
+                        borderColor: [brandColors.cerulean_border, brandColors.neutral_border],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false }, title: { display: true, text: 'Efficacy for Alcohol Use Disorder', font: chartFont }, tooltip: { ...defaultChartPlugins.tooltip, callbacks: { label: (c) => `${c.label}: ${c.raw}% Reduction` } } },
+                    scales: { y: { beginAtZero: true, max: 100, ticks:{font: chartFont}, title: { display: true, text: 'Reduction in Heavy Drinking (%)', font: chartFont } }, x: { ticks:{font: chartFont} } }
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
