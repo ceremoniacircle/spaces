@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ceremonia Spaces: A Proposal for Compassionate Care</title>
+    <link rel="icon" type="image/png" href="images/ceremonia_icon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <!-- Chosen Palette: Ceremonia Brand Palette -->
-    <!-- Application Structure Plan: A non-linear, thematic single-page application. The structure uses a sticky navigation bar to allow users (e.g., board members) to jump directly to sections addressing their primary concerns: 1) The Community Crisis (the "why"), 2) The Professional Solution (the "how"), 3) Our Commitment (the "who"), and 4) A proactive Q&A. This architecture prioritizes user-driven exploration over a passive, linear report, making the information more accessible and persuasive by allowing users to address their own questions first. -->
+    <!-- Application Structure Plan: A non-linear, thematic single-page application. The structure uses a sticky navigation bar to allow users (e.g., board members) to jump directly to sections addressing their primary concerns: 1) The Community Crisis (the "why"), 2) The Professional Solution (the "how"), 3) Our Commitment (the "who"), 4) Our Team, 5) Media & Learning, and 6) A proactive Q&A. This architecture prioritizes user-driven exploration over a passive, linear report, making the information more accessible and persuasive. -->
     <!-- Visualization & Content Choices: 
         - The Crisis (State Level): Report data on CO mental health vs. US average -> Goal: Compare -> Viz: Bar Chart (Chart.js) -> Interaction: Hover for details -> Justification: Immediately establishes the scale of the problem.
         - The Crisis (TRD): Report data on Treatment-Resistant Depression -> Goal: Inform/Proportion -> Viz: Donut Chart (Chart.js) -> Interaction: Hover for details -> Justification: Visually highlights the specific underserved population the center helps.
@@ -18,6 +19,7 @@
         - The Crisis (Economic Cost): Report data on TRD cost -> Goal: Inform -> Viz: Formatted Text Block -> Interaction: Static -> Justification: Presents a large, impactful number clearly without a complex chart.
         - The Solution (Efficacy): Report data on psilocybin vs. antidepressant remission -> Goal: Compare -> Viz: Grouped Bar Chart (Chart.js) -> Interaction: Hover for details -> Justification: Provides a powerful, data-driven argument for effectiveness.
         - The Solution (Process): Report's 3-stage clinical protocol -> Goal: Organize/Explain -> Viz: Numbered HTML/CSS flexbox diagram -> Interaction: Static -> Justification: Clearly illustrates the structured, professional nature of the therapy.
+        - Media: Book and documentary info -> Goal: Inform/Context -> Viz: Embedded video and linked image -> Interaction: Play video, click link -> Justification: Provides accessible, mainstream resources for further learning.
         - Q&A: Report's anticipated questions -> Goal: Organize/Inform -> Viz: HTML/CSS/JS Accordion -> Interaction: Click to reveal -> Justification: Proactively addresses concerns in a clean, organized manner.
     -->
     <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
@@ -61,17 +63,24 @@
         .accordion-arrow {
             transition: transform 0.3s ease-out;
         }
+        .aspect-w-16 { position: relative; padding-bottom: 56.25%; }
+        .aspect-h-9 { height: 0; }
+        .aspect-w-16 > iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
     </style>
 </head>
 <body class="antialiased">
 
     <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <h1 class="text-xl md:text-2xl font-bold" style="color: var(--cielo-cerulean);">Ceremonia Spaces</h1>
-            <div class="hidden md:flex space-x-8">
-                <a href="#crisis" class="nav-link text-gray-600 hover:text-[var(--tierra-teal)] font-medium">The Community Crisis</a>
-                <a href="#solution" class="nav-link text-gray-600 hover:text-[var(--tierra-teal)] font-medium">Our Professional Solution</a>
+            <a href="#" class="flex items-center">
+                <img src="images/ceremonia_logo_horiz_color.png" alt="Ceremonia Spaces Logo" class="h-10">
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#crisis" class="nav-link text-gray-600 hover:text-[var(--tierra-teal)] font-medium">The Crisis</a>
+                <a href="#solution" class="nav-link text-gray-600 hover:text-[var(--tierra-teal)] font-medium">Our Solution</a>
                 <a href="#commitment" class="nav-link text-gray-600 hover:text-[var(--tierra-teal)] font-medium">Our Commitment</a>
+                <a href="#team" class="nav-link text-gray-600 hover:text-[var(--tierra-teal)] font-medium">Our Team</a>
+                <a href="#media" class="nav-link text-gray-600 hover:text-[var(--tierra-teal)] font-medium">Media & Learning</a>
                 <a href="#faq" class="nav-link text-gray-600 hover:text-[var(--tierra-teal)] font-medium">Your Questions</a>
             </div>
             <div class="md:hidden">
@@ -81,9 +90,11 @@
             </div>
         </nav>
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
-            <a href="#crisis" class="block py-2 px-6 text-gray-600 hover:bg-gray-50 hover:text-[var(--tierra-teal)]">The Community Crisis</a>
-            <a href="#solution" class="block py-2 px-6 text-gray-600 hover:bg-gray-50 hover:text-[var(--tierra-teal)]">Our Professional Solution</a>
+            <a href="#crisis" class="block py-2 px-6 text-gray-600 hover:bg-gray-50 hover:text-[var(--tierra-teal)]">The Crisis</a>
+            <a href="#solution" class="block py-2 px-6 text-gray-600 hover:bg-gray-50 hover:text-[var(--tierra-teal)]">Our Solution</a>
             <a href="#commitment" class="block py-2 px-6 text-gray-600 hover:bg-gray-50 hover:text-[var(--tierra-teal)]">Our Commitment</a>
+            <a href="#team" class="block py-2 px-6 text-gray-600 hover:bg-gray-50 hover:text-[var(--tierra-teal)]">Our Team</a>
+            <a href="#media" class="block py-2 px-6 text-gray-600 hover:bg-gray-50 hover:text-[var(--tierra-teal)]">Media & Learning</a>
             <a href="#faq" class="block py-2 px-6 text-gray-600 hover:bg-gray-50 hover:text-[var(--tierra-teal)]">Your Questions</a>
         </div>
     </header>
@@ -219,9 +230,72 @@
                 </div>
             </div>
             
-            <div class="p-8 rounded-lg shadow-lg text-center text-white" style="background-color: var(--cielo-cerulean);">
-                <h4 class="text-2xl font-bold mb-3">A Quiet & Respectful Neighbor</h4>
-                <p class="max-w-3xl mx-auto leading-relaxed">We are deeply committed to being a positive presence. Our center operates strictly by appointment. Each of our private therapy rooms will host only a single participant or one small group per day, ensuring a calm, predictable, and low-traffic environment. All therapeutic work is conducted indoors in a private, controlled setting. We are here to be a place of quiet healing, not a source of disruption.</p>
+            <div class="p-8 rounded-lg shadow-lg text-white grid md:grid-cols-2 gap-8 items-center" style="background-color: var(--cielo-cerulean);">
+                <div class="text-center md:text-left">
+                    <h4 class="text-2xl font-bold mb-3">A Quiet & Respectful Neighbor</h4>
+                    <p class="leading-relaxed">We are deeply committed to being a positive presence. Our center operates strictly by appointment. Each of our private therapy rooms will host only a single participant or one small group per day, ensuring a calm, predictable, and low-traffic environment. All therapeutic work is conducted indoors in a private, controlled setting. We are here to be a place of quiet healing, not a source of disruption.</p>
+                </div>
+                <img src="images/538_commons_dr.jpg" alt="Exterior of the Ceremonia Spaces center" class="rounded-lg shadow-md w-full h-auto object-cover">
+            </div>
+        </section>
+
+        <section id="team" class="mb-20 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-2">Our Team: Leadership & Expertise</h3>
+                <p class="max-w-3xl mx-auto text-gray-600 leading-relaxed">Our center is guided by a team of experienced professionals dedicated to providing the highest standard of care, safety, and compassionate support.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="images/austin_mao.jpg" alt="Photo of Austin Mao" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h4 class="text-xl font-bold">Austin Mao</h4>
+                    <h5 class="font-semibold mb-2" style="color: var(--tierra-teal);">Founder & CEO</h5>
+                    <p class="text-gray-600 text-sm leading-relaxed">Austin is a conscious entrepreneur and investor who has successfully built and exited multiple businesses. His personal healing journey inspired him to create Ceremonia Spaces to provide others with access to safe, legal, and transformative healing experiences.</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="images/craig_heacock.jpg" alt="Photo of Dr. Craig Heacock" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h4 class="text-xl font-bold">Dr. Craig Heacock</h4>
+                    <h5 class="font-semibold mb-2" style="color: var(--tierra-teal);">Medical Director</h5>
+                    <p class="text-gray-600 text-sm leading-relaxed">Dr. Heacock is a board-certified psychiatrist with over 20 years of experience. He is a leading voice in psychedelic medicine, a MAPS-trained therapist for MDMA-assisted therapy, and hosts the popular psychiatric podcast "Back from the Abyss."</p>
+                </div>
+                 <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="images/darrick_sahara.jpg" alt="Photo of Dr. Darrick Sahara" class="w-32 h-32 rounded-full mx-auto mb-4 object-cover">
+                    <h4 class="text-xl font-bold">Dr. Darrick Sahara</h4>
+                    <h5 class="font-semibold mb-2" style="color: var(--tierra-teal);">Clinical Advisor</h5>
+                    <p class="text-gray-600 text-sm leading-relaxed">Dr. Sahara is a licensed clinical psychologist with extensive experience in trauma and addiction. He has worked closely with veterans and first responders and brings a deep understanding of the complex needs of those suffering from PTSD.</p>
+                </div>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg mt-8 text-center">
+                <h4 class="text-xl font-bold mb-2">Our Licensed Facilitators</h4>
+                <p class="text-gray-600 max-w-2xl mx-auto leading-relaxed">All therapeutic sessions are conducted by state-licensed facilitators. Each has completed over 150 hours of rigorous training, passed background checks, and is dedicated to upholding the highest ethical standards of care and confidentiality as mandated by Colorado law.</p>
+            </div>
+        </section>
+
+        <section id="media" class="mb-20 scroll-mt-20">
+            <div class="text-center mb-12">
+                <h3 class="text-3xl font-bold text-gray-800 mb-2">Media & Further Learning</h3>
+                <p class="max-w-3xl mx-auto text-gray-600 leading-relaxed">This field has gained significant mainstream attention for its therapeutic promise. For those interested in learning more, these resources from respected journalist Michael Pollan provide an excellent, accessible overview of the science and history.</p>
+            </div>
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4" style="color: var(--cielo-cerulean);">The Bestselling Book</h4>
+                        <p class="text-gray-600 mb-4 leading-relaxed">"How to Change Your Mind" explores the history and science of this therapeutic model. It provides a thoughtful, in-depth look at how these compounds work and why they are re-emerging as a powerful tool for mental health.</p>
+                        <a href="https://www.amazon.com/Change-Your-Mind-Consciousness-Addiction/dp/0735224153" target="_blank" rel="noopener noreferrer" class="inline-block px-6 py-2 rounded-md text-white font-semibold transition" style="background-color: var(--sol-orange); hover:opacity-90;">Learn More</a>
+                    </div>
+                    <a href="https://www.amazon.com/Change-Your-Mind-Consciousness-Addiction/dp/0735224153" target="_blank" rel="noopener noreferrer">
+                        <img src="https://m.media-amazon.com/images/I/41bhaVIDlNL._SY445_SX342_.jpg" alt="Cover of the book How to Change Your Mind" class="rounded-lg shadow-md w-full max-w-xs mx-auto">
+                    </a>
+                </div>
+                <hr class="my-8 border-gray-200">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                     <div class="aspect-w-16 aspect-h-9 rounded-lg overflow-hidden shadow-lg">
+                        <iframe src="https://www.youtube.com/embed/X8LRb4jfZ9g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-semibold mb-4" style="color: var(--cielo-cerulean);">The Netflix Docuseries</h4>
+                        <p class="text-gray-600 leading-relaxed">The book was adapted into a popular, four-part documentary series on Netflix. It offers a compelling visual exploration of the topic and is a great resource for understanding the human side of this healing work.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
