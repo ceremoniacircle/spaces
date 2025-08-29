@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Ceremonia Spaces — Bank Financing Request</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            background-color: #F5F3FF;
+            color: #3D352E;
+        }
+        h1, h2, h3, h4, h5, h6, .nav-link, .stat-value, .stat-label, button, .highlight-value, th {
+            font-family: 'Public Sans', sans-serif;
+        }
+        .nav-link.active {
+            color: #65C5B2; /* tierra teal */
+            border-bottom: 2px solid #65C5B2;
+        }
+        .section-bg {
+             background-color: #FFFFFF;
+        }
+        .stat-card {
+            background-color: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.07);
+        }
+        .stat-value {
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #6283C2; /* cielo cerulean */
+        }
+        .stat-label {
+            font-size: 1rem;
+            color: #6b7280;
+            margin-top: 0.5rem;
+        }
+        @media print {
+            .print-hide {
+                display: none !important;
+            }
+            body, .section-bg {
+                background-color: #FFFFFF !important;
+                color: #000000 !important;
+            }
+            section {
+                padding-top: 2rem !important;
+                padding-bottom: 2rem !important;
+                page-break-inside: avoid;
+            }
+            header, footer {
+                display: none;
+            }
+            .page-break-before {
+                page-break-before: always;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200 print-hide">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#summary" aria-label="Go to top">
+                <img src="images/ceremonia_logo_horiz_color.png" alt="Ceremonia Spaces Logo" class="h-8 md:h-10 w-auto">
+            </a>
+            <div class="hidden md:flex flex-wrap items-center justify-center space-x-4 lg:space-x-6 text-sm font-medium">
+                <a href="#market" class="nav-link">Market</a>
+                <a href="#demand" class="nav-link">Demand</a>
+                <a href="#model" class="nav-link">Model</a>
+                <a href="#financials" class="nav-link">Financials</a>
+                <a href="#stack" class="nav-link">Capital Stack</a>
+                <a href="#risk" class="nav-link">Risk</a>
+                <a href="#property" class="nav-link">Property</a>
+                <a href="#founder" class="nav-link">Founder</a>
+            </div>
+            <a href="#contact" class="bg-[#65C5B2] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">
+                Contact
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero / Executive Summary -->
+        <section id="summary" class="py-16 md:py-24">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-[#3D352E]">Ceremonia Spaces — Bank Financing Request</h1>
+                <h2 class="mt-4 text-xl md:text-2xl font-semibold text-gray-600">Licensed Medical Services Facility for Psychedelic Healing</h2>
+                <div class="mt-8 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="stat-card">
+                        <p class="stat-label">Loan Requested</p>
+                        <p class="stat-value">$450,000</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Property</p>
+                        <p class="stat-value">7,062 SF</p>
+                         <p class="text-gray-500 text-sm mt-1">Golden, CO</p>
+                    </div>
+                </div>
+                <p class="mt-8 max-w-2xl mx-auto text-lg text-gray-700 italic">
+                    A secured commercial real estate loan backed by tangible property and a long-term NNN lease to a profitable, de-risked operator with pre-committed tenant demand.
+                </p>
+            </div>
+        </section>
+
+        <!-- Quick Investment Snapshot -->
+        <section class="py-12 md:py-16 section-bg border-t">
+             <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden border">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="p-4 text-sm font-semibold text-gray-600 w-1/3">Term</th>
+                                <th class="p-4 text-sm font-semibold text-gray-600">Detail</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200">
+                            <tr class="text-sm">
+                                <td class="p-4 font-medium text-gray-700">Purchase Price</td>
+                                <td class="p-4 text-gray-600">$1,050,000 (~$149/SF)</td>
+                            </tr>
+                            <tr class="text-sm bg-gray-50">
+                                <td class="p-4 font-medium text-gray-700">Seller Financing (1st Lien)</td>
+                                <td class="p-4 text-gray-600">$500,000 at 7.0% Interest</td>
+                            </tr>
+                            <tr class="text-sm">
+                                <td class="p-4 font-medium text-gray-700">Bank Loan Requested (2nd Lien)</td>
+                                <td class="p-4 text-gray-600 font-bold">$450,000 (This Deck)</td>
+                            </tr>
+                             <tr class="text-sm bg-gray-50">
+                                <td class="p-4 font-medium text-gray-700">Equity In</td>
+                                <td class="p-4 text-gray-600">$200,000 (Founder + Investors, already committed)</td>
+                            </tr>
+                            <tr class="text-sm">
+                                <td class="p-4 font-medium text-gray-700">Collateral</td>
+                                <td class="p-4 text-gray-600">Property at 538 Commons Dr, Golden, CO & NNN lease cash flows</td>
+                            </tr>
+                             <tr class="text-sm bg-gray-50">
+                                <td class="p-4 font-medium text-gray-700">Use of Proceeds</td>
+                                <td class="p-4 text-gray-600">Complete acquisition, closing costs, light tenant improvements, and initial working capital cushion.</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Market -->
+        <section id="market" class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Market: A Specialty Medical Services Model</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
+                        This business is best understood as a specialized medical office facility. Much like a dermatology or dental group, we provide licensed, compliant space for independent, state-licensed practitioners to serve their clients. We are the infrastructure provider in a new, regulated health services market.
+                    </p>
+                </div>
+                 <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white p-6 rounded-lg border">
+                        <h3 class="font-bold text-lg mb-2">Market Proxy: Oregon</h3>
+                        <p class="text-sm text-gray-600 mb-4">Oregon, the first state to license these services, provides a strong proxy for demand. Their market shows consistent quarter-over-quarter growth in sessions.</p>
+                        <div class="h-32"><canvas id="oregonSparkline"></canvas></div>
+                        <p class="text-xs text-center text-gray-500 mt-2">Source: Oregon Health Authority Data (Illustrative Growth)</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border">
+                        <h3 class="font-bold text-lg mb-2">Colorado: A Superior Market</h3>
+                         <ul class="text-sm text-gray-700 list-disc list-inside space-y-2">
+                            <li><strong>Larger Population:</strong> 6.0M vs Oregon's 4.2M.</li>
+                            <li><strong>Greater Need:</strong> Higher reported rates of adult mental health challenges.</li>
+                            <li><strong>#1 Tourism Destination:</strong> Colorado is already the top destination for psychedelic tourism, a key driver of the Oregon market's success.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Demand De-Risking -->
+        <section id="demand" class="py-16 md:py-24 section-bg border-t">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                     <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Demand De-Risking</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
+                        The operator (OpCo) has already secured significant, quantifiable demand from licensed professionals, dramatically de-risking the NNN lease that collateralizes this loan.
+                    </p>
+                </div>
+                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="stat-card">
+                        <p class="stat-label">Total Licensed Facilitators in CO</p>
+                        <p class="stat-value">55</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">On Our Waitlist</p>
+                        <p class="stat-value text-[#65C5B2]">28</p>
+                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
+                            <div class="bg-[#65C5B2] h-2.5 rounded-full" style="width: 50.9%"></div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-1">≈51% of Total Market</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Pending Training Partnerships</p>
+                        <p class="stat-value">3</p>
+                        <p class="text-sm text-gray-500 mt-1">LOIs from top U.S. training programs</p>
+                    </div>
+                </div>
+                <div class="mt-12 max-w-3xl mx-auto p-4 text-center bg-[#65C5B2]/10 border-l-4 border-[#65C5B2] rounded-r-lg">
+                    <p class="font-semibold text-[#4a9484]">Next Step: Convert Waitlist to Signed Pre-Commitments</p>
+                    <p class="text-sm text-gray-700 mt-1">We are now converting our waitlist into signed, bank-friendly pre-commitment agreements for room rentals to provide concrete proof of future cash flows.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Business Model -->
+        <section id="model" class="py-16 md:py-24">
+             <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Business Model: How Cash Flow Works</h2>
+                <p class="mt-3 max-w-3xl mx-auto text-gray-600">
+                    The structure is straightforward, creating a clear and secure path for revenue to cover debt service.
+                </p>
+                <div class="mt-12 flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4 text-center">
+                    <div class="bg-white p-6 rounded-lg border w-full md:w-1/4">
+                        <p class="font-bold text-lg">Property (Landlord SPV)</p>
+                        <p class="text-sm text-gray-500">Holds the real estate asset.</p>
+                    </div>
+                    <div class="text-2xl font-bold text-gray-400">→</div>
+                    <div class="bg-white p-6 rounded-lg border w-full md:w-1/3">
+                        <p class="font-bold text-lg">NNN Master Lease</p>
+                        <p class="text-sm text-gray-500">Long-term lease to the Operator (OpCo), covering all property debt & expenses.</p>
+                    </div>
+                    <div class="text-2xl font-bold text-gray-400">→</div>
+                    <div class="bg-white p-6 rounded-lg border w-full md:w-1/4">
+                        <p class="font-bold text-lg">Day-Rate Leases</p>
+                        <p class="text-sm text-gray-500">Sub-leases to licensed facilitators.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Financials (OpCo) -->
+        <section id="financials" class="py-16 md:py-24 section-bg border-t">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Operator Financials (Ceremonia Spaces, Inc.)</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
+                        The tenant (OpCo) demonstrates strong profitability and ample cash flow to comfortably service its NNN lease obligations, ensuring consistent payments to the property SPV.
+                    </p>
+                </div>
+                <div class="max-w-5xl mx-auto bg-white rounded-lg p-6 border shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-center">Year 1 Financial Forecast (Base Case)</h3>
+                    <div class="h-96 w-full"><canvas id="financialChart"></canvas></div>
+                     <p class="text-xs text-center text-gray-500 mt-4">Note: This forecast for the operating company (tenant) is based on a phased rollout, pre-committed anchor tenants, and conservative facilitator demand assumptions. It is for illustrative purposes to demonstrate the operator's ability to service its lease debt.</p>
+                </div>
+                 <div class="mt-8 max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
+                    <div class="stat-card">
+                        <p class="stat-label">Year 1 Revenue</p>
+                        <p class="stat-value">$830,000</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Year 1 EBITDA Margin</p>
+                        <p class="stat-value">44%</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Stabilized DSCR (Yr 2)</p>
+                        <p class="stat-value text-[#65C5B2]">>2.0x</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Capital Stack -->
+        <section id="stack" class="py-16 md:py-24">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Post-Close Capital Stack</h2>
+                <div class="mt-8 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-lg border">
+                        <h3 class="font-bold text-lg">1st Position</h3>
+                        <p class="text-2xl font-bold mt-2">$500,000</p>
+                        <p class="text-sm text-gray-500">Seller Note (7.0%)</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border-2 border-[#65C5B2] shadow-lg">
+                        <h3 class="font-bold text-lg text-[#4a9484]">2nd Position (This Request)</h3>
+                        <p class="text-2xl font-bold mt-2 text-[#65C5B2]">$450,000</p>
+                        <p class="text-sm text-gray-500">Bank Loan (Target 6-8%)</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border">
+                        <h3 class="font-bold text-lg">Equity</h3>
+                        <p class="text-2xl font-bold mt-2">$200,000</p>
+                        <p class="text-sm text-gray-500">Founder & Investors</p>
+                    </div>
+                </div>
+                 <div class="mt-8 max-w-md mx-auto p-3 text-center bg-gray-100 border rounded-lg">
+                    <p class="font-semibold text-gray-700">Total Sources ≈ $1.15M (Purchase + Closing + TI Cushion)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Risk Mitigation -->
+        <section id="risk" class="py-16 md:py-24 section-bg border-t">
+             <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Risk Mitigation</h2>
+                </div>
+                <div class="max-w-3xl mx-auto">
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><span class="text-xl text-[#65C5B2] mr-3 mt-1">✓</span><div><strong class="text-gray-800">Real Estate Collateral:</strong> The loan is secured by a tangible asset acquired at a ~$150k discount to its appraised value.</div></li>
+                        <li class="flex items-start"><span class="text-xl text-[#65C5B2] mr-3 mt-1">✓</span><div><strong class="text-gray-800">Pre-Committed Demand:</strong> The operator has a waitlist of 28 licensed facilitators (≈50% of the market) and pending LOIs from 3 national training programs.</div></li>
+                        <li class="flex items-start"><span class="text-xl text-[#65C5B2] mr-3 mt-1">✓</span><div><strong class="text-gray-800">First-of-Scale Facility:</strong> As the only high-quality, multi-room facility for rent in the Denver metro area, the operator has a significant first-mover advantage.</div></li>
+                        <li class="flex items-start"><span class="text-xl text-[#65C5B2] mr-3 mt-1">✓</span><div><strong class="text-gray-800">Experienced Operator:</strong> The founder has scaled a large-scale hospitality portfolio and has personally facilitated over 1,000+ psychedelic sessions.</div></li>
+                        <li class="flex items-start"><span class="text-xl text-[#65C5B2] mr-3 mt-1">✓</span><div><strong class="text-gray-800">Medical Services Analog:</strong> The business model mirrors that of a successful Independent Practice Association (IPA), a proven model in the medical field.</div></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Property -->
+        <section id="property" class="py-16 md:py-24 page-break-before">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Property Overview</h2>
+                </div>
+                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">538 Commons Dr, Golden, CO</h3>
+                        <div class="mb-6"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.751680199148!2d-105.2913388846247!3d39.7225199794519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b8180a53b1229%3A0x4a4c483a3bff8b27!2s538%20Commons%20Dr%2C%20Golden%2C%20CO%2080401!5e0!3m2!1sen!2sus!4v1689708940833!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-md"></iframe></div>
+                        <h4 class="font-semibold text-gray-800 mb-2">Property Highlights:</h4>
+                        <ul class="text-gray-700 list-disc list-inside space-y-1 text-sm">
+                            <li>7,062 sq. ft. two-story office building.</li>
+                            <li>New roof installed in 2021.</li>
+                            <li>Quiet, professional business park with a focus on health & wellness tenants.</li>
+                            <li>Serene foothills setting with mountain views, ideal for therapeutic work.</li>
+                            <li>Will be delivered vacant, allowing for immediate tenant improvements.</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-6">
+                        <img src="images/patio.jpg" alt="Outdoor patio area at the Golden property" class="rounded-lg shadow-lg w-full h-auto object-cover">
+                        <img src="images/group-hall.jpg" alt="Interior view of a large group room" class="rounded-lg shadow-lg w-full h-auto object-cover">
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <!-- Founder -->
+        <section id="founder" class="py-16 md:py-24 section-bg border-t">
+            <div class="container mx-auto px-6">
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                    <div class="md:col-span-1">
+                        <img src="images/austin_mao.jpg" alt="Austin Mao, Founder & CEO of Ceremonia" class="rounded-xl shadow-lg object-cover w-full h-auto">
+                    </div>
+                    <div class="md:col-span-2">
+                        <h2 class="text-3xl font-bold">Austin Mao</h2>
+                        <h3 class="text-lg font-semibold text-[#65C5B2]">Founder & CEO, Ceremonia</h3>
+                        <ul class="mt-4 space-y-2 list-disc list-inside text-gray-700">
+                            <li><strong>1,000+ Sessions Facilitated:</strong> Deep experience in the safe and ethical application of psychedelic medicine.</li>
+                            <li><strong>Colorado's 1st Licensed Facilitator:</strong> Recognized by the state under the Legacy Healer Pathway.</li>
+                            <li><strong>Advisor to CO Governor's Office & DORA:</strong> A trusted voice in shaping state-level regulatory policy.</li>
+                            <li><strong>Proven Hospitality Operator:</strong> Scaled a short-term rental portfolio in Las Vegas to 2,000+ monthly guests across 24 properties.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Loan Request -->
+        <section id="loan-request" class="py-16 md:py-24">
+             <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-xl border-2 border-[#65C5B2] shadow-2xl">
+                    <h2 class="text-3xl font-bold text-center text-[#3D352E]">Loan Request Details</h2>
+                    <dl class="mt-8 divide-y divide-gray-200">
+                        <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Amount</dt><dd class="text-sm text-gray-900 col-span-2 font-bold text-xl">$450,000</dd></div>
+                        <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Loan Type</dt><dd class="text-sm text-gray-900 col-span-2">Standard Commercial Real Estate Loan</dd></div>
+                        <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Target Terms</dt><dd class="text-sm text-gray-900 col-span-2">5–10 Year Term, 6–8% Interest Rate, Standard Amortization</dd></div>
+                        <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Security</dt><dd class="text-sm text-gray-900 col-span-2">Second lien position on the property at 538 Commons Dr, subordinate to $500k seller financing. Collateral includes the property and the NNN lease cash flows. Optional UCC filing on OpCo receivables.</dd></div>
+                         <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Use of Proceeds</dt><dd class="text-sm text-gray-900 col-span-2">Finalize property acquisition, cover all closing costs, fund light tenant improvements, and provide a working capital cushion for launch.</dd></div>
+                    </dl>
+                    <div class="mt-8 text-center print-hide">
+                        <button onclick="window.print()" class="bg-[#65C5B2] text-white font-bold py-3 px-8 rounded-lg hover:bg-opacity-90 transition-transform transform hover:scale-105 shadow-lg">
+                            Download PDF / Print
+                        </button>
+                    </div>
+                </div>
+             </div>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact" class="py-16 md:py-24 section-bg border-t">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold text-[#3D352E]">Contact</h2>
+                <div class="mt-6">
+                    <p class="text-xl font-semibold">Austin Mao</p>
+                    <a href="mailto:austin@ceremoniacircle.org" class="text-lg text-[#6283C2] hover:text-[#496291] transition-colors">austin@ceremoniacircle.org</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-6 text-center text-gray-500 text-xs print-hide">
+        <p>&copy; 2025 Ceremonia Spaces, Inc. For informational purposes only. Not an offer to sell securities.</p>
+        <p>Document ID: CS-BANK-DECK-V1.2 | Generated: August 29, 2025</p>
+    </footer>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    // --- Smooth Scrolling ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    // --- Chart Data ---
+    const financialData = {
+        labels: ['Q3 \'25', 'Q4 \'25', 'Q1 \'26', 'Q2 \'26'],
+        revenue: [14500, 131000, 340000, 344500],
+        opex: [-92429, -125000, -139000, -110000],
+        cash: [7181, 16310, 205738, 417989]
+    };
+
+    const oregonData = {
+        labels: ['Q3 \'24', 'Q4 \'24', 'Q1 \'25', 'Q2 \'25 (Proj.)'],
+        sessions: [1000, 1800, 3300, 5000]
+    };
+    
+    // --- Chart Rendering ---
+    // 1. Oregon Sparkline
+    const oregonCtx = document.getElementById('oregonSparkline');
+    if (oregonCtx) {
+        new Chart(oregonCtx, {
+            type: 'line',
+            data: {
+                labels: oregonData.labels,
+                datasets: [{
+                    label: 'Sessions per Quarter',
+                    data: oregonData.sessions,
+                    borderColor: '#65C5B2',
+                    tension: 0.3,
+                    fill: true,
+                    backgroundColor: 'rgba(101, 197, 178, 0.1)',
+                }]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { display: false }, tooltip: { enabled: true } },
+                scales: { 
+                    y: { beginAtZero: true, ticks: { display: false }, grid: { display: false } }, 
+                    x: { ticks: { font: { size: 10 } }, grid: { display: false } }
+                }
+            }
+        });
+    }
+
+    // 2. Main Financial Chart
+    const financialCtx = document.getElementById('financialChart');
+    if (financialCtx) {
+        new Chart(financialCtx, {
+            type: 'bar',
+            data: {
+                labels: financialData.labels,
+                datasets: [
+                    { label: 'Revenue', data: financialData.revenue, backgroundColor: '#65C5B2' },
+                    { label: 'OpEx', data: financialData.opex, backgroundColor: '#FBAE17' },
+                    { 
+                        label: 'Cash Balance', 
+                        data: financialData.cash,
+                        type: 'line',
+                        borderColor: '#6283C2',
+                        yAxisID: 'y1',
+                        tension: 0.1
+                    }
+                ]
+            },
+            options: {
+                responsive: true, maintainAspectRatio: false,
+                plugins: { legend: { position: 'bottom' } },
+                scales: {
+                    x: { stacked: true },
+                    y: { 
+                        stacked: true, 
+                        position: 'left',
+                        title: { display: true, text: 'Revenue & OpEx ($)' },
+                        ticks: { callback: value => '$' + (value/1000) + 'k' }
+                    },
+                    y1: { 
+                        position: 'right', 
+                        grid: { drawOnChartArea: false },
+                        title: { display: true, text: 'Cash Balance ($)' },
+                        ticks: { callback: value => '$' + (value/1000) + 'k' }
+                    }
+                }
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>
