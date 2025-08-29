@@ -46,28 +46,33 @@
             margin-top: 0.5rem;
         }
         @media print {
-            .print-hide {
-                display: none !important;
-            }
+            .print-hide { display: none !important; }
+            .print-header { display: flex !important; }
             body, .section-bg {
                 background-color: #FFFFFF !important;
                 color: #000000 !important;
             }
             section {
-                padding-top: 2rem !important;
-                padding-bottom: 2rem !important;
+                padding-top: 2.5rem !important;
+                padding-bottom: 2.5rem !important;
                 page-break-inside: avoid;
             }
-            header, footer {
-                display: none;
-            }
-            .page-break-before {
-                page-break-before: always;
-            }
+            header, footer { display: none; }
+            .page-break-before { page-break-before: always; }
+            .stat-card, .bg-white { border: 1px solid #ddd; }
         }
     </style>
 </head>
 <body class="antialiased">
+
+    <!-- Print Header -->
+    <div class="print-header hidden justify-between items-center p-4 border-b border-gray-300">
+        <img src="images/ceremonia_logo_horiz_color.png" alt="Ceremonia Spaces Logo" class="h-8">
+        <div>
+            <p class="font-bold text-sm">Ceremonia Spaces — Bank Financing Request</p>
+            <p class="text-xs text-gray-600" id="print-date">Date | Doc ID: CS-BANK-DECK-V2.1</p>
+        </div>
+    </div>
 
     <!-- Header & Navigation -->
     <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 border-b border-gray-200 print-hide">
@@ -109,49 +114,31 @@
                     </div>
                 </div>
                 <p class="mt-8 max-w-2xl mx-auto text-lg text-gray-700 italic">
-                    A secured commercial real estate loan backed by tangible property and a long-term NNN lease to a profitable, de-risked operator with pre-committed tenant demand.
+                    A secured commercial real estate loan backed by tangible property and a long-term NNN lease to an operator with projected profitability and pre-committed tenant demand.
                 </p>
             </div>
         </section>
 
-        <!-- Quick Investment Snapshot -->
-        <section class="py-12 md:py-16 section-bg border-t">
+        <!-- Bank Underwriting Snapshot -->
+        <section id="underwriting" class="py-12 md:py-16 section-bg border-t">
              <div class="container mx-auto px-6">
-                <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden border">
-                    <table class="w-full text-left">
-                        <thead class="bg-gray-50">
-                            <tr>
-                                <th class="p-4 text-sm font-semibold text-gray-600 w-1/3">Term</th>
-                                <th class="p-4 text-sm font-semibold text-gray-600">Detail</th>
-                            </tr>
-                        </thead>
-                        <tbody class="divide-y divide-gray-200">
-                            <tr class="text-sm">
-                                <td class="p-4 font-medium text-gray-700">Purchase Price</td>
-                                <td class="p-4 text-gray-600">$1,050,000 (~$149/SF)</td>
-                            </tr>
-                            <tr class="text-sm bg-gray-50">
-                                <td class="p-4 font-medium text-gray-700">Seller Financing (1st Lien)</td>
-                                <td class="p-4 text-gray-600">$500,000 at 7.0% Interest</td>
-                            </tr>
-                            <tr class="text-sm">
-                                <td class="p-4 font-medium text-gray-700">Bank Loan Requested (2nd Lien)</td>
-                                <td class="p-4 text-gray-600 font-bold">$450,000 (This Deck)</td>
-                            </tr>
-                             <tr class="text-sm bg-gray-50">
-                                <td class="p-4 font-medium text-gray-700">Equity In</td>
-                                <td class="p-4 text-gray-600">$200,000 (Founder + Investors, already committed)</td>
-                            </tr>
-                            <tr class="text-sm">
-                                <td class="p-4 font-medium text-gray-700">Collateral</td>
-                                <td class="p-4 text-gray-600">Property at 538 Commons Dr, Golden, CO & NNN lease cash flows</td>
-                            </tr>
-                             <tr class="text-sm bg-gray-50">
-                                <td class="p-4 font-medium text-gray-700">Use of Proceeds</td>
-                                <td class="p-4 text-gray-600">Complete acquisition, closing costs, light tenant improvements, and initial working capital cushion.</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-2xl md:text-3xl font-bold text-center mb-6">Bank Underwriting Snapshot</h2>
+                    <div class="bg-white rounded-lg shadow-lg overflow-hidden border">
+                        <table class="w-full text-left">
+                            <tbody class="divide-y divide-gray-200">
+                                <tr class="text-sm"><td class="p-3 font-medium text-gray-700 w-1/2">Purchase Price</td><td class="p-3 text-gray-800 font-semibold">$1,050,000</td></tr>
+                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Appraised Value</td><td class="p-3 text-gray-800 font-semibold">$1,200,000</td></tr>
+                                <tr class="text-sm"><td class="p-3 font-medium text-gray-700">Total Debt Post-Close</td><td class="p-3 text-gray-800 font-semibold">$950,000</td></tr>
+                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">LTV (Debt / Appraised Value)</td><td class="p-3 text-gray-800 font-semibold" id="ltv-value">≈ 79%</td></tr>
+                                <tr class="text-sm"><td class="p-3 font-medium text-gray-700">LTC (Debt / Total Uses)</td><td class="p-3 text-gray-800 font-semibold" id="ltc-value">≈ 83%</td></tr>
+                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Requested Loan (2nd Lien)</td><td class="p-3 text-gray-800 font-semibold">$450,000 (Target 6-8%, 5-10yr term)</td></tr>
+                                <tr class="text-sm"><td class="p-3 font-medium text-gray-700">Collateral</td><td class="p-3 text-gray-800">2nd lien on 538 Commons Dr + NNN lease cash flows; optional UCC on OpCo receivables</td></tr>
+                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Intercreditor</td><td class="p-3 text-gray-800">Seller is 1st lien; intercreditor agreement anticipated</td></tr>
+                                <tr class="text-sm"><td class="p-3 font-medium text-gray-700">Prepayment</td><td class="p-3 text-gray-800">Standard (open after 24 months)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>
@@ -168,16 +155,16 @@
                  <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div class="bg-white p-6 rounded-lg border">
                         <h3 class="font-bold text-lg mb-2">Market Proxy: Oregon</h3>
-                        <p class="text-sm text-gray-600 mb-4">Oregon, the first state to license these services, provides a strong proxy for demand. Their market shows consistent quarter-over-quarter growth in sessions.</p>
-                        <div class="h-32"><canvas id="oregonSparkline"></canvas></div>
-                        <p class="text-xs text-center text-gray-500 mt-2">Source: Oregon Health Authority Data (Illustrative Growth)</p>
+                        <p class="text-sm text-gray-600 mb-4">Oregon, the first state to license these services, provides a strong proxy for demand, showing consistent quarter-over-quarter growth.</p>
+                        <div class="h-32"><canvas id="oregonSparkline" aria-label="A line chart showing session growth in Oregon."></canvas></div>
+                        <p class="text-xs text-center text-gray-500 mt-2">Illustrative proxy (Oregon licensing); Colorado expected to be larger.</p>
                     </div>
                     <div class="bg-white p-6 rounded-lg border">
                         <h3 class="font-bold text-lg mb-2">Colorado: A Superior Market</h3>
                          <ul class="text-sm text-gray-700 list-disc list-inside space-y-2">
                             <li><strong>Larger Population:</strong> 6.0M vs Oregon's 4.2M.</li>
                             <li><strong>Greater Need:</strong> Higher reported rates of adult mental health challenges.</li>
-                            <li><strong>#1 Tourism Destination:</strong> Colorado is already the top destination for psychedelic tourism, a key driver of the Oregon market's success.</li>
+                            <li><strong>Established Tourism:</strong> Colorado is an established wellness destination, a key driver of the Oregon market's success.</li>
                         </ul>
                     </div>
                 </div>
@@ -193,7 +180,7 @@
                         The operator (OpCo) has already secured significant, quantifiable demand from licensed professionals, dramatically de-risking the NNN lease that collateralizes this loan.
                     </p>
                 </div>
-                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
                     <div class="stat-card">
                         <p class="stat-label">Total Licensed Facilitators in CO</p>
                         <p class="stat-value">55</p>
@@ -201,10 +188,6 @@
                     <div class="stat-card">
                         <p class="stat-label">On Our Waitlist</p>
                         <p class="stat-value text-[#65C5B2]">28</p>
-                        <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2">
-                            <div class="bg-[#65C5B2] h-2.5 rounded-full" style="width: 50.9%"></div>
-                        </div>
-                        <p class="text-xs text-gray-500 mt-1">≈51% of Total Market</p>
                     </div>
                     <div class="stat-card">
                         <p class="stat-label">Pending Training Partnerships</p>
@@ -212,6 +195,25 @@
                         <p class="text-sm text-gray-500 mt-1">LOIs from top U.S. training programs</p>
                     </div>
                 </div>
+                 <div class="mt-12 max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
+                    <div class="lg:col-span-1 text-center">
+                        <h3 class="font-bold text-lg mb-2">Waitlist Share of Market</h3>
+                        <div class="h-48 w-48 mx-auto"><canvas id="waitlistDonut" aria-label="A donut chart showing that 28 out of 55 facilitators are on the waitlist."></canvas></div>
+                    </div>
+                    <div class="lg:col-span-2 bg-white rounded-lg border p-4">
+                        <h3 class="font-bold text-lg mb-2">Pre-Commitments (In Process)</h3>
+                         <table class="w-full text-sm text-left">
+                            <thead class="bg-gray-50"><tr><th class="p-2">Organization</th><th class="p-2">Commitment</th><th class="p-2">Status</th></tr></thead>
+                            <tbody class="divide-y">
+                                <tr><td class="p-2">Training Program A</td><td class="p-2">4 Days/Month</td><td class="p-2">Draft LOI</td></tr>
+                                <tr><td class="p-2">Facilitator Group B</td><td class="p-2">2 Days/Month</td><td class="p-2">Verbal → Paper</td></tr>
+                                <tr><td class="p-2">Training Program C</td><td class="p-2">6 Days/Quarter</td><td class="p-2">Draft LOI</td></tr>
+                                <tr><td class="p-2">Solo Practitioner D</td><td class="p-2">1 Day/Month</td><td class="p-2">Verbal</td></tr>
+                                <tr><td class="p-2">Wellness Retreat E</td><td class="p-2">Weekend Buyout</td><td class="p-2">Negotiating</td></tr>
+                            </tbody>
+                         </table>
+                    </div>
+                 </div>
                 <div class="mt-12 max-w-3xl mx-auto p-4 text-center bg-[#65C5B2]/10 border-l-4 border-[#65C5B2] rounded-r-lg">
                     <p class="font-semibold text-[#4a9484]">Next Step: Convert Waitlist to Signed Pre-Commitments</p>
                     <p class="text-sm text-gray-700 mt-1">We are now converting our waitlist into signed, bank-friendly pre-commitment agreements for room rentals to provide concrete proof of future cash flows.</p>
@@ -219,8 +221,24 @@
             </div>
         </section>
 
+        <!-- License & Due Diligence -->
+        <section id="diligence" class="py-16 md:py-24">
+            <div class="container mx-auto px-6 text-center">
+                 <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">License & Due Diligence Status</h2>
+                <div class="mt-8 max-w-2xl mx-auto bg-white p-6 rounded-lg border">
+                    <ul class="space-y-4 text-left">
+                        <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>License:</strong> State license process at final stage; expected approval: <strong>[Insert Date]</strong></div></li>
+                        <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>Appraisal:</strong> Completed at <strong>$1.2M</strong> (report available)</div></li>
+                        <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>Phase I ESA:</strong> Completed, No RECs (report available)</div></li>
+                        <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>Title & Zoning:</strong> Clean; zoning supports intended use (reports available)</div></li>
+                         <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>Roof:</strong> Replaced in 2021</div></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
         <!-- Business Model -->
-        <section id="model" class="py-16 md:py-24">
+        <section id="model" class="py-16 md:py-24 section-bg border-t">
              <div class="container mx-auto px-6 text-center">
                  <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Business Model: How Cash Flow Works</h2>
                 <p class="mt-3 max-w-3xl mx-auto text-gray-600">
@@ -242,37 +260,78 @@
                         <p class="text-sm text-gray-500">Sub-leases to licensed facilitators.</p>
                     </div>
                 </div>
+                 <div class="mt-8 max-w-2xl mx-auto p-4 bg-gray-50 border rounded-lg">
+                    <p class="font-semibold text-gray-800">Illustrative NNN Lease</p>
+                    <p class="text-sm text-gray-600">Monthly base rent is sufficient to cover seller 1st DS + bank 2nd DS + taxes/ins/ops.</p>
+                    <p class="font-mono text-xs mt-2 text-blue-800 bg-blue-100 p-2 rounded">Coverage = OpCo Revenue / (Annual NNN Obligation) → target ≥ 1.25x (bank standard)</p>
+                </div>
             </div>
         </section>
 
         <!-- Financials (OpCo) -->
-        <section id="financials" class="py-16 md:py-24 section-bg border-t">
+        <section id="financials" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
                      <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Operator Financials (Ceremonia Spaces, Inc.)</h2>
                     <p class="mt-3 max-w-3xl mx-auto text-gray-600">
-                        The tenant (OpCo) demonstrates strong profitability and ample cash flow to comfortably service its NNN lease obligations, ensuring consistent payments to the property SPV.
+                        The tenant (OpCo) demonstrates projected profitability and ample cash flow to comfortably service its NNN lease obligations, ensuring consistent payments to the property SPV.
                     </p>
                 </div>
                 <div class="max-w-5xl mx-auto bg-white rounded-lg p-6 border shadow-lg">
                     <h3 class="text-xl font-bold mb-4 text-center">Year 1 Financial Forecast (Base Case)</h3>
-                    <div class="h-96 w-full"><canvas id="financialChart"></canvas></div>
-                     <p class="text-xs text-center text-gray-500 mt-4">Note: This forecast for the operating company (tenant) is based on a phased rollout, pre-committed anchor tenants, and conservative facilitator demand assumptions. It is for illustrative purposes to demonstrate the operator's ability to service its lease debt.</p>
+                    <div class="h-96 w-full"><canvas id="financialChart" aria-label="A chart showing Year 1 revenue, opex, and cash balance projections."></canvas></div>
+                    <div class="mt-6 flex flex-wrap justify-center gap-4 text-center">
+                        <div class="px-4 py-2 bg-gray-100 rounded-md text-sm"><strong class="block text-base">Year-1 Revenue:</strong> $830k</div>
+                        <div class="px-4 py-2 bg-gray-100 rounded-md text-sm"><strong class="block text-base">Year-1 EBITDA:</strong> $366k (44%)</div>
+                        <div class="px-4 py-2 bg-gray-100 rounded-md text-sm"><strong class="block text-base text-[#65C5B2]">Stabilized DSCR (Yr-2):</strong> >2.0x</div>
+                        <div class="px-4 py-2 bg-gray-100 rounded-md text-sm"><strong class="block text-base">Year-2 EBITDA Margin:</strong> 57%</div>
+                        <div class="px-4 py-2 bg-gray-100 rounded-md text-sm"><strong class="block text-base">Year-3 EBITDA Margin:</strong> 59%</div>
+                    </div>
+                     <p class="text-xs text-center text-gray-500 mt-4">Illustrative forward-looking model; not audited; actuals may vary.</p>
                 </div>
-                 <div class="mt-8 max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 gap-6">
-                    <div class="stat-card">
-                        <p class="stat-label">Year 1 Revenue</p>
-                        <p class="stat-value">$830,000</p>
-                    </div>
-                    <div class="stat-card">
-                        <p class="stat-label">Year 1 EBITDA Margin</p>
-                        <p class="stat-value">44%</p>
-                    </div>
-                    <div class="stat-card">
-                        <p class="stat-label">Stabilized DSCR (Yr 2)</p>
-                        <p class="stat-value text-[#65C5B2]">>2.0x</p>
-                    </div>
+                 <div class="mt-8 max-w-5xl mx-auto bg-white rounded-lg p-6 border shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-center">Illustrative DSCR Sensitivity Analysis</h3>
+                    <table class="w-full text-sm text-center">
+                        <thead>
+                            <tr class="border-b"><th class="p-2"></th><th class="p-2 font-semibold text-gray-600">Day Rate -10%</th><th class="p-2 font-semibold text-gray-600">Base Day Rate</th><th class="p-2 font-semibold text-gray-600">Day Rate +10%</th></tr>
+                        </thead>
+                        <tbody id="sensitivity-table-body">
+                            <!-- JS will populate this -->
+                        </tbody>
+                    </table>
                 </div>
+            </div>
+        </section>
+        
+        <!-- 3-Year Pro Forma -->
+        <section id="pro-forma" class="py-16 md:py-24 section-bg border-t page-break-before">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">3-Year Pro Forma (Base Case)</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
+                        Illustrative projections for the operator (tenant) demonstrating strong growth in lease coverage capacity.
+                    </p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-lg overflow-hidden border">
+                    <table class="w-full text-left">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="p-4 text-sm font-semibold text-gray-600">Metric</th>
+                                <th class="p-4 text-sm font-semibold text-gray-600 text-right">Year 1</th>
+                                <th class="p-4 text-sm font-semibold text-gray-600 text-right">Year 2</th>
+                                <th class="p-4 text-sm font-semibold text-gray-600 text-right">Year 3</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-200" id="pro-forma-table-body">
+                            <!-- JS will populate this -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="max-w-4xl mx-auto mt-8 bg-white p-6 rounded-lg border">
+                    <h3 class="font-bold text-lg mb-2 text-center">3-Year Trend: Revenue vs. EBITDA</h3>
+                    <div class="h-64"><canvas id="threeYearTrendChart" aria-label="A line chart showing revenue and EBITDA growth over 3 years."></canvas></div>
+                </div>
+                 <p class="text-xs text-center text-gray-500 mt-4 max-w-4xl mx-auto">Footnote: Forward-looking, illustrative calculations; actuals may vary. Bank DSCR typically uses property NOI vs property debt service; shown here as an operator EBITDA proxy for lease coverage.</p>
             </div>
         </section>
 
@@ -297,26 +356,38 @@
                         <p class="text-sm text-gray-500">Founder & Investors</p>
                     </div>
                 </div>
-                 <div class="mt-8 max-w-md mx-auto p-3 text-center bg-gray-100 border rounded-lg">
+                 <div class="mt-8 max-w-4xl mx-auto p-3 text-center bg-gray-100 border rounded-lg">
                     <p class="font-semibold text-gray-700">Total Sources ≈ $1.15M (Purchase + Closing + TI Cushion)</p>
+                     <p class="text-xs text-gray-600 mt-2"><strong>Structure</strong>: 1st — $500k Seller Note @7% (1st lien); <strong>2nd — $450k State-Chartered Bank Loan</strong> (requested); Equity — $200k committed. Intercreditor agreement to govern 1st/2nd.</p>
                 </div>
             </div>
         </section>
 
-        <!-- Risk Mitigation -->
+        <!-- Key Risks & Mitigations -->
         <section id="risk" class="py-16 md:py-24 section-bg border-t">
-             <div class="container mx-auto px-6">
+            <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                     <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Risk Mitigation</h2>
+                     <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Key Risks & Mitigations</h2>
                 </div>
-                <div class="max-w-3xl mx-auto">
-                    <ul class="space-y-4">
-                        <li class="flex items-start"><span class="text-xl text-[#65C5B2] mr-3 mt-1">✓</span><div><strong class="text-gray-800">Real Estate Collateral:</strong> The loan is secured by a tangible asset acquired at a ~$150k discount to its appraised value.</div></li>
-                        <li class="flex items-start"><span class="text-xl text-[#65C5B2] mr-3 mt-1">✓</span><div><strong class="text-gray-800">Pre-Committed Demand:</strong> The operator has a waitlist of 28 licensed facilitators (≈50% of the market) and pending LOIs from 3 national training programs.</div></li>
-                        <li class="flex items-start"><span class="text-xl text-[#65C5B2] mr-3 mt-1">✓</span><div><strong class="text-gray-800">First-of-Scale Facility:</strong> As the only high-quality, multi-room facility for rent in the Denver metro area, the operator has a significant first-mover advantage.</div></li>
-                        <li class="flex items-start"><span class="text-xl text-[#65C5B2] mr-3 mt-1">✓</span><div><strong class="text-gray-800">Experienced Operator:</strong> The founder has scaled a large-scale hospitality portfolio and has personally facilitated over 1,000+ psychedelic sessions.</div></li>
-                        <li class="flex items-start"><span class="text-xl text-[#65C5B2] mr-3 mt-1">✓</span><div><strong class="text-gray-800">Medical Services Analog:</strong> The business model mirrors that of a successful Independent Practice Association (IPA), a proven model in the medical field.</div></li>
-                    </ul>
+                <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg border">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
+                        <div>
+                            <h3 class="font-bold">Licensing Timing</h3>
+                            <p class="text-sm text-gray-600">Approval tracking with dated milestones; contingency timeline built in.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Utilization Ramp-Up</h3>
+                            <p class="text-sm text-gray-600">Converting 28 waitlist entries to signed pre-commitments; phased capex; flexible day-rate pricing.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Second-Lien Position</h3>
+                            <p class="text-sm text-gray-600">Intercreditor agreement; NNN lease assigned to lender; optional UCC on receivables.</p>
+                        </div>
+                         <div>
+                            <h3 class="font-bold">Market Entrants</h3>
+                            <p class="text-sm text-gray-600">First facility of scale; partnerships with top training programs; defensible location/quality.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -330,14 +401,16 @@
                  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     <div>
                         <h3 class="text-xl font-bold mb-4">538 Commons Dr, Golden, CO</h3>
-                        <div class="mb-6"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.751680199148!2d-105.2913388846247!3d39.7225199794519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b8180a53b1229%3A0x4a4c483a3bff8b27!2s538%20Commons%20Dr%2C%20Golden%2C%20CO%2080401!5e0!3m2!1sen!2sus!4v1689708940833!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-md"></iframe></div>
+                        <div class="mb-6"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3068.751680199148!2d-105.2913388846247!3d39.7225199794519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x876b8180a53b1229%3A0x4a4c483a3bff8b27!2s538%20Commons%20Dr%2C%20Golden%2C%20CO%2080401!5e0!3m2!1sen!2sus!4v1689708940833!5m2!1sen!2sus" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="rounded-lg shadow-md" title="Google Map of 538 Commons Dr"></iframe></div>
                         <h4 class="font-semibold text-gray-800 mb-2">Property Highlights:</h4>
                         <ul class="text-gray-700 list-disc list-inside space-y-1 text-sm">
                             <li>7,062 sq. ft. two-story office building.</li>
+                            <li><strong>Valuation:</strong> Appraised at <strong>$1.2M</strong></li>
+                            <li><strong>Acquisition Basis:</strong> ≈ <strong>$149/SF</strong></li>
                             <li>New roof installed in 2021.</li>
-                            <li>Quiet, professional business park with a focus on health & wellness tenants.</li>
+                            <li>Quiet, professional business park with a health & wellness focus.</li>
                             <li>Serene foothills setting with mountain views, ideal for therapeutic work.</li>
-                            <li>Will be delivered vacant, allowing for immediate tenant improvements.</li>
+                            <li>Will be delivered vacant for immediate tenant improvements.</li>
                         </ul>
                     </div>
                     <div class="space-y-6">
@@ -352,7 +425,7 @@
         <section id="founder" class="py-16 md:py-24 section-bg border-t">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
-                    <div class="md:col-span-1">
+                    <div class="md-col-span-1">
                         <img src="images/austin_mao.jpg" alt="Austin Mao, Founder & CEO of Ceremonia" class="rounded-xl shadow-lg object-cover w-full h-auto">
                     </div>
                     <div class="md:col-span-2">
@@ -377,11 +450,14 @@
                     <dl class="mt-8 divide-y divide-gray-200">
                         <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Amount</dt><dd class="text-sm text-gray-900 col-span-2 font-bold text-xl">$450,000</dd></div>
                         <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Loan Type</dt><dd class="text-sm text-gray-900 col-span-2">Standard Commercial Real Estate Loan</dd></div>
-                        <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Target Terms</dt><dd class="text-sm text-gray-900 col-span-2">5–10 Year Term, 6–8% Interest Rate, Standard Amortization</dd></div>
-                        <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Security</dt><dd class="text-sm text-gray-900 col-span-2">Second lien position on the property at 538 Commons Dr, subordinate to $500k seller financing. Collateral includes the property and the NNN lease cash flows. Optional UCC filing on OpCo receivables.</dd></div>
+                        <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Target Terms</dt><dd class="text-sm text-gray-900 col-span-2">5–10 Year Term, 6–8% Interest Rate</dd></div>
+                        <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Amortization Example</dt><dd class="text-sm text-gray-900 col-span-2">Illustrative 20- or 25-year amortization (bank standard)</dd></div>
+                        <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Security</dt><dd class="text-sm text-gray-900 col-span-2">Second lien position on 538 Commons Dr, subordinate to $500k seller financing. Collateral includes the property and the NNN lease cash flows. Optional UCC filing on OpCo receivables.</dd></div>
+                        <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Assignment</dt><dd class="text-sm text-gray-900 col-span-2">NNN lease assignment and lender’s consent to subleases available.</dd></div>
                          <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Use of Proceeds</dt><dd class="text-sm text-gray-900 col-span-2">Finalize property acquisition, cover all closing costs, fund light tenant improvements, and provide a working capital cushion for launch.</dd></div>
                     </dl>
-                    <div class="mt-8 text-center print-hide">
+                    <p class="text-xs text-center text-gray-500 mt-6">Note: Second-lien subject to intercreditor agreement with seller note.</p>
+                    <div class="mt-6 text-center print-hide">
                         <button onclick="window.print()" class="bg-[#65C5B2] text-white font-bold py-3 px-8 rounded-lg hover:bg-opacity-90 transition-transform transform hover:scale-105 shadow-lg">
                             Download PDF / Print
                         </button>
@@ -404,13 +480,100 @@
 
     <footer class="py-6 text-center text-gray-500 text-xs print-hide">
         <p>&copy; 2025 Ceremonia Spaces, Inc. For informational purposes only. Not an offer to sell securities.</p>
-        <p>Document ID: CS-BANK-DECK-V1.2 | Generated: August 29, 2025</p>
+        <p>Document ID: CS-BANK-DECK-V2.1 | <span id="footer-date"></span></p>
     </footer>
-
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-    // --- Smooth Scrolling ---
+    // --- Pro Forma & Sensitivity Calculations ---
+    const formatCurrency = (val) => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 0, maximumFractionDigits: 0 }).format(val);
+    const formatPercent = (val) => `${(val * 100).toFixed(1)}%`;
+    const formatDSCR = (val) => `${val.toFixed(2)}x`;
+
+    const yr1Revenue = 830000;
+    const yr1EbitdaMargin = 0.44;
+    const yr2EbitdaMargin = 0.57;
+    const yr3EbitdaMargin = 0.59;
+    const yr2RevenueGrowth = 0.30;
+    const yr3RevenueGrowth = 0.20;
+    const annualNNNLease = 167004;
+    const annualDebtServiceTotal = 167004;
+    
+    // Pro forma calcs
+    const yr2Revenue = Math.round(yr1Revenue * (1 + yr2RevenueGrowth));
+    const yr3Revenue = Math.round(yr2Revenue * (1 + yr3RevenueGrowth));
+    const yr1EBITDA = Math.round(yr1Revenue * yr1EbitdaMargin);
+    const yr2EBITDA = Math.round(yr2Revenue * yr2EbitdaMargin);
+    const yr3EBITDA = Math.round(yr3Revenue * yr3EbitdaMargin);
+    const dscrY1 = (yr1EBITDA / annualDebtServiceTotal);
+    const dscrY2 = (yr2EBITDA / annualDebtServiceTotal);
+    const dscrY3 = (yr3EBITDA / annualDebtServiceTotal);
+
+    // Populate Pro Forma Table
+    const proFormaTable = document.getElementById('pro-forma-table-body');
+    if (proFormaTable) {
+        proFormaTable.innerHTML = `
+            <tr class="text-sm"><td class="p-3 font-medium">Revenue</td><td class="p-3 text-right">${formatCurrency(yr1Revenue)}</td><td class="p-3 text-right">${formatCurrency(yr2Revenue)}</td><td class="p-3 text-right">${formatCurrency(yr3Revenue)}</td></tr>
+            <tr class="text-sm bg-gray-50"><td class="p-3 font-medium">EBITDA</td><td class="p-3 text-right">${formatCurrency(yr1EBITDA)}</td><td class="p-3 text-right">${formatCurrency(yr2EBITDA)}</td><td class="p-3 text-right">${formatCurrency(yr3EBITDA)}</td></tr>
+            <tr class="text-sm"><td class="p-3 font-medium">EBITDA Margin</td><td class="p-3 text-right">${formatPercent(yr1EbitdaMargin)}</td><td class="p-3 text-right">${formatPercent(yr2EbitdaMargin)}</td><td class="p-3 text-right">${formatPercent(yr3EbitdaMargin)}</td></tr>
+            <tr class="text-sm bg-gray-50"><td class="p-3 font-medium">Annual NNN Lease Obligation</td><td class="p-3 text-right">${formatCurrency(annualNNNLease)}</td><td class="p-3 text-right">${formatCurrency(annualNNNLease)}</td><td class="p-3 text-right">${formatCurrency(annualNNNLease)}</td></tr>
+            <tr class="text-sm"><td class="p-3 font-medium">Total Annual Debt Service</td><td class="p-3 text-right">${formatCurrency(annualDebtServiceTotal)}</td><td class="p-3 text-right">${formatCurrency(annualDebtServiceTotal)}</td><td class="p-3 text-right">${formatCurrency(annualDebtServiceTotal)}</td></tr>
+            <tr class="text-sm bg-gray-100 font-bold"><td class="p-3">DSCR (EBITDA / Debt Service)</td><td class="p-3 text-right">${formatDSCR(dscrY1)}</td><td class="p-3 text-right">${formatDSCR(dscrY2)}</td><td class="p-3 text-right">${formatDSCR(dscrY3)}</td></tr>
+        `;
+    }
+
+    // Populate Sensitivity Table
+    const sensitivityTable = document.getElementById('sensitivity-table-body');
+    if (sensitivityTable) {
+        const rateChanges = [-0.1, 0, 0.1];
+        const utilChanges = [0.1, 0, -0.1];
+        let tableHTML = '';
+        utilChanges.forEach((utilChange, i) => {
+            const utilLabels = ['Util. +10%', 'Base Util.', 'Util. -10%'];
+            let rowHTML = `<tr class="border-b"><td class="p-2 font-semibold text-gray-600 text-left">${utilLabels[i]}</td>`;
+            rateChanges.forEach(rateChange => {
+                const adjustedRevenue = yr2Revenue * (1 + utilChange + rateChange);
+                const adjustedEBITDA = adjustedRevenue * yr2EbitdaMargin;
+                const dscr = adjustedEBITDA / annualDebtServiceTotal;
+                let bgColor = 'bg-green-50 text-green-800';
+                if (dscr < 1.25) bgColor = 'bg-red-50 text-red-800';
+                else if (dscr < 1.5) bgColor = 'bg-yellow-50 text-yellow-800';
+                rowHTML += `<td class="p-2 ${bgColor} font-bold">${formatDSCR(dscr)}</td>`;
+            });
+            rowHTML += '</tr>';
+            tableHTML += rowHTML;
+        });
+        sensitivityTable.innerHTML = tableHTML;
+    }
+
+
+    // --- Dynamic Computations & Content ---
+    const purchasePrice = 1050000;
+    const appraisedValue = 1200000;
+    const totalDebt = 950000;
+    const totalUses = 1150000;
+    const ltv = totalDebt / appraisedValue;
+    const ltc = totalDebt / totalUses;
+    document.getElementById('ltv-value').textContent = `≈ ${(ltv * 100).toFixed(0)}%`;
+    document.getElementById('ltc-value').textContent = `≈ ${(ltc * 100).toFixed(0)}%`;
+    const today = new Date();
+    const dateString = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    document.getElementById('print-date').textContent = `${dateString} | Doc ID: CS-BANK-DECK-V2.1`;
+    document.getElementById('footer-date').textContent = dateString;
+
+    // --- Smooth Scrolling & Active Nav Highlighting ---
+    const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('main section');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('href').substring(1) === entry.target.id);
+                });
+            }
+        });
+    }, { rootMargin: '-50% 0px -50% 0px' });
+    sections.forEach(section => observer.observe(section));
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
@@ -425,7 +588,6 @@ document.addEventListener('DOMContentLoaded', function () {
         opex: [-92429, -125000, -139000, -110000],
         cash: [7181, 16310, 205738, 417989]
     };
-
     const oregonData = {
         labels: ['Q3 \'24', 'Q4 \'24', 'Q1 \'25', 'Q2 \'25 (Proj.)'],
         sessions: [1000, 1800, 3300, 5000]
@@ -437,29 +599,25 @@ document.addEventListener('DOMContentLoaded', function () {
     if (oregonCtx) {
         new Chart(oregonCtx, {
             type: 'line',
-            data: {
-                labels: oregonData.labels,
-                datasets: [{
-                    label: 'Sessions per Quarter',
-                    data: oregonData.sessions,
-                    borderColor: '#65C5B2',
-                    tension: 0.3,
-                    fill: true,
-                    backgroundColor: 'rgba(101, 197, 178, 0.1)',
-                }]
-            },
-            options: {
-                responsive: true, maintainAspectRatio: false,
-                plugins: { legend: { display: false }, tooltip: { enabled: true } },
-                scales: { 
-                    y: { beginAtZero: true, ticks: { display: false }, grid: { display: false } }, 
-                    x: { ticks: { font: { size: 10 } }, grid: { display: false } }
-                }
-            }
+            data: { labels: oregonData.labels, datasets: [{ data: oregonData.sessions, borderColor: '#65C5B2', tension: 0.3, fill: true, backgroundColor: 'rgba(101, 197, 178, 0.1)' }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false }, tooltip: { enabled: true } }, scales: { y: { beginAtZero: true, ticks: { display: false }, grid: { display: false } }, x: { ticks: { font: { size: 10 } }, grid: { display: false } } } }
         });
     }
 
-    // 2. Main Financial Chart
+    // 2. Waitlist Donut Chart
+    const waitlistCtx = document.getElementById('waitlistDonut');
+    if (waitlistCtx) {
+        new Chart(waitlistCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['On Waitlist', 'Rest of Market'],
+                datasets: [{ data: [28, 27], backgroundColor: ['#65C5B2', '#E5E7EB'], borderWidth: 2 }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } } }
+        });
+    }
+
+    // 3. Main Financial Chart
     const financialCtx = document.getElementById('financialChart');
     if (financialCtx) {
         new Chart(financialCtx, {
@@ -469,35 +627,34 @@ document.addEventListener('DOMContentLoaded', function () {
                 datasets: [
                     { label: 'Revenue', data: financialData.revenue, backgroundColor: '#65C5B2' },
                     { label: 'OpEx', data: financialData.opex, backgroundColor: '#FBAE17' },
-                    { 
-                        label: 'Cash Balance', 
-                        data: financialData.cash,
-                        type: 'line',
-                        borderColor: '#6283C2',
-                        yAxisID: 'y1',
-                        tension: 0.1
-                    }
+                    { label: 'Cash Balance', data: financialData.cash, type: 'line', borderColor: '#6283C2', yAxisID: 'y1', tension: 0.1 }
                 ]
             },
             options: {
                 responsive: true, maintainAspectRatio: false,
                 plugins: { legend: { position: 'bottom' } },
                 scales: {
-                    x: { stacked: true },
-                    y: { 
-                        stacked: true, 
-                        position: 'left',
-                        title: { display: true, text: 'Revenue & OpEx ($)' },
-                        ticks: { callback: value => '$' + (value/1000) + 'k' }
-                    },
-                    y1: { 
-                        position: 'right', 
-                        grid: { drawOnChartArea: false },
-                        title: { display: true, text: 'Cash Balance ($)' },
-                        ticks: { callback: value => '$' + (value/1000) + 'k' }
-                    }
+                    x: { stacked: true, grid: { display: false } },
+                    y: { stacked: true, position: 'left', title: { display: true, text: 'Revenue & OpEx ($)' }, ticks: { callback: value => '$' + (value/1000) + 'k' } },
+                    y1: { position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: 'Cash Balance ($)' }, ticks: { callback: value => '$' + (value/1000) + 'k' } }
                 }
             }
+        });
+    }
+
+    // 4. 3-Year Trend Chart
+    const trendCtx = document.getElementById('threeYearTrendChart');
+    if (trendCtx) {
+        new Chart(trendCtx, {
+            type: 'line',
+            data: {
+                labels: ['Year 1', 'Year 2', 'Year 3'],
+                datasets: [
+                    { label: 'Revenue', data: [yr1Revenue, yr2Revenue, yr3Revenue], borderColor: '#6283C2', backgroundColor: 'rgba(98, 131, 194, 0.1)', fill: true, tension: 0.1 },
+                    { label: 'EBITDA', data: [yr1EBITDA, yr2EBITDA, yr3EBITDA], borderColor: '#65C5B2', backgroundColor: 'rgba(101, 197, 178, 0.1)', fill: true, tension: 0.1 }
+                ]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true, ticks: { callback: value => '$' + (value/1000) + 'k' } } } }
         });
     }
 });
@@ -505,3 +662,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
 </body>
 </html>
+
