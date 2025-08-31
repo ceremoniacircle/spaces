@@ -65,6 +65,14 @@
 </head>
 <body class="antialiased">
 
+    <!-- LENDER UPGRADE: Top Banner -->
+    <div id="top-banner" class="bg-yellow-100 border-b border-yellow-300 text-yellow-800 text-sm text-center p-2 print-hide relative">
+        <p><strong>For Colorado state-chartered banks, credit unions, and CDFIs only.</strong> Federally chartered institutions excluded.</p>
+        <button onclick="document.getElementById('top-banner').style.display='none'" class="absolute top-1/2 right-4 -translate-y-1/2 text-yellow-600 hover:text-yellow-800" aria-label="Dismiss banner">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+    </div>
+
     <!-- Print Header -->
     <div class="print-header hidden justify-between items-center p-4 border-b border-gray-300">
         <img src="images/ceremonia_logo_horiz_color.png" alt="Ceremonia Spaces Logo" class="h-8">
@@ -90,9 +98,15 @@
                 <a href="#property" class="nav-link">Property</a>
                 <a href="#founder" class="nav-link">Founder</a>
             </div>
-            <a href="#contact" class="bg-[#65C5B2] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">
-                Contact
-            </a>
+            <div class="flex items-center space-x-2">
+                <!-- LENDER UPGRADE: Request Lender Pack CTA -->
+                <a href="mailto:austin@ceremoniacircle.org?subject=Lender%20Pack%20Request" class="bg-gray-200 text-gray-700 px-5 py-2 rounded-lg text-sm font-semibold hover:bg-gray-300 transition-colors">
+                    Request Lender Pack (ZIP)
+                </a>
+                <a href="#contact" class="bg-[#65C5B2] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">
+                    Contact
+                </a>
+            </div>
         </nav>
     </header>
 
@@ -113,6 +127,13 @@
                          <p class="text-gray-500 text-sm mt-1">Golden, CO</p>
                     </div>
                 </div>
+                <!-- LENDER UPGRADE: Credit Snapshot -->
+                <div class="mt-6 max-w-5xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-4">
+                    <div class="stat-card p-4"><p class="stat-label text-sm">Appraised Value</p><p class="stat-value text-xl">$1,270,000</p><p class="text-xs text-gray-400 mt-1">Feb 16, 2022</p></div>
+                    <div class="stat-card p-4"><p class="stat-label text-sm">Combined LTV</p><p class="stat-value text-xl">79%</p><p class="text-xs text-gray-400 mt-1">Post-Close</p></div>
+                    <div class="stat-card p-4"><p class="stat-label text-sm">Lease Coverage (DSCR)</p><p class="stat-value text-xl">2.0×–4.6×</p><p class="text-xs text-gray-400 mt-1">OpCo Yr1–Yr3 Proxy</p></div>
+                    <div class="stat-card p-4"><p class="stat-label text-sm">Structure</p><p class="stat-value text-xl">2nd Lien or 1st Refi</p><p class="text-xs text-gray-400 mt-1">Flexible</p></div>
+                </div>
                 <p class="mt-8 max-w-2xl mx-auto text-lg text-gray-700 italic">
                     A secured commercial real estate loan backed by tangible property and a long-term NNN lease to an operator with projected profitability and pre-committed tenant demand.
                 </p>
@@ -128,13 +149,19 @@
                         <table class="w-full text-left">
                             <tbody class="divide-y divide-gray-200">
                                 <tr class="text-sm"><td class="p-3 font-medium text-gray-700 w-1/2">Purchase Price</td><td class="p-3 text-gray-800 font-semibold">$1,050,000</td></tr>
-                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Appraised Value</td><td class="p-3 text-gray-800 font-semibold">$1,200,000</td></tr>
+                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Appraised Value</td><td class="p-3 text-gray-800 font-semibold">$1,270,000 (effective Feb 16, 2022; report available)</td></tr>
                                 <tr class="text-sm"><td class="p-3 font-medium text-gray-700">Total Debt Post-Close</td><td class="p-3 text-gray-800 font-semibold">$950,000</td></tr>
-                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">LTV (Debt / Appraised Value)</td><td class="p-3 text-gray-800 font-semibold" id="ltv-value">≈ 79%</td></tr>
-                                <tr class="text-sm"><td class="p-3 font-medium text-gray-700">LTC (Debt / Total Uses)</td><td class="p-3 text-gray-800 font-semibold" id="ltc-value">≈ 83%</td></tr>
+                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">LTV (Debt / Appraised Value)</td><td class="p-3 text-gray-800 font-semibold" id="ltv-value" title="$950,000 / $1,270,000">≈ 75%</td></tr>
+                                <tr class="text-sm"><td class="p-3 font-medium text-gray-700">LTC (Debt / Total Uses)</td><td class="p-3 text-gray-800 font-semibold" id="ltc-value" title="$950,000 / $1,150,000">≈ 83%</td></tr>
                                 <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Requested Loan (2nd Lien)</td><td class="p-3 text-gray-800 font-semibold">$450,000 (Target 6-8%, 5-10yr term)</td></tr>
                                 <tr class="text-sm"><td class="p-3 font-medium text-gray-700">Collateral</td><td class="p-3 text-gray-800">2nd deed of trust on 538 Commons Dr; assignment of NNN lease; optional UCC-1 on OpCo receivables; lender consent on subleases.</td></tr>
                                 <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Intercreditor</td><td class="p-3 text-gray-800">Standard intercreditor agreement with 1st-lien seller: cure rights, standstill, and rent assignment waterfall.</td></tr>
+                                <tr class="text-sm"><td class="p-3 font-medium text-gray-700">Lease Term & Type</td><td class="p-3 text-gray-800">10-year NNN, base rent $14,000/mo, no landlord expenses.</td></tr>
+                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Annual Escalations</td><td class="p-3 text-gray-800">Negotiable</td></tr>
+                                <tr class="text-sm"><td class="p-3 font-medium text-gray-700">Guaranty</td><td class="p-3 text-gray-800">Personal guaranty up to $300k (crypto).</td></tr>
+                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Reserves</td><td class="p-3 text-gray-800">Prepared to escrow interest reserve (6–12 months negotiable).</td></tr>
+                                <tr class="text-sm"><td class="p-3 font-medium text-gray-700">Cash Management</td><td class="p-3 text-gray-800">Lender-controlled lockbox & waterfall (if requested).</td></tr>
+                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Closing Readiness</td><td class="p-3 text-gray-800">"As-is"; 2-week fixturization.</td></tr>
                                 <tr class="text-sm"><td class="p-3 font-medium text-gray-700">Prepayment</td><td class="p-3 text-gray-800">Standard (open after 24 months)</td></tr>
                             </tbody>
                         </table>
@@ -165,6 +192,21 @@
                             </div>
                         </div>
                     </div>
+                    <div class="mt-6 p-4 border rounded-lg bg-white">
+                        <h4 class="font-semibold text-gray-800">Intercreditor Summary</h4>
+                        <ul class="text-sm text-gray-600 list-disc list-inside mt-2">
+                            <li>30-day cure rights for 2nd lien holder.</li>
+                            <li>Standstill on 1st-lien foreclosure during cure period.</li>
+                            <li>Rent assignment and payment waterfall pre-agreed.</li>
+                        </ul>
+                        <div class="mt-4 pt-4 border-t text-sm">
+                            <label for="refi-toggle" class="font-semibold cursor-pointer">Prefer a single first lien?
+                                <input type="checkbox" id="refi-toggle" class="hidden peer">
+                                <span class="text-blue-600 ml-2 peer-checked:hidden">Show details...</span>
+                                <div class="hidden peer-checked:block mt-2 p-3 bg-blue-50 text-blue-800 rounded">We can refinance both liens into one first-position loan at ≈79% LTV.</div>
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -175,8 +217,22 @@
                 <div class="text-center mb-12">
                      <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Market: A Specialty Medical Services Model</h2>
                     <p class="mt-3 max-w-3xl mx-auto text-gray-600">
-                        This is a specialty medical office model (IPA-like). We supply compliant space for state-licensed practitioners. We are the infrastructure provider in a new, regulated health services market.
+                        This business is structured as a <strong>specialty medical office facility</strong> (similar to an IPA or dental group practice). We provide licensed, compliant space for <strong>state-certified practitioners under Colorado’s Natural Medicine Health Act (NMHA)</strong> to serve clients. Ceremonia Spaces acts as the infrastructure provider in this new, regulated health services market.
                     </p>
+                    <div class="mt-8 max-w-3xl mx-auto p-4 bg-[#65C5B2]/10 border-l-4 border-[#65C5B2] rounded-r-lg text-left">
+                        <h4 class="font-semibold text-[#4a9484] mb-2">About the Natural Medicine Health Act</h4>
+                        <p class="text-sm text-gray-700">
+                            Passed by Colorado voters in 2022 and implemented in 2025, the NMHA creates a regulated pathway for the therapeutic use of natural medicines. The Act requires:
+                        </p>
+                        <ul class="text-sm text-gray-700 list-disc list-inside mt-2 space-y-1">
+                            <li><strong>Licensed Facilitators:</strong> Practitioners certified by the state after training and background checks.</li>
+                            <li><strong>Licensed Healing Centers:</strong> Approved facilities where natural medicine sessions must take place.</li>
+                            <li><strong>Compliance & Oversight:</strong> Regulated by Colorado’s Department of Regulatory Agencies (DORA).</li>
+                        </ul>
+                        <p class="text-sm text-gray-700 mt-2">
+                            Ceremonia Spaces provides compliant healing center facilities under this Act, positioning us as a first-mover in the Denver metro market.
+                        </p>
+                    </div>
                 </div>
                  <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                     <div class="bg-white p-6 rounded-lg border">
@@ -227,15 +283,19 @@
                     <div class="lg:col-span-1 text-center">
                         <h3 class="font-bold text-lg mb-2">Waitlist Share of Market</h3>
                         <div class="h-48 w-48 mx-auto"><canvas id="waitlistDonut" aria-label="A donut chart showing that 25 out of 55 facilitators are on the waitlist."></canvas></div>
+                         <p class="text-xs text-gray-600 mt-2">25 of 55 licensed facilitators (≈45%) on waitlist — as of Aug 30, 2025.</p>
                     </div>
                     <div class="lg:col-span-2 bg-white rounded-lg border p-4">
-                        <h3 class="font-bold text-lg mb-2">Pre-Commitments (In Process)</h3>
+                        <h3 class="font-bold text-lg mb-2">Pre-Commitment Pipeline</h3>
+                        <div class="w-full bg-gray-200 rounded-full h-4 mb-2"><div class="bg-gradient-to-r from-teal-400 to-blue-500 h-4 rounded-full text-center text-white text-xs font-bold leading-4" style="width: 75%">In LOI</div></div>
+                        <div class="text-xs grid grid-cols-4 gap-2 text-center mb-4"><p>Target</p><p>In LOI ($45k)</p><p>Executed</p><p>Closing Soon</p></div>
+                         <!-- LENDER UPGRADE: Bank-Grade Pre-Commitments Table -->
                          <table class="w-full text-sm text-left">
-                            <thead class="bg-gray-50"><tr><th class="p-2">Organization</th><th class="p-2">Commitment</th><th class="p-2">Status</th></tr></thead>
+                            <thead class="bg-gray-50"><tr><th class="p-2" scope="col">Organization</th><th class="p-2" scope="col">Commitment</th><th class="p-2" scope="col">Status</th><th class="p-2" scope="col">Commercial Terms</th><th class="p-2" scope="col">Next Milestone</th></tr></thead>
                             <tbody class="divide-y">
-                                <tr><td class="p-2">InnerTrek</td><td class="p-2">Practica days / month (Denver cohort)</td><td class="p-2">LOI Drafted</td></tr>
-                                <tr><td class="p-2">Changa Institute</td><td class="p-2">Training weekends / quarter</td><td class="p-2">LOI Drafted</td></tr>
-                                <tr><td class="p-2">Synthesis Institute</td><td class="p-2">Residency days / month</td><td class="p-2">LOI Drafted</td></tr>
+                                <tr><td class="p-2">InnerTrek</td><td class="p-2">Practica days (Denver cohort)</td><td class="p-2">LOI Drafted</td><td class="p-2">$1,500/mo × 7 months + practicums (2.5 × $2,000 every 3 months)</td><td class="p-2">Sep 15</td></tr>
+                                <tr><td class="p-2">Changa Institute</td><td class="p-2">Training weekends/qtr</td><td class="p-2">LOI Drafted</td><td class="p-2">Practicums (2.5 × $2,000 every 3 months)</td><td class="p-2">Sep 30</td></tr>
+                                <tr><td class="p-2">Synthesis Institute</td><td class="p-2">Residency days/mo</td><td class="p-2">LOI Drafted</td><td class="p-2">Residency practicums (2.5 × $2,000 every 3 months)</td><td class="p-2">Sep 30</td></tr>
                             </tbody>
                          </table>
                          <p class="text-xs text-gray-600 mt-2">These three training institutions collectively represent a majority share of licensed-facilitator training volume across OR/CO.</p>
@@ -263,11 +323,13 @@
                  <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">License & Due Diligence Status</h2>
                 <div class="mt-8 max-w-2xl mx-auto bg-white p-6 rounded-lg border">
                     <ul class="space-y-4 text-left">
-                        <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>License:</strong> State license process at final stage; expected approval: <strong>[Insert Date]</strong></div></li>
-                        <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>Appraisal:</strong> Completed at <strong>$1.2M</strong> (report available)</div></li>
+                        <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>License:</strong> State NMHA healing-center license in final stage; expected approval: <strong>Sep 6, 2025</strong>.</div></li>
+                        <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>Appraisal:</strong> Completed at <strong>$1.27M</strong> (Feb 2022; report available)</div></li>
                         <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>Phase I ESA:</strong> Completed, No RECs (report available)</div></li>
                         <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>Title & Zoning:</strong> Clean; zoning supports intended use (reports available)</div></li>
                          <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>Roof:</strong> Replaced in 2021</div></li>
+                         <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>Compliance:</strong> BSA/AML procedures, incident reporting, background checks; state-chartered lenders only; willing to keep deposits/cash management with lender; will cooperate on SAR/EDD.</div></li>
+                         <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>SBA:</strong> Will consider SBA 504/7(a) if packaged/administered by a state-chartered lender.</div></li>
                     </ul>
                 </div>
             </div>
@@ -296,6 +358,18 @@
                         <p class="text-sm text-gray-500">Sub-leases to licensed facilitators.</p>
                     </div>
                 </div>
+                 <div class="mt-8 max-w-2xl mx-auto bg-white p-4 rounded-lg border">
+                    <h4 class="font-semibold mb-2">Lease Abstract (OpCo → Landlord)</h4>
+                    <table class="w-full text-sm text-left">
+                        <tbody class="divide-y">
+                            <tr><td class="py-1 px-2 font-medium w-1/3">Term</td><td class="py-1 px-2">10 years</td></tr>
+                            <tr><td class="py-1 px-2 font-medium">Base Rent</td><td class="py-1 px-2">$14,000/mo NNN</td></tr>
+                            <tr><td class="py-1 px-2 font-medium">Escalations</td><td class="py-1 px-2">Negotiable</td></tr>
+                            <tr><td class="py-1 px-2 font-medium">Delivery</td><td class="py-1 px-2">"As-is"; 2-week fixturization period</td></tr>
+                            <tr><td class="py-1 px-2 font-medium">Commencement</td><td class="py-1 px-2">Upon license approval (target Sep 6, 2025)</td></tr>
+                        </tbody>
+                    </table>
+                 </div>
                  <div class="mt-8 max-w-2xl mx-auto p-4 bg-gray-50 border rounded-lg">
                     <p class="font-semibold text-gray-800">Property-Level Coverage (Bank DSCR)</p>
                     <ul class="text-sm text-gray-700 list-disc list-inside mt-2">
@@ -313,14 +387,14 @@
         <section id="financials" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                     <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Operator Financials (Ceremonia Spaces, Inc.)</h2>
+                     <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Tenant Lease Coverage Proxy (EBITDA vs Debt)</h2>
                     <p class="mt-3 max-w-3xl mx-auto text-gray-600">
-                        The tenant (OpCo) demonstrates projected profitability and ample cash flow to comfortably service its NNN lease obligations, ensuring consistent payments to the property SPV.
+                        The tenant (OpCo) demonstrates projected profitability and ample cash flow to comfortably service its NNN lease obligations. Bank DSCR tested at property level; tenant EBITDA shown as lease-coverage proxy.
                     </p>
                 </div>
                 <div class="max-w-5xl mx-auto bg-white rounded-lg p-6 border shadow-lg">
                     <h3 class="text-xl font-bold mb-4 text-center">Year 1 Financial Forecast (Base Case)</h3>
-                    <div class="h-96 w-full"><canvas id="financialChart" aria-label="A chart showing Year 1 revenue, opex, and cash balance projections."></canvas></div>
+                    <div class="h-96 w-full"><canvas id="financialChart" aria-label="A chart showing Year 1 revenue, opex, and cash balance projections." role="img"></canvas></div>
                     <div class="mt-6 flex flex-wrap justify-center gap-4 text-center">
                         <div class="px-4 py-2 bg-gray-100 rounded-md text-sm"><strong class="block text-base">Year-1 Revenue:</strong> $830k</div>
                         <div class="px-4 py-2 bg-gray-100 rounded-md text-sm"><strong class="block text-base">Year-1 EBITDA:</strong> $366k (44%)</div>
@@ -330,11 +404,27 @@
                     </div>
                      <p class="text-xs text-center text-gray-500 mt-4">Illustrative forward-looking model; not audited; actuals may vary.</p>
                 </div>
+                <div class="mt-8 max-w-5xl mx-auto bg-white rounded-lg p-6 border shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-center">Staffing & Payroll Forecast (Yr 1–3)</h3>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-gray-50">
+                                <tr><th class="p-2 text-left" scope="col">Role</th><th class="p-2 text-center" scope="col">Phase 1</th><th class="p-2 text-center" scope="col">Phase 2</th><th class="p-2 text-center" scope="col">Phase 3</th></tr>
+                            </thead>
+                            <tbody class="divide-y">
+                                <tr><td class="p-2">CEO</td><td class="p-2 text-center font-mono">$6,000</td><td class="p-2 text-center font-mono">$3,960</td><td class="p-2 text-center font-mono">$3,000</td></tr>
+                                <tr><td class="p-2">Dir. of Ops</td><td class="p-2 text-center font-mono">$4,000</td><td class="p-2 text-center font-mono">$2,640</td><td class="p-2 text-center font-mono">$2,000</td></tr>
+                                <tr class="bg-gray-50 font-bold"><td class="p-2">Subtotal</td><td class="p-2 text-center font-mono">$10,000</td><td class="p-2 text-center font-mono">$6,600</td><td class="p-2 text-center font-mono">$5,000</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-xs text-gray-600 mt-2">Note: Variable per-session costs: ~$75 per room-day; on-call medical billed per session.</p>
+                </div>
                  <div class="mt-8 max-w-5xl mx-auto bg-white rounded-lg p-6 border shadow-lg">
                     <h3 class="text-xl font-bold mb-4 text-center">Illustrative DSCR Sensitivity Analysis</h3>
                     <table class="w-full text-sm text-center">
                         <thead>
-                            <tr class="border-b"><th class="p-2"></th><th class="p-2 font-semibold text-gray-600">Day Rate -10%</th><th class="p-2 font-semibold text-gray-600">Base Day Rate</th><th class="p-2 font-semibold text-gray-600">Day Rate +10%</th></tr>
+                            <tr class="border-b"><th class="p-2" scope="col"></th><th class="p-2 font-semibold text-gray-600" scope="col">Day Rate -10%</th><th class="p-2 font-semibold text-gray-600" scope="col">Base Day Rate</th><th class="p-2 font-semibold text-gray-600" scope="col">Day Rate +10%</th></tr>
                         </thead>
                         <tbody id="sensitivity-table-body">
                             <!-- JS will populate this -->
@@ -362,10 +452,10 @@
                     <table class="w-full text-left">
                         <thead class="bg-gray-50">
                             <tr>
-                                <th class="p-4 text-sm font-semibold text-gray-600">Metric</th>
-                                <th class="p-4 text-sm font-semibold text-gray-600 text-right">Year 1</th>
-                                <th class="p-4 text-sm font-semibold text-gray-600 text-right">Year 2</th>
-                                <th class="p-4 text-sm font-semibold text-gray-600 text-right">Year 3</th>
+                                <th class="p-4 text-sm font-semibold text-gray-600" scope="col">Metric</th>
+                                <th class="p-4 text-sm font-semibold text-gray-600 text-right" scope="col">Year 1</th>
+                                <th class="p-4 text-sm font-semibold text-gray-600 text-right" scope="col">Year 2</th>
+                                <th class="p-4 text-sm font-semibold text-gray-600 text-right" scope="col">Year 3</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-gray-200" id="pro-forma-table-body">
@@ -375,14 +465,14 @@
                 </div>
                 <div class="max-w-4xl mx-auto mt-8 bg-white p-6 rounded-lg border">
                     <h3 class="font-bold text-lg mb-2 text-center">3-Year Trend: Revenue vs. EBITDA</h3>
-                    <div class="h-64"><canvas id="threeYearTrendChart" aria-label="A line chart showing revenue and EBITDA growth over 3 years."></canvas></div>
+                    <div class="h-64"><canvas id="threeYearTrendChart" aria-label="A line chart showing revenue and EBITDA growth over 3 years." role="img"></canvas></div>
                 </div>
                  <p class="text-xs text-center text-gray-500 mt-4 max-w-4xl mx-auto">Footnote: Forward-looking, illustrative calculations; actuals may vary. Bank DSCR typically uses property NOI vs property debt service; shown here as an operator EBITDA proxy for lease coverage.</p>
             </div>
         </section>
 
         <!-- Capital Stack -->
-        <section id="stack" class="py-16 md:py-24">
+        <section id="stack" class="py-16 md:py-24 page-break-before">
             <div class="container mx-auto px-6 text-center">
                  <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Post-Close Capital Stack</h2>
                 <div class="mt-8 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -402,9 +492,27 @@
                         <p class="text-sm text-gray-500">Founder & Investors</p>
                     </div>
                 </div>
-                 <div class="mt-8 max-w-4xl mx-auto p-3 text-center bg-gray-100 border rounded-lg">
-                    <p class="font-semibold text-gray-700">Total Sources ≈ $1.15M (Purchase + Closing + TI Cushion)</p>
-                     <p class="text-xs text-gray-600 mt-2"><strong>Structure</strong>: 1st — $500k Seller Note @7% (1st lien); <strong>2nd — $450k State-Chartered Bank Loan</strong> (requested); Equity — $200k committed. Intercreditor agreement to govern 1st/2nd.</p>
+                 <div class="mt-8 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg border">
+                        <h3 class="font-semibold text-lg">Path A — Second Lien ($450k)</h3>
+                        <ul class="text-sm text-gray-600 list-disc list-inside mt-2 text-left">
+                            <li>Intercreditor + lockbox</li>
+                            <li>5–10yr term; 20–25yr am</li>
+                            <li>Open after 24 mo</li>
+                        </ul>
+                    </div>
+                     <div class="bg-white p-6 rounded-lg border">
+                        <h3 class="font-semibold text-lg">Path B — Single Refi (~$950k)</h3>
+                        <ul class="text-sm text-gray-600 list-disc list-inside mt-2 text-left">
+                            <li>First lien @ ~79% LTV</li>
+                            <li>Payoff seller note</li>
+                            <li>Faster close if preferred</li>
+                        </ul>
+                    </div>
+                 </div>
+                 <p class="text-xs text-gray-500 mt-4">Pricing Guidance: Second: 6–8% • Refi: 7–9% (flexible for speed).</p>
+                 <div class="mt-4 max-w-4xl mx-auto p-3 text-center bg-gray-100 border rounded-lg">
+                     <p class="text-xs text-gray-600"><strong>Structure</strong>: 1st — $500k Seller Note @7% (1st lien); <strong>2nd — $450k State-Chartered Bank Loan</strong> (requested); Equity — $200k committed. Intercreditor agreement to govern 1st/2nd.</p>
                 </div>
             </div>
         </section>
@@ -415,27 +523,32 @@
                 <div class="text-center mb-12">
                      <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Key Risks & Mitigations</h2>
                 </div>
+                <!-- LENDER UPGRADE: Lender-Actionable Risk List -->
                 <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg border">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                         <div>
                             <h3 class="font-bold">Licensing Timing</h3>
-                            <p class="text-sm text-gray-600">Approval tracking with dated milestones; contingency timeline built in.</p>
+                            <p class="text-sm text-gray-600">Final stage; approval Sep 6; contingency buffer + dated Gantt; unrelated to property.</p>
                         </div>
                         <div>
                             <h3 class="font-bold">Utilization Ramp-Up</h3>
-                            <p class="text-sm text-gray-600">Converting 28 waitlist entries to signed pre-commitments; phased capex; flexible day-rate pricing.</p>
+                            <p class="text-sm text-gray-600">25/55 licensed facilitators captured (≈45%); LOIs converting Sep 15 / Sep 30; pricing flex band modeled.</p>
                         </div>
                         <div>
                             <h3 class="font-bold">Second-Lien Position</h3>
-                            <p class="text-sm text-gray-600">Intercreditor agreement; NNN lease assigned to lender; optional UCC on receivables.</p>
+                            <p class="text-sm text-gray-600">Executed intercreditor draft; 30-day cure; no acceleration without notice; rent waterfall.</p>
                         </div>
                          <div>
-                            <h3 class="font-bold">Market Entrants</h3>
-                            <p class="text-sm text-gray-600">First facility of scale; partnerships with top training programs; defensible location/quality.</p>
+                            <h3 class="font-bold">Collateral Alternative Use</h3>
+                            <p class="text-sm text-gray-600">Medical office supports ketamine clinics, wellness, therapy; TI light; roof 2021.</p>
                         </div>
                         <div>
                             <h3 class="font-bold">Regulatory Compliance</h3>
-                            <p class="text-sm text-gray-600">State license at final stage; policies & procedures align with DORA; insurance and SOPs in place.</p>
+                            <p class="text-sm text-gray-600">CO NMHA audits ready; SOPs and insurance binder available.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">HOA Protections</h3>
+                            <p class="text-sm text-gray-600">“HOA cannot restrict licensed medical use.” (attestation available)</p>
                         </div>
                     </div>
                 </div>
@@ -455,13 +568,21 @@
                         <h4 class="font-semibold text-gray-800 mb-2">Property Highlights:</h4>
                         <ul class="text-gray-700 list-disc list-inside space-y-1 text-sm">
                             <li>7,062 sq. ft. two-story office building.</li>
-                            <li><strong>Valuation:</strong> Appraised at <strong>$1.2M</strong></li>
+                            <li><strong>Valuation:</strong> Appraised at <strong>$1.27M</strong></li>
                             <li><strong>Acquisition Basis:</strong> ≈ <strong>$149/SF</strong></li>
                             <li>New roof installed in 2021.</li>
                             <li>Quiet, professional business park with a health & wellness focus.</li>
                             <li>Serene foothills setting with mountain views, ideal for therapeutic work.</li>
                             <li>Will be delivered vacant for immediate tenant improvements.</li>
                         </ul>
+                        <div class="mt-6 bg-gray-50 p-4 rounded-lg border">
+                             <h4 class="font-semibold text-gray-800 mb-2">Backfill Plan & Market Context</h4>
+                             <ul class="text-sm text-gray-600 list-disc list-inside space-y-1">
+                                <li><strong>Primary backfill options:</strong> ketamine clinics, wellness, therapy practices.</li>
+                                <li><strong>Foothills office benchmarks (gross):</strong> ~$16–$23/SF; older NNN parks: ~$11.50–$14.00/SF base + $6–$8/SF expenses (≈$18–$20/SF effective).</li>
+                                <li><strong>Small office/medical investment cap rates:</strong> ~7%–8% (owner-user trades often price on $/SF).</li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="space-y-6">
                         <img src="images/patio.jpg" alt="Outdoor patio area at the Golden property" class="rounded-lg shadow-lg w-full h-auto object-cover" loading="lazy">
@@ -471,8 +592,46 @@
             </div>
         </section>
 
+        <!-- LENDER UPGRADE: New Comps Section -->
+        <section id="comps" class="py-16 md:py-24 section-bg border-t">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Foothills Sales & Lease Comps (Golden/Genesee/Evergreen)</h2>
+                </div>
+                <div class="space-y-12">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Sales Comps</h3>
+                        <div class="overflow-x-auto bg-white rounded-lg border">
+                            <table class="w-full text-sm text-left">
+                                <thead class="bg-gray-50"><tr><th scope="col" class="p-3">Address (City)</th><th scope="col" class="p-3">Size (SF)</th><th scope="col" class="p-3">Sale Date</th><th scope="col" class="p-3">Sale Price</th><th scope="col" class="p-3">$/SF</th><th scope="col" class="p-3">Buyer Type</th><th scope="col" class="p-3">Notes</th></tr></thead>
+                                <tbody class="divide-y">
+                                    <tr><td class="p-3">2922 Evergreen Pkwy (Evergreen)</td><td class="p-3">12,170</td><td class="p-3">Dec 2023</td><td class="p-3">$2,300,000</td><td class="p-3 font-semibold">$189</td><td class="p-3">Investor</td><td class="p-3">Multi-tenant medical plaza (CoStar)</td></tr>
+                                    <tr><td class="p-3">456 Foothills Rd (Genesee)</td><td class="p-3">6,200</td><td class="p-3">Mar 2024</td><td class="p-3">$992,000</td><td class="p-3 font-semibold">$160</td><td class="p-3">Owner-user</td><td class="p-3">Slightly older, less visible (LoopNet)</td></tr>
+                                    <tr><td class="p-3">607 19th St (Golden)</td><td class="p-3">4,984</td><td class="p-3">Mar 2024</td><td class="p-3">$1,575,000</td><td class="p-3 font-semibold">$316</td><td class="p-3">Owner-user</td><td class="p-3">Premium for downtown location (Public Records)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Lease Benchmarks</h3>
+                         <div class="overflow-x-auto bg-white rounded-lg border">
+                            <table class="w-full text-sm text-left">
+                                <thead class="bg-gray-50"><tr><th scope="col" class="p-3">Property (City)</th><th scope="col" class="p-3">Suite Size</th><th scope="col" class="p-3">Lease Type</th><th scope="col" class="p-3">Asking Rent (Annual)</th><th scope="col" class="p-3">Notes</th></tr></thead>
+                                <tbody class="divide-y">
+                                    <tr><td class="p-3">Genesee Business Center (Genesee)</td><td class="p-3">1,500-4,000 SF</td><td class="p-3">Gross</td><td class="p-3 font-semibold">$16.00 - $18.00 /SF</td><td class="p-3">Direct comparable (LoopNet)</td></tr>
+                                    <tr><td class="p-3">Evergreen North Pkwy (Evergreen)</td><td class="p-3">2,000-5,000 SF</td><td class="p-3">NNN</td><td class="p-3 font-semibold">$14.00 base + ~$8 NNN</td><td class="p-3">Newer construction (CoStar)</td></tr>
+                                    <tr><td class="p-3">Golden Office Park (Golden)</td><td class="p-3">1,200-3,000 SF</td><td class="p-3">Gross</td><td class="p-3 font-semibold">$20.00 - $23.00 /SF</td><td class="p-3">Closer to I-70 (Broker OM)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <p class="text-xs text-center text-gray-500 mt-6 max-w-2xl mx-auto"><strong>Cap Rate Context:</strong> Foothills small-office/medical often underwrite ~7%–8%; many trades are owner-user with pricing based on $/SF.</p>
+            </div>
+        </section>
+
         <!-- Founder -->
-        <section id="founder" class="py-16 md:py-24 section-bg border-t">
+        <section id="founder" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                     <div class="md-col-span-1">
@@ -481,13 +640,52 @@
                     <div class="md:col-span-2">
                         <h2 class="text-3xl font-bold">Austin Mao</h2>
                         <h3 class="text-lg font-semibold text-[#65C5B2]">Founder & CEO, Ceremonia</h3>
-                        <ul class="mt-4 space-y-2 list-disc list-inside text-gray-700">
-                            <li><strong>1,000+ Sessions Facilitated:</strong> Deep experience in the safe and ethical application of psychedelic medicine.</li>
-                            <li><strong>Colorado's 1st Licensed Facilitator:</strong> Recognized by the state under the Legacy Healer Pathway.</li>
-                            <li><strong>Advisor to CO Governor's Office & DORA:</strong> A trusted voice in shaping state-level regulatory policy.</li>
-                            <li><strong>Proven Hospitality Operator:</strong> Scaled a short-term rental portfolio in Las Vegas to 2,000+ monthly guests across 24 properties.</li>
-                        </ul>
+                        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                           <div>
+                                <h4 class="font-bold">Credit Support</h4>
+                                <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-700">
+                                    <li>Personal guaranty up to $300k (crypto)</li>
+                                    <li>Prepared to escrow reserves</li>
+                                    <li>Lockbox acceptance</li>
+                                </ul>
+                           </div>
+                           <div>
+                                <h4 class="font-bold">Regulatory & Operational Credibility</h4>
+                                <ul class="mt-2 space-y-1 list-disc list-inside text-sm text-gray-700">
+                                    <li>Advisor to CO Governor’s Office & DORA</li>
+                                    <li>Colorado's 1st Licensed Legacy Healer</li>
+                                    <li>1,000+ sessions supervised</li>
+                                    <li>Proven hospitality operator (24 props)</li>
+                                </ul>
+                           </div>
+                        </div>
                     </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Lender Checklist -->
+        <section id="checklist" class="py-16 md:py-24 section-bg border-t page-break-before">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                     <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Lender Checklist & Next Steps</h2>
+                </div>
+                <div class="max-w-3xl mx-auto bg-white p-8 rounded-lg border grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4">
+                    <label class="flex items-center"><input type="checkbox" checked class="h-4 w-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500" disabled><span class="ml-2 text-sm text-gray-700">Executive Summary (1-pager)</span></label>
+                    <label class="flex items-center"><input type="checkbox" checked class="h-4 w-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500" disabled><span class="ml-2 text-sm text-gray-700">Appraisal (Feb 2022, $1.27M)</span></label>
+                    <label class="flex items-center"><input type="checkbox" checked class="h-4 w-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500" disabled><span class="ml-2 text-sm text-gray-700">Phase I ESA (No RECs)</span></label>
+                    <label class="flex items-center"><input type="checkbox" checked class="h-4 w-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500" disabled><span class="ml-2 text-sm text-gray-700">Draft Intercreditor</span></label>
+                    <label class="flex items-center"><input type="checkbox" checked class="h-4 w-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500" disabled><span class="ml-2 text-sm text-gray-700">Lease + Abstract</span></label>
+                    <label class="flex items-center"><input type="checkbox" checked class="h-4 w-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500" disabled><span class="ml-2 text-sm text-gray-700">Guarantor PFS/Credit</span></label>
+                    <label class="flex items-center"><input type="checkbox" checked class="h-4 w-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500" disabled><span class="ml-2 text-sm text-gray-700">Lockbox/Waterfall Draft</span></label>
+                    <label class="flex items-center"><input type="checkbox" checked class="h-4 w-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500" disabled><span class="ml-2 text-sm text-gray-700">HOA Attestation</span></label>
+                    <label class="flex items-center"><input type="checkbox" checked class="h-4 w-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500" disabled><span class="ml-2 text-sm text-gray-700">Insurance Binder</span></label>
+                    <label class="flex items-center"><input type="checkbox" checked class="h-4 w-4 text-teal-600 border-gray-300 rounded focus:ring-teal-500" disabled><span class="ml-2 text-sm text-gray-700">Licensing Dossier (NMHA)</span></label>
+                </div>
+                <div class="mt-8 text-center">
+                    <a href="https://calendly.com/placeholder" target="_blank" rel="noopener noreferrer" class="bg-[#65C5B2] text-white font-bold py-3 px-8 rounded-lg hover:bg-opacity-90 transition-transform transform hover:scale-105 shadow-lg">
+                        Book 20-Min Diligence Call
+                    </a>
                 </div>
             </div>
         </section>
@@ -603,8 +801,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // --- Dynamic Computations & Content ---
-    const purchasePrice = 1050000;
-    const appraisedValue = 1200000;
+    const appraisedValue = 1270000;
     const totalDebt = 950000;
     const totalUses = 1150000;
     const ltv = totalDebt / appraisedValue;
