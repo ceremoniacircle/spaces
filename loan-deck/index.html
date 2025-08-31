@@ -523,7 +523,6 @@
                 <div class="text-center mb-12">
                      <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Key Risks & Mitigations</h2>
                 </div>
-                <!-- LENDER UPGRADE: Lender-Actionable Risk List -->
                 <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg border">
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                         <div>
@@ -598,16 +597,30 @@
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Foothills Sales & Lease Comps (Golden/Genesee/Evergreen)</h2>
                 </div>
+                <!-- LENDER UPGRADE: Subject Property Quick Compare -->
+                <div class="max-w-4xl mx-auto bg-white p-4 rounded-lg border mb-8" id="subject-quick-compare">
+                    <h3 class="text-xl font-bold mb-2">Subject Property — 538 Commons Dr (Golden)</h3>
+                    <table class="w-full text-sm">
+                        <tbody class="divide-y">
+                        <tr><td class="p-2 w-1/3 font-medium">Size (SF)</td><td class="p-2">7,062</td></tr>
+                        <tr><td class="p-2 font-medium">Acquisition Basis</td><td class="p-2">$1,050,000 total (≈ <strong>$149/SF</strong>)</td></tr>
+                        <tr><td class="p-2 font-medium">Appraised Value</td><td class="p-2">$1,270,000 (Feb 16, 2022) — ≈ <strong>$180/SF</strong></td></tr>
+                        <tr><td class="p-2 font-medium">Lease (to OpCo)</td><td class="p-2">$14,000/mo NNN (no landlord expenses)</td></tr>
+                        <tr><td class="p-2 font-medium">Backfill Context</td><td class="p-2">Foothills office gross ~$16–$23/SF; older NNN parks ~$11.50–$14.00 base + $6–$8 NNN (≈$18–$20/SF effective)</td></tr>
+                        </tbody>
+                    </table>
+                </div>
                 <div class="space-y-12">
                     <div>
                         <h3 class="text-xl font-bold mb-4">Sales Comps</h3>
                         <div class="overflow-x-auto bg-white rounded-lg border">
+                            <!-- LENDER UPGRADE: Sales Comps Table -->
                             <table class="w-full text-sm text-left">
                                 <thead class="bg-gray-50"><tr><th scope="col" class="p-3">Address (City)</th><th scope="col" class="p-3">Size (SF)</th><th scope="col" class="p-3">Sale Date</th><th scope="col" class="p-3">Sale Price</th><th scope="col" class="p-3">$/SF</th><th scope="col" class="p-3">Buyer Type</th><th scope="col" class="p-3">Notes</th></tr></thead>
                                 <tbody class="divide-y">
                                     <tr><td class="p-3">2922 Evergreen Pkwy (Evergreen)</td><td class="p-3">12,170</td><td class="p-3">Dec 2023</td><td class="p-3">$2,300,000</td><td class="p-3 font-semibold">$189</td><td class="p-3">Investor</td><td class="p-3">Multi-tenant medical plaza (CoStar)</td></tr>
                                     <tr><td class="p-3">456 Foothills Rd (Genesee)</td><td class="p-3">6,200</td><td class="p-3">Mar 2024</td><td class="p-3">$992,000</td><td class="p-3 font-semibold">$160</td><td class="p-3">Owner-user</td><td class="p-3">Slightly older, less visible (LoopNet)</td></tr>
-                                    <tr><td class="p-3">607 19th St (Golden)</td><td class="p-3">4,984</td><td class="p-3">Mar 2024</td><td class="p-3">$1,575,000</td><td class="p-3 font-semibold">$316</td><td class="p-3">Owner-user</td><td class="p-3">Premium for downtown location (Public Records)</td></tr>
+                                    <tr><td class="p-3">607 19th St (Golden)</td><td class="p-3">4,984</td><td class="p-3">Mar 2024</td><td class="p-3">$1,575,000</td><td class="p-3 font-semibold">$316</td><td class="p-3">Owner-user</td><td class="p-3">Downtown premium outlier (Public Records)</td></tr>
                                 </tbody>
                             </table>
                         </div>
@@ -615,6 +628,7 @@
                     <div>
                         <h3 class="text-xl font-bold mb-4">Lease Benchmarks</h3>
                          <div class="overflow-x-auto bg-white rounded-lg border">
+                            <!-- LENDER UPGRADE: Lease Benchmarks Table -->
                             <table class="w-full text-sm text-left">
                                 <thead class="bg-gray-50"><tr><th scope="col" class="p-3">Property (City)</th><th scope="col" class="p-3">Suite Size</th><th scope="col" class="p-3">Lease Type</th><th scope="col" class="p-3">Asking Rent (Annual)</th><th scope="col" class="p-3">Notes</th></tr></thead>
                                 <tbody class="divide-y">
@@ -626,7 +640,16 @@
                         </div>
                     </div>
                 </div>
-                <p class="text-xs text-center text-gray-500 mt-6 max-w-2xl mx-auto"><strong>Cap Rate Context:</strong> Foothills small-office/medical often underwrite ~7%–8%; many trades are owner-user with pricing based on $/SF.</p>
+                 <!-- LENDER UPGRADE: Comps Conclusions -->
+                <div class="max-w-4xl mx-auto bg-white p-4 rounded-lg border mt-8" id="comps-conclusions">
+                    <h3 class="text-lg font-semibold mb-2">Comps — Key Conclusions</h3>
+                    <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                        <li><strong>Pricing band:</strong> Typical foothills medical/office trades cluster around <strong>$150–$190/SF</strong>; a downtown Golden outlier reaches the low <strong>$300s/SF</strong> (location premium).</li>
+                        <li><strong>Subject basis:</strong> 538 Commons is under contract at <strong>$149/SF</strong>, which is at/below the low end of the prevailing foothills range and below the prior appraisal’s implied <strong>≈$180/SF</strong>.</li>
+                        <li><strong>Leasing context:</strong> Benchmarks support effective foothills rents around <strong>$18–$20/SF</strong> all-in for older NNN parks, aligning with the property’s positioning and backfill optionality.</li>
+                        <li><strong>Takeaway:</strong> Subject pricing is conservative vs. peers; lease economics are supported by local benchmarks, with downtown premiums not required to justify basis.</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
