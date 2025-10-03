@@ -86,7 +86,9 @@ Map property data to standard investment deck sections (matching investment-deck
 
 1. **Investment Ask Section**:
    - Headline with investment opportunity type (e.g., "Looking for 2-3 Investors to Co-Sign on Mortgage")
-   - Key financing stats in stat cards: Down Payment, Monthly Payment, Annual Debt Service, LTV
+   - **PROMINENT: Cap Rate and Cash-on-Cash Return** displayed in large, eye-catching format at the very top
+   - Key return metrics in highlighted banner: Cap Rate, Cash-on-Cash Return, Total ROI (Year 1), DSCR
+   - Secondary financing stats in stat cards: Down Payment, Monthly Payment, Annual Debt Service, LTV
    - Financing structure with Sources (mortgage, down payment) and Uses (purchase, closing, CapEx)
    - Zillow listing link button
    - Investment terms summary (loan type, interest rate, amortization, DSCR)
