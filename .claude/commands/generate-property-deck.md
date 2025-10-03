@@ -57,21 +57,54 @@ Implement core brand elements:
 ### Step 3: Generate Content Sections
 Map property data to standard investment deck sections (matching investment-deck/index.html structure):
 
-1. **Hero Section**: Property headline, key investment terms, primary stats, Zillow listing link
-2. **Property Overview**: Location map, specs, photo gallery (ALL images from images/ folder), unique selling points
-3. **Financial Analysis**: Acquisition costs, OpCo income, revenue models, LandCo returns, key metrics
-4. **Investment Thesis**: Strengths (green), Concerns (yellow), Recommendation summary (blue)
-5. **Next Steps**: 90-day execution timeline with week-by-week tasks
-6. **Market Context**: Healing center market stats + Gateway tourism market stats
-7. **Business Context**: The Colorado Psychedelic Infrastructure Crisis
-8. **The Ceremonia Solution**: Premier asset positioning, turnkey compliance, market share chart
-9. **The Ceremonia Ecosystem**: 3-entity structure (Journeys, EDU, Spaces)
-10. **Legal & Entity Structure**: LandCo, OpCo, Holdings explanation
-11. **Founder & Vision**: Austin Mao bio with credibility markers and highlight cards
-12. **Due Diligence**: Link to full analysis document (if available)
-13. **Contact**: Contact info, investment invitation
+1. **Investment Ask Section**:
+   - Headline with investment opportunity type (e.g., "Looking for 2-3 Investors to Co-Sign on Mortgage")
+   - Key financing stats in stat cards: Down Payment, Monthly Payment, Annual Debt Service, LTV
+   - Financing structure with Sources (mortgage, down payment) and Uses (purchase, closing, CapEx)
+   - Zillow listing link button
+   - Investment terms summary (loan type, interest rate, amortization, DSCR)
+
+2. **Hero Section**: Property headline, location, key property stats (sqft, beds/baths, lot size, year built)
+
+3. **Property Overview**:
+   - Location map
+   - Property specs table
+   - **Modal Photo Gallery** (ALL images from images/ folder) - thumbnails open full-size images in modal overlay
+   - Unique selling points
+
+4. **Financial Analysis**: Acquisition costs, OpCo income, revenue models, LandCo returns, key metrics
+
+5. **Investment Thesis**: Strengths (green), Concerns (yellow), Recommendation summary (blue)
+
+6. **Next Steps**: 90-day execution timeline with week-by-week tasks
+
+7. **Market Context**: Healing center market stats + Gateway tourism market stats
+
+8. **Business Context**: The Colorado Psychedelic Infrastructure Crisis
+
+9. **The Ceremonia Solution**: Premier asset positioning, turnkey compliance, market share chart
+
+10. **The Ceremonia Ecosystem**: 3-entity structure (Journeys, EDU, Spaces)
+
+11. **Legal & Entity Structure**: LandCo, OpCo, Holdings explanation
+
+12. **Founder & Vision**: Austin Mao bio with credibility markers and highlight cards
+
+13. **Due Diligence**: Link to full analysis document (if available)
+
+14. **Contact**: Contact info, investment invitation
 
 ### Step 4: Build Interactive Elements
+
+**Modal Photo Gallery** (REQUIRED):
+- Grid of thumbnail images (4-5 columns responsive)
+- Click thumbnail to open full-size image in modal overlay
+- Modal features: dark backdrop, close button (X), previous/next navigation arrows, image counter
+- Keyboard navigation: ESC to close, arrow keys for prev/next
+- Touch swipe support for mobile
+- Implementation: Pure CSS/JS (no external dependencies) using W3Schools approach
+- CSS: `.modal { display: none; position: fixed; z-index: 999; width: 100%; height: 100%; background: rgba(0,0,0,0.9); }`
+- JS: Click handlers for thumbnails, navigation buttons, and close
 
 **Financial Calculator** (if deck_type includes financial modeling):
 - Dynamic input controls (purchase price, financing terms, utilization rates)
@@ -92,18 +125,21 @@ Map property data to standard investment deck sections (matching investment-deck
 
 ### Step 5: Quality Assurance Checklist
 - [ ] All data accurately sourced from input files
-- [ ] ALL images from images/ folder are included in gallery (not just first 6)
-- [ ] Zillow listing link prominently displayed in hero section
+- [ ] Investment Ask section prominently displayed at top with financing details
+- [ ] Modal photo gallery implemented with ALL images from images/ folder
+- [ ] Modal navigation working (prev/next arrows, keyboard ESC/arrows, close button)
+- [ ] Zillow listing link in Investment Ask section
+- [ ] Financing structure shows Sources and Uses tables
+- [ ] Current mortgage rates and down payment from agent research
 - [ ] All business context sections from investment-deck/index.html are included
 - [ ] No placeholder text or broken links
 - [ ] Responsive design tested (mobile, tablet, desktop)
-- [ ] Interactive elements functional
-- [ ] Images load with lazy loading and alt text
+- [ ] Interactive elements functional (modal, calculators, charts)
+- [ ] Thumbnail images display in grid (not full gallery on page)
 - [ ] Chart.js renders correctly (if applicable)
 - [ ] Financial calculations accurate
 - [ ] Meta tags populated
 - [ ] Performance optimized
-- [ ] Use ChromeDevTools MCP to validate output against investment-deck/index.html structure
 
 ## Example: Saint Vrain Property
 
