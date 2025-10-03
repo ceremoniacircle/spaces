@@ -1,0 +1,116 @@
+{
+  "zpid": "2138154339",
+  "url": "https://www.zillow.com/homedetails/11042-N-Saint-Vrain-Dr-Lyons-CO-80540/2138154339_zpid/",
+  "address": {
+    "street": "11042 N Saint Vrain Dr",
+    "city": "Lyons",
+    "state": "CO",
+    "zip": "80540",
+    "full": "11042 N Saint Vrain Dr, Lyons, CO 80540",
+    "slug": "11042-n-saint-vrain-dr-lyons-co-80540"
+  },
+  "pricing": {
+    "listPrice": 1399000,
+    "pricePerSqft": 254,
+    "priceHistory": [
+      {
+        "date": "2025-09-09",
+        "price": 1500000,
+        "event": "Listed"
+      },
+      {
+        "date": "2025-09-09",
+        "price": 1399000,
+        "event": "Price cut: $101K"
+      }
+    },
+    "zestimate": 1354400,
+    "rentZestimate": 5391
+  },
+  "property": {
+    "type": "Single Family Home",
+    "subtype": "Residential-Detached, Residential",
+    "bedrooms": 4,
+    "bathrooms": {
+      "full": 2,
+      "threeQuarter": 1,
+      "half": 1,
+      "total": 4
+    },
+    "sqft": 5512,
+    "lotSize": "12.82 Acres",
+    "yearBuilt": 2001,
+    "stories": 2,
+    "garage": {
+      "spaces": 2,
+      "type": "attached",
+      "features": ["Garage Door Opener", "Heated Garage"]
+    },
+    "heating": "Forced air, natural gas",
+    "cooling": "Central A/C"
+  },
+  "location": {
+    "latitude": 40.284374,
+    "longitude": -105.37344,
+    "neighborhood": "80540",
+    "county": "Boulder County"
+  },
+  "listing": {
+    "mlsNumber": "1036776",
+    "listDate": "2025-09-09",
+    "daysOnMarket": 111,
+    "status": "Active",
+    "views": 1338,
+    "saves": 90,
+    "agentName": "Scott K Thompson",
+    "agentPhone": "970-368-7000",
+    "brokerageName": "Keller Williams Top of the Rockies Real Estate",
+    "source": "IRES",
+    "description": "Secluded Mountain Retreat with Creekside Setting and Designer Finishes - Experience the perfect harmony of modern luxury and natural beauty in this extraordinary custom home. Dramatic cliffs, towering pines, and a year-round creek create an inspiring backdrop that feels both tranquil and enchanting. Step inside to soaring vaulted ceilings, walls of windows that frame breathtaking mountain views, and rich wood flooring that ties the open-concept spaces together. The gourmet kitchen is a true centerpiece, boasting sleek granite countertops, high-end appliances, and a panoramic window wall. Sun-filled dining and living areas flow seamlessly to expansive outdoor decks-ideal for entertaining or enjoying peaceful evenings beneath the stars. The primary suite is designed for indulgence, offering a cozy fireplace, tray ceiling detail, sitting area, and spa-like ensuite with a soaking tub surrounded by picture windows. Multiple living areas provide flexibility for gatherings, home offices, or multigenerational living. A lower-level retreat includes a second kitchen, bonus rooms, and private guest suites. Outdoors, discover wraparound decks across multiple levels, a shaded pergola dining space with cafe lighting, and the soothing soundtrack of the creek just below. A custom stone bridge and winding driveway enhance the sense of charm and seclusion. Whether it's sipping coffee at sunrise, hosting unforgettable dinner parties, or simply reconnecting with nature, this hidden gem offers a lifestyle that feels a world away-yet remains just minutes from town.",
+    "features": [
+      "Cozy fireplace",
+      "Designer finishes",
+      "Modern luxury",
+      "Breathtaking mountain views",
+      "Custom stone bridge",
+      "Multigenerational living",
+      "Sitting area",
+      "Vaulted ceilings",
+      "Walls of windows",
+      "Gourmet kitchen",
+      "Granite countertops",
+      "High-end appliances",
+      "Expansive outdoor decks",
+      "Primary suite with fireplace",
+      "Spa-like ensuite",
+      "Soaking tub",
+      "Second kitchen",
+      "Year-round creek",
+      "Pergola dining space",
+      "Wraparound decks"
+    ]
+  },
+  "financial": {
+    "hoaFees": 0,
+    "estimatedMonthlyPayment": "N/A",
+    "estimatedInsurance": 2400,
+    "estimatedPropertyTax": 8400
+  },
+  "images": {
+    "count": 6,
+    "folder": "./images/",
+    "files": [
+      "01.jpg",
+      "02.jpg",
+      "03.jpg",
+      "04.jpg",
+      "05.jpg",
+      "06.jpg"
+    ]
+  },
+  "metadata": {
+    "scrapedAt": "2025-10-03T16:56:00Z",
+    "firecrawlVersion": "v1",
+    "dataSource": "Zillow via Firecrawl API"
+  }
+}
