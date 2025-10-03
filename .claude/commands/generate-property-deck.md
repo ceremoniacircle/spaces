@@ -69,10 +69,12 @@ Based on property type and use case, select appropriate mortgage product:
 **Selection Logic:**
 1. Check property type in analysis.md (single-family, multi-family, commercial, mixed-use)
 2. Check intended use (owner-occupied residence, investment rental, commercial operation)
-3. If single-family OR 1-4 units + residential use → Conventional Residential
+3. If single-family OR 1-4 units + residential use → **Conventional Residential ONLY** (no SBA comparison)
 4. If commercial zoning OR 5+ units → Commercial financing (SBA 504 preferred for owner-occupied)
 5. If residential converting to commercial → Prioritize SBA 504, show Conventional Commercial as alternative
 6. Always use current market rates from real-estate-investment-analyst agent
+
+**IMPORTANT: Do NOT show SBA 504 comparisons for residential properties.** Only show the appropriate residential financing option.
 
 ### Step 2: Apply Ceremonia Design System
 Implement core brand elements:
@@ -101,7 +103,11 @@ Map property data to standard investment deck sections (matching investment-deck
    - **Modal Photo Gallery** (ALL images from images/ folder) - thumbnails open full-size images in modal overlay
    - Unique selling points
 
-4. **Financial Analysis**: Acquisition costs, OpCo income, revenue models, LandCo returns, key metrics
+4. **Financial Analysis**:
+   - **LandCo Acquisition Costs** (investor perspective): Purchase price ONLY (closing costs paid by seller, CapEx handled by Ceremonia Spaces OpCo)
+   - **OpCo Revenue** (Ceremonia Spaces): Gross revenue, operating expenses, NNN lease payment to LandCo, net profit
+   - **LandCo Returns**: Cap rate, cash-on-cash, total ROI, DSCR, annual cash flow breakdown
+   - Key metrics and projections
 
 5. **Investment Thesis**: Strengths (green), Concerns (yellow), Recommendation summary (blue)
 
