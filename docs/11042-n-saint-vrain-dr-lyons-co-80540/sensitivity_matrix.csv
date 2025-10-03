@@ -1,0 +1,40 @@
+metric,buyout_nights,utilization_35pct,utilization_45pct,utilization_55pct,utilization_65pct
+monthly_revenue,4,44760,51840,58920,66000
+monthly_revenue,6,50760,57240,63720,70200
+monthly_revenue,8,56760,62640,68520,74400
+annual_revenue,4,537120,622080,707040,792000
+annual_revenue,6,609120,686880,764640,842400
+annual_revenue,8,681120,751680,822240,892800
+annual_opex,4,160044,181620,203196,224772
+annual_opex,6,180804,201900,223008,244104
+annual_opex,8,201564,222180,242808,263436
+annual_noi,4,377076,440460,503844,567228
+annual_noi,6,428316,484980,541632,598296
+annual_noi,8,479556,529500,579432,629364
+dscr,4,4.50,5.26,6.02,6.77
+dscr,6,5.12,5.79,6.47,7.14
+dscr,8,5.73,6.32,6.92,7.52
+annual_cash_flow,4,293328,356712,420096,483480
+annual_cash_flow,6,344568,401232,457884,514548
+annual_cash_flow,8,395808,445752,495684,545616
+coc_return,4,0.748,0.910,1.072,1.234
+coc_return,6,0.879,1.024,1.168,1.313
+coc_return,8,1.010,1.138,1.265,1.392
+interest_rate_sensitivity,rate_6.50pct,rate_7.00pct,rate_7.50pct,rate_8.00pct,notes
+monthly_pi,6632,6979,7337,7704,Base scenario: 6 buyouts 55pct utilization
+annual_debt,79584,83748,88044,92448,Monthly P&I × 12
+dscr_base_scenario,7.21,6.85,6.52,6.21,Annual NOI $573876 / Annual Debt
+annual_cash_flow_base,494292,490128,485832,481428,NOI - Annual Debt
+coc_return_base,1.261,1.251,1.240,1.228,Annual Cash Flow / Cash Invested $391920
+price_sensitivity,minus_10pct,base,plus_10pct,notes,assumption
+room_rate,810,900,990,Per night,3.2x Lyons ADR
+buyout_rate,2700,3000,3300,Per night,Full property
+monthly_revenue_base_scenario,58968,65520,72072,6 buyouts 55pct utilization,calculation
+annual_noi_base_scenario,516492,573876,631260,After all OpEx,calculation
+dscr_price_sensitivity,6.17,6.85,7.54,NOI / Annual Debt $83748,calculation
+coc_return_price_sensitivity,1.104,1.251,1.397,Cash Flow / Cash Invested,calculation
+management_fee_sensitivity,8pct,15pct,25pct,notes,scenario
+annual_mgmt_cost_base,62899,117936,196560,Base scenario $786240 revenue,calculation
+annual_noi_mgmt_adjusted,573876,518839,440316,Revenue - all costs,calculation
+dscr_mgmt_adjusted,6.85,6.19,5.26,NOI / Annual Debt,calculation
+coc_return_mgmt_adjusted,1.251,1.110,0.910,Cash Flow / Cash Invested,calculation
