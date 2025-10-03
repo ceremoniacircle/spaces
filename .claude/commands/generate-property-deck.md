@@ -41,11 +41,38 @@ Extract structured information from markdown files:
 - **From gemini-property-info.md**: Operating model specifics, execution timeline
 
 Key data points to extract:
-- Property: address, size, bedrooms, bathrooms, lot size, year built, features
+- Property: address, size, bedrooms, bathrooms, lot size, year built, features, **property type** (single-family, multi-family, commercial, mixed-use)
 - Pricing: list price, purchase price, comparable data
 - Financials: revenue scenarios, DSCR, cash-on-cash returns, operating expenses
 - Market: demand drivers, competition, location advantages
 - Risks: Primary concerns and mitigation strategies
+
+### Step 1.5: Determine Financing Structure
+Based on property type and use case, select appropriate mortgage product:
+
+**Residential Properties** (Single-Family, 1-4 Units):
+- **Conventional Conforming**: 20-25% down, current market rates (6.5-7.5%), 30-year fixed
+- **Conventional Non-Conforming (Jumbo)**: For loans >$766,550, 20-25% down, rates +0.25-0.5%
+- **FHA**: 3.5% down (owner-occupied), rates similar to conventional
+- **Investment Property**: 20-25% down, rates +0.5-0.75% vs owner-occupied
+
+**Commercial Properties** (5+ units, commercial use):
+- **SBA 504**: 10% down, 6.0-6.6% fixed, 25-year term (owner-occupied commercial)
+- **SBA 7(a)**: 10% down, variable rates, 25-year term (general business use)
+- **Conventional Commercial**: 20-30% down, 6.5-8.5% rates, 5-10 year term with 20-25 year amortization
+
+**Hybrid/Special Use** (Residential converting to commercial):
+- First attempt: **SBA 504** if >51% owner-occupied business use
+- Fallback: **Conventional Commercial** if SBA not available
+- Alternative: **Residential Investment Property** if maintaining residential zoning
+
+**Selection Logic:**
+1. Check property type in analysis.md (single-family, multi-family, commercial, mixed-use)
+2. Check intended use (owner-occupied residence, investment rental, commercial operation)
+3. If single-family OR 1-4 units + residential use → Conventional Residential
+4. If commercial zoning OR 5+ units → Commercial financing (SBA 504 preferred for owner-occupied)
+5. If residential converting to commercial → Prioritize SBA 504, show Conventional Commercial as alternative
+6. Always use current market rates from real-estate-investment-analyst agent
 
 ### Step 2: Apply Ceremonia Design System
 Implement core brand elements:
