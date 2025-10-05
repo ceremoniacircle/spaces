@@ -178,9 +178,37 @@
                 grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
             }
         }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-logo {
+            height: 40px;
+            width: auto;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="https://ceremoniacircle.org" target="_blank" rel="noopener noreferrer">
+                    <img src="../images/ceremonia_logo_horiz_color.png" alt="Ceremonia" class="navbar-logo">
+                </a>
+                <div class="text-sm font-semibold text-gray-600">
+                    St. Vrain Investment Opportunity
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <!-- Investment Ask Section -->
     <section id="investment-ask" class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-purple-50">
@@ -765,8 +793,8 @@
 
                 <!-- Investor Return Scenarios -->
                 <div class="bg-white rounded-lg shadow-lg border p-6">
-                    <h3 class="text-xl font-bold mb-4">Your Investment Returns Under Different Lease Scenarios</h3>
-                    <p class="text-sm text-gray-600 mb-4">Impact of NNN lease changes on investor income (per investor, 1/3 share)</p>
+                    <h3 class="text-xl font-bold mb-4">Co-Investor Returns Under Different Lease Scenarios</h3>
+                    <p class="text-sm text-gray-600 mb-4">Impact of NNN lease changes on co-investor income (equal 1/3 share, based on $134,071 investment)</p>
                     <table class="w-full text-sm">
                         <thead class="bg-gray-50">
                             <tr>
@@ -783,33 +811,33 @@
                                 <td class="p-3 text-right">$9,000</td>
                                 <td class="p-3 text-right">$474</td>
                                 <td class="p-3 text-right">$5,688</td>
-                                <td class="p-3 text-right">4.9%</td>
+                                <td class="p-3 text-right">4.2%</td>
                             </tr>
                             <tr>
                                 <td class="p-3 text-gray-600">Lease Reduced 10%</td>
                                 <td class="p-3 text-right">$10,800</td>
                                 <td class="p-3 text-right">$1,074</td>
                                 <td class="p-3 text-right">$12,888</td>
-                                <td class="p-3 text-right">11.1%</td>
+                                <td class="p-3 text-right">9.6%</td>
                             </tr>
                             <tr class="bg-green-50">
                                 <td class="p-3 font-semibold text-green-900">Current ($12K/month)</td>
                                 <td class="p-3 text-right font-semibold">$12,000</td>
                                 <td class="p-3 text-right font-bold text-green-700">$1,474</td>
                                 <td class="p-3 text-right font-bold text-green-700">$17,684</td>
-                                <td class="p-3 text-right font-bold text-green-700">15.2%</td>
+                                <td class="p-3 text-right font-bold text-green-700">13.2%</td>
                             </tr>
                             <tr>
                                 <td class="p-3 text-gray-600">Lease Increased 10%</td>
                                 <td class="p-3 text-right">$13,200</td>
                                 <td class="p-3 text-right">$1,874</td>
                                 <td class="p-3 text-right">$22,488</td>
-                                <td class="p-3 text-right">19.3%</td>
+                                <td class="p-3 text-right">16.8%</td>
                             </tr>
                         </tbody>
                     </table>
                     <div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded text-sm text-blue-900">
-                        <strong>Risk Mitigation:</strong> Even if lease reduces to $9,000/month (25% haircut), you still earn 4.9% cash-on-cash return—similar to treasury yields but with real estate equity upside. Tenant's 5.22x coverage provides strong buffer against revenue volatility.
+                        <strong>Risk Mitigation:</strong> Even if lease reduces to $9,000/month (25% haircut), co-investors still earn 4.2% cash-on-cash return—similar to treasury yields but with real estate equity upside. Tenant's 5.22x coverage provides strong buffer against revenue volatility.
                     </div>
                 </div>
 
@@ -1300,12 +1328,12 @@
 
             <div class="max-w-4xl mx-auto space-y-6">
                 <div class="bg-green-50 border border-green-200 rounded-lg p-6">
-                    <h3 class="text-lg font-bold text-green-900 mb-4">✓ Investment Highlights (Per Investor - 1/3 Share)</h3>
+                    <h3 class="text-lg font-bold text-green-900 mb-4">✓ Co-Investor Investment Highlights</h3>
                     <ul class="space-y-3 text-green-900">
-                        <li><strong>Attractive Returns:</strong> 15.2% cash-on-cash return on $116,583 investment</li>
-                        <li><strong>Passive Monthly Income:</strong> $1,474/month after mortgage and management fees</li>
+                        <li><strong>Attractive Returns:</strong> 13.2% cash-on-cash return on $134,071 investment</li>
+                        <li><strong>Passive Monthly Income:</strong> $1,474/month after mortgage and management fees (equal 1/3 share)</li>
                         <li><strong>Strong Lease Security:</strong> $12K/month NNN lease with 5.22x tenant coverage (OpCo NOI $752K vs $144K lease)</li>
-                        <li><strong>3-Partner Risk Sharing:</strong> Co-sign with 2 investors, reducing individual exposure</li>
+                        <li><strong>Partner with Founder:</strong> Co-sign with founder Austin Mao and one other co-investor, sharing mortgage with experienced operator</li>
                         <li><strong>Zero Operational Burden:</strong> Tenant handles all property operations and improvements</li>
                         <li><strong>Refinancing Flexibility:</strong> No prepayment penalties—refinance when rates drop to boost cash flow</li>
                         <li><strong>Anchor Tenant Buffer:</strong> Ceremonia Journeys' 4 buyouts/month ($16K) alone covers 133% of lease</li>
@@ -1328,7 +1356,7 @@
                 <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
                     <h3 class="text-lg font-bold text-blue-900 mb-4">→ Recommendation: ATTRACTIVE INVESTMENT FOR PATIENT CAPITAL</h3>
                     <p class="text-blue-900 mb-3">
-                        This 3-investor co-ownership structure offers <strong>compelling risk-adjusted returns</strong>: 15.2% annual cash-on-cash from $116,583 investment generating $1,474/month passive income. The $12,000/month NNN lease provides stable cash flow with strong 1.63x DSCR on investor debt service, while tenant's 5.22x revenue coverage demonstrates substantial buffer against operational volatility.
+                        This 3-investor co-ownership structure offers <strong>compelling risk-adjusted returns</strong> for co-investors: 13.2% annual cash-on-cash from $134,071 investment generating $1,474/month passive income through equal 1/3 share. The $12,000/month NNN lease provides stable cash flow with strong 1.63x DSCR on investor debt service, while tenant's 5.22x revenue coverage demonstrates substantial buffer against operational volatility.
                     </p>
                     <p class="text-blue-900 mb-3">
                         <strong>Key Success Factors:</strong> (1) Tenant executes on dual-revenue model (12 buyouts/month @ $4,000 + room rentals), (2) Regulatory approvals secured (Use Review + STR license), (3) Septic capacity confirmed for 8-guest operations. Anchor tenant Ceremonia Journeys' 4 guaranteed buyouts/month ($192K/year) alone exceeds total lease obligation—providing downside protection.
