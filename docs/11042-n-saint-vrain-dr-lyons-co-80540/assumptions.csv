@@ -1,0 +1,59 @@
+key,value,unit,note
+list_price,1399000,USD,Per property listing
+building_sf,5512,sqft,Living space
+lot_acres,12.82,acres,Lot size
+year_built,2001,year,24 years old
+bedrooms,4,rooms,Current configuration
+bathrooms,4,rooms,Full baths
+rooms_count,4,rooms,Therapy room conversion from bedrooms
+ceremony_spaces,2,spaces,Main living areas
+max_occupancy,8,guests,Septic capacity limit per Boulder County OWTS (4 bedrooms × 2 persons)
+room_rate_nightly,900,USD,ASSUMPTION: 3.2x Lyons STR market ADR ($277); requires validation
+ceremony_buyout_rate_nightly,3000,USD,ASSUMPTION: Full property buyout; no comparable data
+indifference_utilization,0.833,decimal,"Utilization at which room revenue = buyout revenue (u* = $3,000 / (4 × $900))"
+down_payment_pct,0.25,decimal,25% of purchase price (industry standard investment property)
+loan_amount,1049250,USD,75% LTV
+closing_costs_pct,0.03,decimal,3% of purchase price
+closing_costs,41970,USD,Buyer closing costs
+cash_invested,391920,USD,Down payment + closing costs
+mortgage_term,30,years,Standard amortization
+interest_rate,0.07,decimal,"7.00% annual (Oct 2025 investment property rate; primary residence 6.21-6.53% + 0.50-0.75% premium)"
+monthly_pi,6979,USD,Principal & interest payment
+annual_debt_service,83748,USD,Monthly P&I × 12
+variable_costs_pct,0.13,decimal,13% of revenue (platform fees 5% + cleaning 5% + supplies 3%)
+management_pct,0.08,decimal,8% of revenue (self-managed with booking software)
+supplies_per_roomnight,0,USD,Included in 13% variable costs
+fixed_opex_monthly,3500,USD,"Original assumption: utilities, insurance base, maintenance, contingency"
+fixed_opex_monthly_revised,1000,USD,"REVISED with realistic wildfire insurance: utilities $150 + insurance $625 + maintenance $200 + contingency $25"
+property_tax_annual,5244,USD,FACT: Assessed tax from property listing
+property_tax_monthly,437,USD,Annual tax / 12
+guest_taxes_treatment,pass_through,text,Not included in OpEx (collected from guests and remitted to authorities)
+insurance_base_estimate,2400,USD/year,Original estimate (OUTDATED)
+insurance_wildfire_verified,7500,USD/year,"FACT: Boulder County WUI zone market rate $6,000-$7,500/year (Oct 2025 research)"
+low_buyout_nights,4,per month,Conservative scenario
+base_buyout_nights,6,per month,Expected scenario
+high_buyout_nights,8,per month,Optimistic scenario
+low_room_utilization,0.35,decimal,Conservative (non-buyout nights)
+base_room_utilization,0.55,decimal,"Expected (Lyons market 51% + 4% NMHA premium; ASSUMPTION)"
+high_room_utilization,0.65,decimal,Optimistic
+str_license_fee_initial,350,USD,Boulder County short-term rental license
+str_license_fee_renewal,250,USD,2-year renewal
+str_license_term,2,years,Boulder County license duration
+nmha_license_fee,6000,USD,ASSUMPTION: Colorado healing center license (verify current fee schedule)
+septic_bedrooms,4,bedrooms,Design capacity for OWTS calculation
+septic_capacity_persons,8,persons,Boulder County formula: 2 persons/bedroom
+owner_occupancy_required,TRUE,boolean,Boulder County STR licensing requirement (6+ months/year primary residence)
+use_review_required,TRUE,boolean,Medical office use in residential zone requires Use Review approval
+use_review_timeline,9,months,"ASSUMPTION: 6-12 month range; midpoint estimate"
+use_review_cost,10000,USD,"ASSUMPTION: $5K-$15K range (application, legal, hearings)"
+wildfire_mitigation_rebate,500,USD,Boulder County Wildfire Partners program (max rebate)
+data_source_mortgage_rates,Multiple sources,text,"NerdWallet, Bankrate, The Mortgage Reports (Oct 3, 2025)"
+data_source_str_market,AirDNA,text,Lyons CO market data (Oct 3, 2025)
+data_source_regulations,Boulder County + Colorado DPO,text,Official government websites (Oct 3, 2025)
+data_source_insurance,Boulder Reporting Lab + Insurify,text,Wildfire insurance research (Oct 3, 2025)
+data_access_date,2025-10-03,date,All external research conducted Oct 3, 2025
+revenue_assumption_confidence,LOW,text,No comparable NMHA healing center pricing data (market <1 year old)
+utilization_assumption_confidence,MEDIUM,text,Based on Lyons STR market + estimated NMHA premium (unverified)
+cost_assumption_confidence,MEDIUM,text,Industry estimates; revised insurance to verified wildfire rates
+regulatory_assumption_confidence,HIGH,text,Verified Boulder County STR and Colorado NMHA regulations (Oct 2025)
+financial_model_stress_test,0.50,decimal,"Revenue reduced 50% ($450 room rate, 45% utilization) still produces 3.70x DSCR, 57.8% CoC"

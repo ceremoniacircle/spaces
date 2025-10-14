@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Saint Vrain Healing Retreat — Investment Opportunity</title>
+    <link rel="icon" type="image/png" href="../images/ceremonia_icon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=Public+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --teal: #65C5B2;
+            --cerulean: #6283C2;
+            --text: #3D352E;
+            --bg: #F5F3FF;
+        }
+
+        body {
+            font-family: 'Lora', serif;
+            color: var(--text);
+            background-color: var(--bg);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Public Sans', sans-serif;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-label {
+            color: #6B7280;
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .stat-value {
+            color: var(--text);
+            font-size: 1.875rem;
+            font-weight: 700;
+            margin-top: 0.5rem;
+        }
+
+        .section-bg {
+            background-color: white;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            overflow: auto;
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            max-width: 90%;
+            max-height: 90%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .modal-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 1000;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+        }
+
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 30px;
+            transition: 0.3s;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .image-counter {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #f1f1f1;
+            font-size: 18px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 8px 16px;
+            border-radius: 4px;
+            z-index: 1000;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            cursor: pointer;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            aspect-ratio: 4/3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: white;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-logo {
+            height: 40px;
+            width: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="https://ceremoniacircle.org" target="_blank" rel="noopener noreferrer">
+                    <img src="../images/ceremonia_logo_horiz_color.png" alt="Ceremonia" class="navbar-logo">
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#property-overview" class="text-sm font-semibold text-gray-600 hover:text-teal-600 transition-colors">Property</a>
+                    <a href="#financial-analysis" class="text-sm font-semibold text-gray-600 hover:text-teal-600 transition-colors">Financials</a>
+                    <a href="#investment-thesis" class="text-sm font-semibold text-gray-600 hover:text-teal-600 transition-colors">Thesis</a>
+                    <a href="#contact" class="text-sm font-semibold text-gray-600 hover:text-teal-600 transition-colors">Contact</a>
+                </div>
+
+                <!-- Mobile Title -->
+                <div class="md:hidden text-sm font-semibold text-gray-600">
+                    St. Vrain Investment
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Investment Ask Section -->
+    <section id="investment-ask" class="py-16 md:py-24 bg-gradient-to-br from-blue-50 to-purple-50">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-3xl md:text-5xl font-bold tracking-tight text-[#3D352E]">Colorado's First Licensed Retreat Center for Natural Medicine</h1>
+            <h2 class="mt-4 text-xl md:text-2xl font-semibold text-gray-600">11% Cap Rate Investment | $1,229/Month | Limited Opportunity</h2>
+
+            <!-- PROMINENT RETURN METRICS -->
+            <div class="mt-8 max-w-4xl mx-auto bg-gradient-to-r from-green-500 to-teal-500 rounded-2xl p-8 shadow-2xl">
+                <h3 class="text-white text-xl md:text-2xl font-bold mb-6">Investment Returns</h3>
+                <p class="text-white text-sm mb-4 opacity-90">11% cap rate property backed by $12,375/month NNN Lease from Ceremonia Spaces</p>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 border-2 border-white border-opacity-30">
+                        <p class="text-white text-sm font-semibold uppercase tracking-wide mb-2">Investment</p>
+                        <p class="text-white text-4xl md:text-5xl font-black">$134K</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 border-2 border-white border-opacity-30">
+                        <p class="text-white text-sm font-semibold uppercase tracking-wide mb-2">Monthly Income</p>
+                        <p class="text-white text-4xl md:text-5xl font-black">$1,229</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 border-2 border-white border-opacity-30">
+                        <p class="text-white text-sm font-semibold uppercase tracking-wide mb-2">Annual Return</p>
+                        <p class="text-white text-4xl md:text-5xl font-black">$14.7K</p>
+                    </div>
+                    <div class="bg-white bg-opacity-20 backdrop-blur-sm rounded-lg p-4 border-2 border-white border-opacity-30">
+                        <p class="text-white text-sm font-semibold uppercase tracking-wide mb-2">Return</p>
+                        <p class="text-white text-4xl md:text-5xl font-black">11.0%</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="mt-8 text-lg text-gray-700 max-w-3xl mx-auto">
+                <strong>$134,071 investment delivers 11% fixed return ($1,229/month) backed by $1.35M property generating 11% cap rate.</strong> Colorado's only NMHA-licensed healing center offering overnight retreat accommodations. The 12.82-acre mountain sanctuary with 4 therapy rooms commands $4,000/day full-property buyouts. Tenant Ceremonia Spaces generates revenue across multiple occupancy scenarios providing 5.30x-10.61x coverage on the $12,375/month property NOI requirement. Strategic location 60 minutes from Denver Airport. Capture first-mover advantage in Colorado's emerging natural medicine landscape.
+            </p>
+
+            <!-- Investment Summary -->
+            <div class="mt-10 max-w-6xl mx-auto">
+                <h3 class="text-center text-lg font-bold text-gray-700 mb-4">Investment Summary</h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <!-- Property Column -->
+                    <div class="bg-white rounded-lg shadow-lg border p-6">
+                        <h4 class="font-bold text-lg mb-4 text-blue-900">Property</h4>
+                        <dl class="space-y-3 text-sm">
+                            <div>
+                                <dt class="text-gray-600">Property Value</dt>
+                                <dd class="font-bold text-lg">$1,350,000</dd>
+                            </div>
+                            <div>
+                                <dt class="text-gray-600">Cap Rate</dt>
+                                <dd class="font-bold text-lg text-green-700">11%</dd>
+                            </div>
+                            <div>
+                                <dt class="text-gray-600">Property NOI</dt>
+                                <dd class="font-semibold">$148,500/year</dd>
+                            </div>
+                            <div>
+                                <dt class="text-gray-600">NNN Lease</dt>
+                                <dd class="font-semibold">$12,375/month</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <!-- Your Investment Column -->
+                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg shadow-lg border-2 border-blue-300 p-6">
+                        <h4 class="font-bold text-lg mb-4 text-blue-900">Your Investment</h4>
+                        <dl class="space-y-3 text-sm">
+                            <div>
+                                <dt class="text-gray-600">Capital Required</dt>
+                                <dd class="font-bold text-lg">$134,071</dd>
+                            </div>
+                            <div>
+                                <dt class="text-gray-600">Structure</dt>
+                                <dd class="font-semibold">Preferred Equity</dd>
+                            </div>
+                            <div>
+                                <dt class="text-gray-600">Liabilities</dt>
+                                <dd class="font-semibold text-green-700">None</dd>
+                            </div>
+                            <div>
+                                <dt class="text-gray-600">Responsibilities</dt>
+                                <dd class="font-semibold text-green-700">None</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <!-- Your Returns Column -->
+                    <div class="bg-white rounded-lg shadow-lg border p-6">
+                        <h4 class="font-bold text-lg mb-4 text-green-900">Your Returns</h4>
+                        <dl class="space-y-3 text-sm">
+                            <div>
+                                <dt class="text-gray-600">Monthly Income</dt>
+                                <dd class="font-bold text-lg text-green-700">$1,229</dd>
+                            </div>
+                            <div>
+                                <dt class="text-gray-600">Annual Return</dt>
+                                <dd class="font-bold text-lg">$14,748</dd>
+                            </div>
+                            <div>
+                                <dt class="text-gray-600">Return Rate</dt>
+                                <dd class="font-bold text-lg text-green-700">11.0%</dd>
+                            </div>
+                            <div>
+                                <dt class="text-gray-600">Return Type</dt>
+                                <dd class="font-semibold">Fixed</dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8">
+                <a href="https://www.zillow.com/homedetails/11042-N-Saint-Vrain-Dr-Lyons-CO-80540/2138154339_zpid/" target="_blank" rel="noopener noreferrer"
+                   class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors shadow-md">
+                    View Zillow Listing →
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Structure -->
+    <section class="py-12 md:py-16 section-bg border-t">
+        <div class="container mx-auto px-6">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Investment Structure</h2>
+
+                <!-- Three Key Position Cards -->
+                <div class="grid md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg shadow-lg border-2 border-blue-300 p-6">
+                        <h3 class="font-bold text-lg mb-3 text-blue-900">Preferred Position</h3>
+                        <p class="text-sm text-gray-700">Your equity investment receives priority distributions before any residual returns</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg shadow-lg border-2 border-green-300 p-6">
+                        <h3 class="font-bold text-lg mb-3 text-green-900">11% Fixed Return</h3>
+                        <p class="text-sm text-gray-700">$1,229/month ($14,748/year) paid from property cash flow generated by NNN lease</p>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg shadow-lg border-2 border-purple-300 p-6">
+                        <h3 class="font-bold text-lg mb-3 text-purple-900">Limited Risk</h3>
+                        <p class="text-sm text-gray-700">No debt liability, no management duties, backed by 5.30x-10.61x tenant coverage</p>
+                    </div>
+                </div>
+
+                <!-- What You Receive -->
+                <div class="bg-white rounded-lg shadow-lg border p-6 mb-6">
+                    <h3 class="font-bold text-lg mb-4">What You Receive</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-green-50 border border-green-200 rounded">
+                            <h4 class="font-semibold text-green-900 mb-2">Monthly Distributions</h4>
+                            <p class="text-sm text-gray-700">$1,229/month paid from property NOI, typically on the 15th of each month</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 border border-blue-200 rounded">
+                            <h4 class="font-semibold text-blue-900 mb-2">11% Annual Return</h4>
+                            <p class="text-sm text-gray-700">$14,748/year on your $134,071 investment, significantly above treasury yields</p>
+                        </div>
+                        <div class="p-4 bg-purple-50 border border-purple-200 rounded">
+                            <h4 class="font-semibold text-purple-900 mb-2">Equity Participation</h4>
+                            <p class="text-sm text-gray-700">Pro-rata share in property appreciation and sale proceeds based on invested capital</p>
+                        </div>
+                        <div class="p-4 bg-yellow-50 border border-yellow-200 rounded">
+                            <h4 class="font-semibold text-yellow-900 mb-2">Quarterly Reporting</h4>
+                            <p class="text-sm text-gray-700">Transparent financial statements including property performance and tenant metrics</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- What You Don't Have -->
+                <div class="bg-white rounded-lg shadow-lg border p-6 mb-6">
+                    <h3 class="font-bold text-lg mb-4">What You Don't Have</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-gray-50 border border-gray-200 rounded">
+                            <h4 class="font-semibold text-gray-700 mb-2">❌ No Debt Liability</h4>
+                            <p class="text-sm text-gray-600">Zero personal liability for any financing. This is an equity position, not a loan.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 border border-gray-200 rounded">
+                            <h4 class="font-semibold text-gray-700 mb-2">❌ No Management Duties</h4>
+                            <p class="text-sm text-gray-600">No tenant relations, no maintenance coordination, no regulatory compliance work.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 border border-gray-200 rounded">
+                            <h4 class="font-semibold text-gray-700 mb-2">❌ No Tenant Relations</h4>
+                            <p class="text-sm text-gray-600">Operating partner handles all tenant interactions, lease enforcement, and collections.</p>
+                        </div>
+                        <div class="p-4 bg-gray-50 border border-gray-200 rounded">
+                            <h4 class="font-semibold text-gray-700 mb-2">❌ No Operational Burden</h4>
+                            <p class="text-sm text-gray-600">Truly passive investment—receive distributions and reports, nothing more required.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Complete Investment Breakdown -->
+                <div class="bg-yellow-50 border-2 border-yellow-400 rounded-lg p-6 mb-6">
+                    <h4 class="font-bold text-yellow-900 mb-4 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
+                        </svg>
+                        Complete Investment Breakdown
+                    </h4>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-yellow-100">
+                                <tr>
+                                    <th class="p-3 text-left font-semibold text-yellow-900">Component</th>
+                                    <th class="p-3 text-right font-semibold text-yellow-900">Amount</th>
+                                    <th class="p-3 text-left font-semibold text-yellow-900">Description</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-yellow-200">
+                                <tr class="bg-white">
+                                    <td class="p-3 font-semibold">Upfront Capital</td>
+                                    <td class="p-3 text-right font-bold text-lg">$134,071</td>
+                                    <td class="p-3 text-sm text-gray-600">One-time equity investment</td>
+                                </tr>
+                                <tr class="bg-green-50">
+                                    <td class="p-3 font-semibold text-green-900">Ongoing Obligations</td>
+                                    <td class="p-3 text-right font-bold text-green-700 text-lg">$0</td>
+                                    <td class="p-3 text-sm text-green-700">No debt, no recurring payments</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="p-3 font-bold">Monthly Distributions</td>
+                                    <td class="p-3 text-right font-bold text-blue-700 text-lg">$1,229</td>
+                                    <td class="p-3 text-sm text-gray-600">11% return, paid monthly</td>
+                                </tr>
+                                <tr class="bg-white">
+                                    <td class="p-3 font-bold">Annual Return</td>
+                                    <td class="p-3 text-right font-bold text-blue-700 text-lg">$14,748</td>
+                                    <td class="p-3 text-sm text-gray-600">11.0% return on capital</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Property & Lease Terms -->
+                <div class="bg-white rounded-lg shadow-lg border p-6">
+                    <h3 class="font-bold text-lg mb-4">Property & Lease Terms</h3>
+                    <dl class="divide-y divide-gray-200">
+                        <div class="py-4 grid grid-cols-3 gap-4">
+                            <dt class="text-sm font-medium text-gray-500">Property Value</dt>
+                            <dd class="text-sm text-gray-900 col-span-2 font-semibold">$1,350,000</dd>
+                        </div>
+                        <div class="py-4 grid grid-cols-3 gap-4">
+                            <dt class="text-sm font-medium text-gray-500">Cap Rate</dt>
+                            <dd class="text-sm text-gray-900 col-span-2 font-semibold">11%</dd>
+                        </div>
+                        <div class="py-4 grid grid-cols-3 gap-4">
+                            <dt class="text-sm font-medium text-gray-500">Property NOI Required</dt>
+                            <dd class="text-sm text-gray-900 col-span-2">$148,500/year ($12,375/month)</dd>
+                        </div>
+                        <div class="py-4 grid grid-cols-3 gap-4">
+                            <dt class="text-sm font-medium text-gray-500">NNN Lease Tenant</dt>
+                            <dd class="text-sm text-gray-900 col-span-2">Ceremonia Spaces, Inc. — $12,375/month (10-Year Term)</dd>
+                        </div>
+                        <div class="py-4 grid grid-cols-3 gap-4">
+                            <dt class="text-sm font-medium text-gray-500">Investor Security</dt>
+                            <dd class="text-sm text-gray-900 col-span-2">Preferred equity position, 5.30x-10.61x tenant revenue coverage across scenarios</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="hero" class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold">First Mover Licensed Retreat Center for Natural Medicine</h2>
+            <p class="mt-4 text-xl text-gray-600">11042 N Saint Vrain Dr, Lyons, CO 80540</p>
+
+            <p class="mt-6 text-lg text-gray-700 max-w-3xl mx-auto">
+                Colorado's first and only NMHA-licensed healing center offering overnight retreat accommodations. While all other licensed healing centers operate in commercial buildings in urban/metro areas requiring participants to shuttle to/from separate lodging, this 12.82-acre mountain sanctuary provides an integrated overnight retreat experience—capturing the first-mover advantage in Colorado's emerging natural medicine landscape.
+            </p>
+
+            <div class="mt-8 max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="stat-card">
+                    <p class="stat-label">Living Space</p>
+                    <p class="stat-value text-xl">5,512 sqft</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Bedrooms/Baths</p>
+                    <p class="stat-value text-xl">4bd / 4ba</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Lot Size</p>
+                    <p class="stat-value text-xl">12.82 acres</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Year Built</p>
+                    <p class="stat-value text-xl">2001</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Property Overview with Modal Gallery -->
+    <section id="property-overview" class="py-12 md:py-16 section-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Property Showcase</h2>
+
+            <div class="max-w-6xl mx-auto">
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openModal();currentSlide(1)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/01.jpeg" alt="Property Image 1">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(2)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/03.jpeg" alt="Property Image 3">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(3)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/04.jpeg" alt="Property Image 4">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(4)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/11.jpeg" alt="Property Image 11">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(5)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/12.jpeg" alt="Property Image 12">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(6)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/05.jpeg" alt="Property Image 5">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(7)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/06.jpeg" alt="Property Image 6">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(8)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/07.jpeg" alt="Property Image 7">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(9)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/08.jpeg" alt="Property Image 8">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(10)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/09.jpeg" alt="Property Image 9">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(11)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/10.jpeg" alt="Property Image 10">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(12)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/13.jpeg" alt="Property Image 13">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(13)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/14.jpeg" alt="Property Image 14">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(14)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/15.jpeg" alt="Property Image 15">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(15)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/16.jpeg" alt="Property Image 16">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(16)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/17.jpeg" alt="Property Image 17">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(17)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/18.jpeg" alt="Property Image 18">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(18)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/19.jpeg" alt="Property Image 19">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(19)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/20.jpeg" alt="Property Image 20">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(20)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/21.jpeg" alt="Property Image 21">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(21)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/22.jpeg" alt="Property Image 22">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(22)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/23.jpeg" alt="Property Image 23">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(23)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/24.jpeg" alt="Property Image 24">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(24)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/25.jpeg" alt="Property Image 25">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(25)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/26.jpeg" alt="Property Image 26">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(26)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/27.jpeg" alt="Property Image 27">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(27)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/28.jpeg" alt="Property Image 28">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(28)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/29.jpeg" alt="Property Image 29">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(29)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/30.jpeg" alt="Property Image 30">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(30)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/31.jpeg" alt="Property Image 31">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(31)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/32.jpeg" alt="Property Image 32">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(32)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/33.jpeg" alt="Property Image 33">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(33)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/34.jpeg" alt="Property Image 34">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(34)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/35.jpeg" alt="Property Image 35">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(35)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/36.jpeg" alt="Property Image 36">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(36)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/37.jpeg" alt="Property Image 37">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(37)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/38.jpeg" alt="Property Image 38">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(38)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/39.jpeg" alt="Property Image 39">
+                    </div>
+                    <div class="gallery-item" onclick="openModal();currentSlide(39)">
+                        <img src="../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/40.jpeg" alt="Property Image 40">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 max-w-4xl mx-auto bg-white rounded-lg shadow-lg p-6">
+                <h3 class="text-xl font-bold mb-4">Unique Selling Points</h3>
+                <ul class="space-y-3 text-gray-700">
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-teal-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span><strong>Year-Round Creek & 12.82 Acres:</strong> Exceptional natural privacy with dramatic cliffs and towering pines—ideal healing environment</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-teal-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span><strong>Boulder/Denver Access:</strong> 15 miles from Boulder, 45 miles from Denver—premium Front Range location</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-teal-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span><strong>4-Room Capacity:</strong> 5,512 sqft with 4 therapy rooms currently licensed and operational for retreat experiences</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-teal-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span><strong>Owner-Occupancy Pathway:</strong> Unincorporated Boulder County allows STR with owner residence (Austin relocates)</span>
+                    </li>
+                    <li class="flex items-start">
+                        <svg class="w-6 h-6 text-teal-600 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                        </svg>
+                        <span><strong>Motivated Seller:</strong> 111 days on market, $101K price reduction—negotiation leverage</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Structure -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div class="image-counter" id="imageCounter"></div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        <div class="modal-content">
+            <img id="modalImage" src="" alt="Property Image">
+        </div>
+    </div>
+
+    <script>
+        // Modal functionality
+        let slideIndex = 1;
+        const images = [
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/01.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/03.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/04.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/11.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/12.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/05.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/06.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/07.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/08.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/09.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/10.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/13.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/14.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/15.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/16.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/17.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/18.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/19.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/20.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/21.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/22.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/23.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/24.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/25.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/26.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/27.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/28.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/29.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/30.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/31.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/32.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/33.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/34.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/35.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/36.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/37.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/38.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/39.jpeg',
+            '../docs/11042-n-saint-vrain-dr-lyons-co-80540/images/40.jpeg'
+        ];
+
+        function openModal() {
+            document.getElementById("imageModal").style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            if (n > images.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = images.length }
+
+            document.getElementById("modalImage").src = images[slideIndex - 1];
+            document.getElementById("imageCounter").innerHTML = slideIndex + " / " + images.length;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            const modal = document.getElementById("imageModal");
+            if (modal.style.display === "block") {
+                if (event.key === "Escape") {
+                    closeModal();
+                } else if (event.key === "ArrowLeft") {
+                    plusSlides(-1);
+                } else if (event.key === "ArrowRight") {
+                    plusSlides(1);
+                }
+            }
+        });
+
+        // Close modal when clicking outside the image
+        document.getElementById("imageModal").addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeModal();
+            }
+        });
+    </script>
+
+    <!-- Financial Analysis Section -->
+    <section id="financial-analysis" class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Financial Analysis</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-8">
+                <strong>Updated October 2025</strong> with 11% cap rate property structure ($1.35M value, $12,375/month NOI requirement) and verified tenant financial strength across multiple occupancy scenarios.
+            </p>
+
+            <div class="max-w-5xl mx-auto space-y-6">
+                <!-- Tenant Dual Revenue Model Explainer -->
+                <div class="bg-gradient-to-r from-purple-50 to-blue-50 border border-purple-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-3 text-purple-900">Tenant Revenue Model (Why They Can Pay $12.4K/Month NOI)</h3>
+                    <p class="text-gray-700 mb-4">
+                        Ceremonia Spaces generates income through multiple revenue streams under Colorado's Natural Medicine Health Act (NMHA):
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded border border-purple-100">
+                            <h4 class="font-semibold text-purple-900 mb-2">💎 Facilitator Rooms & Ceremony Spaces</h4>
+                            <p class="text-sm text-gray-700">4 facilitator rooms ($800/day) + 2 ceremony rooms ($2,400 & $1,800/day) rentals</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border border-purple-100">
+                            <h4 class="font-semibold text-purple-900 mb-2">🌿 Whole Home Buyouts & Membership</h4>
+                            <p class="text-sm text-gray-700">Full property exclusive use for group ceremonies at $4,000/day + facilitator network membership ($6,000/month recurring)</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tenant Financial Strength: Scenario Comparison Table -->
+                <div class="bg-white rounded-lg shadow-lg border overflow-hidden">
+                    <div class="bg-gradient-to-r from-blue-500 to-purple-500 p-4">
+                        <h3 class="text-xl font-bold text-white">Tenant Financial Strength: Ceremonia Spaces OpCo Occupancy Scenarios</h3>
+                    </div>
+                    <table class="w-full text-sm">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="p-3 text-left font-semibold">Metric</th>
+                                <th class="p-3 text-right font-semibold">Low (20%)</th>
+                                <th class="p-3 text-right font-semibold bg-green-50">Mid (40%)</th>
+                                <th class="p-3 text-right font-semibold">High (60%)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y">
+                            <tr>
+                                <td class="p-3 text-gray-600">Occupancy Rate</td>
+                                <td class="p-3 text-right">20%</td>
+                                <td class="p-3 text-right bg-green-50 font-semibold">40%</td>
+                                <td class="p-3 text-right">60%</td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="p-3 font-semibold">Annual OpCo Revenue</td>
+                                <td class="p-3 text-right font-semibold">$786,240</td>
+                                <td class="p-3 text-right bg-green-100 font-bold text-green-700">$1,287,360</td>
+                                <td class="p-3 text-right font-semibold">$1,575,360</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-gray-600">Annual OpEx</td>
+                                <td class="p-3 text-right">$584,069</td>
+                                <td class="p-3 text-right bg-green-50">$644,203</td>
+                                <td class="p-3 text-right">$678,763</td>
+                            </tr>
+                            <tr class="bg-purple-50">
+                                <td class="p-3 font-semibold">Annual OpCo NOI</td>
+                                <td class="p-3 text-right font-semibold">$202,171</td>
+                                <td class="p-3 text-right bg-green-100 font-bold text-green-700">$643,157</td>
+                                <td class="p-3 text-right font-semibold">$896,597</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 font-semibold">Property NOI Coverage</td>
+                                <td class="p-3 text-right font-semibold">5.30x</td>
+                                <td class="p-3 text-right bg-green-100 font-bold text-green-700">8.67x</td>
+                                <td class="p-3 text-right font-semibold">10.61x</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-gray-600">NOI Margin</td>
+                                <td class="p-3 text-right">25.7%</td>
+                                <td class="p-3 text-right bg-green-50 font-semibold">50.0%</td>
+                                <td class="p-3 text-right">56.9%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="p-4 bg-gray-50 border-t text-xs text-gray-600">
+                        <strong>Note:</strong> Tenant (Ceremonia Spaces) revenue provides 5.30x-10.61x coverage on the $148,500 annual property NOI requirement ($12,375/month) across occupancy scenarios. Even at conservative 20% occupancy, OpCo generates $786K in revenue, providing 5.30x coverage—demonstrating strong tenant creditworthiness. <strong>Your 11% return ($1,229/month) remains unchanged across all scenarios.</strong>
+                    </div>
+                </div>
+
+                <!-- Investor Return Scenarios -->
+                <div class="bg-white rounded-lg shadow-lg border p-6">
+                    <h3 class="text-xl font-bold mb-4">Investor Return Stability Across Property NOI Scenarios</h3>
+                    <p class="text-sm text-gray-600 mb-4">Your 11% preferred return remains constant regardless of property NOI performance</p>
+                    <table class="w-full text-sm">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="p-3 text-left font-semibold">Scenario</th>
+                                <th class="p-3 text-right font-semibold">Monthly Property NOI</th>
+                                <th class="p-3 text-right font-semibold">Your Monthly Return</th>
+                                <th class="p-3 text-right font-semibold">Your Return Rate</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y">
+                            <tr>
+                                <td class="p-3 text-gray-600">NOI Reduced 25%</td>
+                                <td class="p-3 text-right">$9,281</td>
+                                <td class="p-3 text-right font-semibold text-green-700">$1,229</td>
+                                <td class="p-3 text-right font-semibold text-green-700">11.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-gray-600">NOI Reduced 10%</td>
+                                <td class="p-3 text-right">$11,138</td>
+                                <td class="p-3 text-right font-semibold text-green-700">$1,229</td>
+                                <td class="p-3 text-right font-semibold text-green-700">11.0%</td>
+                            </tr>
+                            <tr class="bg-green-50">
+                                <td class="p-3 font-semibold text-green-900">Current (11% cap)</td>
+                                <td class="p-3 text-right font-semibold">$12,375</td>
+                                <td class="p-3 text-right font-bold text-green-700">$1,229</td>
+                                <td class="p-3 text-right font-bold text-green-700">11.0%</td>
+                            </tr>
+                            <tr>
+                                <td class="p-3 text-gray-600">NOI Increased 10%</td>
+                                <td class="p-3 text-right">$13,613</td>
+                                <td class="p-3 text-right font-semibold text-green-700">$1,229</td>
+                                <td class="p-3 text-right font-semibold text-green-700">11.0%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded text-sm text-blue-900">
+                        <strong>Preferred Return Protection:</strong> As a preferred equity investor, you receive your 11% return ($1,229/month) before any residual distributions. Tenant's 5.30x-10.61x revenue coverage provides strong buffer to ensure property generates sufficient NOI for your distributions.
+                    </div>
+                </div>
+
+                <!-- First Year Cash Flow Projection -->
+                <div class="bg-white rounded-lg shadow-lg border p-6">
+                    <h3 class="text-xl font-bold mb-4">First Year Cash Flow Projection</h3>
+                    <p class="text-sm text-gray-600 mb-4">Your expected monthly distributions based on 11% preferred return on $134,071 investment</p>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="p-3 text-left font-semibold">Period</th>
+                                    <th class="p-3 text-right font-semibold">Monthly Distribution</th>
+                                    <th class="p-3 text-right font-semibold">Cumulative Return</th>
+                                    <th class="p-3 text-left font-semibold">Notes</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y">
+                                <tr class="bg-green-50">
+                                    <td class="p-3 font-semibold">Months 1-12</td>
+                                    <td class="p-3 text-right font-bold text-green-700 text-lg">$1,229/mo</td>
+                                    <td class="p-3 text-right font-bold text-green-700">$14,748</td>
+                                    <td class="p-3 text-sm">Fixed 11% return begins at closing; paid from property NOI</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-semibold text-gray-700">Annual Total (Year 1)</td>
+                                    <td class="p-3 text-right font-semibold text-lg">—</td>
+                                    <td class="p-3 text-right font-semibold text-lg">$14,748</td>
+                                    <td class="p-3 text-sm text-gray-600">11.0% return on capital</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="mt-4 grid md:grid-cols-2 gap-4">
+                        <div class="p-4 bg-blue-50 border border-blue-200 rounded">
+                            <h4 class="font-semibold text-blue-900 mb-2">💰 Distribution Characteristics</h4>
+                            <ul class="text-xs text-blue-900 space-y-2">
+                                <li>• <strong>Predictable & Fixed:</strong> $1,229/month every month, regardless of property performance</li>
+                                <li>• <strong>Preferred Position:</strong> Your return paid before any residual distributions to operating partner</li>
+                                <li>• <strong>No Seasonality:</strong> Fixed return does not fluctuate with occupancy or tourist seasons</li>
+                                <li>• <strong>Strong Coverage:</strong> Tenant's 5.30x-10.61x revenue coverage provides substantial security buffer</li>
+                            </ul>
+                        </div>
+                        <div class="p-4 bg-green-50 border border-green-200 rounded">
+                            <h4 class="font-semibold text-green-900 mb-2">✅ Distribution Timing</h4>
+                            <p class="text-xs text-green-900 mb-2">
+                                <strong>Monthly distributions begin at closing.</strong> Expected payment schedule:
+                            </p>
+                            <ul class="text-xs text-green-900 space-y-1">
+                                <li>• Payment Date: 15th of each month</li>
+                                <li>• Distribution Method: ACH direct deposit</li>
+                                <li>• Quarterly Reports: Property & tenant performance</li>
+                            </ul>
+                            <p class="text-xs text-green-900 mt-2 font-semibold">
+                                Your 11% return is backed by property NOI generated from Ceremonia Spaces' $12,375/month lease.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Ceremonia Journeys Anchor Tenant Highlight -->
+                <div class="bg-gradient-to-r from-teal-50 to-green-50 border border-teal-200 rounded-lg p-6">
+                    <h3 class="text-xl font-bold mb-3 text-teal-900">Anchor Tenant: Ceremonia Journeys</h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white p-4 rounded border border-teal-100">
+                            <h4 class="font-semibold text-teal-900 mb-2">Guaranteed 4 Buyouts/Month</h4>
+                            <p class="text-sm text-gray-700">Ceremonia Journeys (330+ retreat alumni, established brand) commits to 4 buyouts/month minimum</p>
+                            <p class="text-lg font-bold text-teal-700 mt-2">$16,000/month revenue</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border border-teal-100">
+                            <h4 class="font-semibold text-teal-900 mb-2">Covers 129% of Property NOI</h4>
+                            <p class="text-sm text-gray-700">Anchor tenant alone generates $192K/year—more than the entire $148.5K property NOI requirement</p>
+                            <p class="text-lg font-bold text-teal-700 mt-2">Additional facilitators = pure upside</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Context Section -->
+    <section id="market-context" class="py-12 md:py-16 section-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Market Context</h2>
+
+            <div class="max-w-5xl mx-auto space-y-8">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div class="bg-white rounded-lg shadow-lg border p-6">
+                        <h3 class="text-xl font-bold mb-4">Healing Center Market</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-blue-50 border border-blue-200 rounded">
+                                <p class="text-sm font-semibold text-blue-900 mb-2">Oregon Market Baseline (Q1 2025)</p>
+                                <p class="text-3xl font-bold text-blue-700">1,509</p>
+                                <p class="text-sm text-blue-700">clients/quarter → 6,036 sessions/year</p>
+                            </div>
+                            <div class="p-4 bg-purple-50 border border-purple-200 rounded">
+                                <p class="text-sm font-semibold text-purple-900 mb-2">Colorado Market (Projected)</p>
+                                <p class="text-3xl font-bold text-purple-700">8,885</p>
+                                <p class="text-sm text-purple-700">annual sessions (1.48x tourism + 1.43x population)</p>
+                            </div>
+                            <div class="p-4 bg-teal-50 border border-teal-200 rounded">
+                                <p class="text-sm font-semibold text-teal-900 mb-2">Average Session Price</p>
+                                <p class="text-3xl font-bold text-teal-700">$500</p>
+                                <p class="text-sm text-teal-700">market standard pricing</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-lg border p-6">
+                        <h3 class="text-xl font-bold mb-4">Gateway Tourism Market</h3>
+                        <div class="space-y-4">
+                            <div class="p-4 bg-green-50 border border-green-200 rounded">
+                                <p class="text-sm font-semibold text-green-900 mb-2">Rocky Mountain National Park</p>
+                                <p class="text-3xl font-bold text-green-700">4.15M</p>
+                                <p class="text-sm text-green-700">annual visitors (15 min from property)</p>
+                            </div>
+                            <div class="p-4 bg-yellow-50 border border-yellow-200 rounded">
+                                <p class="text-sm font-semibold text-yellow-900 mb-2">Lyons Location Advantage</p>
+                                <ul class="text-sm text-yellow-900 space-y-1 mt-2">
+                                    <li>• 15 miles from Boulder</li>
+                                    <li>• 45 miles from Denver (1 hour)</li>
+                                    <li>• Unincorporated Boulder County (STR-friendly)</li>
+                                    <li>• Premium mountain/creek setting</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Context Section -->
+    <section id="business-context" class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">The Colorado Psychedelic Infrastructure Crisis</h2>
+
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-yellow-50 border-l-4 border-yellow-500 p-6 rounded-r-lg">
+                    <h3 class="text-xl font-bold text-yellow-900 mb-3">The Problem</h3>
+                    <p class="text-gray-700 mb-4">
+                        Oregon's mature regulated market reveals a <strong>systemic shortage of practice space</strong>: a 13.8-to-1 ratio of licensed facilitators to available centers. Colorado faces an even greater shortage, creating immediate demand for compliant healing center infrastructure.
+                    </p>
+                    <div class="grid md:grid-cols-2 gap-4 mt-4">
+                        <div class="bg-white p-4 rounded border border-yellow-200">
+                            <p class="text-sm font-semibold text-gray-600">Total CO Market Capacity</p>
+                            <p class="text-3xl font-bold text-yellow-700">~69 rooms</p>
+                            <p class="text-xs text-gray-600">across all competitors</p>
+                        </div>
+                        <div class="bg-white p-4 rounded border border-yellow-200">
+                            <p class="text-sm font-semibold text-gray-600">Market Structure</p>
+                            <p class="text-lg font-bold text-yellow-700">Micro-Centers</p>
+                            <p class="text-xs text-gray-600">Most competitors: 1-3 rooms only</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-teal-50 border-l-4 border-teal-500 p-6 rounded-r-lg">
+                    <h3 class="text-xl font-bold text-teal-900 mb-3">Market Demand Drivers</h3>
+                    <ul class="space-y-2 text-gray-700">
+                        <li class="flex items-start">
+                            <span class="text-teal-600 mr-2 font-bold">✓</span>
+                            <span><strong>Tourism Multiplier (1.48x):</strong> Colorado attracts significantly more wellness tourism than Oregon</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-600 mr-2 font-bold">✓</span>
+                            <span><strong>Population Multiplier (1.43x):</strong> 6.0M vs Oregon's 4.2M residents</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-600 mr-2 font-bold">✓</span>
+                            <span><strong>Mental Health Need:</strong> Higher reported rates of adult mental health challenges</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-600 mr-2 font-bold">✓</span>
+                            <span><strong>Established Destination:</strong> Colorado is a proven wellness and healing tourism market</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Ceremonia Solution Section -->
+    <section id="ceremonia-solution" class="py-12 md:py-16 section-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">The Ceremonia Solution</h2>
+
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-8 items-start">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Strategic Market Position</h3>
+                        <p class="text-gray-700 mb-4">
+                            The Saint Vrain property is a premium 4-room healing center with <strong>Colorado's only overnight accommodation license</strong>—creating a competitive moat through regulatory advantage, not just room count.
+                        </p>
+
+                        <div class="mb-6">
+                            <div class="h-64">
+                                <canvas id="marketShareChart"></canvas>
+                            </div>
+                            <p class="text-sm text-center text-gray-600 mt-2">4 rooms represents 5.8% of Colorado's ~69 total healing center rooms</p>
+                        </div>
+
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                            <h4 class="font-bold text-blue-900 mb-2">Competitive Advantages</h4>
+                            <ul class="space-y-2 text-sm text-blue-900">
+                                <li>• <strong>Overnight Market Leadership:</strong> Only center allowing multi-day immersive retreats ($4,000/night buyouts)</li>
+                                <li>• <strong>Setting:</strong> 12.82 acres with year-round creek, complete privacy</li>
+                                <li>• <strong>Location:</strong> 1 hour from Denver Airport, gateway to RMNP (4.15M visitors/year)</li>
+                                <li>• <strong>Regulatory Moat:</strong> Boulder County owner-occupied STR licensing creates barrier to entry</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-bold mb-4">Turnkey Compliance & Operations</h3>
+                        <p class="text-gray-700 mb-4">
+                            Ceremonia solves the biggest hurdles for independent facilitators, providing compliant infrastructure and integrated support services.
+                        </p>
+
+                        <div class="space-y-4">
+                            <div class="bg-white border rounded-lg p-4">
+                                <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                                    <span class="text-teal-600 mr-2">✓</span>
+                                    Regulatory & Compliance
+                                </h4>
+                                <p class="text-sm text-gray-700">Fully licensed environment, removing the $6K licensing burden and operational complexity for facilitators.</p>
+                            </div>
+
+                            <div class="bg-white border rounded-lg p-4">
+                                <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                                    <span class="text-teal-600 mr-2">✓</span>
+                                    Ancillary Services
+                                </h4>
+                                <p class="text-sm text-gray-700">Integrated solutions for insurance, banking, and payment processing—major industry pain points.</p>
+                            </div>
+
+                            <div class="bg-white border rounded-lg p-4">
+                                <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                                    <span class="text-teal-600 mr-2">✓</span>
+                                    Built-in Lead Generation
+                                </h4>
+                                <p class="text-sm text-gray-700"><strong>#1 Google search result</strong> for "Colorado psilocybin" and top-ranked for "Colorado psychedelic therapy," providing powerful client referral stream.</p>
+                            </div>
+
+                            <div class="bg-white border rounded-lg p-4">
+                                <h4 class="font-bold text-gray-900 mb-2 flex items-center">
+                                    <span class="text-teal-600 mr-2">✓</span>
+                                    Premium Experience
+                                </h4>
+                                <p class="text-sm text-gray-700">5,512 sqft retreat setting with natural creek, mountain views, complete privacy—ideal ambiance for healing work.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ceremonia Ecosystem Section -->
+    <section id="ceremonia-ecosystem" class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">The Ceremonia Ecosystem</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                The tenant's success is supported by a synergistic ecosystem of entities that drive revenue, ensure compliance, and build a defensible market position.
+            </p>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
+                <div class="bg-white border-2 border-teal-200 rounded-xl p-6 shadow-lg">
+                    <div class="text-4xl mb-4 text-center">🌿</div>
+                    <h3 class="text-xl font-bold text-center mb-2">Ceremonia Journeys</h3>
+                    <p class="text-center text-sm font-semibold text-gray-500 mb-4">(Nonprofit)</p>
+                    <p class="text-sm text-gray-700">
+                        The established and trusted brand for legal psilocybin retreats. Provides a foundation of trust and operational excellence, and acts as a primary anchor tenant with 50+ retreats conducted and 330+ alumni network.
+                    </p>
+                </div>
+
+                <div class="bg-white border-2 border-blue-200 rounded-xl p-6 shadow-lg">
+                    <div class="text-4xl mb-4 text-center">🧑‍🎓</div>
+                    <h3 class="text-xl font-bold text-center mb-2">Ceremonia EDU</h3>
+                    <p class="text-center text-sm font-semibold text-gray-500 mb-4">(For-Profit Training)</p>
+                    <p class="text-sm text-gray-700">
+                        A state-approved facilitator training program that serves as a customer acquisition flywheel, funneling newly licensed facilitators directly to Ceremonia Spaces. Creates captive B2B demand.
+                    </p>
+                </div>
+
+                <div class="bg-white border-2 border-purple-200 rounded-xl p-6 shadow-lg">
+                    <div class="text-4xl mb-4 text-center">🏢</div>
+                    <h3 class="text-xl font-bold text-center mb-2">Ceremonia Spaces</h3>
+                    <p class="text-center text-sm font-semibold text-gray-500 mb-4">(Public Benefit Corp.)</p>
+                    <p class="text-sm text-gray-700">
+                        The scalable, for-profit real estate arm (the tenant) that provides turnkey facilities to the captive B2B market created by our brand and trained by Ceremonia EDU.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Legal & Entity Structure Section -->
+    <section id="legal-structure" class="py-12 md:py-16 section-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Legal & Entity Structure</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                Our sophisticated, multi-entity structure ensures regulatory compliance, maximizes tax efficiency, minimizes investor liability, and clearly delineates roles for scalable growth.
+            </p>
+
+            <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-6">
+                <div class="bg-white border rounded-lg p-6 shadow-md">
+                    <h3 class="text-lg font-bold mb-3 text-teal-700">Ceremonia Holdings, LLC</h3>
+                    <p class="text-sm text-gray-700">
+                        Provides consolidated governance and holds ownership stakes. Acts as the General Partner (GP) of the property-owning LLC.
+                    </p>
+                </div>
+
+                <div class="bg-white border rounded-lg p-6 shadow-md">
+                    <h3 class="text-lg font-bold mb-3 text-blue-700">Saint Vrain LandCo, LLC</h3>
+                    <p class="text-sm text-gray-700">
+                        The property owner and investment SPV. Fully insulated from direct operational risk. Provides fixed return to investors via the NNN lease.
+                    </p>
+                </div>
+
+                <div class="bg-white border rounded-lg p-6 shadow-md">
+                    <h3 class="text-lg font-bold mb-3 text-purple-700">Ceremonia Spaces, Inc. (OpCo)</h3>
+                    <p class="text-sm text-gray-700">
+                        The master tenant responsible for all operations and lease payments. Generates non-280E taxable income through room rentals.
+                    </p>
+                </div>
+
+                <div class="bg-white border rounded-lg p-6 shadow-md">
+                    <h3 class="text-lg font-bold mb-3 text-green-700">Ceremonia Healing Center, Inc.</h3>
+                    <p class="text-sm text-gray-700">
+                        A separate C-Corp that holds the state healing center license, isolating all plant-touching activities and IRS §280E tax exposure.
+                    </p>
+                </div>
+            </div>
+
+            <div class="max-w-4xl mx-auto mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+                <h4 class="font-bold text-blue-900 mb-3">Why This Structure Matters for Investors</h4>
+                <ul class="space-y-2 text-sm text-blue-900">
+                    <li>• <strong>Risk Isolation:</strong> LandCo investors protected from operational/regulatory risks</li>
+                    <li>• <strong>Tax Optimization:</strong> OpCo avoids IRS §280E penalties (applies only to plant-touching entities)</li>
+                    <li>• <strong>Clear Returns:</strong> NNN lease provides predictable, passive income stream</li>
+                    <li>• <strong>Scalability:</strong> Proven structure replicable across multiple properties</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- NNN Lease Structure Section -->
+    <section id="nnn-lease" class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">NNN Lease Structure & Rent Coverage</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                The property-owning entity (LandCo) executes a long-term Triple Net (NNN) lease with Ceremonia Spaces Inc. (OpCo), ensuring all property expenses and debt service are covered directly by the tenant.
+            </p>
+
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-white border rounded-lg shadow-lg overflow-hidden">
+                    <div class="bg-gradient-to-r from-teal-500 to-blue-500 p-4">
+                        <h3 class="text-xl font-bold text-white text-center">Rent Coverage Analysis (Year 1, Base Case)</h3>
+                    </div>
+                    <table class="w-full">
+                        <tbody class="divide-y">
+                            <tr class="bg-gray-50">
+                                <td class="p-4 font-semibold">Total Annual NNN Lease Payment</td>
+                                <td class="p-4 text-right font-mono font-bold text-lg">$168,000</td>
+                                <td class="p-4 text-sm text-gray-600">Covers 100% of property debt & expenses</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold">Less: Guaranteed Anchor Revenue</td>
+                                <td class="p-4 text-right font-mono font-semibold">($96,000)</td>
+                                <td class="p-4 text-sm text-gray-600">Ceremonia Journeys covers 57% from Day 1</td>
+                            </tr>
+                            <tr class="bg-blue-50">
+                                <td class="p-4 font-semibold text-blue-900">Remaining Rent Obligation</td>
+                                <td class="p-4 text-right font-mono font-semibold text-blue-900">$72,000</td>
+                                <td class="p-4 text-sm text-blue-700">To be covered by facilitator rentals</td>
+                            </tr>
+                            <tr class="bg-green-50">
+                                <td class="p-4 font-bold text-green-900">Projected Tenant Annual Revenue</td>
+                                <td class="p-4 text-right font-mono font-bold text-green-900 text-lg">$1,287,360</td>
+                                <td class="p-4 text-sm font-semibold text-green-900">Provides 7.66x coverage on total lease (Mid scenario, 40% occupancy)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white border rounded-lg p-6">
+                        <h4 class="font-bold text-gray-900 mb-3">NNN Lease Components</h4>
+                        <table class="w-full text-sm">
+                            <tbody class="divide-y">
+                                <tr><td class="py-2">Base Rent (Debt Service)</td><td class="py-2 text-right font-semibold">$81,660</td></tr>
+                                <tr><td class="py-2">Property Tax</td><td class="py-2 text-right font-semibold">$8,400</td></tr>
+                                <tr><td class="py-2">Insurance</td><td class="py-2 text-right font-semibold">$2,400</td></tr>
+                                <tr><td class="py-2">Maintenance Reserve</td><td class="py-2 text-right font-semibold">$13,990</td></tr>
+                                <tr class="bg-gray-50 font-bold"><td class="py-2">Total NNN Lease</td><td class="py-2 text-right">$168,000/year</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="bg-white border rounded-lg p-6">
+                        <h4 class="font-bold text-gray-900 mb-3">Landlord Benefits</h4>
+                        <ul class="space-y-3 text-sm text-gray-700">
+                            <li class="flex items-start">
+                                <span class="text-teal-600 mr-2 font-bold">✓</span>
+                                <span><strong>Predictable Income:</strong> $14,000/month fixed payment</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-teal-600 mr-2 font-bold">✓</span>
+                                <span><strong>Zero Operating Expenses:</strong> Tenant pays all costs</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-teal-600 mr-2 font-bold">✓</span>
+                                <span><strong>Strong Coverage:</strong> 1.76x DSCR on debt service</span>
+                            </li>
+                            <li class="flex items-start">
+                                <span class="text-teal-600 mr-2 font-bold">✓</span>
+                                <span><strong>Passive Income:</strong> $5,195/month after debt</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder & Vision Section -->
+    <section id="founder" class="py-12 md:py-16 section-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Founder & Vision</h2>
+            <p class="text-center text-gray-600 max-w-3xl mx-auto mb-12">
+                A successful venture is led by a founder with the precise blend of industry expertise and operational capability.
+            </p>
+
+            <div class="max-w-4xl mx-auto grid md:grid-cols-3 gap-8 items-center">
+                <div class="md:col-span-1">
+                    <img src="images/austin_mao.jpg" alt="Austin Mao, Founder & CEO of Ceremonia" class="rounded-xl shadow-lg object-cover w-full h-auto" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22400%22%3E%3Crect fill=%22%23ddd%22 width=%22400%22 height=%22400%22/%3E%3Ctext fill=%22%23999%22 font-family=%22sans-serif%22 font-size=%2224%22 x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22%3EAustin Mao%3C/text%3E%3C/svg%3E'">
+                </div>
+                <div class="md:col-span-2 bg-white p-8 rounded-xl border shadow-md">
+                    <h3 class="text-2xl font-bold">Austin Mao</h3>
+                    <p class="text-lg font-semibold text-teal-600 mb-4">Founder & CEO, Ceremonia</p>
+                    <p class="text-gray-700 mb-6">
+                        Austin is a pioneering entrepreneur and policy leader in the regulated psychedelic ecosystem. As Colorado's first licensed Legacy Healer, he combines deep facilitation experience with a proven track record of scaling hospitality and real estate ventures.
+                    </p>
+
+                    <div class="grid grid-cols-3 gap-4 mb-6">
+                        <div class="bg-teal-50 border border-teal-200 rounded-lg p-4 text-center">
+                            <p class="text-3xl font-bold text-teal-700">600+</p>
+                            <p class="text-xs font-semibold text-teal-900 mt-1">Individuals Facilitated</p>
+                        </div>
+                        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+                            <p class="text-3xl font-bold text-blue-700">Top 3</p>
+                            <p class="text-xs font-semibold text-blue-900 mt-1">Psilocybin Retreats in US</p>
+                        </div>
+                        <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 text-center">
+                            <p class="text-3xl font-bold text-purple-700">#1</p>
+                            <p class="text-xs font-semibold text-purple-900 mt-1">STR Portfolio in Las Vegas</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 border-t border-gray-200">
+                        <h4 class="font-semibold text-gray-900 mb-3">Additional Highlights:</h4>
+                        <ul class="space-y-2 text-sm text-gray-700">
+                            <li>• Colorado's 1st Licensed Facilitator (Legacy Healer Pathway)</li>
+                            <li>• Advisor to Colorado Governor's Office & DORA</li>
+                            <li>• Scaled largest short-term rental portfolio in Las Vegas to 2000+ monthly guests over 24 owned homes</li>
+                            <li>• Recognized thought leader with keynote presentations at <strong>TEDxBoulder, Mindvalley,</strong> and the <strong>Conscious Entrepreneur Summit</strong></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Next Steps / 90-Day Timeline Section -->
+    <section id="next-steps" class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Next Steps: 90-Day Execution Timeline</h2>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <div class="bg-gradient-to-r from-blue-50 to-purple-50 border-l-4 border-blue-500 p-6 rounded-r-lg">
+                        <h3 class="text-lg font-bold mb-2">Weeks 1-2: Due Diligence & Inspections</h3>
+                        <ul class="space-y-1 text-sm text-gray-700">
+                            <li>• Professional septic inspection & capacity assessment (critical: 8-person occupancy requirement)</li>
+                            <li>• Comprehensive property inspection (deferred maintenance, structural, systems)</li>
+                            <li>• Wildfire insurance quotes (expect 2x-4x base estimate in Boulder County)</li>
+                            <li>• Boulder County zoning consultation (Use Review for medical office use)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-teal-50 to-green-50 border-l-4 border-teal-500 p-6 rounded-r-lg">
+                        <h3 class="text-lg font-bold mb-2">Weeks 3-4: Regulatory Planning</h3>
+                        <ul class="space-y-1 text-sm text-gray-700">
+                            <li>• Submit Use Review application to Boulder County Planning</li>
+                            <li>• Initiate NMHA Healing Center license application (~$6K)</li>
+                            <li>• Begin owner-occupied STR license process (Austin relocates as primary resident)</li>
+                            <li>• Finalize NNN lease agreement with Ceremonia Spaces, Inc.</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-yellow-50 to-orange-50 border-l-4 border-yellow-500 p-6 rounded-r-lg">
+                        <h3 class="text-lg font-bold mb-2">Weeks 5-8: Property Acquisition & Build-Out</h3>
+                        <ul class="space-y-1 text-sm text-gray-700">
+                            <li>• Close on property (30-45 days conventional financing)</li>
+                            <li>• Begin 10-room therapy suite build-out ($98,090 CapEx budget)</li>
+                            <li>• Install healing center infrastructure (soundproofing, integration spaces, outdoor pathways)</li>
+                            <li>• Austin establishes primary residence (6+ months/year for STR compliance)</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gradient-to-r from-green-50 to-teal-50 border-l-4 border-green-500 p-6 rounded-r-lg">
+                        <h3 class="text-lg font-bold mb-2">Weeks 9-12: Launch Preparation</h3>
+                        <ul class="space-y-1 text-sm text-gray-700">
+                            <li>• Obtain NMHA Healing Center license approval</li>
+                            <li>• Secure owner-occupied STR license (2-year term)</li>
+                            <li>• Complete Use Review process (may extend 6-12 months; operations begin under temporary approval)</li>
+                            <li>• Onboard anchor tenant (Ceremonia Journeys) + first facilitator cohort</li>
+                            <li>• Launch marketing: Google SEO (#1 "Colorado psilocybin"), facilitator waitlist conversion</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6 text-center">
+                    <h4 class="font-bold text-blue-900 mb-2">Critical Success Factors</h4>
+                    <div class="grid md:grid-cols-2 gap-4 text-sm text-blue-900">
+                        <div>
+                            <p class="font-semibold mb-1">Septic Capacity Confirmation</p>
+                            <p class="text-xs">Must support 8-person occupancy or budget $30K-$50K upgrade</p>
+                        </div>
+                        <div>
+                            <p class="font-semibold mb-1">Use Review Approval</p>
+                            <p class="text-xs">Medical office use in residential zone; 6-12 month timeline</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment Thesis -->
+    <section id="investment-thesis" class="py-12 md:py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold text-center mb-8">Investment Thesis</h2>
+
+            <div class="max-w-4xl mx-auto space-y-6">
+                <div class="bg-green-50 border border-green-200 rounded-lg p-6">
+                    <h3 class="text-lg font-bold text-green-900 mb-4">✓ Investment Highlights</h3>
+                    <ul class="space-y-3 text-green-900">
+                        <li><strong>Fixed 11% Return:</strong> $1,229/month ($14,748/year) on $134,071 investment</li>
+                        <li><strong>Paid from Property NOI:</strong> Distributions funded by $12,375/month NNN lease from Ceremonia Spaces</li>
+                        <li><strong>11% Cap Rate Property:</strong> $1.35M property value generating $148,500 annual NOI requirement</li>
+                        <li><strong>Strong Tenant Coverage:</strong> 5.30x-10.61x tenant revenue coverage across occupancy scenarios</li>
+                        <li><strong>Zero Debt Exposure:</strong> Preferred equity position—no personal liability for any financing</li>
+                        <li><strong>Preferred Position:</strong> Your 11% return paid before any residual distributions to operating partner</li>
+                        <li><strong>Anchor Tenant Buffer:</strong> Ceremonia Journeys' 4 buyouts/month ($192K/year) covers 129% of property NOI requirement</li>
+                        <li><strong>Full Financial Transparency:</strong> Quarterly financial statements including property performance and tenant operational metrics</li>
+                    </ul>
+                </div>
+
+                <!-- Property Appreciation Upside -->
+                <div class="bg-gradient-to-r from-blue-50 to-purple-50 border-2 border-blue-300 rounded-lg p-6">
+                    <h3 class="text-lg font-bold text-blue-900 mb-4 flex items-center">
+                        <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                        </svg>
+                        Property Appreciation & Capital Gains Potential
+                    </h3>
+                    <div class="grid md:grid-cols-2 gap-4">
+                        <div class="bg-white rounded-lg p-4 border border-blue-200">
+                            <h4 class="font-semibold text-blue-900 mb-2">📈 Historical Market Performance</h4>
+                            <p class="text-sm text-gray-700 mb-3">
+                                Boulder County mountain properties in the Lyons corridor have shown strong appreciation driven by limited inventory, proximity to Denver/Boulder metro, and increasing demand for recreational properties near Rocky Mountain National Park.
+                            </p>
+                            <div class="bg-blue-50 p-3 rounded">
+                                <p class="text-xs text-blue-900 font-semibold mb-1">Strategic Location Benefits:</p>
+                                <ul class="text-xs text-blue-900 space-y-1">
+                                    <li>• 1 hour from Denver Airport ($11B expansion)</li>
+                                    <li>• Gateway to RMNP (4.15M annual visitors)</li>
+                                    <li>• Limited supply: Boulder County STR restrictions</li>
+                                    <li>• Unique 12.82-acre parcel with year-round creek</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg p-4 border border-blue-200">
+                            <h4 class="font-semibold text-blue-900 mb-2">💰 Exit Strategy & Sale Proceeds</h4>
+                            <p class="text-sm text-gray-700 mb-3">
+                                <strong>Capital Gains Participation:</strong> Upon property sale, you receive pro-rata share of net proceeds based on your invested capital.
+                            </p>
+                            <div class="bg-green-50 p-3 rounded mb-3">
+                                <p class="text-sm font-semibold text-green-900 mb-2">Your Equity Position:</p>
+                                <ul class="text-xs text-green-900 space-y-1">
+                                    <li>• Pro-rata share in property appreciation</li>
+                                    <li>• Participate in sale proceeds after expenses</li>
+                                    <li>• Capital gains upside beyond fixed 11% return</li>
+                                    <li>• Strategic hold period: 5-10+ years recommended</li>
+                                </ul>
+                            </div>
+                            <p class="text-xs text-gray-600 italic">
+                                Exit timing determined by operating partner with investor input. Strong tenant performance and property improvements enhance exit value.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="mt-4 bg-blue-100 border-l-4 border-blue-500 p-4 rounded">
+                        <p class="text-sm text-blue-900">
+                            <strong>🎯 Total Return Potential:</strong> The 11% fixed return provides stable passive income, while property appreciation offers additional capital gains upside. Strategic location 60 minutes from Denver in high-demand mountain corridor provides strong long-term appreciation potential beyond fixed distribution returns.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
+                    <h3 class="text-lg font-bold text-yellow-900 mb-4">⚠ Key Risks & Considerations</h3>
+                    <ul class="space-y-3 text-yellow-900">
+                        <li><strong>Tenant Performance Risk:</strong> Distributions depend on property generating sufficient NOI to cover your 11% preferred return (mitigated by 5.30x-10.61x tenant revenue coverage across scenarios)</li>
+                        <li><strong>New Market Uncertainty:</strong> NMHA healing center market launched Dec 2024; pricing assumptions based on limited comparable data</li>
+                        <li><strong>Septic Capacity:</strong> 8-guest occupancy limit could constrain tenant operations if exceeded ($30K-$50K upgrade cost)</li>
+                        <li><strong>Regulatory Approval:</strong> Use Review required for healing center use in residential zone (6-12 month timeline)</li>
+                        <li><strong>Preferred Return Priority:</strong> While you have priority over residual distributions, operating partner controls property operations and exit timing</li>
+                        <li><strong>Property-Specific:</strong> 24-year-old mountain home, wildfire insurance premiums, winter access challenges</li>
+                    </ul>
+                </div>
+
+                <div class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+                    <h3 class="text-lg font-bold text-blue-900 mb-4">→ Recommendation: ATTRACTIVE PREFERRED EQUITY INVESTMENT</h3>
+                    <p class="text-blue-900 mb-3">
+                        This preferred equity structure offers <strong>compelling risk-adjusted returns</strong>: 11% fixed return on $134,071 investment generating $1,229/month passive income backed by 11% cap rate property. The $12,375/month property NOI requirement is supported by tenant Ceremonia Spaces' 5.30x-10.61x revenue coverage across occupancy scenarios, demonstrating substantial buffer against operational volatility.
+                    </p>
+                    <p class="text-blue-900 mb-3">
+                        <strong>Key Success Factors:</strong> (1) Tenant executes on occupancy-based revenue model (whole home buyouts, facilitator rooms, ceremony spaces), (2) Regulatory approvals secured (Use Review + STR license), (3) Septic capacity confirmed for 8-guest operations. Anchor tenant Ceremonia Journeys' 4 guaranteed buyouts/month ($192K/year) covers 129% of property NOI requirement—providing downside protection.
+                    </p>
+                    <p class="text-blue-900">
+                        <strong>Investment Profile:</strong> Best suited for investors seeking passive real estate income with hands-off management, comfortable with preferred equity structure, and able to hold 5-10+ years to maximize returns and property appreciation. Zero debt liability provides clean risk profile. <strong>Ideal for accredited investors</strong> comfortable with emerging market risk but seeking strong tenant fundamentals and regulatory moat with overnight market leadership.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 md:py-24 bg-gradient-to-br from-teal-50 to-blue-50">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold">Ready to Invest?</h2>
+            <p class="mt-4 text-xl text-gray-700 max-w-2xl mx-auto">
+                Join us in building Colorado's premier healing center infrastructure. Contact Austin to discuss this investment opportunity.
+            </p>
+            <div class="mt-8">
+                <a href="mailto:austin@ceremoniacircle.org" class="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors shadow-md">
+                    Contact Austin Mao →
+                </a>
+            </div>
+            <p class="mt-6 text-sm text-gray-600">austin@ceremoniacircle.org</p>
+        </div>
+    </section>
+
+    <!-- Chart.js Script for Market Share Chart -->
+    <script>
+        // Market Share Chart
+        const marketShareCtx = document.getElementById('marketShareChart');
+        if (marketShareCtx) {
+            new Chart(marketShareCtx, {
+                type: 'pie',
+                data: {
+                    labels: ['Saint Vrain (4 Rooms)', 'All Other Competitors (65 Rooms)'],
+                    datasets: [{
+                        data: [4, 65],
+                        backgroundColor: ['#65C5B2', '#E5E7EB'],
+                        borderColor: ['#FFFFFF', '#FFFFFF'],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: 'bottom',
+                            labels: {
+                                font: {
+                                    size: 12,
+                                    family: "'Public Sans', sans-serif"
+                                },
+                                padding: 12
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.label || '';
+                                    let value = context.parsed;
+                                    let sum = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+                                    let percentage = ((value / sum) * 100).toFixed(1) + '%';
+                                    return label + ': ' + percentage;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
