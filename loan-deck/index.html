@@ -65,6 +65,16 @@
 </head>
 <body class="antialiased">
 
+    <!-- LENDER UPGRADE: Top eligibility banner (dismissible) -->
+    <div id="lender-eligibility-banner" class="print-hide bg-[#6283C2] text-white text-xs md:text-sm py-2 px-6 flex items-center justify-between">
+        <p>
+            For <strong>Colorado state-chartered banks, credit unions, and CDFIs</strong> only. <strong>Federally chartered institutions excluded.</strong>
+        </p>
+        <button type="button" aria-label="Dismiss eligibility banner" class="ml-4 bg-white/20 hover:bg-white/30 rounded px-2 py-1" onclick="document.getElementById('lender-eligibility-banner').style.display='none'">
+            Dismiss
+        </button>
+    </div>
+
     <!-- Print Header -->
     <div class="print-header hidden justify-between items-center p-4 border-b border-gray-300">
         <img src="images/ceremonia_logo_horiz_color.png" alt="Ceremonia Spaces Logo" class="h-8">
@@ -90,9 +100,15 @@
                 <a href="#property" class="nav-link">Property</a>
                 <a href="#founder" class="nav-link">Founder</a>
             </div>
-            <a href="#contact" class="bg-[#65C5B2] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">
-                Contact
-            </a>
+            <div class="flex items-center gap-2">
+                <a href="#contact" class="bg-[#65C5B2] text-white px-5 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">
+                    Contact
+                </a>
+                <!-- LENDER UPGRADE: Request Lender Pack CTA -->
+                <a href="mailto:austin@ceremoniacircle.org?subject=Lender%20Pack%20Request" class="bg-[#6283C2] text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-opacity-90 transition-colors">
+                    Request Lender Pack (ZIP)
+                </a>
+            </div>
         </nav>
     </header>
 
@@ -101,7 +117,7 @@
         <section id="summary" class="py-16 md:py-24">
             <div class="container mx-auto px-6 text-center">
                 <h1 class="text-4xl md:text-5xl font-bold tracking-tight text-[#3D352E]">Ceremonia Spaces — Bank Financing Request</h1>
-                <h2 class="mt-4 text-xl md:text-2xl font-semibold text-gray-600">Licensed Specialty Medical Services Facility (NNN)</h2>
+                <h2 class="mt-4 text-xl md:text-2xl font-semibold text-gray-600">Licensed Specialty Medical Services under Colorado's Natural Medicine Health Act (NMHA)</h2>
                 <div class="mt-8 max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
                     <div class="stat-card">
                         <p class="stat-label">Loan Requested</p>
@@ -116,6 +132,28 @@
                 <p class="mt-8 max-w-2xl mx-auto text-lg text-gray-700 italic">
                     A secured commercial real estate loan backed by tangible property and a long-term NNN lease to an operator with projected profitability and pre-committed tenant demand.
                 </p>
+                <!-- LENDER UPGRADE: Executive Credit Snapshot row -->
+                <div class="mt-10 max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="stat-card" title="Effective date: Feb 16, 2022">
+                        <p class="stat-label">Appraised Value</p>
+                        <p class="stat-value">$1,270,000</p>
+                        <p class="text-xs text-gray-500 mt-1">Effective Feb 16, 2022; report available</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Combined LTV (post-close)</p>
+                        <p class="stat-value">79%</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Lease Coverage (DSCR proxy)</p>
+                        <p class="stat-value">2.0×–4.6×</p>
+                        <p class="text-xs text-gray-500 mt-1">Year 1–Year 3</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Structure</p>
+                        <p class="stat-value text-base md:text-2xl">Second lien or single refi</p>
+                        <p class="text-xs text-gray-500 mt-1">Flexible</p>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -130,14 +168,34 @@
                                 <tr class="text-sm"><td class="p-3 font-medium text-gray-700 w-1/2">Purchase Price</td><td class="p-3 text-gray-800 font-semibold">$1,050,000</td></tr>
                                 <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Appraised Value</td><td class="p-3 text-gray-800 font-semibold">$1,200,000</td></tr>
                                 <tr class="text-sm"><td class="p-3 font-medium text-gray-700">Total Debt Post-Close</td><td class="p-3 text-gray-800 font-semibold">$950,000</td></tr>
-                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">LTV (Debt / Appraised Value)</td><td class="p-3 text-gray-800 font-semibold" id="ltv-value">≈ 79%</td></tr>
-                                <tr class="text-sm"><td class="p-3 font-medium text-gray-700">LTC (Debt / Total Uses)</td><td class="p-3 text-gray-800 font-semibold" id="ltc-value">≈ 83%</td></tr>
+                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">LTV (Debt / Appraised Value)</td><td class="p-3 text-gray-800 font-semibold" id="ltv-value" title="Exact LTV">≈ 79%</td></tr>
+                                <tr class="text-sm"><td class="p-3 font-medium text-gray-700">LTC (Debt / Total Uses)</td><td class="p-3 text-gray-800 font-semibold" id="ltc-value" title="Exact LTC">≈ 83%</td></tr>
                                 <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Requested Loan (2nd Lien)</td><td class="p-3 text-gray-800 font-semibold">$450,000 (Target 6-8%, 5-10yr term)</td></tr>
                                 <tr class="text-sm"><td class="p-3 font-medium text-gray-700">Collateral</td><td class="p-3 text-gray-800">2nd deed of trust on 538 Commons Dr; assignment of NNN lease; optional UCC-1 on OpCo receivables; lender consent on subleases.</td></tr>
                                 <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Intercreditor</td><td class="p-3 text-gray-800">Standard intercreditor agreement with 1st-lien seller: cure rights, standstill, and rent assignment waterfall.</td></tr>
                                 <tr class="text-sm"><td class="p-3 font-medium text-gray-700">Prepayment</td><td class="p-3 text-gray-800">Standard (open after 24 months)</td></tr>
+                                <!-- LENDER UPGRADE: Additional underwriting rows -->
+                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Lease Term & Type</td><td class="p-3 text-gray-800 font-semibold">10-year NNN, base rent $14,000/mo, no landlord expenses</td></tr>
+                                <tr class="text-sm"><td class="p-3 font-medium text-gray-700">Annual Escalations</td><td class="p-3 text-gray-800 font-semibold">[Negotiable]</td></tr>
+                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Guaranty</td><td class="p-3 text-gray-800 font-semibold">Personal guaranty up to $300k liquid investments</td></tr>
+                                <tr class="text-sm"><td class="p-3 font-medium text-gray-700">Reserves</td><td class="p-3 text-gray-800 font-semibold">Prepared to escrow 6–12 months interest (negotiable)</td></tr>
+                                <tr class="text-sm bg-gray-50"><td class="p-3 font-medium text-gray-700">Cash Management</td><td class="p-3 text-gray-800 font-semibold">Optional lender-controlled lockbox & waterfall</td></tr>
+                                <tr class="text-sm"><td class="p-3 font-medium text-gray-700">Closing Readiness</td><td class="p-3 text-gray-800 font-semibold">2-week fixturization; property taken "as-is"</td></tr>
                             </tbody>
                         </table>
+                    </div>
+                    <!-- LENDER UPGRADE: Intercreditor Summary and First-Lien toggle -->
+                    <div class="max-w-4xl mx-auto mt-4 bg-white rounded-lg border p-4">
+                        <h3 class="font-semibold mb-2">Intercreditor Summary</h3>
+                        <ul class="list-disc list-inside text-sm text-gray-700 space-y-1">
+                            <li>30-day cure rights for 2nd lien</li>
+                            <li>Standstill on 1st-lien foreclosure during cure</li>
+                            <li>Rent assignment waterfall pre-agreed</li>
+                        </ul>
+                        <details class="mt-3 text-sm text-gray-700">
+                            <summary class="cursor-pointer text-[#6283C2] font-medium">Prefer a single first lien?</summary>
+                            <p class="mt-1">We can refinance both liens into one first at ~79% LTV.</p>
+                        </details>
                     </div>
                     <div class="max-w-4xl mx-auto mt-6 bg-white rounded-lg border overflow-hidden">
                         <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x">
@@ -215,7 +273,7 @@
                         <p class="stat-label">On Our Waitlist</p>
                         <p class="stat-value text-[#65C5B2]">25</p>
                         <div class="w-full bg-gray-200 rounded-full h-2.5 mt-2"><div class="bg-[#65C5B2] h-2.5 rounded-full" style="width: 45.5%"></div></div>
-                        <p class="text-xs text-gray-500 mt-1">≈45% of Licensed Market</p>
+                        <p class="text-xs text-gray-500 mt-1">≈45% of Licensed Market — as of Aug 30, 2025.</p>
                     </div>
                     <div class="stat-card">
                         <p class="stat-label">Conservative Monthly Room-Days (Waitlist)</p>
@@ -226,19 +284,66 @@
                  <div class="mt-12 max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                     <div class="lg:col-span-1 text-center">
                         <h3 class="font-bold text-lg mb-2">Waitlist Share of Market</h3>
-                        <div class="h-48 w-48 mx-auto"><canvas id="waitlistDonut" aria-label="A donut chart showing that 25 out of 55 facilitators are on the waitlist."></canvas></div>
+                        <div class="h-48 w-48 mx-auto">
+                            <!-- LENDER UPGRADE: Chart accessibility -->
+                            <h4 id="waitlistDonutLabel" class="sr-only">Waitlist donut chart</h4>
+                            <p id="waitlistDonutDesc" class="sr-only">Shows 25 on waitlist out of total 55 licensed facilitators.</p>
+                            <canvas id="waitlistDonut" aria-labelledby="waitlistDonutLabel" aria-describedby="waitlistDonutDesc"></canvas>
+                        </div>
+                        <!-- LENDER UPGRADE: Donut caption update -->
+                        <p class="text-xs text-center text-gray-500 mt-2">25 of 55 licensed facilitators (≈45%) on waitlist — as of Aug 30, 2025.</p>
                     </div>
                     <div class="lg:col-span-2 bg-white rounded-lg border p-4">
+                        <!-- LENDER UPGRADE: Pre-Commitment Pipeline progress bar and 5-col table -->
+                        <div class="mb-4">
+                            <h3 class="font-bold text-lg mb-2">Pre-Commitment Pipeline</h3>
+                            <div class="w-full bg-gray-200 rounded-full h-3">
+                                <div class="bg-[#6283C2] h-3 rounded-full" style="width: 60%"></div>
+                            </div>
+                            <div class="flex justify-between text-[11px] text-gray-600 mt-1">
+                                <span>Target (annualized): $—</span>
+                                <span>In LOI: $—</span>
+                                <span>Executed: $—</span>
+                                <span>Closing this month: $—</span>
+                            </div>
+                            <p class="text-xs text-gray-500 mt-2">Executed LOIs convert to sub-lease day-rates.</p>
+                        </div>
                         <h3 class="font-bold text-lg mb-2">Pre-Commitments (In Process)</h3>
-                         <table class="w-full text-sm text-left">
-                            <thead class="bg-gray-50"><tr><th class="p-2">Organization</th><th class="p-2">Commitment</th><th class="p-2">Status</th></tr></thead>
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-gray-50">
+                                <tr>
+                                    <th class="p-2" scope="col">Organization</th>
+                                    <th class="p-2" scope="col">Commitment</th>
+                                    <th class="p-2" scope="col">Dollarization</th>
+                                    <th class="p-2" scope="col">Status</th>
+                                    <th class="p-2" scope="col">Next Milestone</th>
+                                </tr>
+                            </thead>
                             <tbody class="divide-y">
-                                <tr><td class="p-2">InnerTrek</td><td class="p-2">Practica days / month (Denver cohort)</td><td class="p-2">LOI Drafted</td></tr>
-                                <tr><td class="p-2">Changa Institute</td><td class="p-2">Training weekends / quarter</td><td class="p-2">LOI Drafted</td></tr>
-                                <tr><td class="p-2">Synthesis Institute</td><td class="p-2">Residency days / month</td><td class="p-2">LOI Drafted</td></tr>
+                                <tr>
+                                    <td class="p-2">InnerTrek</td>
+                                    <td class="p-2">Practica days (Denver cohort) + $1,500/mo for 7 months</td>
+                                    <td class="p-2">Quarterly practicums: 2.5 days × $2,000/day</td>
+                                    <td class="p-2">Target: LOI executed</td>
+                                    <td class="p-2">Milestone: Sep 15</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">Changa Institute</td>
+                                    <td class="p-2">Training weekends / quarter</td>
+                                    <td class="p-2">Quarterly practicums: 2.5 days × $2,000/day</td>
+                                    <td class="p-2">Target: LOI executed</td>
+                                    <td class="p-2">Milestone: Sep 30</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-2">Synthesis Institute</td>
+                                    <td class="p-2">Residency days / month</td>
+                                    <td class="p-2">Quarterly practicums: 2.5 days × $2,000/day</td>
+                                    <td class="p-2">Target: LOI executed</td>
+                                    <td class="p-2">Milestone: Sep 30</td>
+                                </tr>
                             </tbody>
-                         </table>
-                         <p class="text-xs text-gray-600 mt-2">These three training institutions collectively represent a majority share of licensed-facilitator training volume across OR/CO.</p>
+                        </table>
+                        <p class="text-xs text-gray-600 mt-2">These training institutions collectively represent a majority share of licensed-facilitator training volume across OR/CO.</p>
                     </div>
                  </div>
                  <div class="mt-6 max-w-3xl mx-auto bg-white p-4 rounded-lg border">
@@ -263,11 +368,15 @@
                  <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">License & Due Diligence Status</h2>
                 <div class="mt-8 max-w-2xl mx-auto bg-white p-6 rounded-lg border">
                     <ul class="space-y-4 text-left">
-                        <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>License:</strong> State license process at final stage; expected approval: <strong>[Insert Date]</strong></div></li>
+                        <!-- LENDER UPGRADE: License copy + date -->
+                        <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>License:</strong> State NMHA healing-center license in final stage; <strong>expected approval: Sep 6, 2025</strong>.</div></li>
                         <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>Appraisal:</strong> Completed at <strong>$1.2M</strong> (report available)</div></li>
                         <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>Phase I ESA:</strong> Completed, No RECs (report available)</div></li>
                         <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>Title & Zoning:</strong> Clean; zoning supports intended use (reports available)</div></li>
                          <li class="flex items-center"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>Roof:</strong> Replaced in 2021</div></li>
+                        <!-- LENDER UPGRADE: Compliance & SBA bullets -->
+                        <li class="flex items-start"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>Compliance:</strong> BSA/AML procedures, incident reporting, background checks; <em>state-chartered lenders only</em>; willing to keep <strong>deposits/cash management</strong> with lender; will cooperate on SAR/EDD.</div></li>
+                        <li class="flex items-start"><span class="text-xl text-green-500 mr-3">✓</span><div><strong>SBA:</strong> Will consider <strong>SBA 504/7(a)</strong> if packaged/administered by a <em>state-chartered</em> lender.</div></li>
                     </ul>
                 </div>
             </div>
@@ -305,6 +414,13 @@
                         DSCR = Property NOI / Property Debt Service &nbsp;→&nbsp; target ≥ 1.25x
                         </li>
                     </ul>
+                    <!-- LENDER UPGRADE: Property-level DSCR badge -->
+                    <div class="mt-3 text-sm"><span class="font-semibold">Property DSCR:</span> <span id="property-dscr-badge" class="ml-2 inline-block px-2 py-1 rounded font-bold">—</span></div>
+                 </div>
+                <!-- LENDER UPGRADE: Lease Abstract card -->
+                <div class="mt-6 max-w-3xl mx-auto bg-white p-6 rounded-lg border">
+                    <h3 class="font-bold text-lg mb-2">Lease Abstract</h3>
+                    <p class="text-sm text-gray-700"><strong>Term:</strong> 10 years • <strong>Base:</strong> $14,000/mo NNN • <strong>Escalations:</strong> [Negotiable or % if known] • <strong>Options:</strong> [insert if any] • <strong>Assignment & Estoppel:</strong> Available • <strong>Rent Commencement:</strong> Upon license approval • <strong>Fixturization:</strong> 2 weeks • <strong>Delivery:</strong> "As-is".</p>
                 </div>
             </div>
         </section>
@@ -313,14 +429,17 @@
         <section id="financials" class="py-16 md:py-24">
             <div class="container mx-auto px-6">
                 <div class="text-center mb-12">
-                     <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Operator Financials (Ceremonia Spaces, Inc.)</h2>
-                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">
-                        The tenant (OpCo) demonstrates projected profitability and ample cash flow to comfortably service its NNN lease obligations, ensuring consistent payments to the property SPV.
-                    </p>
+                     <!-- LENDER UPGRADE: Rename OpCo chart block heading and add reminder -->
+                     <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Tenant Lease Coverage Proxy (EBITDA vs Debt)</h2>
+                    <p class="mt-3 max-w-3xl mx-auto text-gray-600">Bank DSCR tested at property level; tenant EBITDA shown as lease-coverage proxy.</p>
                 </div>
                 <div class="max-w-5xl mx-auto bg-white rounded-lg p-6 border shadow-lg">
                     <h3 class="text-xl font-bold mb-4 text-center">Year 1 Financial Forecast (Base Case)</h3>
-                    <div class="h-96 w-full"><canvas id="financialChart" aria-label="A chart showing Year 1 revenue, opex, and cash balance projections."></canvas></div>
+                    <div class="h-96 w-full">
+                        <h4 id="financialChartLabel" class="sr-only">Year 1 revenue, opex, and cash balance projections</h4>
+                        <p id="financialChartDesc" class="sr-only">Bar and line chart comparing quarterly revenue, operating expenses, and cash balance.</p>
+                        <canvas id="financialChart" aria-labelledby="financialChartLabel" aria-describedby="financialChartDesc"></canvas>
+                    </div>
                     <div class="mt-6 flex flex-wrap justify-center gap-4 text-center">
                         <div class="px-4 py-2 bg-gray-100 rounded-md text-sm"><strong class="block text-base">Year-1 Revenue:</strong> $830k</div>
                         <div class="px-4 py-2 bg-gray-100 rounded-md text-sm"><strong class="block text-base">Year-1 EBITDA:</strong> $366k (44%)</div>
@@ -330,7 +449,29 @@
                     </div>
                      <p class="text-xs text-center text-gray-500 mt-4">Illustrative forward-looking model; not audited; actuals may vary.</p>
                 </div>
-                 <div class="mt-8 max-w-5xl mx-auto bg-white rounded-lg p-6 border shadow-lg">
+                <!-- LENDER UPGRADE: Staffing & Payroll Forecast (Yr 1–3) -->
+                <div class="mt-8 max-w-5xl mx-auto bg-white rounded-lg p-6 border shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-center">Staffing & Payroll Forecast (Yr 1–3)</h3>
+                    <table class="w-full text-sm text-left">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th class="p-2" scope="col">Role</th>
+                                <th class="p-2" scope="col">Entity</th>
+                                <th class="p-2" scope="col">Phase 1 (Yr 1)</th>
+                                <th class="p-2" scope="col">Phase 2 (Yr 2)</th>
+                                <th class="p-2" scope="col">Phase 3 (Yr 3)</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y">
+                            <tr><td class="p-2">Facility Manager</td><td class="p-2">OpCo</td><td class="p-2">$60k</td><td class="p-2">$65k</td><td class="p-2">$70k</td></tr>
+                            <tr class="bg-gray-50"><td class="p-2">Clinical Director (PT)</td><td class="p-2">Contract</td><td class="p-2">$36k</td><td class="p-2">$48k</td><td class="p-2">$60k</td></tr>
+                            <tr><td class="p-2">Front Desk / Ops</td><td class="p-2">OpCo</td><td class="p-2">$42k</td><td class="p-2">$50k</td><td class="p-2">$55k</td></tr>
+                            <tr class="bg-gray-50"><td class="p-2">On-call Medical</td><td class="p-2">Contract</td><td class="p-2">Per session</td><td class="p-2">Per session</td><td class="p-2">Per session</td></tr>
+                        </tbody>
+                    </table>
+                    <p class="text-xs text-center text-gray-500 mt-3">Variable per-session costs: ~$75 per room-day; on-call medical billed per session.</p>
+                </div>
+                <div class="mt-8 max-w-5xl mx-auto bg-white rounded-lg p-6 border shadow-lg">
                     <h3 class="text-xl font-bold mb-4 text-center">Illustrative DSCR Sensitivity Analysis</h3>
                     <table class="w-full text-sm text-center">
                         <thead>
@@ -375,14 +516,18 @@
                 </div>
                 <div class="max-w-4xl mx-auto mt-8 bg-white p-6 rounded-lg border">
                     <h3 class="font-bold text-lg mb-2 text-center">3-Year Trend: Revenue vs. EBITDA</h3>
-                    <div class="h-64"><canvas id="threeYearTrendChart" aria-label="A line chart showing revenue and EBITDA growth over 3 years."></canvas></div>
+                    <div class="h-64">
+                        <h4 id="trendChartLabel" class="sr-only">3-Year Revenue vs EBITDA Trend</h4>
+                        <p id="trendChartDesc" class="sr-only">Line chart with revenue and EBITDA for Years 1 to 3.</p>
+                        <canvas id="threeYearTrendChart" aria-labelledby="trendChartLabel" aria-describedby="trendChartDesc"></canvas>
+                    </div>
                 </div>
                  <p class="text-xs text-center text-gray-500 mt-4 max-w-4xl mx-auto">Footnote: Forward-looking, illustrative calculations; actuals may vary. Bank DSCR typically uses property NOI vs property debt service; shown here as an operator EBITDA proxy for lease coverage.</p>
             </div>
         </section>
 
         <!-- Capital Stack -->
-        <section id="stack" class="py-16 md:py-24">
+        <section id="stack" class="py-16 md:py-24 page-break-before">
             <div class="container mx-auto px-6 text-center">
                  <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Post-Close Capital Stack</h2>
                 <div class="mt-8 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -406,6 +551,18 @@
                     <p class="font-semibold text-gray-700">Total Sources ≈ $1.15M (Purchase + Closing + TI Cushion)</p>
                      <p class="text-xs text-gray-600 mt-2"><strong>Structure</strong>: 1st — $500k Seller Note @7% (1st lien); <strong>2nd — $450k State-Chartered Bank Loan</strong> (requested); Equity — $200k committed. Intercreditor agreement to govern 1st/2nd.</p>
                 </div>
+                <!-- LENDER UPGRADE: Two Paths We'll Close -->
+                <div class="mt-8 max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg border">
+                        <h3 class="font-bold text-lg">Path A — Second Lien ($450k)</h3>
+                        <p class="text-sm text-gray-700 mt-2">Intercreditor + lockbox; 5–10yr term; 20–25yr am; open after 24 mo.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-lg border">
+                        <h3 class="font-bold text-lg">Path B — Single Refi (~$950k)</h3>
+                        <p class="text-sm text-gray-700 mt-2">First lien @ ~79% LTV; payoff seller; similar term/am; faster close if bank prefers.</p>
+                    </div>
+                </div>
+                <p class="mt-2 text-xs text-gray-600"><strong>Pricing Guidance</strong>: Second: 6–8% • Refi: 7–9% (flexible for speed).</p>
             </div>
         </section>
 
@@ -416,26 +573,31 @@
                      <h2 class="text-3xl md:text-4xl font-bold text-[#3D352E]">Key Risks & Mitigations</h2>
                 </div>
                 <div class="max-w-4xl mx-auto bg-white p-8 rounded-lg border">
+                    <!-- LENDER UPGRADE: Lender-actionable risks -->
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-6">
                         <div>
                             <h3 class="font-bold">Licensing Timing</h3>
-                            <p class="text-sm text-gray-600">Approval tracking with dated milestones; contingency timeline built in.</p>
+                            <p class="text-sm text-gray-600">Final stage; approval <strong>Sep 6</strong>; contingency buffer + dated Gantt; unrelated to property.</p>
                         </div>
                         <div>
-                            <h3 class="font-bold">Utilization Ramp-Up</h3>
-                            <p class="text-sm text-gray-600">Converting 28 waitlist entries to signed pre-commitments; phased capex; flexible day-rate pricing.</p>
+                            <h3 class="font-bold">Utilization Ramp</h3>
+                            <p class="text-sm text-gray-600">25/55 licensed facilitators captured (≈45%); LOIs converting <strong>Sep 15 / Sep 30</strong>; pricing flex band modeled.</p>
                         </div>
                         <div>
-                            <h3 class="font-bold">Second-Lien Position</h3>
-                            <p class="text-sm text-gray-600">Intercreditor agreement; NNN lease assigned to lender; optional UCC on receivables.</p>
-                        </div>
-                         <div>
-                            <h3 class="font-bold">Market Entrants</h3>
-                            <p class="text-sm text-gray-600">First facility of scale; partnerships with top training programs; defensible location/quality.</p>
+                            <h3 class="font-bold">Second-Lien</h3>
+                            <p class="text-sm text-gray-600">Executed intercreditor draft; 30-day cure; no acceleration without notice; rent waterfall.</p>
                         </div>
                         <div>
-                            <h3 class="font-bold">Regulatory Compliance</h3>
-                            <p class="text-sm text-gray-600">State license at final stage; policies & procedures align with DORA; insurance and SOPs in place.</p>
+                            <h3 class="font-bold">Collateral Alternative Use</h3>
+                            <p class="text-sm text-gray-600">Medical office supports <strong>ketamine clinics, wellness, therapy</strong>; TI light; roof 2021.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Compliance</h3>
+                            <p class="text-sm text-gray-600">CO NMHA audits ready; SOPs and insurance binder available.</p>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">HOA Protections</h3>
+                            <p class="text-sm text-gray-600">"HOA cannot restrict licensed medical use." (<a href="#" class="text-[#6283C2] underline">link</a> placeholder)</p>
                         </div>
                     </div>
                 </div>
@@ -462,6 +624,24 @@
                             <li>Serene foothills setting with mountain views, ideal for therapeutic work.</li>
                             <li>Will be delivered vacant for immediate tenant improvements.</li>
                         </ul>
+                        <!-- LENDER UPGRADE: Backfill plan and comps placeholders -->
+                        <div class="mt-4 grid grid-cols-1 gap-4">
+                            <div class="bg-white border rounded p-4">
+                                <h4 class="font-semibold mb-2">Backfill Plan</h4>
+                                <p class="text-sm text-gray-700">Aligned uses: <strong>ketamine clinics, wellness, therapy practices</strong>.</p>
+                            </div>
+                            <div class="bg-white border rounded p-4">
+                                <h4 class="font-semibold mb-2">Rent Comps & Cap-Rate Context</h4>
+                                <table class="w-full text-xs text-left">
+                                    <thead class="bg-gray-50"><tr><th class="p-2" scope="col">Comp</th><th class="p-2" scope="col">Rent/SF</th><th class="p-2" scope="col">Notes</th></tr></thead>
+                                    <tbody class="divide-y">
+                                        <tr><td class="p-2">[Comp A]</td><td class="p-2">$—</td><td class="p-2">NNN medical office</td></tr>
+                                        <tr class="bg-gray-50"><td class="p-2">[Comp B]</td><td class="p-2">$—</td><td class="p-2">Owner-user</td></tr>
+                                        <tr><td class="p-2">[Cap-Rate]</td><td class="p-2">—%</td><td class="p-2">Regional NNN medical</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                     <div class="space-y-6">
                         <img src="images/patio.jpg" alt="Outdoor patio area at the Golden property" class="rounded-lg shadow-lg w-full h-auto object-cover" loading="lazy">
@@ -481,12 +661,24 @@
                     <div class="md:col-span-2">
                         <h2 class="text-3xl font-bold">Austin Mao</h2>
                         <h3 class="text-lg font-semibold text-[#65C5B2]">Founder & CEO, Ceremonia</h3>
-                        <ul class="mt-4 space-y-2 list-disc list-inside text-gray-700">
-                            <li><strong>1,000+ Sessions Facilitated:</strong> Deep experience in the safe and ethical application of psychedelic medicine.</li>
-                            <li><strong>Colorado's 1st Licensed Facilitator:</strong> Recognized by the state under the Legacy Healer Pathway.</li>
-                            <li><strong>Advisor to CO Governor's Office & DORA:</strong> A trusted voice in shaping state-level regulatory policy.</li>
-                            <li><strong>Proven Hospitality Operator:</strong> Scaled a short-term rental portfolio in Las Vegas to 2,000+ monthly guests across 24 properties.</li>
-                        </ul>
+                        <!-- LENDER UPGRADE: Credit-relevant highlights -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                            <div>
+                                <h4 class="font-semibold">Credit Support</h4>
+                                <ul class="mt-2 space-y-2 list-disc list-inside text-gray-700">
+                                    <li>Personal guaranty up to <strong>$300k liquid</strong> (crypto)</li>
+                                    <li>Prepared escrows; lockbox acceptance</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Regulatory Credibility</h4>
+                                <ul class="mt-2 space-y-2 list-disc list-inside text-gray-700">
+                                    <li>Advisor to CO Governor's Office & DORA</li>
+                                    <li>Colorado legacy facilitator; <strong>1,000+ sessions</strong> supervised</li>
+                                    <li>Proven hospitality operator (24 properties; 2,000 guests/mo)</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -503,7 +695,7 @@
                         <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Target Terms</dt><dd class="text-sm text-gray-900 col-span-2">5–10 Year Term, 6–8% Interest Rate</dd></div>
                         <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Amortization Example</dt><dd class="text-sm text-gray-900 col-span-2">Illustrative 20- or 25-year amortization (bank standard)</dd></div>
                         <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Security</dt><dd class="text-sm text-gray-900 col-span-2">Second lien position on 538 Commons Dr, subordinate to $500k seller financing. Collateral includes the property and the NNN lease cash flows. Optional UCC filing on OpCo receivables.</dd></div>
-                        <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Assignment</dt><dd class="text-sm text-gray-900 col-span-2">NNN lease assignment and lender’s consent to subleases available.</dd></div>
+                        <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Assignment</dt><dd class="text-sm text-gray-900 col-span-2">NNN lease assignment and lender's consent to subleases available.</dd></div>
                          <div class="py-4 grid grid-cols-3 gap-4"><dt class="text-sm font-medium text-gray-500">Use of Proceeds</dt><dd class="text-sm text-gray-900 col-span-2">Finalize property acquisition, cover all closing costs, fund light tenant improvements, and provide a working capital cushion for launch.</dd></div>
                     </dl>
                     <p class="text-xs text-center text-gray-500 mt-6">Note: Second-lien subject to intercreditor agreement with seller note.</p>
@@ -527,6 +719,30 @@
             </div>
         </section>
     </main>
+
+    <!-- LENDER UPGRADE: Lender Checklist -->
+    <section id="lender-checklist" class="py-16 md:py-24 section-bg border-t page-break-before">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-[#3D352E]">Lender Checklist</h2>
+            <div class="mt-8 max-w-3xl mx-auto bg-white p-6 rounded-lg border">
+                <ul class="space-y-3 text-left text-sm text-gray-800">
+                    <li><label class="inline-flex items-start gap-2"><input type="checkbox" class="mt-1"> Executive Summary (1-pager)</label></li>
+                    <li><label class="inline-flex items-start gap-2"><input type="checkbox" class="mt-1"> Appraisal (Feb 2022, $1.27M)</label></li>
+                    <li><label class="inline-flex items-start gap-2"><input type="checkbox" class="mt-1"> Phase I ESA (No RECs)</label></li>
+                    <li><label class="inline-flex items-start gap-2"><input type="checkbox" class="mt-1"> Draft Intercreditor</label></li>
+                    <li><label class="inline-flex items-start gap-2"><input type="checkbox" class="mt-1"> Lease + Abstract</label></li>
+                    <li><label class="inline-flex items-start gap-2"><input type="checkbox" class="mt-1"> Guarantor PFS/credit</label></li>
+                    <li><label class="inline-flex items-start gap-2"><input type="checkbox" class="mt-1"> Lockbox/Waterfall draft</label></li>
+                    <li><label class="inline-flex items-start gap-2"><input type="checkbox" class="mt-1"> HOA attestation</label></li>
+                    <li><label class="inline-flex items-start gap-2"><input type="checkbox" class="mt-1"> Insurance binder</label></li>
+                    <li><label class="inline-flex items-start gap-2"><input type="checkbox" class="mt-1"> Licensing dossier (NMHA)</label></li>
+                </ul>
+                <div class="mt-6 text-center print-hide">
+                    <a href="https://calendly.com/placeholder" class="bg-[#65C5B2] text-white font-bold py-3 px-8 rounded-lg hover:bg-opacity-90 transition-transform transform hover:scale-105 shadow-lg">Book 20-min diligence call</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <footer class="py-6 text-center text-gray-500 text-xs print-hide">
         <p>&copy; 2025 Ceremonia Spaces, Inc. For informational purposes only. Not an offer to sell securities.</p>
@@ -609,8 +825,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const totalUses = 1150000;
     const ltv = totalDebt / appraisedValue;
     const ltc = totalDebt / totalUses;
-    document.getElementById('ltv-value').textContent = `≈ ${(ltv * 100).toFixed(0)}%`;
-    document.getElementById('ltc-value').textContent = `≈ ${(ltc * 100).toFixed(0)}%`;
+    const ltvEl = document.getElementById('ltv-value');
+    const ltcEl = document.getElementById('ltc-value');
+    if (ltvEl) {
+        ltvEl.textContent = `≈ ${(ltv * 100).toFixed(0)}%`;
+        ltvEl.title = `${(ltv * 100).toFixed(2)}%`;
+    }
+    if (ltcEl) {
+        ltcEl.textContent = `≈ ${(ltc * 100).toFixed(0)}%`;
+        ltcEl.title = `${(ltc * 100).toFixed(2)}%`;
+    }
     const today = new Date();
     const dateString = today.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
     document.getElementById('print-date').textContent = `${dateString} | Doc ID: CS-BANK-DECK-V2.1`;
@@ -711,6 +935,20 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true, ticks: { callback: value => '$' + (value/1000) + 'k' } } } }
         });
+    }
+
+    // LENDER UPGRADE: compute and display Property DSCR badge with thresholds
+    const propertyAnnualNOI = 14000 * 12; // base NNN rent
+    const propertyAnnualDebtService = 125000; // illustrative combined 1st + 2nd
+    const propDscr = propertyAnnualNOI / propertyAnnualDebtService;
+    const dscrBadge = document.getElementById('property-dscr-badge');
+    if (dscrBadge) {
+        dscrBadge.textContent = `${propDscr.toFixed(2)}×`;
+        let badgeClasses = 'bg-green-100 text-green-800';
+        if (propDscr < 1.10) badgeClasses = 'bg-red-100 text-red-800';
+        else if (propDscr < 1.25) badgeClasses = 'bg-yellow-100 text-yellow-800';
+        dscrBadge.className = `ml-2 inline-block px-2 py-1 rounded font-bold ${badgeClasses}`;
+        dscrBadge.title = `NOI: ${formatCurrency(propertyAnnualNOI)} | Debt Service: ${formatCurrency(propertyAnnualDebtService)}`;
     }
 });
 </script>
